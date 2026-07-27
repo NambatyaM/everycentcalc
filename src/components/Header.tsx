@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const navLinks = [
-  { href: '/freelancer-tax/', label: 'Freelancer Tax' },
-  { href: '/freelancer-rate/', label: 'Freelancer Rates' },
+  { href: '/freelance-tax/', label: 'Freelance Tax' },
+  { href: '/freelance-business/', label: 'Freelance Business' },
   { href: '/side-hustle/', label: 'Side Hustle' },
   { href: '/real-estate/', label: 'Real Estate' },
-  { href: '/small-business/', label: 'Small Business' },
+  { href: '/business-finance/', label: 'Business Finance' },
 ];
 
 export default function Header() {
