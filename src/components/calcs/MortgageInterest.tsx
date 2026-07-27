@@ -81,8 +81,8 @@ export default function MortgageInterestCalc() {
         <ResultRow label="Principal Payment" value={`$${firstMonthPrincipal.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Interest Payment" value={`$${firstMonthInterest.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Total Payment" value={`$${monthlyPayment.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
-        <ResultRow label="Principal of Payment" value={`${((firstMonthPrincipal / monthlyPayment) * 100).toFixed(1)}%`} />
-        <ResultRow label="Interest of Payment" value={`${((firstMonthInterest / monthlyPayment) * 100).toFixed(1)}%`} />
+        <ResultRow label="Principal of Payment" value={monthlyPayment > 0 ? `${((firstMonthPrincipal / monthlyPayment) * 100).toFixed(1)}%` : '0.0%'} />
+        <ResultRow label="Interest of Payment" value={monthlyPayment > 0 ? `${((firstMonthInterest / monthlyPayment) * 100).toFixed(1)}%` : '0.0%'} />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>

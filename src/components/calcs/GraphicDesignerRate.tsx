@@ -23,10 +23,10 @@ export default function GraphicDesignerRate() {
   const monthlyRevenue = hourly * hours * 4;
   const annualAtCurrent = monthlyRevenue * 12;
 
-  const logoHours = logo / hourly;
-  const cardsHours = cards / hourly;
-  const socialHours = social / hourly;
-  const websiteHours = website / hourly;
+  const logoHours = hourly > 0 ? logo / hourly : 0;
+  const cardsHours = hourly > 0 ? cards / hourly : 0;
+  const socialHours = hourly > 0 ? social / hourly : 0;
+  const websiteHours = hourly > 0 ? website / hourly : 0;
 
   return (
     <div>

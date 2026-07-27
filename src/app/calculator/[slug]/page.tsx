@@ -76,6 +76,15 @@ import EmergencyFundCalc from '@/components/calcs/EmergencyFund';
 import DebtAvalancheVsSnowballCalc from '@/components/calcs/DebtAvalancheVsSnowball';
 import RothVsTraditionalCalc from '@/components/calcs/RothVsTraditional';
 import InvestmentDiversificationCalc from '@/components/calcs/InvestmentDiversification';
+import AirbnbRevenueCalc from '@/components/calcs/AirbnbRevenue';
+import BrrrrCalc from '@/components/calcs/Brrrr';
+import ClientBillingCalc from '@/components/calcs/ClientBilling';
+import ContentCreatorRevenueCalc from '@/components/calcs/ContentCreatorRevenue';
+import FreelancerHealthInsuranceCalc from '@/components/calcs/FreelancerHealthInsurance';
+import IsSideHustleWorthItCalc from '@/components/calcs/IsSideHustleWorthIt';
+import PricingStrategyCalc from '@/components/calcs/PricingStrategy';
+import RentVsBuyNewCalc from '@/components/calcs/RentVsBuyNew';
+import ShopifyProfitCalc from '@/components/calcs/ShopifyProfit';
 
 const CALC_COMPONENTS: Record<string, React.FC> = {
   'self-employment-tax-calculator': SelfEmploymentTaxCalc,
@@ -148,6 +157,15 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'debt-avalanche-vs-snowball-calculator': DebtAvalancheVsSnowballCalc,
   'roth-vs-traditional-calculator': RothVsTraditionalCalc,
   'investment-diversification-calculator': InvestmentDiversificationCalc,
+  'airbnb-revenue-calculator': AirbnbRevenueCalc,
+  'brrrr-calculator': BrrrrCalc,
+  'client-billing-calculator': ClientBillingCalc,
+  'content-creator-revenue-calculator': ContentCreatorRevenueCalc,
+  'freelancer-health-insurance-calculator': FreelancerHealthInsuranceCalc,
+  'is-side-hustle-worth-it-calculator': IsSideHustleWorthItCalc,
+  'pricing-strategy-calculator': PricingStrategyCalc,
+  'rent-vs-buy-new-calculator': RentVsBuyNewCalc,
+  'shopify-profit-calculator': ShopifyProfitCalc,
 };
 
 export function generateStaticParams() {

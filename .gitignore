@@ -13,5 +13,9 @@ build/
 *.pem
 .env*.local
 
+# temp files
+tmp/
+scripts/
+
 # vercel
 .vercel

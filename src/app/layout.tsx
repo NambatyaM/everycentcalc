@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | EveryCentCalc',
   },
   description:
-    '28 free online calculators for freelancers, side hustlers, real estate investors, and small business owners. Calculate self-employment tax, quarterly payments, rental ROI, break-even, and more — no signup required.',
+    '87 free online calculators for freelancers, side hustlers, real estate investors, and small business owners. Calculate self-employment tax, quarterly payments, rental ROI, break-even, and more. No signup required.',
   keywords: [
     'freelancer tax calculator',
     'self-employment tax calculator',
@@ -38,6 +38,12 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
+  manifest: '/site.webmanifest',
   metadataBase: new URL('https://everycentcalc.biz.id'),
   alternates: {
     canonical: '/',
@@ -46,16 +52,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'EveryCentCalc',
-    title: 'EveryCentCalc — 28 Free Financial Calculators',
+    title: 'EveryCentCalc — 87 Free Financial Calculators',
     description:
-      'Free calculators for freelancers, side hustlers, real estate investors, and small business owners. 2026 IRS rates. 100% private.',
+      '87 free calculators for freelancers, side hustlers, real estate investors, and small business owners. 2026 IRS rates. 100% private.',
     url: 'https://everycentcalc.biz.id',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'EveryCentCalc — Free Financial Calculators',
     description:
-      '28 free calculators for freelancers, side hustlers, real estate investors, and small business owners.',
+      '87 free calculators for freelancers, side hustlers, real estate investors, and small business owners.',
   },
   robots: {
     index: true,
@@ -68,6 +74,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#059669',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -83,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'EveryCentCalc',
               url: 'https://everycentcalc.biz.id',
               description:
-                '28 free online financial calculators for freelancers, side hustlers, real estate investors, and small business owners.',
+                '87 free online financial calculators for freelancers, side hustlers, real estate investors, and small business owners.',
               potentialAction: {
                 '@type': 'SearchAction',
                 target: 'https://everycentcalc.biz.id/search?q={search_term_string}',

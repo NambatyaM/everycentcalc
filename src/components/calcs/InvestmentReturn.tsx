@@ -21,14 +21,18 @@ export default function InvestmentReturnCalc() {
   const t = parseFloat(years) || 0;
   const n = FREQ_MAP[freq];
 
-  const fv = P * Math.pow(1 + r / n, n * t) + PMT * ((Math.pow(1 + r / n, n * t) - 1) / (r / n));
+  const fv = r > 0
+    ? P * Math.pow(1 + r / n, n * t) + PMT * ((Math.pow(1 + r / n, n * t) - 1) / (r / n))
+    : P + PMT * n * t;
   const totalContributed = P + PMT * t * 12;
   const totalInterest = fv - totalContributed;
-  const effectiveReturn = P > 0 ? ((fv / P) ** (1 / t) - 1) * 100 : 0;
+  const effectiveReturn = P > 0 && t > 0 ? ((fv / P) ** (1 / t) - 1) * 100 : 0;
 
   const milestones = [5, 10, 15, 20, 25, 30].filter((y) => y <= t && y > 0);
   const milestoneValues = milestones.map((y) => {
-    const val = P * Math.pow(1 + r / n, n * y) + PMT * ((Math.pow(1 + r / n, n * y) - 1) / (r / n));
+    const val = r > 0
+      ? P * Math.pow(1 + r / n, n * y) + PMT * ((Math.pow(1 + r / n, n * y) - 1) / (r / n))
+      : P + PMT * n * y;
     const contributed = P + PMT * y * 12;
     return { year: y, value: val, contributed, interest: val - contributed };
   });

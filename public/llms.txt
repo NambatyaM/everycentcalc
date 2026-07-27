@@ -1,26 +1,115 @@
 # EveryCentCalc
 
-> 28 free financial calculators for freelancers, side hustlers, real estate investors, and small business owners. Updated for 2026 IRS tax brackets.
+> 87 free financial calculators for freelancers, side hustlers, real estate investors, and small business owners. Updated for 2026 IRS tax brackets.
 
 ## What This Site Does
 
-EveryCentCalc provides free online financial calculators. All calculations happen in the browser — no data is stored or transmitted.
+EveryCentCalc provides free online financial calculators. All calculations happen in the browser. No data is stored or transmitted.
 
-- **Freelance & Self-Employment Tax**: Self-employment tax, quarterly estimates, side hustle tax, freelance income tax, tax deductions, quarterly deadlines
-- **Freelance Business**: Freelancer rate calculator, profitability calculator, retirement savings calculator
-- **Side Hustle & Gig Economy**: Etsy profit, rideshare driver income, freelance vs employment, debt payoff, time tracking value
-- **Real Estate Investing**: Rent vs buy, rental property, house flipping, rental cash flow, mortgage payment
-- **LLC & Business Entity Tax**: LLC vs sole proprietor, S-Corp tax, business entity comparison
-- **Business Finance**: Break-even, startup runway, profit margin, business debt payoff, SaaS metrics
-- **Investment & Retirement**: Compound interest, required minimum distributions, Roth conversion, 401(k)
+### Freelance and Self Employment Tax (13 calculators)
+- Self-Employment Tax Calculator
+- Quarterly Tax Calculator
+- Side Hustle Tax Calculator
+- Freelance Income Tax Calculator
+- Freelance Tax Deduction Calculator
+- Quarterly Tax Penalty Calculator
+- Freelancer Effective Tax Rate Calculator
+- Self-Employed Health Insurance Deduction Calculator
+- Home Office Deduction Calculator
+- 1099 Income Tax Calculator
+- Self-Employment Tax vs. FICA Calculator
+- Qualified Business Income (QBI) Deduction Calculator
+- Freelancer Health Insurance Cost Estimator
+
+### Freelance Business (8 calculators)
+- Freelancer Rate Calculator
+- Freelancer Profitability Calculator
+- Freelancer Retirement Savings Calculator
+- Freelance Project Rate Calculator
+- Freelancer Savings Rate Calculator
+- Freelance Hourly vs. Project Pricing Calculator
+- Freelancer Net Worth Calculator
+- Client Billing Calculator
+
+### Side Hustle and Gig Economy (16 calculators)
+- Etsy Profit Calculator
+- Freelance vs. Employment Calculator
+- DoorDash Driver Profit Calculator
+- Uber Eats Driver Profit Calculator
+- Print on Demand Profit Calculator
+- Amazon FBA Profit Calculator
+- YouTube Revenue Calculator
+- Online Course Profit Calculator
+- Freelance Writer Rate Calculator
+- Freelance Graphic Designer Rate Calculator
+- Podcast Income Calculator
+- Social Media Manager Rate Calculator
+- Side Hustle Income Tax Calculator
+- Content Creator Revenue Calculator
+- Is My Side Hustle Worth It Calculator
+- Shopify Profit Margin Calculator
+
+### Real Estate Investing (16 calculators)
+- Rent vs. Buy Calculator
+- Rental Property Calculator
+- Rental Cash Flow Calculator
+- House Affordability Calculator
+- Mortgage Affordability Calculator
+- Real Estate Agent Commission Calculator
+- Property Investment ROI Calculator
+- Rental Yield Calculator
+- Mortgage Interest Calculator
+- Home Equity Calculator
+- DSCR Loan Calculator
+- Real Estate Flipping Profit Calculator
+- Cap Rate Calculator
+- Airbnb Revenue Estimator
+- BRRRR Method Calculator
+- Rent vs. Buy Calculator (Updated)
+
+### LLC and Business Entity Tax (6 calculators)
+- LLC vs. Sole Proprietor Tax Calculator
+- S-Corp Tax Calculator
+- LLC Tax Savings Calculator
+- C-Corp vs. S-Corp Tax Calculator
+- Business Entity Formation Cost Calculator
+- Payroll Tax Calculator
+
+### Business Finance (10 calculators)
+- Break-Even Calculator
+- Startup Runway Calculator
+- Business Debt Payoff Calculator
+- SaaS Metrics Calculator
+- Cash Flow Calculator
+- Business Loan Interest Calculator
+- Revenue Growth Calculator
+- Expense Ratio Calculator
+- Client Invoice Calculator
+- Pricing Strategy Calculator
+
+### Investment and Retirement (14 calculators)
+- Compound Interest Calculator
+- Investment Return Calculator
+- Stock Portfolio Return Calculator
+- ETF Fee Calculator
+- Retirement Savings Gap Calculator
+- Inflation Adjusted Calculator
+- Emergency Fund Calculator
+- Debt Avalanche vs. Snowball Calculator
+- Roth vs. Traditional Calculator
+- Investment Diversification Calculator
+- Mortgage Payment Calculator
+- Required Minimum Distribution Calculator
+- Roth Conversion Calculator
+- 401(k) Calculator
 
 ## Key Facts
 
-- **28 calculators** across 7 categories
-- **2026 IRS tax brackets** and rates used for all tax calculations
-- **100% free** — no accounts, no paywalls
-- **100% private** — all calculations client-side
-- Based in the US market, targeting freelancers, side hustlers, and small business owners
+- **87 calculators** across 7 categories
+- **2026 IRS tax brackets** and rates for all tax calculations
+- **100% free** with no accounts or paywalls
+- **100% private** with all calculations done client-side
+- Built for the US market targeting freelancers, side hustlers, and small business owners
 
 ## Calculator URLs
 
