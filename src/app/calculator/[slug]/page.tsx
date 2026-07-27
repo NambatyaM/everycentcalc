@@ -19,11 +19,11 @@ import FreelanceVsEmployeeCalc from '@/components/calcs/FreelanceVsEmployee';
 import FreelanceProjectProfitabilityCalc from '@/components/calcs/FreelanceProjectProfitability';
 import EtsyProfitCalc from '@/components/calcs/EtsyProfit';
 import RentalPropertyRoiCalc from '@/components/calcs/RentalPropertyRoi';
-import CashOnCashReturnCalc from '@/components/calcs/CashOnCashReturn';
 import StartupRunwayCalc from '@/components/calcs/StartupRunway';
 import SaasUnitEconomicsCalc from '@/components/calcs/SaasUnitEconomics';
 import SavingsGoalCalc from '@/components/calcs/SavingsGoal';
 import BusinessLoanCalc from '@/components/calcs/BusinessLoan';
+import CashOnCashReturnCalc from '@/components/calcs/CashOnCashReturn';
 import GenericCalc from '@/components/calcs/Generic';
 import QuarterlyTaxPenaltyCalc from '@/components/calcs/QuarterlyTaxPenalty';
 import FreelancerEffectiveTaxRateCalc from '@/components/calcs/FreelancerEffectiveTaxRate';
@@ -47,9 +47,7 @@ import GraphicDesignerRateCalc from '@/components/calcs/GraphicDesignerRate';
 import PodcastIncomeCalc from '@/components/calcs/PodcastIncome';
 import SocialMediaManagerRateCalc from '@/components/calcs/SocialMediaManagerRate';
 import HouseAffordabilityCalc from '@/components/calcs/HouseAffordability';
-import MortgageAffordabilityCalc from '@/components/calcs/MortgageAffordability';
 import AgentCommissionCalc from '@/components/calcs/AgentCommission';
-import PropertyRoiCalc from '@/components/calcs/PropertyRoi';
 import RentalYieldCalc from '@/components/calcs/RentalYield';
 import MortgageInterestCalc from '@/components/calcs/MortgageInterest';
 import HomeEquityCalc from '@/components/calcs/HomeEquity';
@@ -65,7 +63,6 @@ import CashFlowCalc from '@/components/calcs/CashFlow';
 import BusinessLoanInterestCalc from '@/components/calcs/BusinessLoanInterest';
 import RevenueGrowthCalc from '@/components/calcs/RevenueGrowth';
 import ExpenseRatioCalc from '@/components/calcs/ExpenseRatio';
-import ClientInvoiceCalc from '@/components/calcs/ClientInvoiceCalc';
 import InvestmentReturnCalc from '@/components/calcs/InvestmentReturn';
 import StockPortfolioReturnCalc from '@/components/calcs/StockPortfolioReturn';
 import EtfFeeCalculatorCalc from '@/components/calcs/EtfFeeCalculator';
@@ -73,9 +70,7 @@ import RetirementGapCalc from '@/components/calcs/RetirementGap';
 import InflationAdjustedCalc from '@/components/calcs/InflationAdjusted';
 import SideHustleIncomeTaxCalc from '@/components/calcs/SideHustleIncomeTax';
 import EmergencyFundCalc from '@/components/calcs/EmergencyFund';
-import DebtAvalancheVsSnowballCalc from '@/components/calcs/DebtAvalancheVsSnowball';
 import RothVsTraditionalCalc from '@/components/calcs/RothVsTraditional';
-import InvestmentDiversificationCalc from '@/components/calcs/InvestmentDiversification';
 import AirbnbRevenueCalc from '@/components/calcs/AirbnbRevenue';
 import BrrrrCalc from '@/components/calcs/Brrrr';
 import ClientBillingCalc from '@/components/calcs/ClientBilling';
@@ -128,9 +123,7 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'podcast-income-calculator': PodcastIncomeCalc,
   'social-media-manager-rate-calculator': SocialMediaManagerRateCalc,
   'house-affordability-calculator': HouseAffordabilityCalc,
-  'mortgage-affordability-calculator': MortgageAffordabilityCalc,
   'real-estate-agent-commission-calculator': AgentCommissionCalc,
-  'property-investment-roi-calculator': PropertyRoiCalc,
   'rental-yield-calculator': RentalYieldCalc,
   'mortgage-interest-calculator': MortgageInterestCalc,
   'home-equity-calculator': HomeEquityCalc,
@@ -146,7 +139,6 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'business-loan-interest-calculator': BusinessLoanInterestCalc,
   'revenue-growth-calculator': RevenueGrowthCalc,
   'expense-ratio-calculator': ExpenseRatioCalc,
-  'client-invoice-calculator': ClientInvoiceCalc,
   'investment-return-calculator': InvestmentReturnCalc,
   'stock-portfolio-return-calculator': StockPortfolioReturnCalc,
   'etf-fee-calculator': EtfFeeCalculatorCalc,
@@ -154,9 +146,6 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'inflation-adjusted-calculator': InflationAdjustedCalc,
   'side-hustle-income-tax-calculator': SideHustleIncomeTaxCalc,
   'emergency-fund-calculator': EmergencyFundCalc,
-  'debt-avalanche-vs-snowball-calculator': DebtAvalancheVsSnowballCalc,
-  'roth-vs-traditional-calculator': RothVsTraditionalCalc,
-  'investment-diversification-calculator': InvestmentDiversificationCalc,
   'airbnb-revenue-calculator': AirbnbRevenueCalc,
   'brrrr-calculator': BrrrrCalc,
   'client-billing-calculator': ClientBillingCalc,
@@ -166,6 +155,15 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'pricing-strategy-calculator': PricingStrategyCalc,
   'rent-vs-buy-new-calculator': RentVsBuyNewCalc,
   'shopify-profit-calculator': ShopifyProfitCalc,
+  'quarterly-tax-deadline-calculator': QuarterlyTaxCalc,
+  'rideshare-driver-calculator': DoorDashProfitCalc,
+  'freelance-debt-payoff-calculator': BusinessLoanCalc,
+  'house-flipping-calculator': RealEstateFlipProfitCalc,
+  's-corp-tax-calculator': SCorpSalaryCalc,
+  'business-entity-tax-comparison': CCorpVsSCorpCalc,
+  'business-profit-margin-calculator': BreakEvenCalc,
+  'compound-interest-calculator': InvestmentReturnCalc,
+  'roth-conversion-calculator': RothVsTraditionalCalc,
 };
 
 export function generateStaticParams() {
