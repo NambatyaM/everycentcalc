@@ -1,0 +1,87 @@
+'use client';
+
+import { useState } from 'react';
+import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
+import { selfEmploymentTax, federalIncomeTax, STANDARD_DEDUCTION_2026, formatCurrency, formatPercent } from '@/lib/tax';
+
+export default function SelfEmploymentTaxCalc() {
+  const [netIncome, setNetIncome] = useState('50000');
+  const [filingStatus, setFilingStatus] = useState('single');
+
+  const ni = parseFloat(netIncome) || 0;
+
+  const se = selfEmploymentTax(ni);
+  const grossIncome = ni;
+  const deduction = filingStatus === 'married' ? 29200 : STANDARD_DEDUCTION_2026;
+  const taxableIncome = Math.max(0, grossIncome - deduction);
+  const fedTax = federalIncomeTax(taxableIncome);
+  const totalTax = se.total + fedTax;
+  const effectiveRate = ni > 0 ? (totalTax / ni) * 100 : 0;
+  const takeHome = ni - totalTax;
+
+  return (
+    <div>
+      <SectionHeader title="Self-Employment Tax Calculator" subtitle="Calculate your 1099 self-employment tax and estimated federal income tax" />
+
+      <div className="space-y-4 mb-8">
+        <div>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            Net Self-Employment Income ($)
+          </label>
+          <input
+            type="number"
+            value={netIncome}
+            onChange={(e) => setNetIncome(e.target.value)}
+            className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+            style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}
+            placeholder="50000"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            Filing Status
+          </label>
+          <select
+            value={filingStatus}
+            onChange={(e) => setFilingStatus(e.target.value)}
+            className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+            style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}
+          >
+            <option value="single">Single</option>
+            <option value="married">Married Filing Jointly</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3 mb-6">
+        <ResultCard icon="🧾" label="Total SE Tax" value={formatCurrency(se.total)} highlight />
+        <ResultCard icon="📊" label="Effective Tax Rate" value={formatPercent(effectiveRate)} highlight />
+        <ResultCard icon="🏦" label="Social Security (12.4%)" value={formatCurrency(se.ss)} />
+        <ResultCard icon="🏥" label="Medicare (2.9%)" value={formatCurrency(se.medicare)} />
+        <ResultCard icon="💵" label="Federal Income Tax" value={formatCurrency(fedTax)} />
+        <ResultCard icon="💰" label="Estimated Take-Home" value={formatCurrency(takeHome)} highlight />
+      </div>
+
+      <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
+        <ResultRow label="Gross Income" value={formatCurrency(grossIncome)} />
+        <ResultRow label="Taxable SE Income (92.35%)" value={formatCurrency(se.taxable)} />
+        <ResultRow label="Standard Deduction" value={`-${formatCurrency(deduction)}`} />
+        <ResultRow label="Taxable Income" value={formatCurrency(taxableIncome)} />
+        <ResultRow label="Self-Employment Tax" value={formatCurrency(se.total)} />
+        <ResultRow label="Federal Income Tax" value={formatCurrency(fedTax)} />
+        <ResultRow label="Total Tax" value={formatCurrency(totalTax)} bold />
+        <ResultRow label="Estimated Take-Home" value={formatCurrency(takeHome)} bold />
+      </div>
+
+      <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
+        <p className="text-sm" style={{ color: 'var(--brand)' }}>
+          You can deduct <strong>{formatCurrency(se.total / 2)}</strong> (50% of SE tax) from your taxable income on Form 1040 Schedule 1.
+        </p>
+      </div>
+
+      <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+        <p><strong>Note:</strong> Uses 2026 single-filer brackets. Social Security cap: $176,100. Does not include QBI deduction, itemized deductions, or state taxes. Consult a tax professional for precise calculations.</p>
+      </div>
+    </div>
+  );
+}
