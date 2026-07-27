@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { selfEmploymentTax, federalIncomeTax, STANDARD_DEDUCTION_2026, formatCurrency } from '@/lib/tax';
+import { selfEmploymentTax, federalIncomeTax, getStandardDeduction } from '@/lib/tax';
 
 export default function QuarterlyTaxCalc() {
   const [annualIncome, setAnnualIncome] = useState('80000');
@@ -11,12 +11,14 @@ export default function QuarterlyTaxCalc() {
 
   const ai = parseFloat(annualIncome) || 0;
   const oi = parseFloat(otherIncome) || 0;
+  const fs = filingStatus as 'single' | 'married';
 
   const totalIncome = ai + oi;
-  const se = selfEmploymentTax(ai);
-  const deduction = filingStatus === 'married' ? 29200 : STANDARD_DEDUCTION_2026;
-  const taxableIncome = Math.max(0, totalIncome - deduction);
-  const fedTax = federalIncomeTax(taxableIncome);
+  const se = selfEmploymentTax(ai, fs);
+  const deduction = getStandardDeduction(fs);
+  const seDeduction = se.total / 2;
+  const taxableIncome = Math.max(0, totalIncome - deduction - seDeduction);
+  const fedTax = federalIncomeTax(taxableIncome, fs);
   const totalTax = se.total + fedTax;
   const quarterly = totalTax / 4;
 
@@ -75,7 +77,7 @@ export default function QuarterlyTaxCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Uses 2026 single-filer brackets with standard deduction. SE tax is only on freelance income. Other income is taxed at combined rates. Does not include state taxes or QBI deduction. Consult a tax professional.</p>
+        <p>Uses 2026 IRS brackets and standard deduction ($16,100 single / $32,200 MFJ). SE tax is only on freelance income. The 50% SE tax deduction has been applied before calculating federal income tax. Does not include state taxes or QBI deduction. Consult a tax professional.</p>
       </div>
     </div>
   );

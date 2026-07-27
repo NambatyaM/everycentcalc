@@ -11,16 +11,40 @@ import RentVsBuyCalc from '@/components/calcs/RentVsBuy';
 import BreakEvenCalc from '@/components/calcs/BreakEven';
 import MortgageCalc from '@/components/calcs/Mortgage';
 import SideHustleTaxCalc from '@/components/calcs/SideHustleTax';
+import FreelanceTaxSetAsideCalc from '@/components/calcs/FreelanceTaxSetAside';
+import LlcVsSolePropCalc from '@/components/calcs/LlcVsSoleProp';
+import TaxDeductionTrackerCalc from '@/components/calcs/TaxDeductionTracker';
+import FreelanceVsEmployeeCalc from '@/components/calcs/FreelanceVsEmployee';
+import FreelanceProjectProfitabilityCalc from '@/components/calcs/FreelanceProjectProfitability';
+import EtsyProfitCalc from '@/components/calcs/EtsyProfit';
+import RentalPropertyRoiCalc from '@/components/calcs/RentalPropertyRoi';
+import CashOnCashReturnCalc from '@/components/calcs/CashOnCashReturn';
+import StartupRunwayCalc from '@/components/calcs/StartupRunway';
+import SaasUnitEconomicsCalc from '@/components/calcs/SaasUnitEconomics';
+import SavingsGoalCalc from '@/components/calcs/SavingsGoal';
+import BusinessLoanCalc from '@/components/calcs/BusinessLoan';
 import GenericCalc from '@/components/calcs/Generic';
 
 const CALC_COMPONENTS: Record<string, React.FC> = {
   'self-employment-tax-calculator': SelfEmploymentTaxCalc,
   'quarterly-tax-calculator': QuarterlyTaxCalc,
-  'freelancer-hourly-rate-calculator': FreelancerRateCalc,
+  'side-hustle-tax-calculator': SideHustleTaxCalc,
+  'freelance-income-tax-calculator': FreelanceTaxSetAsideCalc,
+  'freelance-tax-deduction-calculator': TaxDeductionTrackerCalc,
+  'freelancer-rate-calculator': FreelancerRateCalc,
+  'freelancer-profitability-calculator': FreelanceProjectProfitabilityCalc,
+  'freelancer-retirement-savings-calculator': SavingsGoalCalc,
+  'etsy-profit-calculator': EtsyProfitCalc,
+  'freelance-vs-employment-calculator': FreelanceVsEmployeeCalc,
   'rent-vs-buy-calculator': RentVsBuyCalc,
+  'rental-property-calculator': RentalPropertyRoiCalc,
+  'mortgage-payment-calculator': MortgageCalc,
+  'llc-vs-sole-proprietor-tax-calculator': LlcVsSolePropCalc,
   'break-even-calculator': BreakEvenCalc,
-  'mortgage-calculator': MortgageCalc,
-  'side-hustle-income-tax-calculator': SideHustleTaxCalc,
+  'startup-runway-calculator': StartupRunwayCalc,
+  'business-debt-payoff-calculator': BusinessLoanCalc,
+  'saas-metrics-calculator': SaasUnitEconomicsCalc,
+  'rental-cash-flow-calculator': CashOnCashReturnCalc,
 };
 
 export function generateStaticParams() {
@@ -35,13 +59,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!calc) return {};
 
   return {
-    title: calc.name,
+    title: `${calc.name} — Free Online Calculator`,
     description: calc.description,
     keywords: calc.keywords,
     openGraph: {
-      title: calc.name,
+      title: `${calc.name} | EveryCentCalc`,
       description: calc.description,
       type: 'website',
+      url: `https://everycentcalc.biz.id/calculator/${calc.slug}/`,
+    },
+    alternates: {
+      canonical: `https://everycentcalc.biz.id/calculator/${calc.slug}/`,
     },
   };
 }
@@ -86,12 +114,37 @@ export default async function CalculatorPage({ params }: Props) {
     ],
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://everycentcalc.biz.id' },
+      ...(cat ? [{ '@type': 'ListItem', position: 2, name: cat.name, item: `https://everycentcalc.biz.id/${cat.slug}/` }] : []),
+      { '@type': 'ListItem', position: cat ? 3 : 2, name: calc.name, item: `https://everycentcalc.biz.id/calculator/${calc.slug}/` },
+    ],
+  };
+
+  const softwareAppSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: calc.name,
+    description: calc.description,
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web Browser',
+    url: `https://everycentcalc.biz.id/calculator/${calc.slug}/`,
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  };
+
   const related = calculators.filter((c) => c.category === calc.category && c.slug !== calc.slug).slice(0, 3);
 
   return (
     <>
       <Header />
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <nav className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
           <Link href="/" className="hover:underline">Home</Link>
           <span className="mx-2">/</span>
@@ -107,24 +160,26 @@ export default async function CalculatorPage({ params }: Props) {
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="mb-8">
-              <div className="text-4xl mb-3">{calc.icon}</div>
-              <h1 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ color: 'var(--text-primary)' }}>
-                {calc.name}
-              </h1>
-              <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-3xl">{calc.icon}</span>
+                <h1 className="text-2xl md:text-3xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
+                  {calc.name}
+                </h1>
+              </div>
+              <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {calc.description}
               </p>
             </div>
 
             <div
-              className="rounded-2xl border p-6 md:p-8 mb-8"
-              style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border)' }}
+              className="rounded-2xl border p-5 md:p-8 mb-8"
+              style={{ background: 'var(--bg-card)', borderColor: 'var(--border)', boxShadow: 'var(--shadow-md)' }}
             >
               <CalcComponent />
             </div>
 
             <div className="mb-10">
-              <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl font-bold mb-5" style={{ color: 'var(--text-primary)' }}>
                 Frequently Asked Questions
               </h2>
               {calc.faqs.map((faq, i) => (
@@ -152,11 +207,11 @@ export default async function CalculatorPage({ params }: Props) {
               ))}
             </div>
 
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <div className="mb-10 p-6 rounded-xl border" style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border)' }}>
+              <h2 className="text-lg font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
                 {calc.question}
               </h2>
-              <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {calc.answer}
               </p>
             </div>
@@ -164,34 +219,34 @@ export default async function CalculatorPage({ params }: Props) {
 
           <aside className="lg:col-span-1">
             <div
-              className="sticky top-20 rounded-xl border p-6"
-              style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border)' }}
+              className="sticky top-20 rounded-xl border p-5"
+              style={{ background: 'var(--bg-card)', borderColor: 'var(--border)', boxShadow: 'var(--shadow-sm)' }}
             >
-              <h3 className="font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="font-bold mb-4 text-sm" style={{ color: 'var(--text-primary)' }}>
                 Related Calculators
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {related.map((r) => (
                   <li key={r.slug}>
                     <Link
                       href={`/calculator/${r.slug}/`}
-                      className="flex items-center gap-2 text-sm hover:underline"
-                      style={{ color: 'var(--brand)' }}
+                      className="flex items-center gap-2 text-sm hover:text-[var(--brand)] transition-colors"
+                      style={{ color: 'var(--text-secondary)' }}
                     >
-                      <span>{r.icon}</span>
+                      <span className="text-base">{r.icon}</span>
                       {r.name}
                     </Link>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 pt-6 border-t" style={{ borderColor: 'var(--border)' }}>
-                <h4 className="font-semibold text-sm mb-3" style={{ color: 'var(--text-primary)' }}>
+              <div className="mt-5 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
+                <h4 className="font-semibold text-xs mb-2" style={{ color: 'var(--text-primary)' }}>
                   {cat?.icon} {cat?.name.replace(' Calculators', '')}
                 </h4>
                 <Link
                   href={`/${calc.categorySlug}/`}
-                  className="text-sm hover:underline"
+                  className="text-sm hover:text-[var(--brand)] transition-colors"
                   style={{ color: 'var(--brand)' }}
                 >
                   View all {cat?.name.replace(' Calculators', '')} →
@@ -203,14 +258,10 @@ export default async function CalculatorPage({ params }: Props) {
       </main>
       <Footer />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
     </>
   );
 }

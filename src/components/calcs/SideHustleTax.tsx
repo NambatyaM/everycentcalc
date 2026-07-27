@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { selfEmploymentTax, federalIncomeTax, STANDARD_DEDUCTION_2026, formatCurrency } from '@/lib/tax';
+import { selfEmploymentTax, federalIncomeTax, getStandardDeduction } from '@/lib/tax';
 
 export default function SideHustleTaxCalc() {
   const [w2Income, setW2Income] = useState('50000');
@@ -11,18 +11,20 @@ export default function SideHustleTaxCalc() {
 
   const w2 = parseFloat(w2Income) || 0;
   const si = parseFloat(sideIncome) || 0;
+  const fs = filingStatus as 'single' | 'married';
 
   const totalIncome = w2 + si;
-  const se = selfEmploymentTax(si);
-  const deduction = filingStatus === 'married' ? 29200 : STANDARD_DEDUCTION_2026;
-  const taxableIncome = Math.max(0, totalIncome - deduction);
-  const fedTax = federalIncomeTax(taxableIncome);
+  const se = selfEmploymentTax(si, fs);
+  const deduction = getStandardDeduction(fs);
+  const seDeduction = se.total / 2;
+  const taxableIncome = Math.max(0, totalIncome - deduction - seDeduction);
+  const fedTax = federalIncomeTax(taxableIncome, fs);
   const totalTax = se.total + fedTax;
   const effectiveRate = totalIncome > 0 ? (totalTax / totalIncome) * 100 : 0;
 
   // Marginal tax on side income = total tax with side income - tax on W-2 only
   const taxableW2Only = Math.max(0, w2 - deduction);
-  const fedTaxW2Only = federalIncomeTax(taxableW2Only);
+  const fedTaxW2Only = federalIncomeTax(taxableW2Only, fs);
   const seTaxOnSide = se.total;
   const additionalFedTax = fedTax - fedTaxW2Only;
   const marginalTaxOnSide = seTaxOnSide + additionalFedTax;
@@ -82,7 +84,7 @@ export default function SideHustleTaxCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Uses 2026 single-filer brackets. SE tax applies only to side income. Federal income tax on side income is calculated as the difference between total tax and tax on W-2 alone. Does not include state taxes or QBI deduction.</p>
+        <p>Uses 2026 IRS brackets and standard deduction ($16,100 single / $32,200 MFJ). SE tax applies only to side income. Federal income tax on side income is calculated as the difference between total tax and tax on W-2 alone. The 50% SE tax deduction has been applied. Does not include state taxes or QBI deduction.</p>
       </div>
     </div>
   );

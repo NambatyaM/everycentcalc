@@ -2,19 +2,21 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { selfEmploymentTax, federalIncomeTax, STANDARD_DEDUCTION_2026, formatCurrency, formatPercent } from '@/lib/tax';
+import { selfEmploymentTax, federalIncomeTax, getStandardDeduction, formatCurrency, formatPercent } from '@/lib/tax';
 
 export default function SelfEmploymentTaxCalc() {
   const [netIncome, setNetIncome] = useState('50000');
   const [filingStatus, setFilingStatus] = useState('single');
 
   const ni = parseFloat(netIncome) || 0;
+  const fs = filingStatus as 'single' | 'married';
 
-  const se = selfEmploymentTax(ni);
+  const se = selfEmploymentTax(ni, fs);
   const grossIncome = ni;
-  const deduction = filingStatus === 'married' ? 29200 : STANDARD_DEDUCTION_2026;
-  const taxableIncome = Math.max(0, grossIncome - deduction);
-  const fedTax = federalIncomeTax(taxableIncome);
+  const deduction = getStandardDeduction(fs);
+  const seDeduction = se.total / 2;
+  const taxableIncome = Math.max(0, grossIncome - deduction - seDeduction);
+  const fedTax = federalIncomeTax(taxableIncome, fs);
   const totalTax = se.total + fedTax;
   const effectiveRate = ni > 0 ? (totalTax / ni) * 100 : 0;
   const takeHome = ni - totalTax;
@@ -58,6 +60,9 @@ export default function SelfEmploymentTaxCalc() {
         <ResultCard icon="📊" label="Effective Tax Rate" value={formatPercent(effectiveRate)} highlight />
         <ResultCard icon="🏦" label="Social Security (12.4%)" value={formatCurrency(se.ss)} />
         <ResultCard icon="🏥" label="Medicare (2.9%)" value={formatCurrency(se.medicare)} />
+        {se.additionalMedicare > 0 && (
+          <ResultCard icon="🏥" label="Addl Medicare (0.9%)" value={formatCurrency(se.additionalMedicare)} />
+        )}
         <ResultCard icon="💵" label="Federal Income Tax" value={formatCurrency(fedTax)} />
         <ResultCard icon="💰" label="Estimated Take-Home" value={formatCurrency(takeHome)} highlight />
       </div>
@@ -66,6 +71,7 @@ export default function SelfEmploymentTaxCalc() {
         <ResultRow label="Gross Income" value={formatCurrency(grossIncome)} />
         <ResultRow label="Taxable SE Income (92.35%)" value={formatCurrency(se.taxable)} />
         <ResultRow label="Standard Deduction" value={`-${formatCurrency(deduction)}`} />
+        <ResultRow label="50% SE Tax Deduction" value={`-${formatCurrency(seDeduction)}`} />
         <ResultRow label="Taxable Income" value={formatCurrency(taxableIncome)} />
         <ResultRow label="Self-Employment Tax" value={formatCurrency(se.total)} />
         <ResultRow label="Federal Income Tax" value={formatCurrency(fedTax)} />
@@ -75,12 +81,12 @@ export default function SelfEmploymentTaxCalc() {
 
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
         <p className="text-sm" style={{ color: 'var(--brand)' }}>
-          You can deduct <strong>{formatCurrency(se.total / 2)}</strong> (50% of SE tax) from your taxable income on Form 1040 Schedule 1.
+          You can deduct <strong>{formatCurrency(seDeduction)}</strong> (50% of SE tax) from your taxable income on Form 1040 Schedule 1. This has been applied above.
         </p>
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Note:</strong> Uses 2026 single-filer brackets. Social Security cap: $176,100. Does not include QBI deduction, itemized deductions, or state taxes. Consult a tax professional for precise calculations.</p>
+        <p><strong>Note:</strong> Uses 2026 IRS brackets and standard deduction ($16,100 single / $32,200 MFJ). Social Security cap: $184,500. Includes 0.9% Additional Medicare Tax on SE income above $200K (single) / $250K (MFJ). Does not include QBI deduction, itemized deductions, or state taxes.</p>
       </div>
     </div>
   );

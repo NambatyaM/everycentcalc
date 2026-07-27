@@ -4,18 +4,38 @@ import { categories } from '@/lib/calculators';
 export default function Footer() {
   return (
     <footer className="border-t mt-20" style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}>
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div>
-            <div className="font-bold text-lg mb-3" style={{ color: 'var(--brand)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="col-span-2 md:col-span-2">
+            <Link href="/" className="flex items-center gap-2.5 font-extrabold text-lg mb-3" style={{ color: 'var(--brand)' }}>
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg text-white text-sm font-bold" style={{ background: 'var(--brand-gradient)' }}>$</span>
               EveryCentCalc
-            </div>
-            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+            </Link>
+            <p className="text-sm leading-relaxed max-w-xs mb-4" style={{ color: 'var(--text-muted)' }}>
               Free financial calculators for freelancers, side hustlers, real estate investors, and small business owners.
+            </p>
+            <a
+              href="https://www.hostinger.com?REFERRALCODE=KKCNKEVINV2U"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="inline-flex items-center gap-2 rounded-lg border px-4 py-3 transition-all hover:shadow-md group text-left"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}
+            >
+              <div>
+                <p className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  Running a side hustle or website?
+                </p>
+                <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                  Hostinger hosting from $2.99/mo — fast, reliable, free domain included.
+                </p>
+              </div>
+            </a>
+            <p className="text-[10px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+              Affiliate link — we earn a commission at no cost to you.
             </p>
           </div>
 
-          {categories.slice(0, 3).map((cat) => (
+          {categories.map((cat) => (
             <div key={cat.slug}>
               <h4 className="font-semibold text-sm mb-3" style={{ color: 'var(--text-primary)' }}>
                 {cat.icon} {cat.name.replace(' Calculators', '')}
@@ -24,7 +44,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href={`/${cat.slug}/`}
-                    className="text-sm hover:underline"
+                    className="text-sm hover:underline transition-colors"
                     style={{ color: 'var(--text-muted)' }}
                   >
                     View All
@@ -35,42 +55,14 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-8">
-          <a
-            href="https://www.hostinger.com?REFERRALCODE=KKCNKEVINV2U"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="flex items-center justify-between rounded-xl border p-5 transition-all hover:shadow-md group"
-            style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}
-          >
-            <div>
-              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--text-primary)' }}>
-                Host a calculator site for $2.99/mo
-              </p>
-              <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                Need hosting for your own project? Hostinger offers fast, affordable web hosting with a free domain.
-              </p>
-            </div>
-            <span
-              className="ml-4 px-4 py-2 rounded-lg text-xs font-semibold whitespace-nowrap group-hover:opacity-90 transition-opacity"
-              style={{ background: 'var(--brand)', color: '#fff' }}
-            >
-              Get Hostinger →
-            </span>
-          </a>
-          <p className="text-[10px] mt-2" style={{ color: 'var(--text-muted)' }}>
-            This site earns a commission from Hostinger referrals at no extra cost to you.
-          </p>
-        </div>
-
-        <div className="mt-8 pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderColor: 'var(--border)' }}>
+        <div className="mt-10 pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderColor: 'var(--border)' }}>
           <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-            &copy; {new Date().getFullYear()} EveryCentCalc. All calculators are for informational purposes only. Not financial, tax, or legal advice. Consult a qualified professional for specific guidance.
+            &copy; {new Date().getFullYear()} EveryCentCalc. All calculators are for informational purposes only. Not financial, tax, or legal advice.
           </p>
-          <div className="flex gap-4 text-xs" style={{ color: 'var(--text-muted)' }}>
-            <Link href="/about/" className="hover:underline">About</Link>
-            <Link href="/privacy/" className="hover:underline">Privacy</Link>
-            <Link href="/terms/" className="hover:underline">Terms</Link>
+          <div className="flex gap-5 text-xs" style={{ color: 'var(--text-muted)' }}>
+            <Link href="/about/" className="hover:underline transition-colors">About</Link>
+            <Link href="/privacy/" className="hover:underline transition-colors">Privacy</Link>
+            <Link href="/terms/" className="hover:underline transition-colors">Terms</Link>
           </div>
         </div>
       </div>

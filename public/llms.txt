@@ -1,0 +1,41 @@
+# EveryCentCalc
+
+> 28 free financial calculators for freelancers, side hustlers, real estate investors, and small business owners. Updated for 2026 IRS tax brackets.
+
+## What This Site Does
+
+EveryCentCalc provides free online financial calculators. All calculations happen in the browser — no data is stored or transmitted.
+
+- **Freelance & Self-Employment Tax**: Self-employment tax, quarterly estimates, side hustle tax, freelance income tax, tax deductions, quarterly deadlines
+- **Freelance Business**: Freelancer rate calculator, profitability calculator, retirement savings calculator
+- **Side Hustle & Gig Economy**: Etsy profit, rideshare driver income, freelance vs employment, debt payoff, time tracking value
+- **Real Estate Investing**: Rent vs buy, rental property, house flipping, rental cash flow, mortgage payment
+- **LLC & Business Entity Tax**: LLC vs sole proprietor, S-Corp tax, business entity comparison
+- **Business Finance**: Break-even, startup runway, profit margin, business debt payoff, SaaS metrics
+- **Investment & Retirement**: Compound interest, required minimum distributions, Roth conversion, 401(k)
+
+## Key Facts
+
+- **28 calculators** across 7 categories
+- **2026 IRS tax brackets** and rates used for all tax calculations
+- **100% free** — no accounts, no paywalls
+- **100% private** — all calculations client-side
+- Based in the US market, targeting freelancers, side hustlers, and small business owners
+
+## Calculator URLs
+
+All calculators are at: `https://everycentcalc.biz.id/calculator/{calculator-slug}/`
+
+Categories:
+- https://everycentcalc.biz.id/freelance-tax/
+- https://everycentcalc.biz.id/freelance-business/
+- https://everycentcalc.biz.id/side-hustle/
+- https://everycentcalc.biz.id/real-estate/
+- https://everycentcalc.biz.id/llc-tax/
+- https://everycentcalc.biz.id/business-finance/
+- https://everycentcalc.biz.id/investment/
+
+## Contact
+
+- Website: https://everycentcalc.biz.id
+- Email: hello@everycentcalc.biz.id

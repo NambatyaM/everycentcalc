@@ -18,12 +18,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cat) return {};
 
   return {
-    title: cat.name,
+    title: `${cat.name} — Free Online Calculators`,
     description: cat.description,
     openGraph: {
-      title: cat.name,
+      title: `${cat.name} | EveryCentCalc`,
       description: cat.description,
       type: 'website',
+    },
+    alternates: {
+      canonical: `https://everycentcalc.biz.id/${cat.slug}/`,
     },
   };
 }
@@ -47,7 +50,7 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <>
       <Header />
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <nav className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
           <Link href="/" className="hover:underline">Home</Link>
           <span className="mx-2">/</span>
@@ -55,40 +58,34 @@ export default async function CategoryPage({ params }: Props) {
         </nav>
 
         <div className="mb-10">
-          <div className="text-5xl mb-4">{cat.icon}</div>
-          <h1 className="text-4xl font-extrabold mb-4" style={{ color: 'var(--text-primary)' }}>
-            {cat.name}
-          </h1>
-          <p className="text-lg max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">{cat.icon}</span>
+            <h1 className="text-3xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
+              {cat.name}
+            </h1>
+          </div>
+          <p className="text-base max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
             {cat.description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {calcs.map((calc) => (
             <CalculatorCard key={calc.slug} calc={calc} />
           ))}
         </div>
 
-        {calcs.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-lg" style={{ color: 'var(--text-muted)' }}>
-              Calculators for this category are coming soon.
-            </p>
-          </div>
-        )}
-
-        <div className="mt-16 rounded-xl border p-8" style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border)' }}>
-          <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+        <div className="mt-14 p-8 rounded-2xl border" style={{ background: 'var(--bg-card)', borderColor: 'var(--border)', boxShadow: 'var(--shadow-md)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
             Why Use {cat.name.replace(' Calculators', '')}?
           </h2>
-          <p className="leading-relaxed mb-6" style={{ color: 'var(--text-secondary)' }}>
-            {cat.description} Every calculator is free, works in your browser, and stores no data. Get instant, actionable results with detailed breakdowns and explanations.
+          <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--text-secondary)' }}>
+            {cat.description} Every calculator is free, runs in your browser, and stores no data. Get instant, actionable results with detailed breakdowns and explanations.
           </p>
           <Link
             href="/"
-            className="inline-flex px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ background: 'var(--brand)' }}
+            className="inline-flex px-5 py-2.5 rounded-xl font-semibold text-sm text-white transition-all hover:opacity-90 hover:shadow-md"
+            style={{ background: 'var(--brand-gradient)' }}
           >
             Browse All Calculators
           </Link>

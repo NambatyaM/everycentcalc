@@ -1,527 +1,904 @@
-export interface Calculator {
-  slug: string;
-  name: string;
-  description: string;
-  category: string;
-  categoryLabel: string;
-  categorySlug: string;
-  icon: string;
-  keywords: string[];
-  question: string;
-  answer: string;
-  faqs: { q: string; a: string }[];
-}
-
-export interface Category {
-  slug: string;
-  name: string;
-  description: string;
-  icon: string;
-}
+import type { Calculator, Category } from './types';
 
 export const categories: Category[] = [
   {
-    slug: 'freelancer-tax',
-    name: 'Freelancer Tax Calculators',
-    description: 'Calculate self-employment tax, quarterly payments, and deductions for your 1099 income.',
+    slug: 'freelance-tax',
+    name: 'Freelance & Self-Employment Tax',
     icon: '🧾',
+    description: 'Stop guessing how much you owe. These calculators break down your self-employment tax, federal income tax, and quarterly payments — so you don’t get hit with penalties.',
   },
   {
-    slug: 'freelancer-rate',
-    name: 'Freelancer Rate Calculators',
-    description: 'Figure out what to charge, compare freelance vs. employee pay, and price your work profitably.',
-    icon: '💰',
+    slug: 'freelance-business',
+    name: 'Freelance Business',
+    icon: '💼',
+    description: 'Set your rates, track your profitability, and know exactly how much to charge. Built for freelancers, consultants, and solopreneurs who want to earn more.',
   },
   {
     slug: 'side-hustle',
-    name: 'Side Hustle Calculators',
-    description: 'Determine if your side hustle is worth it, calculate profit margins, and estimate taxes on extra income.',
-    icon: '🚀',
+    name: 'Side Hustle & Gig Economy',
+    icon: '🚗',
+    description: 'Etsy, Uber, DoorDash, tutoring — every side hustle is different. These calculators show you what you’re actually making after expenses, taxes, and time.',
   },
   {
     slug: 'real-estate',
-    name: 'Real Estate & Rental Calculators',
-    description: 'Evaluate rental property ROI, decide rent vs. buy, and calculate mortgage payments.',
+    name: 'Real Estate Investing',
     icon: '🏠',
+    description: 'Before you buy your next rental property, know the numbers. Cash flow, cap rate, ROI, rent vs. buy, DSCR — all calculated instantly.',
   },
   {
-    slug: 'small-business',
-    name: 'Small Business Calculators',
-    description: 'Find your break-even point, calculate runway, and model your business unit economics.',
+    slug: 'llc-tax',
+    name: 'LLC & Business Entity Tax',
+    icon: '🏢',
+    description: 'Sole proprietor vs. LLC vs. S-Corp — which saves you the most on taxes? These calculators show the real difference, not the marketing pitch.',
+  },
+  {
+    slug: 'business-finance',
+    name: 'Business Finance',
     icon: '📊',
+    description: 'Break-even points, startup runway, profit margins, debt payoff — the numbers that determine whether your business survives or thrives.',
+  },
+  {
+    slug: 'investment',
+    name: 'Investment & Retirement',
+    icon: '📈',
+    description: 'Compound interest, required minimum distributions, Roth conversions, 401(k) planning — maximize every dollar you invest.',
   },
 ];
 
-export const calculators: Calculator[] = [
-  // ─── SUITE 1: FREELANCER TAX ────────────────────────────────
+const freelanceTaxCalculators = [
   {
     slug: 'self-employment-tax-calculator',
     name: 'Self-Employment Tax Calculator',
-    description: 'Calculate your exact 1099 self-employment tax including Social Security (12.4%) and Medicare (2.9%) on your net freelance income.',
-    category: 'freelancer-tax',
-    categoryLabel: 'Freelancer Tax',
-    categorySlug: 'freelancer-tax',
+    description: 'How much do freelancers actually pay in SE tax? This calculator breaks down the 15.3% self-employment tax, including the 92.35% adjustment and the one-half deduction most people miss.',
+    category: 'freelance-tax',
+    url: '/calculator/self-employment-tax-calculator/',
+    canonical: '/calculator/self-employment-tax-calculator/',
+    color: '#8B5CF6',
     icon: '🧾',
-    keywords: ['self employment tax calculator', '1099 tax calculator', 'freelance tax calculator', 'self employed tax'],
-    question: 'How much is self-employment tax on $50,000 of freelance income?',
-    answer: 'Self-employment tax on $50,000 of net freelance income is approximately $7,065. This includes $6,120 for Social Security (12.4% of 92.35% of $50,000) and $945 for Medicare (2.9% of $46,175). You may also owe federal and state income tax on top of this.',
+    tags: ['self employment tax', 'freelance tax', '1099 tax', 'SE tax calculator', 'how much self employment tax do i owe'],
     faqs: [
-      { q: 'What is the self-employment tax rate for 2026?', a: 'The self-employment tax rate is 15.3%, which consists of 12.4% for Social Security (on the first $176,100 of earnings) and 2.9% for Medicare (with no income cap). You pay both the employer and employee portions since you are self-employed.' },
-      { q: 'Do I have to pay self-employment tax if I earn under $400?', a: 'No. You generally do not owe self-employment tax if your net earnings from self-employment are under $400 for the tax year. However, you may still owe income tax on that income if it exceeds your standard deduction.' },
-      { q: 'How is self-employment tax calculated?', a: 'Self-employment tax is calculated on 92.35% of your net self-employment income. Multiply that amount by 15.3% (12.4% Social Security + 2.9% Medicare). The Social Security portion only applies to earnings up to $176,100 in 2026.' },
-      { q: 'Can I deduct half of my self-employment tax?', a: 'Yes. You can deduct 50% of your self-employment tax as an adjustment to income on your federal tax return (Form 1040, Schedule 1). This reduces your adjusted gross income (AGI) but does not reduce your self-employment tax itself.' },
+      {
+        q: 'How is self-employment tax calculated?',
+        a: 'Self-employment tax is 15.3% of your net self-employment income: 12.4% for Social Security (on the first $184,500 in 2026) plus 2.9% for Medicare (with no income limit). The IRS lets you calculate on 92.35% of net earnings, and you can deduct half of the SE tax from your gross income.',
+      },
+      {
+        q: 'Do freelancers pay both self-employment tax and income tax?',
+        a: 'Yes. Self-employment tax covers Social Security and Medicare (the employer + employee portions). Federal income tax is separate and calculated on your taxable income after deductions. You pay both — but the SE tax deduction and business expense deductions reduce your income tax.',
+      },
+      {
+        q: 'Can I deduct half of my self-employment tax?',
+        a: 'Yes. The IRS allows you to deduct 50% of your self-employment tax as an adjustment to income on your 1040. This deduction is automatic — you don\'t need to itemize to claim it.',
+      },
     ],
+    keywords: ['self employment tax calculator 2026', 'freelance tax calculator', '1099 tax calculator', 'how much SE tax do i owe', 'self employed tax rate'],
   },
   {
     slug: 'quarterly-tax-calculator',
-    name: 'Quarterly Estimated Tax Calculator',
-    description: 'Calculate how much you owe the IRS each quarter to avoid underpayment penalties on your freelance and side hustle income.',
-    category: 'freelancer-tax',
-    categoryLabel: 'Freelancer Tax',
-    categorySlug: 'freelancer-tax',
+    name: 'Quarterly Tax Calculator',
+    description: 'Freelancers don\'t have taxes withheld — that means quarterly payments. This calculator tells you exactly how much to pay each quarter (April 15, June 15, September 15, January 15) based on your income.',
+    category: 'freelance-tax',
+    url: '/calculator/quarterly-tax-calculator/',
+    canonical: '/calculator/quarterly-tax-calculator/',
+    color: '#06B6D4',
     icon: '📅',
-    keywords: ['quarterly tax calculator', 'estimated tax payment', '1099 quarterly taxes', 'irs estimated tax'],
-    question: 'How much quarterly tax should I pay on $80,000 freelance income?',
-    answer: 'If you earn $80,000 net freelance income and have no other income, your quarterly estimated tax payments should be approximately $5,712 per quarter ($22,848 annually). This includes self-employment tax (~$11,301) and federal income tax (~$11,547), divided by 4 quarterly payments.',
+    tags: ['quarterly tax calculator', 'estimated tax calculator', '1040-es calculator', 'quarterly estimated taxes'],
     faqs: [
-      { q: 'When are quarterly tax payments due?', a: 'Quarterly estimated tax payments for 2026 are due: Q1 on April 15, Q2 on June 16, Q3 on September 15, and Q4 on January 15, 2027. Missing these deadlines results in penalties and interest from the IRS.' },
-      { q: 'What happens if I miss a quarterly payment?', a: 'The IRS charges an underpayment penalty calculated quarterly. The penalty rate fluctuates based on federal short-term rates plus 3 percentage points. Even a small late payment can cost $50-200+ in penalties depending on how much you owe.' },
-      { q: 'Do I need to pay quarterly taxes on side hustle income?', a: 'Yes, if you expect to owe $1,000 or more in tax for the year and your withholding does not cover it. Most freelancers and side hustlers who earn over $400 must make quarterly estimated payments.' },
-      { q: 'How do I calculate safe harbor quarterly payments?', a: 'To avoid any penalty, pay 100% of last year\'s total tax liability (110% if your AGI exceeded $150,000) divided by 4, OR 90% of this year\'s estimated tax liability divided by 4 — whichever is less.' },
+      {
+        q: 'How much should I pay in quarterly taxes?',
+        a: 'The IRS requires you to pay estimated taxes if you expect to owe $1,000 or more in taxes for the year. For most freelancers, paying 100-110% of last year\'s total tax (110% if AGI > $150k) across four equal quarterly payments avoids underpayment penalties. This calculator computes your quarterly amount automatically.',
+      },
+      {
+        q: 'When are quarterly tax payments due?',
+        a: 'Quarterly estimated taxes are due: Q1 (Jan 1 – Mar 31) → April 15; Q2 (Apr 1 – May 31) → June 15; Q3 (Jun 1 – Aug 31) → September 15; Q4 (Sep 1 – Dec 31) → January 15 of the following year. Miss a deadline and the IRS charges penalties — even if you overpay for the year.',
+      },
+      {
+        q: 'What happens if I don\'t pay quarterly taxes?',
+        a: 'The IRS charges an underpayment penalty if you owe $1,000+ and didn\'t pay at least 90% of your current year tax or 100% of last year\'s tax through withholdings or estimated payments. The penalty rate is set quarterly and compounds on the unpaid amount.',
+      },
     ],
+    keywords: ['quarterly tax calculator 2026', 'how much quarterly taxes do i owe', '1040-es calculator', 'estimated tax payment calculator', 'quarterly estimated tax'],
   },
   {
-    slug: 'freelance-tax-set-aside-calculator',
-    name: 'How Much to Set Aside for Taxes',
-    description: 'A simple calculator that tells you exactly what percentage of every freelance paycheck to save for taxes so you are never surprised at tax time.',
-    category: 'freelancer-tax',
-    categoryLabel: 'Freelancer Tax',
-    categorySlug: 'freelancer-tax',
-    icon: '🏦',
-    keywords: ['how much to save for taxes freelancer', 'tax savings calculator', 'freelance tax percentage', 'set aside for taxes'],
-    question: 'What percentage of freelance income should I save for taxes?',
-    answer: 'Most freelancers should save 25-35% of their net income for taxes. This covers self-employment tax (15.3%) plus federal income tax (10-22% depending on bracket) and any applicable state income tax. In high-tax states like California or New York, save 35-40%.',
-    faqs: [
-      { q: 'How much should a freelancer set aside for taxes?', a: 'A general rule is to set aside 25-30% of your net freelance income for federal taxes. If you live in a state with income tax, increase this to 30-35%. High-tax states like California, New York, or Oregon may require 35-40%.' },
-      { q: 'Do I save taxes on gross or net income?', a: 'You save taxes on your net income — that is gross income minus legitimate business expenses. Deductible expenses like software subscriptions, home office, equipment, and health insurance reduce the income you owe taxes on.' },
-      { q: 'Should I save more or less if I have a day job too?', a: 'If you have W-2 income from a day job, your side hustle income stacks on top at a higher marginal tax rate. You may need to save 30-40% of your freelance income since it is taxed at your top bracket, not your average rate.' },
-    ],
-  },
-  {
-    slug: 'freelancer-hourly-rate-calculator',
-    name: 'Freelancer Hourly Rate Calculator',
-    description: 'Calculate the true hourly rate you need to charge to hit your income goals after accounting for taxes, expenses, and unpaid time off.',
-    category: 'freelancer-rate',
-    categoryLabel: 'Freelancer Rate',
-    categorySlug: 'freelancer-rate',
-    icon: '⏱️',
-    keywords: ['freelancer hourly rate calculator', 'what should i charge hourly', 'freelance rate calculator', 'contractor rate calculator'],
-    question: 'What hourly rate should a freelancer charge to earn $100,000?',
-    answer: 'To earn $100,000 take-home as a US freelancer, you need to charge approximately $75-85/hour working 40 billable hours per week. This accounts for 15.3% self-employment tax, ~22% federal income tax, business expenses (10-15%), and unpaid time off (vacation, sick days, admin work).',
-    faqs: [
-      { q: 'How do I calculate my freelance hourly rate?', a: 'Start with your desired annual income, add 25-35% for taxes, add business expenses (typically 10-20%), then divide by your actual billable hours per year (usually 1,200-1,600 for full-time freelancers who account for admin, marketing, and unpaid time).' },
-      { q: 'What is a good hourly rate for a beginner freelancer?', a: 'Beginner freelancers typically charge $25-50/hour depending on the field. Web developers average $50-75/hour, designers $40-65/hour, and writers $30-60/hour. As you gain experience and testimonials, increase your rate by 10-20% every 6-12 months.' },
-      { q: 'Should I charge more as a freelancer than a salaried employee?', a: 'Yes, significantly more. As a freelancer you pay both employer and employee portions of payroll taxes (extra 7.65%), plus you have no paid vacation, no health insurance subsidy, no 401k match, and inconsistent income. A common multiplier is 1.5-2x your equivalent salaried hourly rate.' },
-    ],
-  },
-  {
-    slug: 'freelance-vs-employee-calculator',
-    name: 'Freelance vs. Employee Take-Home Pay',
-    description: 'Compare your take-home pay as a W-2 employee versus a 1099 freelancer at the same gross income. See the real difference after taxes, benefits, and expenses.',
-    category: 'freelancer-rate',
-    categoryLabel: 'Freelancer Rate',
-    categorySlug: 'freelancer-rate',
-    icon: '⚖️',
-    keywords: ['freelance vs employee calculator', '1099 vs w2 calculator', 'contractor vs employee pay', 'self employed vs employed taxes'],
-    question: 'How much more do I need to earn as a freelancer to match a $70,000 salary?',
-    answer: 'To match the take-home pay of a $70,000 W-2 salary, a freelancer needs to earn approximately $87,000-$92,000. This is because freelancers pay an extra 7.65% in self-employment taxes (both employer and employee share), plus their own health insurance, and have no employer benefits like 401k matching or paid time off.',
-    faqs: [
-      { q: 'Why do freelancers earn less than employees at the same gross income?', a: 'Freelancers pay 15.3% self-employment tax (employees pay 7.65% — the employer covers the other half), must buy their own health insurance, get no paid vacation or sick days, have no employer 401k match, and face inconsistent income that requires larger emergency savings.' },
-      { q: 'What is the real difference between 1099 and W-2 pay?', a: 'At the same gross income, a W-2 employee typically takes home 10-15% more than a 1099 freelancer. This gap comes from self-employment taxes (7.65% extra), lack of employer benefits (health insurance, 401k match), and business expenses that freelancers must cover themselves.' },
-    ],
-  },
-  {
-    slug: 'freelancer-health-insurance-cost',
-    name: 'Freelancer Health Insurance Cost Estimator',
-    description: 'Estimate your monthly health insurance costs as a self-employed individual, including ACA marketplace options and the self-employed health insurance deduction.',
-    category: 'freelancer-rate',
-    categoryLabel: 'Freelancer Rate',
-    categorySlug: 'freelancer-rate',
-    icon: '🏥',
-    keywords: ['freelancer health insurance cost', 'self employed health insurance', 'aca marketplace cost freelancer', 'health insurance for 1099 workers'],
-    question: 'How much does health insurance cost for a freelancer?',
-    answer: 'Health insurance for a self-employed individual averages $400-600/month for a Silver plan on the ACA marketplace, or $250-450/month for a Bronze plan. Costs vary significantly by state, age, and income. The self-employed health insurance deduction lets you deduct 100% of premiums from your taxable income.',
-    faqs: [
-      { q: 'Can freelancers deduct health insurance premiums?', a: 'Yes. Self-employed individuals can deduct 100% of health, dental, and qualified long-term care insurance premiums for themselves, their spouse, and dependents. This is an above-the-line deduction on Schedule 1 of Form 1040.' },
-      { q: 'What is the cheapest health insurance for freelancers?', a: 'Bronze ACA marketplace plans are typically the cheapest at $250-450/month for individuals. If your income is below 400% of the federal poverty level, you may qualify for premium tax credits that reduce your monthly cost significantly.' },
-    ],
-  },
-  {
-    slug: 'llc-vs-sole-proprietorship-tax',
-    name: 'LLC vs. Sole Proprietorship Tax Calculator',
-    description: 'Compare the tax implications of operating as a sole proprietorship versus an LLC to see which entity structure saves you the most money.',
-    category: 'freelancer-tax',
-    categoryLabel: 'Freelancer Tax',
-    categorySlug: 'freelancer-tax',
-    icon: '🏛️',
-    keywords: ['llc vs sole proprietorship tax', 'should i form an llc', 'llc tax calculator', 'sole prop vs llc taxes'],
-    question: 'Is an LLC or sole proprietorship better for taxes?',
-    answer: 'For most solo freelancers earning under $100,000, there is no significant tax difference between a sole proprietorship and a single-member LLC — both are taxed the same way on Schedule C. An LLC provides liability protection but does not change your self-employment tax. Consider an S-Corp election if you earn over $60,000 to potentially save on self-employment taxes.',
-    faqs: [
-      { q: 'Does an LLC save money on taxes?', a: 'A basic LLC (taxed as a disregarded entity) does NOT save you money on taxes compared to a sole proprietorship. Both report income on Schedule C and pay the same self-employment tax. The tax savings come from electing S-Corp taxation for the LLC, which can save 15.3% on distributions above a reasonable salary.' },
-      { q: 'When should a freelancer form an LLC?', a: 'Form an LLC when you want personal liability protection (separating business and personal assets), when you are entering into contracts with clients who require it, or when your income exceeds $60,000+ and S-Corp election becomes tax-advantageous.' },
-    ],
-  },
-  {
-    slug: 'tax-deduction-tracker',
-    name: 'Freelance Tax Deduction Estimator',
-    description: 'Estimate your total tax deductions as a freelancer including home office, equipment, software, health insurance, and other business expenses.',
-    category: 'freelancer-tax',
-    categoryLabel: 'Freelancer Tax',
-    categorySlug: 'freelancer-tax',
-    icon: '📝',
-    keywords: ['freelance tax deductions', 'self employed deductions', 'tax write offs for freelancers', 'what can freelancers deduct'],
-    question: 'What can freelancers deduct on taxes?',
-    answer: 'Freelancers can deduct home office expenses, computer equipment, software subscriptions, internet and phone bills, health insurance premiums, professional development, marketing costs, business travel, office supplies, and more. The average freelancer can deduct $5,000-$15,000 per year, reducing taxable income significantly.',
-    faqs: [
-      { q: 'What are the biggest tax deductions for freelancers?', a: 'The biggest deductions are: home office (up to $1,500+), health insurance premiums (100% deductible), equipment and technology (laptops, monitors), software subscriptions, internet and phone (business percentage), professional development, and business insurance.' },
-      { q: 'How does the home office deduction work?', a: 'You can use the simplified method ($5 per square foot, up to 300 sq ft = $1,500 max) or the regular method (actual expenses multiplied by the percentage of your home used for business). The space must be used regularly and exclusively for business.' },
-    ],
-  },
-
-  // ─── SUITE 2: SIDE HUSTLE ──────────────────────────────────
-  {
-    slug: 'side-hustle-income-tax-calculator',
-    name: 'Side Hustle Income Tax Calculator',
-    description: 'Calculate the exact taxes owed on your side hustle income including self-employment tax, federal tax, and state tax on top of your W-2 salary.',
-    category: 'side-hustle',
-    categoryLabel: 'Side Hustle',
-    categorySlug: 'side-hustle',
+    slug: 'side-hustle-tax-calculator',
+    name: 'Side Hustle Tax Calculator',
+    description: 'Got a W-2 job but also freelance on the side? Your W-2 withholdings might not cover the extra income. This calculator shows exactly how much more you\'ll owe in taxes from your side hustle.',
+    category: 'freelance-tax',
+    url: '/calculator/side-hustle-tax-calculator/',
+    canonical: '/calculator/side-hustle-tax-calculator/',
+    color: '#F59E0B',
     icon: '💼',
-    keywords: ['side hustle tax calculator', 'side job tax calculator', 'tax on side income', 'second job tax calculator'],
-    question: 'How much tax do I owe on $20,000 side hustle income?',
-    answer: 'On $20,000 net side hustle income (assuming $50,000 W-2 salary and single filing), you owe approximately $5,380 in combined taxes: ~$2,828 in self-employment tax (15.3% of 92.35% of $20,000), ~$2,000 in federal income tax (at your marginal 22% bracket), and ~$550 in state income tax (varies by state).',
+    tags: ['side hustle tax calculator', 'tax on side income', 'how much tax do i owe on side hustle', 'freelance tax on top of w2'],
     faqs: [
-      { q: 'Do I have to report side hustle income?', a: 'Yes. All income is taxable regardless of whether you receive a 1099 form. If you earn over $400 from self-employment, you must file Schedule C with your tax return. The IRS receives copies of 1099-NEC and 1099-K forms and expects to see matching income on your return.' },
-      { q: 'How is side hustle income taxed differently from my salary?', a: 'Side hustle income is subject to self-employment tax (15.3%) on top of regular income tax, while W-2 salary has the employer paying half of payroll taxes. Your side income also stacks on top of your salary, meaning it is taxed at your highest marginal rate.' },
+      {
+        q: 'Do I have to pay taxes on my side hustle income?',
+        a: 'Yes. The IRS taxes all income — whether it\'s from your main job, freelance work, or a weekend gig. Side hustle income is subject to income tax plus self-employment tax (15.3%). Your W-2 withholdings only cover your main job; you need to account for the additional income separately.',
+      },
+      {
+        q: 'How much tax should I set aside from my side hustle?',
+        a: 'A common rule of thumb is setting aside 25-30% of net side hustle income for federal taxes (income tax + SE tax). However, your actual rate depends on your total income, filing status, and deductions. This calculator gives you the exact number instead of guessing.',
+      },
+      {
+        q: 'Can I deduct side hustle expenses from my taxes?',
+        a: 'Yes. Any ordinary and necessary business expense for your side hustle is deductible: supplies, software, home office, mileage, phone, internet (business portion), marketing, and more. These deductions reduce your net self-employment income, which lowers both your income tax and SE tax.',
+      },
     ],
+    keywords: ['side hustle tax calculator', 'how much tax on side hustle income', 'tax on side job', 'freelance tax with w2 job', 'additional income tax calculator'],
   },
   {
-    slug: 'is-side-hustle-worth-it-calculator',
-    name: 'Is My Side Hustle Worth It Calculator',
-    description: 'Calculate the true hourly value of your side hustle after taxes, expenses, and time invested — to see if it is actually worth your time.',
-    category: 'side-hustle',
-    categoryLabel: 'Side Hustle',
-    categorySlug: 'side-hustle',
-    icon: '🤔',
-    keywords: ['is my side hustle worth it', 'side hustle profit calculator', 'side hustle hourly rate', 'is side hustling worth it'],
-    question: 'Is a side hustle worth it if I only earn $500/month?',
-    answer: 'It depends on your effective hourly rate. If you spend 20 hours/month for $500, your gross rate is $25/hour. After taxes (25-30%) and expenses, your net is $17-19/hour. Compare this to your alternative — if your time could be spent learning a higher-paying skill, building a business, or resting, the opportunity cost matters. A side hustle is worth it if your net hourly rate exceeds what you value your free time at.',
+    slug: 'freelance-income-tax-calculator',
+    name: 'Freelance Income Tax Calculator',
+    description: 'What\'s your effective tax rate as a freelancer? This calculator computes your total federal income tax using 2026 brackets — including the standard deduction — so you know what you\'ll actually pay.',
+    category: 'freelance-tax',
+    url: '/calculator/freelance-income-tax-calculator/',
+    canonical: '/calculator/freelance-income-tax-calculator/',
+    color: '#10B981',
+    icon: '💰',
+    tags: ['freelance income tax calculator', 'federal income tax calculator', '1099 income tax', 'freelancer tax rate'],
     faqs: [
-      { q: 'How do I calculate if my side hustle is profitable?', a: 'Take your monthly side hustle revenue, subtract all business expenses (tools, software, supplies), subtract estimated taxes (25-30% of profit), then divide by total hours worked (including admin, marketing, not just delivery). If the result exceeds what you value your hourly time at, it is worth continuing.' },
-      { q: 'What is a good side hustle profit margin?', a: 'A healthy side hustle should have a 50-70% profit margin after expenses but before taxes. If your margins are below 30%, you are either underpricing your services or your expenses are too high. Service-based side hustles (consulting, freelancing) typically have higher margins than product-based ones.' },
+      {
+        q: 'What is the freelance tax rate for 2026?',
+        a: 'There isn\'t one "freelance tax rate." Your total federal tax burden includes income tax (10-37% depending on bracket) plus self-employment tax (15.3%). Most freelancers pay an effective federal rate of 22-35% depending on income. State taxes add another 0-13%. This calculator computes your exact federal income tax.',
+      },
+      {
+        q: 'How do I calculate taxes on 1099 income?',
+        a: 'Take your gross 1099 income, subtract business expenses to get net profit. Then: (1) Calculate SE tax on 92.35% of net profit. (2) Calculate income tax on net profit minus half the SE tax minus the standard deduction. (3) Add income tax + SE tax. This calculator does all three steps automatically.',
+      },
+      {
+        q: 'What deductions can freelancers claim?',
+        a: 'Key deductions: business expenses (supplies, software, equipment), home office deduction, health insurance premium deduction, retirement plan contributions (SEP IRA, Solo 401k), half of SE tax deduction, and the qualified business income (QBI) deduction of up to 20% of qualified income.',
+      },
     ],
+    keywords: ['freelance income tax calculator 2026', 'federal income tax calculator 1099', 'what is my tax rate as a freelancer', '1099 income tax calculator', 'freelancer federal tax rate'],
   },
+  {
+    slug: 'freelance-tax-deduction-calculator',
+    name: 'Freelance Tax Deduction Calculator',
+    description: 'Freelancers leave thousands on the table by missing deductions. This calculator shows you exactly how much your business deductions reduce your tax bill — in real dollars, not just percentages.',
+    category: 'freelance-tax',
+    url: '/calculator/freelance-tax-deduction-calculator/',
+    canonical: '/calculator/freelance-tax-deduction-calculator/',
+    color: '#EC4899',
+    icon: '🧮',
+    tags: ['freelance tax deduction calculator', 'what can freelancers deduct', 'business deduction calculator', 'self employed deductions'],
+    faqs: [
+      {
+        q: 'What is the biggest tax deduction for freelancers?',
+        a: 'The qualified business income (QBI) deduction is often the largest — it lets you deduct up to 20% of your qualified business income from your taxable income. After that, the home office deduction, health insurance deduction, and retirement contributions (SEP IRA up to $70,000 in 2026) are typically the biggest.',
+      },
+      {
+        q: 'How much do business deductions actually save me?',
+        a: 'It depends on your tax bracket. A $1,000 deduction saves you $220 if you\'re in the 22% bracket, or $320 if you\'re in the 32% bracket. But deductions also reduce your self-employment tax (an additional 15.3% savings on the deduction amount). This calculator shows your total savings across both taxes.',
+      },
+      {
+        q: 'Can I deduct my home office as a freelancer?',
+        a: 'Yes, if you use part of your home exclusively and regularly for business. The simplified method gives you $5 per square foot (up to 300 sq ft = $1,500 max). The regular method deducts actual expenses (rent/mortgage interest, utilities, insurance) proportioned by office square footage. The deduction reduces both income and SE taxes.',
+      },
+    ],
+    keywords: ['freelance tax deduction calculator', 'how much can i deduct as a freelancer', 'business deduction savings calculator', 'self employed tax deductions', 'freelancer write offs calculator'],
+  },
+  {
+    slug: 'quarterly-tax-deadline-calculator',
+    name: 'Quarterly Tax Deadline Calculator',
+    description: 'Missed a quarterly deadline? This calculator shows if you owe penalties, how much they are, and exactly when your next payment is due. Never miss a quarterly deadline again.',
+    category: 'freelance-tax',
+    url: '/calculator/quarterly-tax-deadline-calculator/',
+    canonical: '/calculator/quarterly-tax-deadline-calculator/',
+    color: '#EF4444',
+    icon: '⏰',
+    tags: ['quarterly tax deadline calculator', 'tax deadline calculator', 'underpayment penalty calculator', 'irs quarterly due dates'],
+    faqs: [
+      {
+        q: 'What are the 2026 quarterly tax deadlines?',
+        a: 'Q1 (income Jan 1–Mar 31): April 15, 2026. Q2 (income Apr 1–May 31): June 15, 2026. Q3 (income Jun 1–Aug 31): September 15, 2026. Q4 (income Sep 1–Dec 31): January 15, 2027. If a deadline falls on a weekend or holiday, it\'s pushed to the next business day.',
+      },
+      {
+        q: 'How is the IRS underpayment penalty calculated?',
+        a: 'The penalty is based on how much you underpaid, for how long, and the quarterly interest rate set by the IRS (typically 7-8% in recent years). The IRS uses Form 2210 to calculate it. Even small underpayments can result in penalties if the shortfall is large and long-standing.',
+      },
+      {
+        q: 'Can I avoid quarterly tax penalties?',
+        a: 'Yes. Pay at least 90% of your current year tax liability OR 100% of last year\'s total tax (110% if AGI > $150,000) through quarterly payments. You can also use the annualized income installment method if your income is uneven throughout the year.',
+      },
+    ],
+    keywords: ['quarterly tax deadline calculator', 'when are quarterly taxes due 2026', 'underpayment penalty calculator', 'irs quarterly tax deadlines', 'did i miss a quarterly tax deadline'],
+  },
+];
+
+const freelanceBusinessCalculators = [
+  {
+    slug: 'freelancer-rate-calculator',
+    name: 'Freelancer Rate Calculator',
+    description: 'Are you charging what you\'re worth? This calculator factors in your expenses, taxes, profit goals, and billable hours to tell you the minimum rate you should charge.',
+    category: 'freelance-business',
+    url: '/calculator/freelancer-rate-calculator/',
+    canonical: '/calculator/freelancer-rate-calculator/',
+    color: '#3B82F6',
+    icon: '💵',
+    tags: ['freelancer rate calculator', 'how much should i charge', 'freelance hourly rate', 'what rate should i charge'],
+    faqs: [
+      {
+        q: 'How do I calculate my freelance rate?',
+        a: 'Take your target annual income, add business expenses, add self-employment and income taxes, divide by billable hours per year. Most freelancers underestimate by 30-50% because they forget taxes, expenses, and non-billable time. This calculator does the math for you.',
+      },
+      {
+        q: 'How many billable hours do freelancers actually work?',
+        a: 'Most freelancers bill 20-25 hours per week out of a 40-hour work week. The rest goes to admin, marketing, invoicing, and business development. If you bill 40 hours, you\'re probably undercharging or working unsustainable hours.',
+      },
+      {
+        q: 'Should I charge hourly or project-based?',
+        a: 'Hourly is simpler but caps your income. Project-based rewards efficiency. Most experienced freelancers switch to project-based or value-based pricing. This calculator gives you the hourly baseline you need to set profitable project rates.',
+      },
+    ],
+    keywords: ['freelancer rate calculator', 'how much should i charge as a freelancer', 'freelance hourly rate calculator', 'what rate to charge freelancing', 'freelance pricing calculator'],
+  },
+  {
+    slug: 'freelancer-profitability-calculator',
+    name: 'Freelancer Profitability Calculator',
+    description: 'Revenue is vanity, profit is sanity. This calculator shows your actual take-home profit after expenses, taxes, and the costs you didn\'t know you had.',
+    category: 'freelance-business',
+    url: '/calculator/freelancer-profitability-calculator/',
+    canonical: '/calculator/freelancer-profitability-calculator/',
+    color: '#8B5CF6',
+    icon: '📊',
+    tags: ['freelancer profitability calculator', 'freelance profit calculator', 'how profitable is my freelance business', 'freelance income vs expenses'],
+    faqs: [
+      {
+        q: 'What is a good profit margin for freelancers?',
+        a: 'Most successful freelancers aim for a 40-60% profit margin (after taxes and business expenses). If you\'re below 30%, you\'re either undercharging or over-spending. Below 15% and you\'re essentially working for free after considering the risks of self-employment.',
+      },
+      {
+        q: 'What expenses should freelancers track?',
+        a: 'Track everything: software subscriptions, home office, phone/internet, professional development, marketing, travel, equipment, coworking space, health insurance, retirement contributions, and professional services (accountant, lawyer). These all reduce your taxable income.',
+      },
+      {
+        q: 'How often should I review my freelance profitability?',
+        a: 'Monthly minimum, quarterly ideally. Track revenue vs. expenses every month so you can catch pricing problems early. A quarterly review lets you adjust rates, cut expenses, or shift focus before a bad quarter becomes a bad year.',
+      },
+    ],
+    keywords: ['freelancer profitability calculator', 'how profitable is my freelance business', 'freelance profit margin calculator', 'am i making money freelancing', 'freelance income breakdown'],
+  },
+  {
+    slug: 'freelancer-retirement-savings-calculator',
+    name: 'Freelancer Retirement Savings Calculator',
+    description: 'No employer 401(k) match? No problem. This calculator shows you how much to save monthly to hit your retirement goal — and the best account types for freelancers.',
+    category: 'freelance-business',
+    url: '/calculator/freelancer-retirement-savings-calculator/',
+    canonical: '/calculator/freelancer-retirement-savings-calculator/',
+    color: '#10B981',
+    icon: '🏦',
+    tags: ['freelancer retirement calculator', 'self employed retirement savings', 'sep ira calculator', 'freelance retirement planning'],
+    faqs: [
+      {
+        q: 'How much should a freelancer save for retirement?',
+        a: 'Aim for 15-20% of net income. Since you don\'t get an employer match, you may need to save more than traditional employees. A SEP IRA lets you save up to 25% of net self-employment income (up to $70,000 in 2026). A Solo 401(k) allows even more with employee + employer contributions.',
+      },
+      {
+        q: 'What is the best retirement account for freelancers?',
+        a: 'SEP IRA: Simplest, contribute up to 25% of net SE income (up to $70k). Solo 401(k): Highest potential contributions with employee + employer portions, plus Roth option. Traditional/Roth IRA: Lower limits but Roth provides tax-free withdrawals. Most freelancers use a SEP IRA for simplicity or a Solo 401(k) for maximum savings.',
+      },
+      {
+        q: 'Can I deduct retirement contributions as a freelancer?',
+        a: 'Yes. SEP IRA and Solo 401(k) contributions are deductible from your income, reducing both income tax and SE tax. A $10,000 contribution saves you $2,200-$3,200 in income tax plus $1,530 in SE tax. This calculator shows the exact tax savings.',
+      },
+    ],
+    keywords: ['freelancer retirement savings calculator', 'how much should a freelancer save for retirement', 'sep ira calculator', 'self employed retirement calculator', 'freelance retirement planning calculator'],
+  },
+];
+
+const sideHustleCalculators = [
   {
     slug: 'etsy-profit-calculator',
-    name: 'Etsy Profit Margin Calculator',
-    description: 'Calculate your true profit margin on Etsy sales after fees (transaction fee, listing fee, payment processing), shipping costs, and material costs.',
+    name: 'Etsy Profit Calculator',
+    description: 'Selling on Etsy? This calculator shows your actual profit after Etsy fees (transaction fee, listing fee, payment processing), shipping, materials, and taxes. Most sellers are shocked by the real number.',
     category: 'side-hustle',
-    categoryLabel: 'Side Hustle',
-    categorySlug: 'side-hustle',
+    url: '/calculator/etsy-profit-calculator/',
+    canonical: '/calculator/etsy-profit-calculator/',
+    color: '#F97316',
     icon: '🛒',
-    keywords: ['etsy profit calculator', 'etsy fee calculator', 'etsy margin calculator', 'how much do i make on etsy'],
-    question: 'What are the actual fees for selling on Etsy?',
-    answer: 'Etsy charges: $0.20 listing fee per item, 6.5% transaction fee on the sale price + shipping, and 3% + $0.25 payment processing fee. On a $30 item with $5 shipping, you pay approximately $3.85 in total fees (12.8% of revenue). Factor in material costs, shipping supplies, and your time to find true profit.',
+    tags: ['etsy profit calculator', 'etsy fee calculator', 'how much do i make on etsy', 'etsy seller profit', 'etsy fees breakdown'],
     faqs: [
-      { q: 'How much profit do Etsy sellers make?', a: 'Profit varies widely. Successful Etsy sellers typically keep 30-50% of revenue as profit after all fees, materials, and shipping costs. A seller earning $5,000/month in revenue might net $1,500-$2,500/month in profit depending on their product type and cost structure.' },
-      { q: 'What percentage does Etsy take from each sale?', a: 'Etsy takes approximately 10-13% of your total sale price (including shipping) when you combine the listing fee ($0.20), transaction fee (6.5%), and payment processing fee (3% + $0.25). High-volume sellers can reduce this slightly with Etsy Plus or negotiated rates.' },
+      {
+        q: 'What are all the Etsy fees in 2026?',
+        a: 'Etsy charges: $0.20 listing fee per item, 6.5% transaction fee on the sale price + shipping, 3% + $0.25 payment processing fee, and optional ads fees. If you sell internationally, there\'s a 2.5% currency conversion fee. Etsy Plus costs $10/month but doesn\'t reduce fees.',
+      },
+      {
+        q: 'How much profit do Etsy sellers actually make?',
+        a: 'It varies wildly. After all fees, many sellers find their profit margin is 20-40% lower than expected. A $30 product might only net $18-22 after Etsy fees, shipping, materials, and taxes. This calculator shows your real take-home.',
+      },
+      {
+        q: 'Do I have to pay taxes on Etsy income?',
+        a: 'Yes. The IRS requires you to report all income, including Etsy sales. If you earn over $600 on Etsy in a year, Etsy issues a 1099-K. You owe self-employment tax (15.3%) plus income tax on your net profit. Deducting materials, shipping, fees, and home office expenses reduces your taxable income.',
+      },
     ],
+    keywords: ['etsy profit calculator 2026', 'etsy fees calculator', 'how much profit do i make on etsy', 'etsy seller profit calculator', 'etsy fees breakdown calculator'],
   },
   {
-    slug: 'amazon-fba-profit-calculator',
-    name: 'Amazon FBA Profit Calculator',
-    description: 'Calculate your true profit per unit on Amazon FBA products after fulfillment fees, referral fees, storage costs, and shipping.',
+    slug: 'rideshare-driver-calculator',
+    name: 'Rideshare Driver Calculator',
+    description: 'Driving for Uber or Lyft? This calculator shows your actual hourly rate after gas, vehicle depreciation, insurance, and self-employment taxes. Spoiler: it\'s less than you think.',
     category: 'side-hustle',
-    categoryLabel: 'Side Hustle',
-    categorySlug: 'side-hustle',
-    icon: '📦',
-    keywords: ['amazon fba profit calculator', 'fba fees calculator', 'amazon seller profit calculator', 'fba cost calculator'],
-    question: 'How much profit do you make per item on Amazon FBA?',
-    answer: 'Profit per Amazon FBA item depends on the product category and price point. On a $25 product, expect $5-$10 profit after: Amazon referral fee (15% = $3.75), FBA fulfillment fee (~$5 for standard size), shipping to Amazon (~$0.50), and product cost ($5-8). Many successful FBA sellers target 25-35% profit margins.',
+    url: '/calculator/rideshare-driver-calculator/',
+    canonical: '/calculator/rideshare-driver-calculator/',
+    color: '#06B6D4',
+    icon: '🚗',
+    tags: ['rideshare driver calculator', 'uber tax calculator', 'lyft profit calculator', 'uber driver expenses', 'rideshare income calculator'],
     faqs: [
-      { q: 'How much are Amazon FBA fees per item?', a: 'Amazon FBA fees include: referral fee (8-15% depending on category, typically 15%), fulfillment fee ($3-$10+ depending on size/weight), and monthly storage fee ($0.87-$2.40 per cubic foot). On a typical $20-30 product, total Amazon fees are $6-$12.' },
-      { q: 'Is Amazon FBA still profitable in 2026?', a: 'Yes, but margins are tighter than in previous years. Successful FBA sellers in 2026 focus on higher-margin products ($20+ price point), private label branding, and optimized listings. The average profitable FBA seller earns $1,000-$5,000/month in net profit.' },
+      {
+        q: 'How much do Uber/Lyft drivers actually make after expenses?',
+        a: 'The average gross is $15-25/hour, but after gas ($2-4/hr), vehicle depreciation ($3-5/hr), insurance, maintenance, and self-employment taxes (15.3%), most drivers net $8-15/hour. Some markets are worse. This calculator shows your real hourly rate.',
+      },
+      {
+        q: 'What expenses can rideshare drivers deduct?',
+        a: 'Deductible expenses: gas, vehicle depreciation (standard mileage rate or actual expenses), phone, phone mount, cleaning supplies, commercial insurance, tolls, parking, and a portion of your auto insurance. You can\'t deduct your time — only actual costs.',
+      },
+      {
+        q: 'What is the standard mileage rate for 2026?',
+        a: 'The IRS standard mileage rate for 2026 is $0.70/mile. This covers gas, depreciation, maintenance, and insurance. You choose either the standard mileage rate OR actual expenses — not both. Most rideshare drivers save more with the standard mileage rate.',
+      },
     ],
+    keywords: ['rideshare driver profit calculator', 'uber driver tax calculator', 'lyft expenses calculator', 'how much do uber drivers make after expenses', 'rideshare income after expenses'],
   },
+  {
+    slug: 'freelance-vs-employment-calculator',
+    name: 'Freelance vs. Employment Calculator',
+    description: 'Should you quit your W-2 and go freelance? This calculator compares the real numbers — salary vs. freelance income after taxes, benefits, and expenses — so you can make the leap with confidence.',
+    category: 'side-hustle',
+    url: '/calculator/freelance-vs-employment-calculator/',
+    canonical: '/calculator/freelance-vs-employment-calculator/',
+    color: '#8B5CF6',
+    icon: '⚖️',
+    tags: ['freelance vs employment calculator', 'should i go freelance', 'freelance vs w2 salary', 'is freelancing worth it', 'freelance income vs salary'],
+    faqs: [
+      {
+        q: 'How much more do I need to earn freelancing to match a $100k salary?',
+        a: 'Generally 120-130% of your W-2 salary. On a $100k salary, you\'d need to earn $120-130k freelancing to match the after-tax income — because you pay both employer and employee portions of FICA (15.3%), plus you lose employer benefits (health insurance, 401k match, PTO). This calculator computes the exact break-even.',
+      },
+      {
+        q: 'What benefits do I lose by going freelance?',
+        a: 'Major losses: employer health insurance (costs you $500-2,000/mo more), 401(k) match (typically 3-6% of salary), paid time off (10-20 days = $4-8k value), disability insurance, and unemployment benefits. Factor these in when comparing.',
+      },
+      {
+        q: 'When does freelancing make more financial sense than a salary?',
+        a: 'When your freelance rate is 2x your hourly salary equivalent, you have 6+ months of savings, you\'re in a high-demand field, and you\'re disciplined about taxes and benefits. Freelancing also wins if you have significant deductible expenses (home office, equipment, travel).',
+      },
+    ],
+    keywords: ['freelance vs employment calculator', 'should i quit my job and freelance', 'freelance income vs salary comparison', 'is freelancing worth it calculator', 'freelance vs w2 income'],
+  },
+  {
+    slug: 'freelance-debt-payoff-calculator',
+    name: 'Freelance Debt Payoff Calculator',
+    description: 'Variable income makes debt payoff harder. This calculator builds a custom payoff plan based on your income fluctuations — showing the fastest path to debt-free.',
+    category: 'side-hustle',
+    url: '/calculator/freelance-debt-payoff-calculator/',
+    canonical: '/calculator/freelance-debt-payoff-calculator/',
+    color: '#EF4444',
+    icon: '💳',
+    tags: ['debt payoff calculator', 'freelance debt payoff', 'credit card payoff calculator', 'debt snowball calculator', 'how to pay off debt freelancer'],
+    faqs: [
+      {
+        q: 'How do I pay off debt with variable freelance income?',
+        a: 'Use a modified debt avalanche: pay minimums on all debts with your baseline income. When you have a good month, throw the surplus at the highest-interest debt first. Build a 1-month income buffer so you can make consistent extra payments even during slow months.',
+      },
+      {
+        q: 'Should I pay off debt or invest as a freelancer?',
+        a: 'Pay off any debt with interest above 6-7% before investing. The guaranteed "return" of eliminating a 20% credit card rate beats any investment. After high-interest debt is gone, split surplus between retirement savings and remaining low-interest debt.',
+      },
+      {
+        q: 'How much should freelancers save for emergencies before paying debt?',
+        a: 'Keep a $1,000 starter emergency fund, then attack high-interest debt. Once high-interest debt is gone, build 3-6 months of expenses. Freelancers need a larger emergency fund than employees because income is irregular.',
+      },
+    ],
+    keywords: ['freelance debt payoff calculator', 'how to pay off debt with variable income', 'credit card payoff calculator freelancer', 'debt snowball for freelancers', 'freelance financial planning calculator'],
+  },
+  {
+    slug: 'time-tracking-value-calculator',
+    name: 'Time Tracking Value Calculator',
+    description: 'How much is your time actually worth? This calculator shows you the hourly value of every task — so you know what to outsource, what to automate, and what to do yourself.',
+    category: 'side-hustle',
+    url: '/calculator/time-tracking-value-calculator/',
+    canonical: '/calculator/time-tracking-value-calculator/',
+    color: '#14B8A6',
+    icon: '⏱️',
+    tags: ['time tracking calculator', 'hourly value calculator', 'what is my time worth', 'freelance time tracking', 'task value calculator'],
+    faqs: [
+      {
+        q: 'How do I calculate the value of my time as a freelancer?',
+        a: 'Divide your desired annual income by billable hours per year (typically 1,200-1,500). That\'s your baseline hourly value. Then compare: if a task takes you 2 hours but a VA charges $25/hr ($50 total), and your time is worth $100/hr, you lose $150 doing it yourself.',
+      },
+      {
+        q: 'What tasks should freelancers outsource?',
+        a: 'Outsource anything that: (1) costs less than your hourly rate, (2) you\'re not good at, (3) doesn\'t generate revenue, or (4) you hate doing. Common outsources: bookkeeping, admin, social media, design, editing, and customer service.',
+      },
+      {
+        q: 'How many hours per week do freelancers spend on non-billable work?',
+        a: 'Most freelancers spend 15-20 hours per week on non-billable tasks: admin, marketing, invoicing, emails, and business development. That\'s 40-50% of your work week. Reducing this (through outsourcing, automation, or better systems) directly increases your effective hourly rate.',
+      },
+    ],
+    keywords: ['freelance time value calculator', 'how much is my time worth', 'freelance hourly value calculator', 'time tracking value calculator', 'what should i outsource as a freelancer'],
+  },
+];
+
+const realEstateCalculators = [
+  {
+    slug: 'rent-vs-buy-calculator',
+    name: 'Rent vs. Buy Calculator',
+    description: 'Should you rent or buy? This calculator factors in home price, rent, mortgage rate, property taxes, insurance, maintenance, opportunity cost, and appreciation to show which option wins for your specific situation.',
+    category: 'real-estate',
+    url: '/calculator/rent-vs-buy-calculator/',
+    canonical: '/calculator/rent-vs-buy-calculator/',
+    color: '#F59E0B',
+    icon: '🏠',
+    tags: ['rent vs buy calculator', 'should i rent or buy a house', 'home buying calculator', 'rent vs buy comparison', 'is it better to rent or buy'],
+    faqs: [
+      {
+        q: 'Is it cheaper to rent or buy in 2026?',
+        a: 'It depends on your market, how long you plan to stay, and current mortgage rates. In most markets, buying is cheaper after 5-7 years of ownership. But renting wins in the short term (under 5 years) because of closing costs, maintenance, and the opportunity cost of a large down payment.',
+      },
+      {
+        q: 'What hidden costs does buying have that renting doesn\'t?',
+        a: 'Property taxes (1-3% of home value/year), homeowner\'s insurance ($1,500-3,000/year), maintenance and repairs (1-2% of home value/year), HOA fees ($200-500/month), closing costs (2-5% of purchase price), and the opportunity cost of your down payment invested elsewhere.',
+      },
+      {
+        q: 'How long do I need to stay in a home for buying to beat renting?',
+        a: 'With current mortgage rates (6-7%), you typically need to stay 5-7 years for buying to be cheaper than renting. In expensive markets (NYC, SF), it can take 8-10 years. In affordable markets (Midwest, South), it can be as short as 3-4 years.',
+      },
+    ],
+    keywords: ['rent vs buy calculator 2026', 'should i rent or buy a house calculator', 'is it cheaper to rent or buy', 'home buying cost calculator', 'rent vs buy comparison calculator'],
+  },
+  {
+    slug: 'rental-property-calculator',
+    name: 'Rental Property Calculator',
+    description: 'Before you buy that rental, know the numbers. This calculator shows cash flow, cap rate, cash-on-cash return, and total ROI — so you can tell a good deal from a money pit.',
+    category: 'real-estate',
+    url: '/calculator/rental-property-calculator/',
+    canonical: '/calculator/rental-property-calculator/',
+    color: '#10B981',
+    icon: '🏘️',
+    tags: ['rental property calculator', 'rental income calculator', 'cap rate calculator', 'cash flow calculator rental', 'is this rental property worth it'],
+    faqs: [
+      {
+        q: 'What is a good cap rate for rental properties?',
+        a: 'A "good" cap rate is typically 5-10%, depending on the market. In high-cost areas (NYC, SF), 3-5% is common. In affordable markets (Midwest, South), 8-12% is achievable. Higher cap rate = higher return but often higher risk or less appreciation.',
+      },
+      {
+        q: 'How do I calculate cash flow on a rental property?',
+        a: 'Monthly rent minus: mortgage payment (PITI), property management (8-12% of rent), maintenance reserve (5-10%), vacancy allowance (5-8%), insurance, property taxes, and HOA fees. Positive cash flow means the property pays you every month. Most investors target $200-500/month minimum.',
+      },
+      {
+        q: 'What is cash-on-cash return?',
+        a: 'Cash-on-cash return = annual pre-tax cash flow ÷ total cash invested (down payment + closing costs + initial repairs). It measures how hard your invested cash is working. A 8-12% cash-on-cash return is considered good. Below 5% and you\'re better off in index funds.',
+      },
+    ],
+    keywords: ['rental property calculator', 'rental cash flow calculator', 'cap rate calculator', 'is this rental property worth it', 'rental property ROI calculator'],
+  },
+  {
+    slug: 'house-flipping-calculator',
+    name: 'House Flipping Calculator',
+    description: 'Thinking about flipping a house? This calculator shows your total cost, expected profit, and ROI after purchase price, renovation costs, holding costs, and selling fees.',
+    category: 'real-estate',
+    url: '/calculator/house-flipping-calculator/',
+    canonical: '/calculator/house-flipping-calculator/',
+    color: '#EC4899',
+    icon: '🔨',
+    tags: ['house flipping calculator', 'flip calculator', 'house flip profit calculator', 'fix and flip calculator', 'flipping house profit'],
+    faqs: [
+      {
+        q: 'How much profit do house flippers typically make?',
+        a: 'According to ATTOM Data, the average gross profit on a house flip in 2025 was about $70,000. But after holding costs, renovation overruns, and selling fees, net profit is typically $30,000-$50,000 per flip — or about 10-20% ROI on invested capital.',
+      },
+      {
+        q: 'What costs do house flippers often forget?',
+        a: 'Holding costs: mortgage payments during renovation ($2,000-5,000/mo), utilities, insurance, property taxes. Renovation overruns (budget 20% extra). Selling costs: agent commissions (5-6%), closing costs (1-2%), and carrying costs if the property sits unsold.',
+      },
+      {
+        q: 'What is the 70% rule for house flipping?',
+        a: 'The 70% rule says: pay no more than 70% of the after-repair value (ARV) minus renovation costs. Example: ARV = $300k, renovations = $50k → max offer = $300k × 0.70 − $50k = $160k. This leaves room for profit, holding costs, and unexpected expenses.',
+      },
+    ],
+    keywords: ['house flipping calculator', 'house flip profit calculator', 'fix and flip calculator', 'flipping house ROI calculator', '70% rule calculator'],
+  },
+  {
+    slug: 'rental-cash-flow-calculator',
+    name: 'Rental Cash Flow Calculator',
+    description: 'Positive cash flow is the whole point of rental investing. This calculator shows your monthly and annual cash flow after every expense — mortgage, taxes, insurance, management, vacancy, and maintenance.',
+    category: 'real-estate',
+    url: '/calculator/rental-cash-flow-calculator/',
+    canonical: '/calculator/rental-cash-flow-calculator/',
+    color: '#3B82F6',
+    icon: '💵',
+    tags: ['rental cash flow calculator', 'cash flow calculator rental property', 'monthly cash flow calculator', 'rental income vs expenses'],
+    faqs: [
+      {
+        q: 'How do I calculate monthly cash flow on a rental?',
+        a: 'Monthly cash flow = Monthly rent − (Mortgage payment + Property management + Maintenance reserve + Vacancy allowance + Insurance + Property taxes + HOA fees). A positive number means the property pays you each month. Negative means you\'re subsidizing the tenant.',
+      },
+      {
+        q: 'What expenses should I include in my rental cash flow calculation?',
+        a: 'Include: mortgage (PITI), property management (8-12% of rent), maintenance reserve (5-10% of rent), vacancy allowance (5-8% of rent), insurance, property taxes, HOA fees, and capital expenditure reserve (for roof, HVAC, etc.). Don\'t forget to account for seasonal vacancies.',
+      },
+      {
+        q: 'Is negative cash flow always bad for rental properties?',
+        a: 'Not necessarily. In high-appreciation markets (NYC, SF, LA), investors accept negative cash flow because the property value increases significantly. But for most investors, positive cash flow is essential — it covers your costs and provides income. Target $200-500/month minimum.',
+      },
+    ],
+    keywords: ['rental cash flow calculator', 'monthly cash flow calculator rental', 'rental property cash flow analysis', 'cash flow calculator for landlords', 'positive cash flow calculator'],
+  },
+  {
+    slug: 'mortgage-payment-calculator',
+    name: 'Mortgage Payment Calculator',
+    description: 'How much will your monthly mortgage payment be? This calculator shows principal and interest, property taxes, insurance, and total PITI — with an amortization schedule breakdown.',
+    category: 'real-estate',
+    url: '/calculator/mortgage-payment-calculator/',
+    canonical: '/calculator/mortgage-payment-calculator/',
+    color: '#8B5CF6',
+    icon: '🏡',
+    tags: ['mortgage payment calculator', 'monthly mortgage calculator', 'how much is my mortgage payment', 'mortgage calculator with taxes and insurance', 'PITI calculator'],
+    faqs: [
+      {
+        q: 'How is my mortgage payment calculated?',
+        a: 'Your monthly payment (PITI) = Principal + Interest + Property Taxes + Insurance. Principal and interest are calculated using: M = P[r(1+r)^n] / [(1+r)^n - 1], where P = loan amount, r = monthly interest rate, n = total months. Add monthly property taxes and insurance for the full payment.',
+      },
+      {
+        q: 'How much house can I afford on my income?',
+        a: 'A common guideline: your total housing payment (PITI) should be under 28% of gross monthly income, and total debt payments under 36%. On a $100k salary, that\'s roughly a $350-420k home with 20% down. But this varies by market, credit score, and other debts.',
+      },
+      {
+        q: 'Should I put 20% down on my mortgage?',
+        a: 'Putting 20% down avoids Private Mortgage Insurance (PMI), which costs $100-300/month on a typical loan. But if you can\'t afford 20%, many conventional loans allow 3-10% down with PMI. Compare: the opportunity cost of a larger down payment vs. PMI cost. Sometimes the money earns more invested.',
+      },
+    ],
+    keywords: ['mortgage payment calculator 2026', 'monthly mortgage payment calculator', 'how much is my mortgage payment', 'mortgage calculator with taxes and insurance', 'affordable home price calculator'],
+  },
+];
+
+const llcTaxCalculators = [
+  {
+    slug: 'llc-vs-sole-proprietor-tax-calculator',
+    name: 'LLC vs. Sole Proprietor Tax Calculator',
+    description: 'LLC or sole proprietor? This calculator shows the actual tax difference — including self-employment tax, liability protection value, and filing requirements — for your specific income level.',
+    category: 'llc-tax',
+    url: '/calculator/llc-vs-sole-proprietor-tax-calculator/',
+    canonical: '/calculator/llc-vs-sole-proprietor-tax-calculator/',
+    color: '#F59E0B',
+    icon: '🏢',
+    tags: ['llc vs sole proprietor tax', 'should i form an llc', 'llc tax calculator', 'sole proprietor vs llc', 'llc tax savings'],
+    faqs: [
+      {
+        q: 'Does an LLC save me taxes compared to a sole proprietor?',
+        a: 'A basic LLC (single-member) doesn\'t change your taxes — the IRS treats it the same as a sole proprietor. You still pay self-employment tax on all net income. The tax savings come when you elect S-Corp taxation for your LLC, which can save 15.3% on income above a reasonable salary.',
+      },
+      {
+        q: 'When should I convert from sole proprietor to LLC?',
+        a: 'Form an LLC when: (1) you want personal asset protection (separates business and personal liability), (2) you\'re earning enough that the filing fees ($50-500/year) are worth it, (3) you want to appear more professional to clients, or (4) you plan to elect S-Corp taxation later.',
+      },
+      {
+        q: 'What is the tax difference between LLC and S-Corp?',
+        a: 'An LLC taxed as a sole prop pays SE tax on all net income. An LLC taxed as an S-Corp pays FICA only on a "reasonable salary" — the rest is a distribution that avoids SE tax. On $150k net income with a $80k salary, S-Corp saves about $10,600/year in SE tax.',
+      },
+    ],
+    keywords: ['llc vs sole proprietor tax calculator', 'should i form an llc for taxes', 'llc tax savings calculator', 'sole proprietor vs llc tax difference', 'llc tax calculator 2026'],
+  },
+  {
+    slug: 's-corp-tax-calculator',
+    name: 'S-Corp Tax Calculator',
+    description: 'An S-Corp can save you thousands in self-employment tax — but only if the numbers work. This calculator shows your exact savings after FICA, salary, distributions, and state taxes.',
+    category: 'llc-tax',
+    url: '/calculator/s-corp-tax-calculator/',
+    canonical: '/calculator/s-corp-tax-calculator/',
+    color: '#3B82F6',
+    icon: '📋',
+    tags: ['s corp tax calculator', 's corp savings calculator', 'should i elect s corp', 's corp vs llc tax', 's corp reasonable salary'],
+    faqs: [
+      {
+        q: 'How much can I save with S-Corp taxation?',
+        a: 'S-Corp saves you SE tax (15.3%) on distributions above your reasonable salary. Example: $200k net income, $100k salary → $100k in distributions avoids SE tax → saves about $15,300/year. But you\'re also paying yourself a salary, so the net savings is the SE tax on the distribution portion.',
+      },
+      {
+        q: 'What is a reasonable salary for S-Corp?',
+        a: 'The IRS requires a "reasonable" salary based on your role, experience, and industry. Paying yourself $20k when you should earn $100k invites an audit. Most tax professionals recommend 40-60% of net income as salary. Too low = IRS risk. Too high = no SE tax savings.',
+      },
+      {
+        q: 'When does S-Corp taxation stop making sense?',
+        a: 'Below $50-60k net income, S-Corp rarely saves enough to justify the extra costs: payroll processing ($500-1,500/year), additional tax return ($500-1,500/year), and state franchise fees. Above $80-100k net income, S-Corp savings usually outweigh the costs significantly.',
+      },
+    ],
+    keywords: ['s corp tax calculator', 's corp savings calculator', 'should i elect s corp taxation', 's corp vs llc tax calculator', 's corp reasonable salary calculator'],
+  },
+  {
+    slug: 'business-entity-tax-comparison',
+    name: 'Business Entity Tax Comparison',
+    description: 'Sole proprietor, LLC, S-Corp, C-Corp — which entity saves you the most? This calculator compares all four side-by-side with your actual numbers.',
+    category: 'llc-tax',
+    url: '/calculator/business-entity-tax-comparison/',
+    canonical: '/calculator/business-entity-tax-comparison/',
+    color: '#10B981',
+    icon: '⚖️',
+    tags: ['business entity tax comparison', 'llc vs s corp vs c corp', 'best business structure for taxes', 'sole proprietor vs llc vs s corp'],
+    faqs: [
+      {
+        q: 'Which business entity pays the least in taxes?',
+        a: 'It depends on your income level. Below $50k: sole prop or LLC is simplest. $50k-$150k: LLC with S-Corp election often saves the most. Above $150k: S-Corp usually wins. C-Corp (21% flat rate) can work for high-income businesses reinvesting profits, but double taxation makes it rare for solopreneurs.',
+      },
+      {
+        q: 'What are the filing requirements for each entity?',
+        a: 'Sole Prop: Schedule C on 1040, self-employment tax. LLC: State filing + Schedule C. LLC (S-Corp): Form 1120-S, K-1, payroll. C-Corp: Form 1120, double taxation. S-Corp has the most compliance requirements: payroll, separate return, and annual state filings.',
+      },
+      {
+        q: 'Can I switch my business entity later?',
+        a: 'Yes. You can convert between entities, though it\'s easier to go from sole prop → LLC → S-Corp than the reverse. The IRS allows LLCs to elect S-Corp taxation with Form 2553 (filed by March 15 for the current year). This is the most common tax-saving move for growing freelancers.',
+      },
+    ],
+    keywords: ['business entity tax comparison', 'best business structure for taxes', 'llc vs s corp vs c corp calculator', 'sole proprietor vs llc vs s corp tax', 'business entity tax calculator'],
+  },
+];
+
+const businessFinanceCalculators = [
   {
     slug: 'break-even-calculator',
-    name: 'Break-Even Point Calculator',
-    description: 'Calculate exactly how many units you need to sell or how much revenue you need to generate to cover all your costs and break even.',
-    category: 'small-business',
-    categoryLabel: 'Small Business',
-    categorySlug: 'small-business',
-    icon: '🎯',
-    keywords: ['break even calculator', 'break even point calculator', 'break even analysis calculator', 'when will i break even'],
-    question: 'How do I calculate my break-even point?',
-    answer: 'Break-even point (units) = Fixed Costs / (Price per Unit - Variable Cost per Unit). For example, if your monthly fixed costs are $3,000, you sell a product for $50, and variable costs are $20, your break-even is 100 units ($3,000 / $30 contribution margin).',
+    name: 'Break-Even Calculator',
+    description: 'How many units do you need to sell to break even? This calculator tells you the exact sales volume needed to cover all fixed and variable costs — so you know if your business idea is viable.',
+    category: 'business-finance',
+    url: '/calculator/break-even-calculator/',
+    canonical: '/calculator/break-even-calculator/',
+    color: '#EF4444',
+    icon: '📉',
+    tags: ['break even calculator', 'break even point calculator', 'how many units to break even', 'break even analysis', 'break even point formula'],
     faqs: [
-      { q: 'What is a break-even point?', a: 'The break-even point is the amount of revenue or number of units you need to sell to cover all your costs — both fixed (rent, software, salaries) and variable (materials, transaction fees). At break-even, profit is exactly $0. Above it, you are profitable.' },
-      { q: 'How long does it take most startups to break even?', a: 'Most small businesses take 2-3 years to break even. Service-based businesses typically break even faster (6-18 months) than product-based businesses (12-36 months) due to lower upfront costs and faster revenue generation.' },
+      {
+        q: 'How do I calculate my break-even point?',
+        a: 'Break-even point (units) = Fixed costs ÷ (Price per unit − Variable cost per unit). The denominator is your contribution margin. If fixed costs are $50,000, price is $100, and variable cost is $40, you need 834 units to break even.',
+      },
+      {
+        q: 'What is the difference between fixed and variable costs?',
+        a: 'Fixed costs stay the same regardless of sales: rent, salaries, insurance, loan payments. Variable costs change with each unit sold: materials, shipping, packaging, transaction fees. Knowing this split is essential for pricing, forecasting, and break-even analysis.',
+      },
+      {
+        q: 'How long do most startups take to break even?',
+        a: 'Most small businesses take 18-36 months to break even. Service businesses break even faster (6-12 months) because they have lower startup costs. Product businesses take longer due to inventory, equipment, and marketing costs. Plan for at least 12 months of losses.',
+      },
     ],
+    keywords: ['break even calculator', 'break even point calculator', 'how many sales to break even', 'break even analysis calculator', 'startup break even calculator'],
   },
   {
     slug: 'startup-runway-calculator',
     name: 'Startup Runway Calculator',
-    description: 'Calculate how many months your startup can survive at its current burn rate before running out of cash.',
-    category: 'small-business',
-    categoryLabel: 'Small Business',
-    categorySlug: 'small-business',
-    icon: '✈️',
-    keywords: ['startup runway calculator', 'burn rate calculator', 'cash runway calculator', 'how long will my startup last'],
-    question: 'How many months of runway should a startup have?',
-    answer: 'Most advisors recommend 12-18 months of runway at all times. With 6 months or less, you are in danger zone and should cut costs or raise immediately. Calculate runway by dividing your total cash balance by your monthly net burn rate (expenses minus revenue). For example, $120,000 in the bank with $10,000/month burn = 12 months of runway.',
+    description: 'How many months can you survive before running out of money? This calculator shows your runway in months — and how many more months you gain by cutting costs or increasing revenue.',
+    category: 'business-finance',
+    url: '/calculator/startup-runway-calculator/',
+    canonical: '/calculator/startup-runway-calculator/',
+    color: '#F59E0B',
+    icon: '🚀',
+    tags: ['startup runway calculator', 'how long can i survive', 'runway calculator startup', 'months of runway', 'burn rate calculator'],
     faqs: [
-      { q: 'What is a good startup burn rate?', a: 'A healthy burn rate depends on your stage. Pre-revenue startups should aim for $5,000-$15,000/month total burn. Revenue-generating startups can sustain higher burns if their revenue covers 30-50% of expenses. The key metric is runway length, not burn rate alone.' },
-      { q: 'How do I extend my startup runway?', a: 'Cut discretionary spending (marketing, office space, tools), negotiate longer payment terms with vendors, accelerate revenue through pricing optimization, consider pre-sales or annual billing to bring in cash faster, and reduce headcount if necessary.' },
+      {
+        q: 'How do I calculate my startup runway?',
+        a: 'Runway (months) = Cash on hand ÷ Monthly burn rate. Monthly burn rate = Monthly expenses − Monthly revenue. If you have $100k saved, spend $15k/month, and earn $5k/month, your burn rate is $10k/month and your runway is 10 months.',
+      },
+      {
+        q: 'What is a healthy runway for a startup?',
+        a: 'Aim for 12-18 months of runway minimum. 6 months is dangerously short — one bad month and you\'re done. 24+ months gives you breathing room to iterate and find product-market fit. Always add a 20% buffer because expenses are always higher than expected.',
+      },
+      {
+        q: 'How do I extend my runway?',
+        a: 'Three levers: (1) Cut fixed costs — renegotiate contracts, switch tools, reduce team. (2) Increase revenue — raise prices, add services, improve conversion. (3) Raise capital — investors, loans, grants. Cutting costs is fastest but has limits. Revenue growth compounds.',
+      },
     ],
+    keywords: ['startup runway calculator', 'how long can my startup survive', 'months of runway calculator', 'burn rate calculator', 'startup cash runway calculator'],
   },
   {
-    slug: 'saas-unit-economics-calculator',
-    name: 'SaaS Unit Economics Calculator (CAC/LTV)',
-    description: 'Calculate your Customer Acquisition Cost (CAC), Lifetime Value (LTV), LTV:CAC ratio, and payback period for your SaaS or subscription business.',
-    category: 'small-business',
-    categoryLabel: 'Small Business',
-    categorySlug: 'small-business',
-    icon: '📈',
-    keywords: ['cac ltv calculator', 'saas unit economics', 'customer lifetime value calculator', 'cac payback period calculator'],
-    question: 'What is a good LTV to CAC ratio for SaaS?',
-    answer: 'A healthy LTV:CAC ratio for SaaS is 3:1 or higher. This means for every $1 you spend acquiring a customer, you earn $3+ in lifetime revenue. Below 1:1 you are losing money on every customer. Between 1:1 and 3:1 you are barely sustainable. Above 5:1 you may be under-investing in growth.',
+    slug: 'business-profit-margin-calculator',
+    name: 'Business Profit Margin Calculator',
+    description: 'What\'s your actual profit margin? This calculator shows gross, operating, and net margins — so you know exactly where your money is going and where to optimize.',
+    category: 'business-finance',
+    url: '/calculator/business-profit-margin-calculator/',
+    canonical: '/calculator/business-profit-margin-calculator/',
+    color: '#8B5CF6',
+    icon: '📊',
+    tags: ['profit margin calculator', 'business profit margin', 'what is my profit margin', 'gross margin calculator', 'net profit margin calculator'],
     faqs: [
-      { q: 'How do I calculate Customer Acquisition Cost (CAC)?', a: 'CAC = Total Sales & Marketing Costs / Number of New Customers Acquired in that period. Include all sales team salaries, marketing spend, tools, and overhead. A simple formula: if you spend $10,000/month on sales and marketing and acquire 100 new customers, your CAC is $100.' },
-      { q: 'How do I calculate Customer Lifetime Value (LTV)?', a: 'Simple LTV = Average Monthly Revenue per Customer × Average Customer Lifespan (months). More accurately: (Average Revenue per Account × Gross Margin %) / Monthly Churn Rate. If your average customer pays $50/month and stays 24 months, LTV = $1,200.' },
+      {
+        q: 'What is a good profit margin for a small business?',
+        a: 'It varies by industry. Service businesses: 15-30% net margin is healthy. Product businesses: 5-20%. Retail: 2-10%. SaaS: 20-40%. If your margin is below the industry average, you\'re either underpricing or overspending.',
+      },
+      {
+        q: 'What is the difference between gross, operating, and net margin?',
+        a: 'Gross margin = (Revenue − Cost of goods sold) ÷ Revenue. Operating margin = (Revenue − COGS − Operating expenses) ÷ Revenue. Net margin = Net income ÷ Revenue. Gross shows product profitability. Operating shows business efficiency. Net shows bottom-line health.',
+      },
+      {
+        q: 'How do I improve my profit margin?',
+        a: 'Four strategies: (1) Raise prices (most impactful, least effort). (2) Reduce COGS (find cheaper suppliers, improve efficiency). (3) Cut overhead (renegotiate rent, reduce subscriptions, automate). (4) Increase volume (spreads fixed costs over more revenue).',
+      },
     ],
+    keywords: ['profit margin calculator', 'business profit margin calculator', 'what is my profit margin', 'gross margin calculator', 'net profit margin calculator small business'],
   },
   {
-    slug: 'pricing-strategy-calculator',
-    name: 'Pricing Strategy Calculator',
-    description: 'Compare cost-plus pricing, value-based pricing, and competitive pricing strategies to find the optimal price for your product or service.',
-    category: 'small-business',
-    categoryLabel: 'Small Business',
-    categorySlug: 'small-business',
-    icon: '💲',
-    keywords: ['pricing strategy calculator', 'how to price my product', 'cost plus pricing calculator', 'value based pricing'],
-    question: 'How do I calculate the right price for my product?',
-    answer: 'Three methods: (1) Cost-plus: add your desired margin to total costs (e.g., $10 cost + 50% margin = $15 price). (2) Value-based: charge what the value is worth to the customer (e.g., if your tool saves them $500/month, charging $50/month is a no-brainer). (3) Competitive: price relative to competitors. Most successful businesses use a combination of all three.',
+    slug: 'business-debt-payoff-calculator',
+    name: 'Business Debt Payoff Calculator',
+    description: 'Business debt doesn\'t have to keep you up at night. This calculator shows you the fastest payoff strategy — avalanche vs. snowball — with a month-by-month schedule.',
+    category: 'business-finance',
+    url: '/calculator/business-debt-payoff-calculator/',
+    canonical: '/calculator/business-debt-payoff-calculator/',
+    color: '#06B6D4',
+    icon: '💳',
+    tags: ['business debt payoff calculator', 'business loan payoff calculator', 'debt payoff strategy calculator', 'avalanche vs snowball calculator'],
     faqs: [
-      { q: 'What is the best pricing strategy for freelancers?', a: 'Value-based pricing is generally best for freelancers. Instead of charging by the hour (which punishes efficiency), charge based on the value delivered to the client. If your work generates $50,000 in revenue for a client, charging $5,000-10,000 is reasonable regardless of how many hours it took.' },
-      { q: 'How do I know if I am underpricing?', a: 'Signs you are underpricing: you are always busy but cannot save money, you attract price-shoppers who demand lots of revisions, your close rate is above 80% (you are saying yes too easily), and more experienced peers charge 2-3x what you charge.' },
+      {
+        q: 'Should I use the avalanche or snowball method to pay off business debt?',
+        a: 'Avalanche (highest interest first) saves the most money mathematically. Snowball (smallest balance first) gives psychological wins faster. If you have high-interest debt (credit cards, MCAs), use avalanche. If you need motivation, use snowball. Both work — pick the one you\'ll stick with.',
+      },
+      {
+        q: 'How do I decide which business debts to pay off first?',
+        a: 'Priority: (1) Merchant cash advances and factoring (effective rates often 50-200%). (2) Credit cards (15-25%). (3) Equipment loans (6-15%). (4) SBA loans (6-8%). (5) Friends/family. Always pay minimums on everything else while targeting the highest-rate debt.',
+      },
+      {
+        q: 'Should I use business revenue to pay off debt or reinvest?',
+        a: 'Pay off high-interest debt (above 10%) first — the guaranteed return of eliminating that rate beats most investments. For low-interest debt (SBA loans, mortgages), reinvesting in growth often has a higher ROI. Balance: maintain cash reserves while making extra debt payments.',
+      },
     ],
-  },
-
-  // ─── SUITE 4: REAL ESTATE ──────────────────────────────────
-  {
-    slug: 'rental-property-roi-calculator',
-    name: 'Rental Property ROI Calculator',
-    description: 'Calculate the cash-on-cash return, cap rate, and total ROI on a rental property investment including mortgage, taxes, insurance, and expenses.',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    categorySlug: 'real-estate',
-    icon: '🏘️',
-    keywords: ['rental property roi calculator', 'real estate roi calculator', 'cash on cash return calculator', 'rental income calculator'],
-    question: 'What is a good ROI on a rental property?',
-    answer: 'A good cash-on-cash return on a rental property is 8-12% annually. Cap rates typically range from 4-10% depending on market. Total ROI (including appreciation and mortgage paydown) can reach 15-25% with leverage. Below 5% cash-on-cash return, the investment may not be worth the management effort.',
-    faqs: [
-      { q: 'How do I calculate rental property ROI?', a: 'Cash-on-Cash Return = (Annual Pre-Tax Cash Flow / Total Cash Invested) × 100. For example, if you invest $50,000 and receive $5,000/year in net cash flow, your cash-on-cash return is 10%. Include all expenses: mortgage, taxes, insurance, maintenance, vacancy, and management fees.' },
-      { q: 'What expenses should I include in my rental ROI calculation?', a: 'Include: mortgage principal and interest, property taxes, insurance, HOA fees, maintenance reserves (5-10% of rent), vacancy allowance (5-8%), property management (8-12% if not self-managing), and capital expenditure reserves (5% of rent for future repairs).' },
-    ],
+    keywords: ['business debt payoff calculator', 'business loan payoff calculator', 'debt avalanche calculator', 'debt snowball calculator business', 'how to pay off business debt'],
   },
   {
-    slug: 'rent-vs-buy-calculator',
-    name: 'Rent vs. Buy Calculator',
-    description: 'Compare the true cost of renting versus buying a home over your planned time horizon, including mortgage, taxes, opportunity cost, and appreciation.',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    categorySlug: 'real-estate',
-    icon: '🏡',
-    keywords: ['rent vs buy calculator', 'should i rent or buy', 'is it better to rent or buy', 'home buying calculator'],
-    question: 'Is it better to rent or buy in 2026?',
-    answer: 'The answer depends on your local market, how long you plan to stay, and current interest rates. Generally, buying wins if you plan to stay 5+ years in a stable or appreciating market. Renting wins if you move frequently, live in a very expensive market, or can invest the difference at higher returns. Use the calculator with your specific numbers for a personalized comparison.',
+    slug: 'saas-metrics-calculator',
+    name: 'SaaS Metrics Calculator',
+    description: 'Running a SaaS business? This calculator tracks MRR, ARR, churn, LTV, CAC, and payback period — the metrics that determine whether your SaaS is investable.',
+    category: 'business-finance',
+    url: '/calculator/saas-metrics-calculator/',
+    canonical: '/calculator/saas-metrics-calculator/',
+    color: '#EC4899',
+    icon: '💻',
+    tags: ['saas metrics calculator', 'mrr calculator', 'ltv cac calculator', 'saas churn calculator', 'saas unit economics'],
     faqs: [
-      { q: 'How long do you need to stay in a home for buying to beat renting?', a: 'In most US markets, buying beats renting after 4-7 years of ownership. This accounts for closing costs (3-6% when buying and selling), opportunity cost of the down payment, and the equity you build through mortgage paydown. The longer you stay, the more buying wins.' },
-      { q: 'What are the hidden costs of buying a home?', a: 'Beyond the mortgage, buyers pay: property taxes (1-3% of value annually), homeowner insurance ($1,000-3,000/year), maintenance (1-2% of value annually), HOA fees ($200-500/month if applicable), closing costs (3-6% of purchase price), and opportunity cost of the down payment invested elsewhere.' },
+      {
+        q: 'What is a good LTV:CAC ratio for SaaS?',
+        a: 'Aim for 3:1 or higher. If your LTV:CAC is below 1:1, you\'re losing money on every customer. 1:1-3:1 is unsustainable. 3:1+ means you have a healthy, scalable business. Below 3:1, either reduce CAC or increase LTV through retention and upsells.',
+      },
+      {
+        q: 'How do I calculate churn rate?',
+        a: 'Monthly churn rate = (Customers lost in month ÷ Customers at start of month) × 100. A 5% monthly churn means you lose 5% of customers each month. For SaaS, aim for under 5% monthly (under 2% is excellent). High churn kills growth no matter how fast you acquire.',
+      },
+      {
+        q: 'What is the SaaS payback period?',
+        a: 'Payback period = CAC ÷ Monthly revenue per customer. If it costs $500 to acquire a customer paying $50/month, your payback is 10 months. Under 12 months is good. Under 6 months is excellent. Long payback means you need more capital to grow.',
+      },
     ],
-  },
-  {
-    slug: 'cap-rate-calculator',
-    name: 'Cap Rate Calculator',
-    description: 'Calculate the capitalization rate of a rental property to compare investment opportunities and assess if a property is fairly priced.',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    categorySlug: 'real-estate',
-    icon: '📐',
-    keywords: ['cap rate calculator', 'capitalization rate calculator', 'what is a good cap rate', 'cap rate formula'],
-    question: 'What is a good cap rate for rental property?',
-    answer: 'A "good" cap rate depends on the market and property class. In expensive coastal cities (NYC, SF), cap rates of 3-5% are normal. In Midwest or Southeast markets, 6-10% is achievable. Generally, higher cap rates mean higher returns but often come with higher risk or less appreciation potential. Most investors target 5-8% cap rates.',
-    faqs: [
-      { q: 'How is cap rate calculated?', a: 'Cap Rate = (Net Operating Income / Property Value) × 100. NOI = Annual Rental Income - Operating Expenses (not including mortgage). For example, a property generating $24,000 NOI valued at $400,000 has a 6% cap rate.' },
-      { q: 'Does cap rate include mortgage payments?', a: 'No. Cap rate is calculated before mortgage payments. It measures the property\'s return independent of financing. This makes it useful for comparing properties with different financing structures. Cash-on-cash return is the metric that includes mortgage payments.' },
-    ],
-  },
-  {
-    slug: 'mortgage-calculator',
-    name: 'Mortgage Payment Calculator',
-    description: 'Calculate your monthly mortgage payment including principal, interest, taxes, insurance (PITI), and see a full amortization schedule.',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    categorySlug: 'real-estate',
-    icon: '🏦',
-    keywords: ['mortgage calculator', 'mortgage payment calculator', 'home loan calculator', 'monthly mortgage payment'],
-    question: 'What is the monthly payment on a $400,000 mortgage?',
-    answer: 'At a 7% interest rate on a 30-year fixed $400,000 mortgage (after 20% down on a $500,000 home), your monthly principal and interest payment is approximately $2,661. Adding property taxes ($350/month), insurance ($150/month), and PMI if applicable, total monthly housing payment is approximately $3,161.',
-    faqs: [
-      { q: 'What is the mortgage payment formula?', a: 'Monthly Payment = P[r(1+r)^n]/[(1+r)^n-1], where P = loan principal, r = monthly interest rate (annual rate / 12), and n = total number of payments (years × 12). For a $400,000 loan at 7% for 30 years: $400,000[0.00583(1.00583)^360]/[(1.00583)^360-1] = $2,661/month.' },
-      { q: 'How much house can I afford?', a: 'A common guideline is the 28/36 rule: your mortgage payment should not exceed 28% of gross monthly income, and total debt payments should not exceed 36%. On a $100,000 salary ($8,333/month gross), your mortgage payment should be under $2,333/month, supporting roughly a $350,000-400,000 home depending on rates and other debts.' },
-    ],
-  },
-  {
-    slug: 'airbnb-revenue-estimator',
-    name: 'Airbnb Revenue Estimator',
-    description: 'Estimate your potential Airbnb rental income based on location, property size, and occupancy assumptions compared to traditional long-term rental income.',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    categorySlug: 'real-estate',
-    icon: '✈️',
-    keywords: ['airbnb revenue calculator', 'airbnb income estimator', 'short term rental calculator', 'airbnb profit calculator'],
-    question: 'How much can I make on Airbnb per month?',
-    answer: 'Airbnb income varies dramatically by location and property type. A well-managed 2-bedroom in a tourist area can generate $2,000-5,000/month in gross revenue (at 65-75% occupancy). After cleaning, supplies, management fees, and higher utilities, net income is typically 50-65% of gross. Compare this to long-term rental income of $1,200-2,500/month for the same property.',
-    faqs: [
-      { q: 'Is Airbnb more profitable than long-term renting?', a: 'In popular tourist areas, Airbnb can generate 30-100% more gross revenue than traditional renting. However, after accounting for higher expenses (cleaning, supplies, more maintenance, platform fees, management), net income is typically 20-50% higher, with more management effort required.' },
-      { q: 'What is a good Airbnb occupancy rate?', a: 'A good Airbnb occupancy rate is 65-75% for most markets. Top-performing properties in tourist destinations can achieve 80%+. Below 50%, you may be better off with a long-term tenant. Use AirDNA or similar tools to research occupancy rates in your specific market.' },
-    ],
-  },
-  {
-    slug: 'cash-on-cash-return-calculator',
-    name: 'Cash-on-Cash Return Calculator',
-    description: 'Calculate the cash-on-cash return on a real estate investment — the ratio of annual pre-tax cash flow to total cash invested.',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    categorySlug: 'real-estate',
-    icon: '💵',
-    keywords: ['cash on cash return calculator', 'cash on cash return formula', 'real estate cash return', 'investment property return'],
-    question: 'What is a good cash-on-cash return?',
-    answer: 'A good cash-on-cash return is 8-12% annually. In hot markets like NYC or SF, 4-6% may be acceptable if appreciation is expected. In cheaper markets, target 10-15%. Below 4%, you might get better risk-adjusted returns from index funds. Above 20% is exceptional but may indicate higher risk.',
-    faqs: [
-      { q: 'How is cash-on-cash return different from cap rate?', a: 'Cap rate measures return based on the property value (ignoring financing), while cash-on-cash return measures return based on the actual cash you invested (including the effects of your mortgage). Cash-on-cash is more useful for leveraged investments because it shows your real return on invested capital.' },
-    ],
-  },
-  {
-    slug: 'brrrr-calculator',
-    name: 'BRRRR Method Calculator',
-    description: 'Evaluate a BRRRR (Buy, Rehab, Rent, Refinance, Repeat) deal by calculating your all-in cost, After Repair Value, and how much cash you pull out on refinance.',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    categorySlug: 'real-estate',
-    icon: '🔄',
-    keywords: ['brrrr calculator', 'brrrr method calculator', 'buy rehab rent refinance repeat', 'brrrr deal calculator'],
-    question: 'How does the BRRRR method work financially?',
-    answer: 'In BRRRR, you buy a distressed property below market value, rehab it to increase the After Repair Value (ARV), rent it out, then refinance at 70-75% of ARV to pull out most or all of your initial investment. If the property appraises at $300,000 after a $40,000 rehab, a 75% refinance gives you $225,000 — ideally recovering most of your $180,000 all-in cost while keeping a cash-flowing rental.',
-    faqs: [
-      { q: 'What is the 70% rule in BRRRR?', a: 'The 70% rule states you should pay no more than 70% of the After Repair Value (ARV) minus repair costs. Example: if a property will be worth $300,000 after $40,000 in repairs, your max purchase price is ($300,000 × 0.70) - $40,000 = $170,000.' },
-    ],
-  },
-
-  // ─── SUITE 5: MORE SIDE HUSTLE ─────────────────────────────
-  {
-    slug: 'shopify-profit-calculator',
-    name: 'Shopify Profit Margin Calculator',
-    description: 'Calculate your true profit margin on Shopify sales after payment processing fees, transaction costs, shipping, and product costs.',
-    category: 'side-hustle',
-    categoryLabel: 'Side Hustle',
-    categorySlug: 'side-hustle',
-    icon: '🛍️',
-    keywords: ['shopify profit calculator', 'shopify fees calculator', 'ecommerce profit calculator', 'shopify margin calculator'],
-    question: 'How much profit do Shopify store owners make?',
-    answer: 'Successful Shopify stores typically achieve 20-40% net profit margins. On a $50 product, expect to keep $10-$20 after: product cost ($10-15), Shopify fees (2.9% + $0.30 = $1.75), shipping ($3-5), and marketing ($5-10 for paid ads). Stores with organic traffic or email marketing can achieve higher margins of 30-50%.',
-    faqs: [
-      { q: 'What are Shopify fees per transaction?', a: 'Shopify Basic plan charges 2.9% + $0.30 per online transaction (lower with Shopify Payments). Additionally, there is a monthly subscription ($39/month on Basic), and if using third-party payment processors, an extra 2% transaction fee applies.' },
-    ],
-  },
-  {
-    slug: 'content-creator-revenue-calculator',
-    name: 'Content Creator Revenue Calculator',
-    description: 'Estimate your total earnings as a content creator across YouTube ad revenue, sponsorships, merchandise, and affiliate income.',
-    category: 'side-hustle',
-    categoryLabel: 'Side Hustle',
-    categorySlug: 'side-hustle',
-    icon: '🎬',
-    keywords: ['youtube earnings calculator', 'content creator income calculator', 'influencer revenue calculator', 'how much do youtubers make'],
-    question: 'How much do content creators actually earn?',
-    answer: 'Content creator income varies enormously. A YouTuber with 100K subscribers might earn $1,000-5,000/month from ads alone ($3-8 CPM), plus $2,000-10,000/month from sponsorships. Smaller creators (10K-50K) typically earn $500-2,000/month total. Instagram and TikTok creators earn less from platform payouts but can earn more from brand deals and affiliate marketing.',
-    faqs: [
-      { q: 'How much do YouTubers earn per 1,000 views?', a: 'YouTube CPM (cost per 1,000 views) varies by niche: Finance ($12-30), Technology ($8-15), Gaming ($2-5), Entertainment ($1-3). On average, US-based creators earn $3-8 per 1,000 views from AdSense alone, before sponsorships and other revenue.' },
-      { q: 'What is the best revenue stream for content creators?', a: 'Sponsorships and brand deals typically provide the highest per-view revenue (10-50x more than AdSense). Affiliate marketing offers the best passive income potential. Ad revenue provides the most reliable baseline income. Digital products and courses offer the highest profit margins.' },
-    ],
-  },
-  {
-    slug: 'freelance-project-profitability',
-    name: 'Freelance Project Profitability Calculator',
-    description: 'Calculate whether a freelance project is profitable by comparing your total time investment against the revenue and your effective hourly rate.',
-    category: 'freelancer-rate',
-    categoryLabel: 'Freelancer Rate',
-    categorySlug: 'freelancer-rate',
-    icon: '📋',
-    keywords: ['freelance project profitability', 'freelance project calculator', 'is this freelance project worth it', 'freelance bid calculator'],
-    question: 'How do I know if a freelance project is profitable?',
-    answer: 'Calculate your effective hourly rate: (Project Revenue - Expenses) / Hours Spent. If it meets or exceeds your target hourly rate, the project is profitable. Also factor in intangibles: portfolio value, referral potential, learning opportunities, and whether the client could become a recurring source of work.',
-    faqs: [
-      { q: 'What is a good hourly rate for freelance projects?', a: 'A good effective hourly rate for freelancers is $50-150/hour depending on your field and experience. Web developers average $75-150/hour, designers $60-120/hour, and writers $50-100/hour. If a project pays below $40/hour effective, it is likely not worth your time unless it provides significant strategic value.' },
-    ],
-  },
-  {
-    slug: 'savings-goal-calculator',
-    name: 'Savings Goal Calculator',
-    description: 'Calculate how much you need to save each month to reach your financial goal by a specific date, including the effect of compound interest.',
-    category: 'small-business',
-    categoryLabel: 'Small Business',
-    categorySlug: 'small-business',
-    icon: '🎯',
-    keywords: ['savings goal calculator', 'how much to save monthly', 'financial goal calculator', 'compound savings calculator'],
-    question: 'How much do I need to save per month to reach $10,000 in one year?',
-    answer: 'To save $10,000 in 12 months, you need to save approximately $833/month. If you put that money in a high-yield savings account earning 5% APY, you would only need to save about $816/month because interest would contribute roughly $240 over the year.',
-    faqs: [
-      { q: 'How does compound interest affect my savings goal?', a: 'Compound interest accelerates your savings growth by earning interest on interest. At 5% APY, $100/month becomes $12,763 after 12 months (vs. $12,000 without interest). Over longer periods, the effect is dramatic: $500/month at 7% becomes $204,977 after 20 years vs. $120,000 without compounding.' },
-    ],
-  },
-  {
-    slug: 'business-loan-calculator',
-    name: 'Business Loan Affordability Calculator',
-    description: 'Calculate your monthly loan payment, total interest paid, and whether a business loan is affordable given your revenue and profit margins.',
-    category: 'small-business',
-    categoryLabel: 'Small Business',
-    categorySlug: 'small-business',
-    icon: '🏛️',
-    keywords: ['business loan calculator', 'small business loan calculator', 'loan payment calculator', 'can i afford a business loan'],
-    question: 'Can my small business afford a loan?',
-    answer: 'A general rule: your total debt service (all loan payments) should not exceed 25-35% of your monthly revenue. If your business generates $20,000/month, your max loan payment should be $5,000-7,000. For a $50,000 loan at 8% over 5 years, monthly payments are approximately $1,014 — affordable for a business earning $5,000+/month.',
-    faqs: [
-      { q: 'What credit score do I need for a small business loan?', a: 'Traditional bank loans typically require a credit score of 680+. SBA loans require 650+. Online lenders may approve scores as low as 500-600, but at higher interest rates (15-30% vs. 6-10% for bank loans). Your business revenue, time in business, and collateral also matter significantly.' },
-    ],
+    keywords: ['saas metrics calculator', 'mrr calculator', 'ltv cac calculator', 'saas churn rate calculator', 'saas unit economics calculator'],
   },
 ];
 
+const investmentCalculators = [
+  {
+    slug: 'compound-interest-calculator',
+    name: 'Compound Interest Calculator',
+    description: 'See how your money grows over time. This calculator shows the power of compound interest with monthly contributions, different compounding frequencies, and inflation adjustment.',
+    category: 'investment',
+    url: '/calculator/compound-interest-calculator/',
+    canonical: '/calculator/compound-interest-calculator/',
+    color: '#10B981',
+    icon: '📈',
+    tags: ['compound interest calculator', 'investment growth calculator', 'how much will my money grow', 'compound interest formula', 'investment calculator with contributions'],
+    faqs: [
+      {
+        q: 'How does compound interest work?',
+        a: 'Compound interest earns returns on your original investment PLUS previous returns. Example: $10,000 at 7% compounded annually becomes $10,700 after year 1, then $11,449 after year 2 (interest on $10,700). Over 30 years, $10,000 grows to $76,123 without adding a penny.',
+      },
+      {
+        q: 'How much will $10,000 grow in 10 years?',
+        a: 'At 7% annual return (stock market average): $19,672. At 4% (savings account): $14,802. At 10% (aggressive investing): $25,937. Adding $500/month: $10k + contributions = $103,000+ at 7%. The monthly contributions matter more than the initial amount.',
+      },
+      {
+        q: 'What is the rule of 72?',
+        a: 'The Rule of 72 estimates how long it takes your money to double: 72 ÷ interest rate = years to double. At 7%: doubles in ~10 years. At 10%: doubles in ~7.2 years. At 4%: doubles in ~18 years. It\'s a quick mental math trick for investment planning.',
+      },
+    ],
+    keywords: ['compound interest calculator', 'compound interest calculator with contributions', 'how much will my investment grow', 'compound interest formula calculator', 'investment growth calculator'],
+  },
+  {
+    slug: 'required-minimum-distribution-calculator',
+    name: 'Required Minimum Distribution Calculator',
+    description: 'Turning 73? The IRS requires you to start withdrawing from retirement accounts. This calculator shows your exact RMD amount — and the penalties for getting it wrong.',
+    category: 'investment',
+    url: '/calculator/required-minimum-distribution-calculator/',
+    canonical: '/calculator/required-minimum-distribution-calculator/',
+    color: '#F59E0B',
+    icon: '🏦',
+    tags: ['required minimum distribution calculator', 'rmd calculator', 'rmd calculator 2026', 'when do i need to take rmd', 'rmd penalty calculator'],
+    faqs: [
+      {
+        q: 'When do I need to start taking RMDs?',
+        a: 'Under SECURE 2.0, RMDs begin at age 73 (for those born 1951-1959) or age 75 (born 1960+). Your first RMD must be taken by April 1 of the year after you turn 73/75. After that, all RMDs must be taken by December 31 each year.',
+      },
+      {
+        q: 'How is my RMD calculated?',
+        a: 'RMD = Account balance ÷ Distribution period (from IRS Table III). Example: $500,000 account at age 73 → distribution period is 26.5 → RMD = $18,868. The divisor decreases each year, so RMDs increase as you age.',
+      },
+      {
+        q: 'What is the penalty for not taking my RMD?',
+        a: 'The penalty for missing an RMD was 50% of the amount not withdrawn. Under SECURE 2.0, it\'s reduced to 25% (and 10% if corrected within the correction window). Even at 25%, it\'s harsh: missing a $20,000 RMD costs a $5,000 penalty.',
+      },
+    ],
+    keywords: ['required minimum distribution calculator 2026', 'rmd calculator', 'rmd calculator 2026', 'irs rmd calculator', 'required minimum distribution penalty'],
+  },
+  {
+    slug: 'roth-conversion-calculator',
+    name: 'Roth Conversion Calculator',
+    description: 'Should you convert your traditional IRA to a Roth? This calculator shows the tax cost of converting — and whether the long-term tax-free growth makes it worth it.',
+    category: 'investment',
+    url: '/calculator/roth-conversion-calculator/',
+    canonical: '/calculator/roth-conversion-calculator/',
+    color: '#8B5CF6',
+    icon: '🔄',
+    tags: ['roth conversion calculator', 'should i convert to roth', 'roth ira conversion calculator', 'roth conversion tax calculator', 'backdoor roth calculator'],
+    faqs: [
+      {
+        q: 'How much tax do I pay on a Roth conversion?',
+        a: 'The converted amount is added to your taxable income for the year. Example: converting $50,000 while in the 22% bracket = $11,000 in additional federal tax. If it pushes you into the 32% bracket, part is taxed at 32%. Plan conversions to stay within a target bracket.',
+      },
+      {
+        q: 'When does a Roth conversion make sense?',
+        a: 'Best when: (1) You\'re in a lower tax bracket now than you expect in retirement. (2) You have years with low income (job loss, sabbatical, early retirement). (3) You want to avoid RMDs. (4) You want tax-free inheritance for heirs. The break-even point is typically 7-10 years.',
+      },
+      {
+        q: 'Can I do a partial Roth conversion?',
+        a: 'Yes. You can convert any amount — you don\'t have to convert everything. Many people do partial conversions over several years to manage their tax bracket. This is especially useful if you\'re near a bracket boundary. Convert just enough to fill up your current bracket.',
+      },
+    ],
+    keywords: ['roth conversion calculator', 'should i convert to roth ira calculator', 'roth conversion tax calculator', 'roth conversion strategy calculator', 'is roth conversion worth it'],
+  },
+  {
+    slug: '401k-calculator',
+    name: '401(k) Calculator',
+    description: 'How much will your 401(k) be worth at retirement? This calculator shows growth with employer matching, contribution limits, and the real impact of starting early vs. late.',
+    category: 'investment',
+    url: '/calculator/401k-calculator/',
+    canonical: '/calculator/401k-calculator/',
+    color: '#3B82F6',
+    icon: '💼',
+    tags: ['401k calculator', '401k growth calculator', 'how much will my 401k be worth', '401k contribution calculator', '401k retirement calculator'],
+    faqs: [
+      {
+        q: 'How much should I contribute to my 401(k)?',
+        a: 'At minimum, contribute enough to get the full employer match — that\'s free money (typically 3-6% of salary). Beyond that, aim for 15% of gross income total (including match). For 2026, the max is $23,500 ($31,000 if 50+). Maxing out at 25 can grow to $1M+ in 20 years.',
+      },
+      {
+        q: 'How much will I have in my 401(k) at retirement?',
+        a: 'It depends on contributions, match, and returns. Contributing $500/month with 50% employer match ($250/month) at 7% annual return: $750/month → $380,000 in 15 years, $750,000 in 25 years, $1.6M in 35 years. Starting 10 years earlier roughly doubles your balance.',
+      },
+      {
+        q: 'Should I choose traditional or Roth 401(k)?',
+        a: 'Choose Roth 401(k) if you expect higher taxes in retirement (you\'re early in career, tax rates may rise). Choose traditional 401(k) if you\'re in a high bracket now and expect lower income in retirement. Many people split contributions for tax diversification.',
+      },
+    ],
+    keywords: ['401k calculator', '401k growth calculator', '401k retirement calculator', 'how much will my 401k be worth', '401k contribution calculator 2026'],
+  },
+];
+
+export const calculators: Calculator[] = [
+  ...freelanceTaxCalculators,
+  ...freelanceBusinessCalculators,
+  ...sideHustleCalculators,
+  ...realEstateCalculators,
+  ...llcTaxCalculators,
+  ...businessFinanceCalculators,
+  ...investmentCalculators,
+].map((calc) => ({
+  ...calc,
+  categorySlug: calc.category,
+  question: calc.faqs[0]?.q || '',
+  answer: calc.faqs[0]?.a || '',
+}));
+
 export function getCalculatorBySlug(slug: string): Calculator | undefined {
-  return calculators.find((c) => c.slug === slug);
+  return calculators.find((calc) => calc.slug === slug);
 }
 
 export function getCalculatorsByCategory(categorySlug: string): Calculator[] {
-  return calculators.filter((c) => c.categorySlug === categorySlug);
+  return calculators.filter((calc) => calc.category === categorySlug);
 }
 
 export function getCategoryBySlug(slug: string): Category | undefined {
-  return categories.find((c) => c.slug === slug);
+  return categories.find((cat) => cat.slug === slug);
 }
 
 export function getAllSlugs(): string[] {
-  return calculators.map((c) => c.slug);
+  return calculators.map((calc) => calc.slug);
 }
