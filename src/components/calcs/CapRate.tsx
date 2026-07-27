@@ -24,7 +24,7 @@ export default function CapRateCalc() {
       <SectionHeader title="Cap Rate Calculator" subtitle="Calculate capitalization rate and implied property values" />
 
       <div className="space-y-4 mb-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Rental Income ($)</label>
             <input type="number" value={annualRentalIncome} onChange={(e) => setAnnualRentalIncome(e.target.value)}

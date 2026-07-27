@@ -31,7 +31,7 @@ export default function FreelanceProjectProfitabilityCalc() {
       <SectionHeader title="Freelance Project Profitability Calculator" subtitle="Determine if a project is worth your time after expenses and taxes" />
 
       <div className="space-y-4 mb-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
               Project Revenue ($)
@@ -59,7 +59,7 @@ export default function FreelanceProjectProfitabilityCalc() {
             />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
               Hourly Rate (Target) ($)
@@ -124,7 +124,7 @@ export default function FreelanceProjectProfitabilityCalc() {
         <ResultRow label="Difference" value={`${rateDiff >= 0 ? '+' : ''}$${rateDiff.toFixed(2)}/hr`} bold />
       </div>
 
-      <div className="rounded-lg border p-4 mb-4" style={{ background: isProfitable ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)', borderColor: isProfitable ? '#22c55e' : '#ef4444' }}>
+      <div className="rounded-lg border p-4 mb-4 break-words overflow-hidden" style={{ background: isProfitable ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)', borderColor: isProfitable ? '#22c55e' : '#ef4444' }}>
         <p className="text-sm font-medium" style={{ color: isProfitable ? '#22c55e' : '#ef4444' }}>
           {isProfitable
             ? `This project is profitable! Your effective rate of $${effectiveHourlyRate.toFixed(2)}/hr ${netHourlyRate >= targetRate ? 'meets' : 'is close to'} your $${targetRate.toFixed(2)}/hr target.`

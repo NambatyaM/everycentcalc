@@ -33,7 +33,7 @@ export default function BrrrrCalc() {
       <SectionHeader title="BRRRR Method Calculator" subtitle="Buy, Rehab, Rent, Refinance, Repeat — analyze your deal" />
 
       <div className="space-y-4 mb-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Purchase Price ($)</label>
             <input type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
@@ -47,7 +47,7 @@ export default function BrrrrCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>After Repair Value (ARV, $)</label>
             <input type="number" value={arv} onChange={(e) => setArv(e.target.value)}
@@ -61,7 +61,7 @@ export default function BrrrrCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Rent ($)</label>
             <input type="number" value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)}

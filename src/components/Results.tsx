@@ -11,24 +11,24 @@ interface ResultCardProps {
 export function ResultCard({ label, value, subtitle, highlight, icon }: ResultCardProps) {
   return (
     <div
-      className={`rounded-xl border p-4 transition-all ${highlight ? 'border-2 shadow-md' : ''}`}
+      className={`rounded-xl border p-4 transition-all min-w-0 overflow-hidden ${highlight ? 'border-2 shadow-md' : ''}`}
       style={{
         background: highlight ? 'var(--brand-light)' : 'var(--bg-tertiary)',
         borderColor: highlight ? 'var(--brand)' : 'var(--border)',
       }}
     >
-      <div className="text-xs font-medium mb-1.5 flex items-center gap-1.5" style={{ color: highlight ? 'var(--brand)' : 'var(--text-secondary)' }}>
-        {icon && <span>{icon}</span>}
-        {label}
+      <div className="text-xs font-medium mb-1.5 flex items-center gap-1.5 min-w-0" style={{ color: highlight ? 'var(--brand)' : 'var(--text-secondary)' }}>
+        {icon && <span className="flex-shrink-0">{icon}</span>}
+        <span className="truncate">{label}</span>
       </div>
       <div
-        className="text-xl md:text-2xl font-bold font-mono tracking-tight"
+        className="text-xl md:text-2xl font-bold font-mono tracking-tight break-all"
         style={{ color: highlight ? 'var(--brand)' : 'var(--text-primary)' }}
       >
         {value}
       </div>
       {subtitle && (
-        <div className="text-[11px] mt-1.5 font-medium" style={{ color: 'var(--text-muted)' }}>
+        <div className="text-[11px] mt-1.5 font-medium truncate" style={{ color: 'var(--text-muted)' }}>
           {subtitle}
         </div>
       )}
@@ -39,12 +39,12 @@ export function ResultCard({ label, value, subtitle, highlight, icon }: ResultCa
 export function ResultRow({ label, value, bold }: { label: string; value: string; bold?: boolean }) {
   return (
     <div
-      className={`flex justify-between items-center py-2.5 ${bold ? 'border-t-2 font-bold' : 'border-t'}`}
+      className={`flex justify-between items-center gap-3 py-2.5 min-w-0 ${bold ? 'border-t-2 font-bold' : 'border-t'}`}
       style={{ borderColor: 'var(--border)' }}
     >
-      <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>{label}</span>
+      <span className="text-sm min-w-0 truncate" style={{ color: 'var(--text-secondary)' }}>{label}</span>
       <span
-        className="font-mono text-sm font-medium"
+        className="font-mono text-sm font-medium flex-shrink-0"
         style={{ color: bold ? 'var(--brand)' : 'var(--text-primary)' }}
       >
         {value}

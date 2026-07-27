@@ -72,6 +72,16 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+input, select {
+  min-height: 44px;
+}
+
+@media (min-width: 640px) {
+  input, select {
+    min-height: 48px;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

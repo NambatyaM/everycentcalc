@@ -55,7 +55,7 @@ export default function SelfEmploymentTaxCalc() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="🧾" label="Total SE Tax" value={formatCurrency(se.total)} highlight />
         <ResultCard icon="📊" label="Effective Tax Rate" value={formatPercent(effectiveRate)} highlight />
         <ResultCard icon="🏦" label="Social Security (12.4%)" value={formatCurrency(se.ss)} />

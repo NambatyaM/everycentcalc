@@ -50,7 +50,7 @@ export default function RentalPropertyRoiCalc() {
       <SectionHeader title="Rental Property ROI Calculator" subtitle="Analyze cash flow, cap rate, and return on investment for rental properties" />
 
       <div className="space-y-4 mb-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Purchase Price ($)</label>
             <input type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
@@ -64,7 +64,7 @@ export default function RentalPropertyRoiCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Mortgage Rate (%/yr)</label>
             <input type="number" value={mortgageRate} onChange={(e) => setMortgageRate(e.target.value)}
@@ -84,7 +84,7 @@ export default function RentalPropertyRoiCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Property Tax (annual $)</label>
             <input type="number" value={propertyTax} onChange={(e) => setPropertyTax(e.target.value)}
@@ -99,7 +99,7 @@ export default function RentalPropertyRoiCalc() {
           </div>
           <div></div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Maintenance (% of rent)</label>
             <input type="number" value={maintenancePct} onChange={(e) => setMaintenancePct(e.target.value)}

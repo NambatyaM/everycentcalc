@@ -44,7 +44,7 @@ export default function SaasUnitEconomicsCalc() {
       <SectionHeader title="SaaS Unit Economics Calculator (CAC/LTV)" subtitle="Measure the health of your customer acquisition and retention" />
 
       <div className="space-y-4 mb-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Marketing Spend ($)</label>
             <input type="number" value={monthlyMarketingSpend} onChange={(e) => setMonthlyMarketingSpend(e.target.value)}
@@ -64,7 +64,7 @@ export default function SaasUnitEconomicsCalc() {
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Gross Margin %</label>
             <input type="number" value={grossMargin} onChange={(e) => setGrossMargin(e.target.value)}
@@ -80,7 +80,7 @@ export default function SaasUnitEconomicsCalc() {
         </div>
       </div>
 
-      <div className="rounded-lg border-2 p-4 mb-6" style={{ background: ltvCacBg, borderColor: ltvCacColor }}>
+      <div className="rounded-lg border-2 p-4 mb-6 break-words overflow-hidden" style={{ background: ltvCacBg, borderColor: ltvCacColor }}>
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium" style={{ color: ltvCacColor }}>LTV:CAC Health</span>
           <span className="text-lg font-bold font-mono" style={{ color: ltvCacColor }}>{ltvCacHealth} ({ltvCacRatio > 0 && ltvCacRatio !== Infinity ? ltvCacRatio.toFixed(1) + ':1' : 'N/A'})</span>

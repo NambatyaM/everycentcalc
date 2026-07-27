@@ -39,7 +39,7 @@ export default function PricingStrategyCalc() {
       <SectionHeader title="Pricing Strategy Calculator" subtitle="Compare cost-plus, value-based, and revenue-based pricing" />
 
       <div className="space-y-4 mb-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Cost to Produce ($)</label>
             <input type="number" value={costToProduce} onChange={(e) => setCostToProduce(e.target.value)}
@@ -59,7 +59,7 @@ export default function PricingStrategyCalc() {
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Target Annual Revenue ($)</label>
             <input type="number" value={targetRevenue} onChange={(e) => setTargetRevenue(e.target.value)}
@@ -75,7 +75,7 @@ export default function PricingStrategyCalc() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         {strategies.map((s) => (
           <div key={s.name} className="rounded-lg border p-4 text-center" style={{ background: 'var(--bg-tertiary)', borderColor: s.color }}>
             <div className="text-xs font-medium mb-1" style={{ color: s.color }}>{s.name}</div>

@@ -42,7 +42,7 @@ export default function AirbnbRevenueCalc() {
       <SectionHeader title="Airbnb Revenue Estimator" subtitle="Estimate short-term rental income vs. traditional renting" />
 
       <div className="space-y-4 mb-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Nightly Rate ($)</label>
             <input type="number" value={nightlyRate} onChange={(e) => setNightlyRate(e.target.value)}
@@ -56,7 +56,7 @@ export default function AirbnbRevenueCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Cleaning Fee ($/turnover)</label>
             <input type="number" value={cleaningFee} onChange={(e) => setCleaningFee(e.target.value)}
@@ -70,7 +70,7 @@ export default function AirbnbRevenueCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Mortgage ($)</label>
             <input type="number" value={monthlyMortgage} onChange={(e) => setMonthlyMortgage(e.target.value)}
@@ -84,7 +84,7 @@ export default function AirbnbRevenueCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Management Fee (% of revenue)</label>
             <input type="number" value={managementFee} onChange={(e) => setManagementFee(e.target.value)}

@@ -59,7 +59,7 @@ export default function SideHustleTaxCalc() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="💼" label="Side Hustle Take-Home" value={`$${Math.max(0, sideTakeHome).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="📊" label="Side Income Marginal Rate" value={`${marginalRate.toFixed(0)}%`} highlight />
         <ResultCard icon="🏦" label="Self-Employment Tax" value={`$${se.total.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />

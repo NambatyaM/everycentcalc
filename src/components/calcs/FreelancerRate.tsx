@@ -45,7 +45,7 @@ export default function FreelancerRateCalc() {
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
               Vacation Weeks/Year
@@ -65,7 +65,7 @@ export default function FreelancerRateCalc() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="⏱️" label="Hourly Rate" value={`$${hourlyRate.toFixed(0)}`} highlight />
         <ResultCard icon="📋" label="Daily Rate" value={`$${dailyRate.toFixed(0)}`} highlight />
         <ResultCard icon="📆" label="Monthly Retainer" value={`$${monthlyRetainer.toFixed(0)}`} highlight />

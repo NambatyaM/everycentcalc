@@ -72,7 +72,7 @@ export default function RentVsBuyCalc() {
       <SectionHeader title="Rent vs. Buy Calculator" subtitle="Compare the true cost of renting vs. buying over time" />
 
       <div className="space-y-4 mb-8">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Home Price ($)</label>
             <input type="number" value={homePrice} onChange={(e) => setHomePrice(e.target.value)}
@@ -86,7 +86,7 @@ export default function RentVsBuyCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Down Payment (%)</label>
             <input type="number" value={downPaymentPct} onChange={(e) => setDownPaymentPct(e.target.value)}
@@ -106,7 +106,7 @@ export default function RentVsBuyCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Property Tax (%/yr)</label>
             <input type="number" value={propertyTaxRate} onChange={(e) => setPropertyTaxRate(e.target.value)}

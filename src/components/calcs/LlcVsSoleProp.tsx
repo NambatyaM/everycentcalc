@@ -77,48 +77,48 @@ export default function LlcVsSolePropCalc() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="🏢" label="Sole Prop Take-Home" value={formatCurrency(spTakeHome)} />
         <ResultCard icon="🏛️" label="S-Corp LLC Take-Home" value={formatCurrency(scorpTakeHome)} highlight />
         <ResultCard icon="💡" label="S-Corp Savings" value={formatCurrency(savings)} highlight subtitle={savings > 0 ? 'per year' : ''} />
         <ResultCard icon="📋" label="S-Corp Salary" value={formatCurrency(salary)} subtitle="Subject to FICA" />
       </div>
 
-      <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <div className="flex items-center mb-2">
-          <span className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>Side-by-Side Comparison</span>
-        </div>
-        <div className="flex justify-between items-center py-2 border-t" style={{ borderColor: 'var(--border)' }}>
-          <span className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}></span>
-          <div className="flex gap-8">
-            <span className="font-mono text-xs font-medium w-24 text-right" style={{ color: 'var(--text-muted)' }}>Sole Prop</span>
-            <span className="font-mono text-xs font-medium w-24 text-right" style={{ color: 'var(--brand)' }}>S-Corp LLC</span>
-          </div>
-        </div>
-        {[
-          { label: 'Gross Income', sp: formatCurrency(ni), sc: formatCurrency(ni) },
-          { label: 'Salary (FICA Basis)', sp: formatCurrency(ni), sc: formatCurrency(salary) },
-          { label: 'Distribution (No FICA)', sp: '—', sc: formatCurrency(distribution) },
-          { label: 'Self-Employment / FICA Tax', sp: formatCurrency(spSe.total), sc: formatCurrency(totalFICA) },
-          { label: 'Federal Income Tax', sp: formatCurrency(spFedTax), sc: formatCurrency(scorpFedTax) },
-          { label: 'Total Tax', sp: formatCurrency(spTotalTax), sc: formatCurrency(scorpTotalTax) },
-          { label: 'Take-Home', sp: formatCurrency(spTakeHome), sc: formatCurrency(scorpTakeHome) },
-        ].map((row) => (
-          <div key={row.label} className="flex justify-between items-center py-2 border-t" style={{ borderColor: 'var(--border)' }}>
-            <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>{row.label}</span>
-            <div className="flex gap-8">
-              <span className="font-mono text-sm w-24 text-right" style={{ color: 'var(--text-primary)' }}>{row.sp}</span>
-              <span className="font-mono text-sm w-24 text-right font-medium" style={{ color: 'var(--brand)' }}>{row.sc}</span>
-            </div>
-          </div>
-        ))}
+      <div className="rounded-xl border p-4 mb-6 overflow-x-auto" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
+        <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Side-by-Side Comparison</div>
+        <table className="w-full text-sm min-w-[320px]">
+          <thead>
+            <tr className="border-t" style={{ borderColor: 'var(--border)' }}>
+              <th className="py-2 text-left font-medium" style={{ color: 'var(--text-secondary)' }}></th>
+              <th className="py-2 text-right font-mono text-xs" style={{ color: 'var(--text-muted)' }}>Sole Prop</th>
+              <th className="py-2 text-right font-mono text-xs" style={{ color: 'var(--brand)' }}>S-Corp LLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { label: 'Gross Income', sp: formatCurrency(ni), sc: formatCurrency(ni) },
+              { label: 'Salary (FICA Basis)', sp: formatCurrency(ni), sc: formatCurrency(salary) },
+              { label: 'Distribution (No FICA)', sp: '—', sc: formatCurrency(distribution) },
+              { label: 'SE / FICA Tax', sp: formatCurrency(spSe.total), sc: formatCurrency(totalFICA) },
+              { label: 'Federal Income Tax', sp: formatCurrency(spFedTax), sc: formatCurrency(scorpFedTax) },
+              { label: 'Total Tax', sp: formatCurrency(spTotalTax), sc: formatCurrency(scorpTotalTax) },
+              { label: 'Take-Home', sp: formatCurrency(spTakeHome), sc: formatCurrency(scorpTakeHome) },
+            ].map((row) => (
+              <tr key={row.label} className="border-t" style={{ borderColor: 'var(--border)' }}>
+                <td className="py-2 pr-4" style={{ color: 'var(--text-secondary)' }}>{row.label}</td>
+                <td className="py-2 text-right font-mono" style={{ color: 'var(--text-primary)' }}>{row.sp}</td>
+                <td className="py-2 text-right font-mono font-medium" style={{ color: 'var(--brand)' }}>{row.sc}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
+      <div className="rounded-lg border p-4 mb-4 break-words" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
         <p className="text-sm" style={{ color: 'var(--brand)' }}>
           {savings > 0
-            ? <>S-Corp election could save you <strong>{formatCurrency(savings)}</strong>/year. The salary is capped at {formatCurrency(salary)} (60% of income or $50K), and the remaining <strong>{formatCurrency(distribution)}</strong> is taken as a distribution — not subject to FICA.</>
-            : <>At this income level, the S-Corp election provides no tax advantage. It typically becomes beneficial above ~$50K in net income.</>
+            ? <>S-Corp election could save you <strong>{formatCurrency(savings)}</strong>/year. Salary capped at {formatCurrency(salary)}, remaining <strong>{formatCurrency(distribution)}</strong> taken as distribution — no FICA.</>
+            : <>At this income level, S-Corp provides no tax advantage. Typically beneficial above ~$50K net income.</>
           }
         </p>
       </div>

@@ -50,7 +50,7 @@ export default function ContentCreatorRevenueCalc() {
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Sponsorships per Month</label>
             <input type="number" value={sponsorships} onChange={(e) => setSponsorships(e.target.value)}
@@ -70,7 +70,7 @@ export default function ContentCreatorRevenueCalc() {
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Members/Subscribers</label>
             <input type="number" value={members} onChange={(e) => setMembers(e.target.value)}
@@ -100,7 +100,7 @@ export default function ContentCreatorRevenueCalc() {
 
         <div className="space-y-4">
           <div>
-            <div className="flex justify-between items-center mb-1">
+            <div className="flex justify-between items-center mb-1 overflow-hidden min-w-0">
               <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Ad Revenue</span>
               <span className="font-mono text-sm font-medium" style={{ color: 'var(--text-primary)' }}>${adRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })} ({adPct.toFixed(1)}%)</span>
             </div>
@@ -110,7 +110,7 @@ export default function ContentCreatorRevenueCalc() {
           </div>
 
           <div>
-            <div className="flex justify-between items-center mb-1">
+            <div className="flex justify-between items-center mb-1 overflow-hidden min-w-0">
               <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Sponsorships</span>
               <span className="font-mono text-sm font-medium" style={{ color: 'var(--text-primary)' }}>${sponsorshipRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })} ({sponsorshipPct.toFixed(1)}%)</span>
             </div>
@@ -120,7 +120,7 @@ export default function ContentCreatorRevenueCalc() {
           </div>
 
           <div>
-            <div className="flex justify-between items-center mb-1">
+            <div className="flex justify-between items-center mb-1 overflow-hidden min-w-0">
               <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Affiliate</span>
               <span className="font-mono text-sm font-medium" style={{ color: 'var(--text-primary)' }}>${ar.toLocaleString('en-US', { maximumFractionDigits: 0 })} ({affiliatePct.toFixed(1)}%)</span>
             </div>
@@ -130,7 +130,7 @@ export default function ContentCreatorRevenueCalc() {
           </div>
 
           <div>
-            <div className="flex justify-between items-center mb-1">
+            <div className="flex justify-between items-center mb-1 overflow-hidden min-w-0">
               <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Membership</span>
               <span className="font-mono text-sm font-medium" style={{ color: 'var(--text-primary)' }}>${membershipRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })} ({membershipPct.toFixed(1)}%)</span>
             </div>

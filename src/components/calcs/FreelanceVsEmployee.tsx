@@ -66,7 +66,7 @@ export default function FreelanceVsEmployeeCalc() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="🏢" label="Employee Take-Home" value={formatCurrency(employeeTakeHome)} highlight />
         <ResultCard icon="💻" label="Freelancer Take-Home" value={formatCurrency(freelancerTakeHome)} highlight />
         <ResultCard icon="📊" label="Employee Eff. Rate" value={formatPercent(employeeEffectiveRate)} />
@@ -88,7 +88,7 @@ export default function FreelanceVsEmployeeCalc() {
         <ResultRow label="Difference" value={`${difference >= 0 ? '+' : ''}${formatCurrency(difference)}`} bold />
       </div>
 
-      <div className="rounded-lg border p-4 mb-4" style={{ background: difference > 0 ? 'var(--brand-light)' : 'rgba(239, 68, 68, 0.1)', borderColor: difference > 0 ? 'var(--brand)' : '#ef4444' }}>
+      <div className="rounded-lg border p-4 mb-4 break-words overflow-hidden" style={{ background: difference > 0 ? 'var(--brand-light)' : 'rgba(239, 68, 68, 0.1)', borderColor: difference > 0 ? 'var(--brand)' : '#ef4444' }}>
         <p className="text-sm font-medium" style={{ color: difference > 0 ? 'var(--brand)' : '#ef4444' }}>
           {difference > 0
             ? `As an employee, you take home ${formatCurrency(difference)} more per year. Freelancers pay double FICA but get a 50% SE tax deduction on federal income tax.`

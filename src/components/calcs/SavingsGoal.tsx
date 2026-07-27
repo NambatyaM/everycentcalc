@@ -43,7 +43,7 @@ export default function SavingsGoalCalc() {
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Time Frame (months)</label>
             <input type="number" value={timeFrame} onChange={(e) => setTimeFrame(e.target.value)}

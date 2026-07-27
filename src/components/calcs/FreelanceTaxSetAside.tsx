@@ -79,7 +79,7 @@ export default function FreelanceTaxSetAsideCalc() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="🧾" label="Total Set-Aside" value={formatCurrency(totalTax)} highlight />
         <ResultCard icon="📊" label="Set-Aside Percentage" value={formatPercent(effectiveRate)} highlight />
         <ResultCard icon="🏦" label="Self-Employment Tax" value={formatCurrency(se.total)} />

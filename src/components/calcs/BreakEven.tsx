@@ -35,7 +35,7 @@ export default function BreakEvenCalc() {
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Rent, salaries, software, insurance — costs that don&apos;t change with sales</p>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Price per Unit ($)</label>
             <input type="number" value={pricePerUnit} onChange={(e) => setPricePerUnit(e.target.value)}
@@ -67,7 +67,7 @@ export default function BreakEvenCalc() {
         </div>
       )}
 
-      <div className="grid grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="🎯" label="Break-Even Units" value={contributionMargin > 0 ? breakEvenUnits.toLocaleString() : 'N/A'} highlight />
         <ResultCard icon="💰" label="Break-Even Revenue" value={contributionMargin > 0 ? `$${breakEvenRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : '$0'} highlight />
         <ResultCard icon="📊" label="Contribution Margin" value={`${contributionMarginPct.toFixed(0)}%`} highlight />
