@@ -71,12 +71,12 @@ export default function HomeEquityCalc() {
         <ResultRow label="Improvement Costs" value={`$${improve.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Equity" value={`$${equity.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label="Equity Percentage" value={`${equityPct.toFixed(1)}%`} bold />
-        <ResultRow label="CLTV (Loan-to-Value)" value={`${cltv.toFixed(1)}%`} />
+        <ResultRow label="CLTV (Loan to Value)" value={`${cltv.toFixed(1)}%`} />
         <ResultRow label="HELOC Available (80%)" value={`$${helocPotential.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>CLTV (Combined Loan-to-Value) ratio represents your mortgage balance relative to home value. Lower CLTV = more equity. HELOC potential assumes 80% maximum LTV. Does not account for closing costs, PMI, or other liens. Consult a lender for actual HELOC qualification.</p>
+        <p>CLTV (Combined Loan to Value) ratio represents your mortgage balance relative to home value. Lower CLTV = more equity. HELOC potential assumes 80% maximum LTV. Does not account for closing costs, PMI, or other liens. Consult a lender for actual HELOC qualification.</p>
       </div>
     </div>
   );

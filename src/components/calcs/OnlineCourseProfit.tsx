@@ -96,12 +96,12 @@ export default function OnlineCourseProfit() {
         <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Year One Summary</p>
         <ResultRow label="Annual Revenue" value={formatCurrency(gross * 12)} />
         <ResultRow label="Annual Costs (fees + ads + other)" value={formatCurrency((platformFee + ads + other) * 12)} />
-        <ResultRow label="Course Production (one-time)" value={`-${formatCurrency(production)}`} />
+        <ResultRow label="Course Production (one time)" value={`-${formatCurrency(production)}`} />
         <ResultRow label="Year One Net Profit" value={formatCurrency(annualWithProduction)} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Platform fee depends on your hosting platform (e.g., Teachable 10%, Udemy 37–97%, Gumroad 10%). Course production cost is a one-time upfront investment. ROI = monthly profit ÷ ad spend × 100. Year One Net Profit accounts for the initial production cost.</p>
+        <p>Platform fee depends on your hosting platform (e.g., Teachable 10%, Udemy 37–97%, Gumroad 10%). Course production cost is a one time upfront investment. ROI = monthly profit ÷ ad spend × 100. Year One Net Profit accounts for the initial production cost.</p>
       </div>
     </div>
   );

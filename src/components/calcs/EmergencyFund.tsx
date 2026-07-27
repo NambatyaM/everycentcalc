@@ -55,7 +55,7 @@ export default function EmergencyFundCalc() {
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="w2">W-2 Employee</option>
-              <option value="freelance">Freelance / Self-Employed</option>
+              <option value="freelance">Freelance / Self Employed</option>
               <option value="hybrid">Hybrid (W-2 + Side Hustle)</option>
             </select>
           </div>
@@ -111,7 +111,7 @@ export default function EmergencyFundCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Emergency funds cover essential expenses during income disruption. Freelancers need larger funds due to income variability. Target 3-9 months based on job security and risk tolerance. Keep emergency funds in a high-yield savings account for easy access.</p>
+        <p>Emergency funds cover essential expenses during income disruption. Freelancers need larger funds due to income variability. Target 3-9 months based on job security and risk tolerance. Keep emergency funds in a high yield savings account for easy access.</p>
       </div>
     </div>
   );

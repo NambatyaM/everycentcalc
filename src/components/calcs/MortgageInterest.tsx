@@ -60,7 +60,7 @@ export default function MortgageInterestCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="💳" label="Monthly Payment" value={`$${monthlyPayment.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="📈" label="Total Interest Paid" value={`$${totalInterest.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
-        <ResultCard icon="📊" label="Interest-to-Loan Ratio" value={`${totalCostRatio.toFixed(1)}%`} />
+        <ResultCard icon="📊" label="Interest to Loan Ratio" value={`${totalCostRatio.toFixed(1)}%`} />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">

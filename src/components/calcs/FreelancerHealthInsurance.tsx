@@ -57,7 +57,7 @@ export default function FreelancerHealthInsuranceCalc() {
 
   return (
     <div>
-      <SectionHeader title="Freelancer Health Insurance Cost Estimator" subtitle="Estimate ACA marketplace premiums, subsidies, and self-employed tax deduction" />
+      <SectionHeader title="Freelancer Health Insurance Cost Estimator" subtitle="Estimate ACA marketplace premiums, subsidies, and self employed tax deduction" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -136,7 +136,7 @@ export default function FreelancerHealthInsuranceCalc() {
         <ResultRow label="Premium Subsidy" value={`-${formatCurrency(subsidyAmount)}`} />
         <ResultRow label="Subsidized Monthly Premium" value={formatCurrency(subsidizedMonthly)} bold />
         <ResultRow label="Annual Premium" value={formatCurrency(annualPremium)} />
-        <ResultRow label="Self-Employed Deduction (100%)" value={`-${formatCurrency(annualPremium)}`} />
+        <ResultRow label="Self Employed Deduction (100%)" value={`-${formatCurrency(annualPremium)}`} />
         <ResultRow label="Tax Savings (marginal rate)" value={`-${formatCurrency(taxSavings)}`} />
         <ResultRow label="Net Annual Cost" value={formatCurrency(netAnnualCost)} bold />
       </div>
@@ -148,7 +148,7 @@ export default function FreelancerHealthInsuranceCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Note:</strong> Subsidies are simplified estimates based on ACA guidelines (threshold: $58,320 single / $117,000 MFJ). Actual premiums vary by location, insurer, and household size. The self-employed health insurance deduction is taken on Schedule 1, not Schedule C. Consult healthcare.gov or a tax professional for exact figures.</p>
+        <p><strong>Note:</strong> Subsidies are simplified estimates based on ACA guidelines (threshold: $58,320 single / $117,000 MFJ). Actual premiums vary by location, insurer, and household size. The self employed health insurance deduction is taken on Schedule 1, not Schedule C. Consult healthcare.gov or a tax professional for exact figures.</p>
       </div>
     </div>
   );

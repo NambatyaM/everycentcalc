@@ -53,7 +53,7 @@ export default function PayrollTax() {
 
   return (
     <div>
-      <SectionHeader title="Payroll Tax Calculator" subtitle="Calculate employee take-home pay and total employer costs for small business payroll" />
+      <SectionHeader title="Payroll Tax Calculator" subtitle="Calculate employee take home pay and total employer costs for small business payroll" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -119,7 +119,7 @@ export default function PayrollTax() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> Federal withholding uses simplified flat 12% estimate. Actual withholding depends on W-4 elections and IRS tables. State tax rate is user-entered. SUTA rate estimated at 2.7% (varies by state and employer experience rating). 401(k) deductions are pre-tax. FUTA applies to first $7,000 of wages. Consult your payroll provider for exact calculations.</p>
+        <p><strong>Disclaimer:</strong> Federal withholding uses simplified flat 12% estimate. Actual withholding depends on W-4 elections and IRS tables. State tax rate is user-entered. SUTA rate estimated at 2.7% (varies by state and employer experience rating). 401(k) deductions are pre tax. FUTA applies to first $7,000 of wages. Consult your payroll provider for exact calculations.</p>
       </div>
     </div>
   );

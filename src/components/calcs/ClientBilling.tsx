@@ -99,7 +99,7 @@ export default function ClientBilling() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Retainer agreements provide predictable income while offering clients a discount off your standard hourly rate. The effective hourly rate accounts for both retainer and overtime hours. Annual discounts are applied to the full annual total (retainer + overtime). Adjust the overtime multiplier based on your agreement (1.5x is standard time-and-a-half).</p>
+        <p>Retainer agreements provide predictable income while offering clients a discount off your standard hourly rate. The effective hourly rate accounts for both retainer and overtime hours. Annual discounts are applied to the full annual total (retainer + overtime). Adjust the overtime multiplier based on your agreement (1.5x is standard time and a half).</p>
       </div>
     </div>
   );

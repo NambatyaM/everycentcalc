@@ -34,7 +34,7 @@ export default function FreelanceVsEmployeeCalc() {
 
   return (
     <div>
-      <SectionHeader title="Freelance vs. Employee Take-Home Pay" subtitle="Compare W-2 employee vs. 1099 freelancer taxes on the same gross income" />
+      <SectionHeader title="Freelance vs. Employee Take Home Pay" subtitle="Compare W-2 employee vs. 1099 freelancer taxes on the same gross income" />
 
       <div className="space-y-4 mb-8">
         <div>
@@ -67,8 +67,8 @@ export default function FreelanceVsEmployeeCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="🏢" label="Employee Take-Home" value={formatCurrency(employeeTakeHome)} highlight />
-        <ResultCard icon="💻" label="Freelancer Take-Home" value={formatCurrency(freelancerTakeHome)} highlight />
+        <ResultCard icon="🏢" label="Employee Take Home" value={formatCurrency(employeeTakeHome)} highlight />
+        <ResultCard icon="💻" label="Freelancer Take Home" value={formatCurrency(freelancerTakeHome)} highlight />
         <ResultCard icon="📊" label="Employee Eff. Rate" value={formatPercent(employeeEffectiveRate)} />
         <ResultCard icon="📊" label="Freelancer Eff. Rate" value={formatPercent(freelancerEffectiveRate)} />
         <ResultCard icon="🏢" label="Employee Total Tax" value={formatCurrency(employeeTotalTax)} />
@@ -83,8 +83,8 @@ export default function FreelanceVsEmployeeCalc() {
         <ResultRow label="Freelancer Federal Tax" value={formatCurrency(freelancerFederalTax)} />
         <ResultRow label="Employee Total Tax" value={formatCurrency(employeeTotalTax)} />
         <ResultRow label="Freelancer Total Tax" value={formatCurrency(freelancerTotalTax)} />
-        <ResultRow label="Employee Take-Home" value={formatCurrency(employeeTakeHome)} bold />
-        <ResultRow label="Freelancer Take-Home" value={formatCurrency(freelancerTakeHome)} bold />
+        <ResultRow label="Employee Take Home" value={formatCurrency(employeeTakeHome)} bold />
+        <ResultRow label="Freelancer Take Home" value={formatCurrency(freelancerTakeHome)} bold />
         <ResultRow label="Difference" value={`${difference >= 0 ? '+' : ''}${formatCurrency(difference)}`} bold />
       </div>
 

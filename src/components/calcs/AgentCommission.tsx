@@ -72,7 +72,7 @@ export default function AgentCommissionCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="💵" label="After-Tax Commission" value={`$${afterTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultCard icon="💵" label="After Tax Commission" value={`$${afterTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultCard icon="🏛️" label="Total Tax" value={`$${totalTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 
@@ -88,7 +88,7 @@ export default function AgentCommissionCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Commission rates are negotiable and vary by market. The tax rate shown represents the agent's estimated income/self-employment tax and does not account for deductions or credits. Consult a tax professional for accurate tax calculations.</p>
+        <p>Commission rates are negotiable and vary by market. The tax rate shown represents the agent's estimated income/self employment tax and does not account for deductions or credits. Consult a tax professional for accurate tax calculations.</p>
       </div>
     </div>
   );

@@ -84,7 +84,7 @@ export default function BrrrrCalc() {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="📊" label="Cash-on-Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
+        <ResultCard icon="📊" label="Cash on Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
         <ResultCard icon="💵" label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="💰" label="Annual Cash Flow" value={`$${annualCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="🏦" label="Cash Left in Deal" value={`$${cashLeftInDeal.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
@@ -96,7 +96,7 @@ export default function BrrrrCalc() {
         <h3 className="font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Deal Breakdown</h3>
         <ResultRow label="Purchase Price" value={`$${pp.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Repair Costs" value={`$${rc.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="All-in Cost" value={`$${allInCost.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
+        <ResultRow label="All in Cost" value={`$${allInCost.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label="After Repair Value (ARV)" value={`$${arvVal.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label={`Refinance Loan (${ltv}% of ARV)`} value={`$${loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Cash Left in Deal" value={`$${cashLeftInDeal.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
@@ -112,7 +112,7 @@ export default function BrrrrCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>The BRRRR method (Buy, Rehab, Rent, Refinance, Repeat) aims to recover most or all of your initial investment through a cash-out refinance. This simplified calculator assumes you own the property free and clear before refinancing. Actual results depend on lender requirements, holding costs during rehab, and refinance terms. Consult a lender and real estate professional for precise analysis.</p>
+        <p>The BRRRR method (Buy, Rehab, Rent, Refinance, Repeat) aims to recover most or all of your initial investment through a cash out refinance. This simplified calculator assumes you own the property free and clear before refinancing. Actual results depend on lender requirements, holding costs during rehab, and refinance terms. Consult a lender and real estate professional for precise analysis.</p>
       </div>
     </div>
   );

@@ -84,7 +84,7 @@ export default function PrintOnDemandProfit() {
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Per-Sale Breakdown</p>
+        <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Per Sale Breakdown</p>
         <ResultRow label="Revenue (Price + Shipping)" value={formatCurrency(revenuePerSale)} />
         <ResultRow label="Product Cost" value={`-${formatCurrency(product)}`} />
         <ResultRow label="Marketing Cost" value={`-${formatCurrency(marketing)}`} />

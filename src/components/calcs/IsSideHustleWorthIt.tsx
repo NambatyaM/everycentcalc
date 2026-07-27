@@ -70,7 +70,7 @@ export default function IsSideHustleWorthItCalc() {
 
       <div className="grid grid-cols-2 gap-3 mb-6">
         <ResultCard icon="⏱️" label="Net Hourly Rate" value={`$${netHourlyRate.toFixed(2)}`} highlight />
-        <ResultCard icon="💰" label="Monthly Take-Home" value={`$${monthlyTakeHome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
+        <ResultCard icon="💰" label="Monthly Take Home" value={`$${monthlyTakeHome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="📊" label="Profit Margin" value={`${profitMargin.toFixed(1)}%`} />
         <ResultCard icon="🏦" label="Annual Projection" value={`$${annualProjection.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
@@ -92,7 +92,7 @@ export default function IsSideHustleWorthItCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>The standard tax rate is 30% to cover self-employment tax (15.3%) and federal income tax. The $15/hr benchmark is roughly equivalent to a minimum wage job. Consider whether the flexibility and growth potential of your side hustle justifies a lower effective rate.</p>
+        <p>The standard tax rate is 30% to cover self employment tax (15.3%) and federal income tax. The $15/hr benchmark is roughly equivalent to a minimum wage job. Consider whether the flexibility and growth potential of your side hustle justifies a lower effective rate.</p>
       </div>
     </div>
   );

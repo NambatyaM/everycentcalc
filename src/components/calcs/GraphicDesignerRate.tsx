@@ -101,7 +101,7 @@ export default function GraphicDesignerRate() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Hourly rate = desired annual income ÷ (52 weeks × billable hours). Project rates shown are estimates based on your hourly rate. Adjust estimates to match your actual project scope. Actual annual income assumes consistent billable hours year-round.</p>
+        <p>Hourly rate = desired annual income ÷ (52 weeks × billable hours). Project rates shown are estimates based on your hourly rate. Adjust estimates to match your actual project scope. Actual annual income assumes consistent billable hours year round.</p>
       </div>
     </div>
   );

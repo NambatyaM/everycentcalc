@@ -15,7 +15,7 @@ export default function SideHustleIncomeTaxCalc() {
   const withheld = parseFloat(w2Withholding) || 0;
 
   const combined = salary + side;
-  const se = selfEmploymentTax(side, filingStatus);
+  const se = selfEmploymentTax(side, filingStatus, salary);
   const seDeduction = se.total / 2;
   const stdDeduction = getStandardDeduction(filingStatus);
   const taxableIncome = Math.max(0, combined - stdDeduction - seDeduction);
@@ -27,7 +27,7 @@ export default function SideHustleIncomeTaxCalc() {
 
   return (
     <div>
-      <SectionHeader title="Side Hustle Income Tax Calculator" subtitle="Estimate additional taxes from self-employment income" />
+      <SectionHeader title="Side Hustle Income Tax Calculator" subtitle="Estimate additional taxes from self employment income" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -74,7 +74,7 @@ export default function SideHustleIncomeTaxCalc() {
         <ResultRow label="W-2 Salary" value={formatCurrency(salary)} />
         <ResultRow label="Side Hustle Income" value={formatCurrency(side)} />
         <ResultRow label="Combined Income" value={formatCurrency(combined)} />
-        <ResultRow label="Self-Employment Tax" value={formatCurrency(se.total)} />
+        <ResultRow label="Self Employment Tax" value={formatCurrency(se.total)} />
         <ResultRow label="50% SE Tax Deduction" value={`-${formatCurrency(seDeduction)}`} />
         <ResultRow label="Standard Deduction" value={`-${formatCurrency(stdDeduction)}`} />
         <ResultRow label="Federal Taxable Income" value={formatCurrency(taxableIncome)} />
@@ -86,7 +86,7 @@ export default function SideHustleIncomeTaxCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>SE tax is 15.3% on 92.35% of net self-employment income (12.4% Social Security + 2.9% Medicare). Federal tax uses 2026 brackets after standard deduction and 50% SE tax deduction. Quarterly payments are due April 15, June 15, September 15, and January 15.</p>
+        <p>SE tax is 15.3% on 92.35% of net self employment income (12.4% Social Security + 2.9% Medicare). Federal tax uses 2026 brackets after standard deduction and 50% SE tax deduction. Quarterly payments are due April 15, June 15, September 15, and January 15.</p>
       </div>
     </div>
   );

@@ -46,7 +46,7 @@ export default function StockPortfolioReturnCalc() {
 
   return (
     <div>
-      <SectionHeader title="Stock Portfolio Return Calculator" subtitle="Compare pre-tax and after-tax portfolio growth" />
+      <SectionHeader title="Stock Portfolio Return Calculator" subtitle="Compare pre tax and after tax portfolio growth" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -96,21 +96,21 @@ export default function StockPortfolioReturnCalc() {
         <ResultCard icon="🏦" label="Total Contributions" value={formatCurrency(totalContributed)} />
         <ResultCard icon="📉" label="Tax on Gains" value={formatCurrency(totalTaxes)} />
         <ResultCard icon="💸" label="Dividend Income" value={formatCurrency(totalDividends)} />
-        <ResultCard icon="📊" label="Portfolio Value (pre-tax)" value={formatCurrency(portfolioPre)} />
+        <ResultCard icon="📊" label="Portfolio Value (pre tax)" value={formatCurrency(portfolioPre)} />
         <ResultCard icon="⚖️" label="Tax Drag" value={formatCurrency(portfolioPre - portfolioPost)} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <ResultRow label="Pre-Tax Portfolio" value={formatCurrency(portfolioPre)} />
-        <ResultRow label="After-Tax Portfolio" value={formatCurrency(portfolioPost)} />
-        <ResultRow label="Pre-Tax Gain" value={formatCurrency(totalGainPre)} />
-        <ResultRow label="After-Tax Gain" value={formatCurrency(totalGainPost)} />
+        <ResultRow label="Pre Tax Portfolio" value={formatCurrency(portfolioPre)} />
+        <ResultRow label="After Tax Portfolio" value={formatCurrency(portfolioPost)} />
+        <ResultRow label="Pre Tax Gain" value={formatCurrency(totalGainPre)} />
+        <ResultRow label="After Tax Gain" value={formatCurrency(totalGainPost)} />
         <ResultRow label="Total Taxes Paid" value={formatCurrency(totalTaxes)} bold />
         <ResultRow label="Tax Drag on Returns" value={`${portfolioPre > 0 ? (((portfolioPre - portfolioPost) / portfolioPre) * 100).toFixed(1) : 0}%`} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Assumes taxes are paid annually on capital gains. Dividends are reinvested. Actual tax treatment depends on holding period, income level, and account type (taxable vs. tax-advantaged). Long-term capital gains rates apply for holdings over 1 year.</p>
+        <p>Assumes taxes are paid annually on capital gains. Dividends are reinvested. Actual tax treatment depends on holding period, income level, and account type (taxable vs. tax advantaged). Long-term capital gains rates apply for holdings over 1 year.</p>
       </div>
     </div>
   );

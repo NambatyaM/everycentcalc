@@ -62,7 +62,7 @@ export default function SavingsGoalCalc() {
           <input type="number" value={expectedAPY} onChange={(e) => setExpectedAPY(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>High-yield savings accounts currently offer 4-5% APY</p>
+          <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>High yield savings accounts currently offer 4-5% APY</p>
         </div>
       </div>
 

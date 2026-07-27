@@ -86,7 +86,7 @@ export default function StartupRunwayCalc() {
       <div className="grid grid-cols-2 gap-3 mb-6">
         <ResultCard icon="🔥" label="Monthly Burn Rate" value={isProfitable ? '$0' : `$${monthlyBurn.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight={!isProfitable} />
         <ResultCard icon="⏳" label="Runway" value={isProfitable ? 'Indefinite' : `${formatMonths(runwayMonths)} mo`} highlight />
-        <ResultCard icon="📅" label="Cash-out Date" value={cashOutDate ? cashOutDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : 'N/A'} />
+        <ResultCard icon="📅" label="Cash out Date" value={cashOutDate ? cashOutDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : 'N/A'} />
         <ResultCard icon="💳" label="Current Cash" value={`$${cash.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 

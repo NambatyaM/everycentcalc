@@ -60,7 +60,7 @@ export default function FreelancerEffectiveTaxRate() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="📊" label="Effective Tax Rate" value={formatPercent(effectiveRate)} highlight />
         <ResultCard icon="🧾" label="Total Tax" value={formatCurrency(totalTax)} highlight />
-        <ResultCard icon="💰" label="Take-Home Pay" value={formatCurrency(takeHome)} highlight />
+        <ResultCard icon="💰" label="Take Home Pay" value={formatCurrency(takeHome)} highlight />
         <ResultCard icon="🏛️" label="SE Tax" value={formatCurrency(se.total)} />
         <ResultCard icon="📋" label="Federal Income Tax" value={formatCurrency(fedTax)} />
       </div>
@@ -73,14 +73,14 @@ export default function FreelancerEffectiveTaxRate() {
         <ResultRow label="Standard Deduction" value={`-${formatCurrency(deduction)}`} />
         <ResultRow label="50% SE Tax Deduction" value={`-${formatCurrency(seDeduction)}`} />
         <ResultRow label="Taxable Income" value={formatCurrency(taxableIncome)} />
-        <ResultRow label="Self-Employment Tax" value={formatCurrency(se.total)} />
+        <ResultRow label="Self Employment Tax" value={formatCurrency(se.total)} />
         <ResultRow label="Federal Income Tax" value={formatCurrency(fedTax)} />
         <ResultRow label="Total Tax" value={formatCurrency(totalTax)} bold />
-        <ResultRow label="Take-Home Pay" value={formatCurrency(takeHome)} bold />
+        <ResultRow label="Take Home Pay" value={formatCurrency(takeHome)} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Uses 2026 IRS brackets and standard deduction ($16,100 single / $32,200 MFJ). Self-employment tax applies to 92.35% of net SE income (12.4% Social Security up to $184,500 + 2.9% Medicare + 0.9% Additional Medicare above threshold). The 50% SE tax deduction is applied before federal income tax. Does not include state taxes or QBI deduction.</p>
+        <p>Uses 2026 IRS brackets and standard deduction ($16,100 single / $32,200 MFJ). Self employment tax applies to 92.35% of net SE income (12.4% Social Security up to $184,500 + 2.9% Medicare + 0.9% Additional Medicare above threshold). The 50% SE tax deduction is applied before federal income tax. Does not include state taxes or QBI deduction.</p>
       </div>
     </div>
   );

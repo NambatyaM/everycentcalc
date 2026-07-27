@@ -33,7 +33,7 @@ export default function TaxDeductionTrackerCalc() {
 
   const categories = [
     { label: 'Home Office (Simplified)', value: homeOffice, detail: `${sq} sq ft × $5/sq ft` },
-    { label: 'Computer / Equipment', value: eq, detail: 'One-time purchase' },
+    { label: 'Computer / Equipment', value: eq, detail: 'One time purchase' },
     { label: 'Software Subscriptions', value: sw, detail: 'Annual total' },
     { label: 'Internet (12 months)', value: inMo, detail: `$${(parseFloat(internet) || 0).toFixed(0)}/mo` },
     { label: 'Phone (12 months)', value: phMo, detail: `$${(parseFloat(phone) || 0).toFixed(0)}/mo` },
@@ -178,7 +178,7 @@ export default function TaxDeductionTrackerCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Note:</strong> Uses the simplified home office method ($5/sq ft, max 300 sq ft). Monthly expenses (internet, phone, health insurance) are annualized. Tax savings estimate uses a flat 22% marginal rate — your actual savings depend on your income bracket and filing status. Self-employed health insurance is deductible on Schedule 1. Consult a tax professional for your specific situation.</p>
+        <p><strong>Note:</strong> Uses the simplified home office method ($5/sq ft, max 300 sq ft). Monthly expenses (internet, phone, health insurance) are annualized. Tax savings estimate uses a flat 22% marginal rate — your actual savings depend on your income bracket and filing status. Self employed health insurance is deductible on Schedule 1. Consult a tax professional for your specific situation.</p>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { selfEmploymentTax, formatCurrency, formatPercent, SS_CAP, SS_RATE, MEDICARE_RATE, type FilingStatus } from '@/lib/tax';
+import { selfEmploymentTax, formatCurrency, formatPercent, SS_CAP, type FilingStatus } from '@/lib/tax';
 
 const INDUSTRY_MULTIPLIERS: Record<string, number> = {
   tech: 0.55,
@@ -22,19 +22,25 @@ export default function SCorpSalary() {
   const fs = filingStatus as FilingStatus;
 
   const multiplier = INDUSTRY_MULTIPLIERS[industry];
-  const reasonableSalary = ni * multiplier;
-  const distribution = ni - reasonableSalary;
+  const baseSalary = ni * multiplier;
+  const adjustedSalary = yib < 2 ? baseSalary * 0.9 : yib > 5 ? baseSalary * 1.05 : baseSalary;
+  const distribution = ni - adjustedSalary;
 
-  const employeeSS = Math.min(reasonableSalary, SS_CAP) * SS_RATE;
-  const employeeMedicare = reasonableSalary * MEDICARE_RATE;
+  const EE_SS_RATE = 0.062;
+  const EE_MEDICARE_RATE = 0.0145;
+  const ER_SS_RATE = 0.062;
+  const ER_MEDICARE_RATE = 0.0145;
+
+  const employeeSS = Math.min(adjustedSalary, SS_CAP) * EE_SS_RATE;
+  const employeeMedicare = adjustedSalary * EE_MEDICARE_RATE;
   const employeeFICA = employeeSS + employeeMedicare;
-  const employerFICA = employeeFICA;
+  const employerSS = Math.min(adjustedSalary, SS_CAP) * ER_SS_RATE;
+  const employerMedicare = adjustedSalary * ER_MEDICARE_RATE;
+  const employerFICA = employerSS + employerMedicare;
   const totalFICA = employeeFICA + employerFICA;
 
   const se = selfEmploymentTax(ni, fs);
   const taxSavings = se.total - totalFICA;
-  const adjustedSalary = yib < 2 ? reasonableSalary * 0.9 : yib > 5 ? reasonableSalary * 1.05 : reasonableSalary;
-  const adjustedDistribution = ni - adjustedSalary;
 
   const seEffectiveRate = ni > 0 ? (se.total / ni) * 100 : 0;
   const ficaEffectiveRate = ni > 0 ? (totalFICA / ni) * 100 : 0;
@@ -81,7 +87,7 @@ export default function SCorpSalary() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
-        <ResultCard icon="💼" label="Recommended Salary" value={formatCurrency(reasonableSalary)} highlight subtitle={`${(multiplier * 100).toFixed(0)}% of income`} />
+        <ResultCard icon="💼" label="Recommended Salary" value={formatCurrency(adjustedSalary)} highlight subtitle={`${(multiplier * 100).toFixed(0)}% of income`} />
         <ResultCard icon="💰" label="Distribution" value={formatCurrency(distribution)} subtitle="No FICA" />
         <ResultCard icon="🏦" label="Total FICA Tax" value={formatCurrency(totalFICA)} />
         <ResultCard icon="📊" label="SE Tax Comparison" value={formatCurrency(se.total)} subtitle="If sole proprietor" />
@@ -92,12 +98,12 @@ export default function SCorpSalary() {
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Salary & Distribution Breakdown</div>
         <ResultRow label="Net Business Income" value={formatCurrency(ni)} />
-        <ResultRow label={`Reasonable Salary (${(multiplier * 100).toFixed(0)}%)`} value={formatCurrency(reasonableSalary)} />
+        <ResultRow label={`Reasonable Salary (${(multiplier * 100).toFixed(0)}%)`} value={formatCurrency(adjustedSalary)} />
         <ResultRow label="Distribution (No FICA)" value={formatCurrency(distribution)} />
         <ResultRow label="Employee FICA (7.65%)" value={formatCurrency(employeeFICA)} />
         <ResultRow label="Employer FICA (7.65%)" value={formatCurrency(employerFICA)} />
         <ResultRow label="Total FICA" value={formatCurrency(totalFICA)} />
-        <ResultRow label="Self-Employment Tax" value={formatCurrency(se.total)} />
+        <ResultRow label="Self Employment Tax" value={formatCurrency(se.total)} />
         <ResultRow label="Annual Savings" value={formatCurrency(taxSavings)} bold />
       </div>
 

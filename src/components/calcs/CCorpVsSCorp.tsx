@@ -44,7 +44,7 @@ export default function CCorpVsSCorp() {
 
   return (
     <div>
-      <SectionHeader title="C-Corp vs. S-Corp Tax Calculator" subtitle="Compare the total tax impact of C-Corp double taxation vs. S-Corp pass-through taxation" />
+      <SectionHeader title="C-Corp vs. S-Corp Tax Calculator" subtitle="Compare the total tax impact of C-Corp double taxation vs. S-Corp pass through taxation" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -85,7 +85,7 @@ export default function CCorpVsSCorp() {
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>S-Corp Breakdown (Pass-Through)</div>
+        <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>S-Corp Breakdown (Pass Through)</div>
         <ResultRow label="Gross Income" value={formatCurrency(ni)} />
         <ResultRow label="FICA on Salary" value={formatCurrency(sTotalFICA)} />
         <ResultRow label="Federal Income Tax" value={formatCurrency(sFedTax)} />
@@ -107,14 +107,14 @@ export default function CCorpVsSCorp() {
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
         <p className="text-sm" style={{ color: 'var(--brand)' }}>
           {cheaper === 'S-Corp'
-            ? <>S-Corp saves <strong>{formatCurrency(difference)}</strong> vs. C-Corp at this income level. Pass-through avoids the 21% corporate tax layer.</>
+            ? <>S-Corp saves <strong>{formatCurrency(difference)}</strong> vs. C-Corp at this income level. Pass through avoids the 21% corporate tax layer.</>
             : <>C-Corp saves <strong>{formatCurrency(difference)}</strong> at this income level, typically when retaining significant earnings and paying low dividends.</>
           }
         </p>
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> S-Corp is pass-through: all income taxed once at personal rates. C-Corp faces double taxation: 21% corporate tax + personal tax on salary and dividends. Dividend tax assumes qualified dividends at 15%. Does not include state taxes, QBI deduction, or additional Medicare taxes. Consult a tax advisor for entity selection.</p>
+        <p><strong>Disclaimer:</strong> S-Corp is pass through: all income taxed once at personal rates. C-Corp faces double taxation: 21% corporate tax + personal tax on salary and dividends. Dividend tax assumes qualified dividends at 15%. Does not include state taxes, QBI deduction, or additional Medicare taxes. Consult a tax advisor for entity selection.</p>
       </div>
     </div>
   );

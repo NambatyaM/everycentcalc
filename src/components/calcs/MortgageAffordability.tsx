@@ -120,13 +120,13 @@ export default function MortgageAffordabilityCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Front-End DTI (%)</label>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Front End DTI (%)</label>
             <input type="number" value={frontEndDTI} onChange={(e) => setFrontEndDTI(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Back-End DTI (%)</label>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Back End DTI (%)</label>
             <input type="number" value={backEndDTI} onChange={(e) => setBackEndDTI(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
@@ -141,14 +141,14 @@ export default function MortgageAffordabilityCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="📊" label="Debt-to-Income Ratio" value={`${actualDTI.toFixed(1)}%`} />
+        <ResultCard icon="📊" label="Debt to Income Ratio" value={`${actualDTI.toFixed(1)}%`} />
         <ResultCard icon="💰" label="Max Monthly PITI" value={`$${maxPITI.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <ResultRow label="Monthly Income" value={`$${monthlyIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Front-End Max" value={`$${frontEndMax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Back-End Max" value={`$${maxPITI.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Front End Max" value={`$${frontEndMax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Back End Max" value={`$${maxPITI.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Down Payment Required" value={`$${dpAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Loan Amount" value={`$${loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Monthly P&I" value={`$${monthlyPI.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
@@ -158,7 +158,7 @@ export default function MortgageAffordabilityCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Uses configurable DTI (Debt-to-Income) ratios. Front-end ratio covers housing costs only; back-end ratio includes all debts. Does not include PMI (if down payment is less than 20%), HOA fees, or other housing costs. Consult a mortgage professional for exact figures.</p>
+        <p>Uses configurable DTI (Debt to Income) ratios. Front end ratio covers housing costs only; back end ratio includes all debts. Does not include PMI (if down payment is less than 20%), HOA fees, or other housing costs. Consult a mortgage professional for exact figures.</p>
       </div>
     </div>
   );

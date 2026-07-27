@@ -20,7 +20,7 @@ export default function HealthInsuranceDeduction() {
 
   return (
     <div>
-      <SectionHeader title="Self-Employed Health Insurance Deduction" subtitle="Estimate your tax savings from the self-employed health insurance deduction" />
+      <SectionHeader title="Self Employed Health Insurance Deduction" subtitle="Estimate your tax savings from the self employed health insurance deduction" />
 
       <div className="space-y-4 mb-8">
         <div>
@@ -76,7 +76,7 @@ export default function HealthInsuranceDeduction() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Self-employed individuals can deduct health insurance premiums for themselves, spouses, dependents, and children under 27. The deduction cannot exceed net self-employment income and cannot be used to create a net loss. This is an above-the-line deduction (Form 1040, Schedule 1). Does not apply if you&apos;re eligible for an employer-subsidized plan.</p>
+        <p>Self employed individuals can deduct health insurance premiums for themselves, spouses, dependents, and children under 27. The deduction cannot exceed net self employment income and cannot be used to create a net loss. This is an above the line deduction (Form 1040, Schedule 1). Does not apply if you&apos;re eligible for an employer-subsidized plan.</p>
       </div>
     </div>
   );

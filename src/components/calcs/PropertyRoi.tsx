@@ -112,7 +112,7 @@ export default function PropertyRoiCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
-        <ResultCard icon="📈" label="Cash-on-Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
+        <ResultCard icon="📈" label="Cash on Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
         <ResultCard icon="💵" label="Annual Cash Flow" value={`$${annualProfit.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="🏆" label="Total ROI" value={`${totalRoi.toFixed(2)}%`} highlight />
       </div>

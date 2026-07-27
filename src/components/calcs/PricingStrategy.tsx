@@ -29,14 +29,14 @@ export default function PricingStrategyCalc() {
   const breakEvenRevenueBased = revenueBasedPrice > 0 ? Math.ceil(revenue / revenueBasedPrice) : 0;
 
   const strategies = [
-    { name: 'Cost-Plus', price: costPlusPrice, profit: profitCostPlus, breakEven: breakEvenCostPlus, color: '#7c3aed' },
-    { name: 'Value-Based', price: valueBasedPrice, profit: profitValueBased, breakEven: breakEvenValueBased, color: '#0369a1' },
-    { name: 'Revenue-Based', price: revenueBasedPrice, profit: profitRevenueBased, breakEven: breakEvenRevenueBased, color: '#16a34a' },
+    { name: 'Cost Plus', price: costPlusPrice, profit: profitCostPlus, breakEven: breakEvenCostPlus, color: '#7c3aed' },
+    { name: 'Value Based', price: valueBasedPrice, profit: profitValueBased, breakEven: breakEvenValueBased, color: '#0369a1' },
+    { name: 'Revenue Based', price: revenueBasedPrice, profit: profitRevenueBased, breakEven: breakEvenRevenueBased, color: '#16a34a' },
   ];
 
   return (
     <div>
-      <SectionHeader title="Pricing Strategy Calculator" subtitle="Compare cost-plus, value-based, and revenue-based pricing" />
+      <SectionHeader title="Pricing Strategy Calculator" subtitle="Compare cost plus, value based, and revenue based pricing" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -88,20 +88,20 @@ export default function PricingStrategyCalc() {
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <div className="text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>Profit Comparison (at {units.toLocaleString()} units)</div>
-        <ResultRow label="Cost-Plus Profit" value={`$${profitCostPlus.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Value-Based Profit" value={`$${profitValueBased.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
-        <ResultRow label="Revenue-Based Profit" value={`$${profitRevenueBased.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Cost Plus Profit" value={`$${profitCostPlus.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Value Based Profit" value={`$${profitValueBased.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
+        <ResultRow label="Revenue Based Profit" value={`$${profitRevenueBased.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <div className="text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>Break-even Units to Hit Revenue Target</div>
-        <ResultRow label="Cost-Plus Break-even" value={breakEvenCostPlus.toLocaleString()} />
-        <ResultRow label="Value-Based Break-even" value={breakEvenValueBased.toLocaleString()} bold />
-        <ResultRow label="Revenue-Based Break-even" value={breakEvenRevenueBased.toLocaleString()} />
+        <div className="text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>Break Even Units to Hit Revenue Target</div>
+        <ResultRow label="Cost Plus Break Even" value={breakEvenCostPlus.toLocaleString()} />
+        <ResultRow label="Value Based Break Even" value={breakEvenValueBased.toLocaleString()} bold />
+        <ResultRow label="Revenue Based Break Even" value={breakEvenRevenueBased.toLocaleString()} />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Cost-plus = cost / (1 - margin%). Value-based = competitor price × 1.10 (10% premium). Revenue-based = target revenue / units. Choose the strategy that best fits your market position and goals.</p>
+        <p>Cost plus = cost / (1 - margin%). Value based = competitor price × 1.10 (10% premium). Revenue based = target revenue / units. Choose the strategy that best fits your market position and goals.</p>
       </div>
     </div>
   );

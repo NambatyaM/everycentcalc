@@ -23,12 +23,12 @@ export default function SelfEmploymentTaxCalc() {
 
   return (
     <div>
-      <SectionHeader title="Self-Employment Tax Calculator" subtitle="Calculate your 1099 self-employment tax and estimated federal income tax" />
+      <SectionHeader title="Self Employment Tax Calculator" subtitle="Calculate your 1099 self employment tax and estimated federal income tax" />
 
       <div className="space-y-4 mb-8">
         <div>
           <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
-            Net Self-Employment Income ($)
+            Net Self Employment Income ($)
           </label>
           <input
             type="number"
@@ -64,7 +64,7 @@ export default function SelfEmploymentTaxCalc() {
           <ResultCard icon="🏥" label="Addl Medicare (0.9%)" value={formatCurrency(se.additionalMedicare)} />
         )}
         <ResultCard icon="💵" label="Federal Income Tax" value={formatCurrency(fedTax)} />
-        <ResultCard icon="💰" label="Estimated Take-Home" value={formatCurrency(takeHome)} highlight />
+        <ResultCard icon="💰" label="Estimated Take Home" value={formatCurrency(takeHome)} highlight />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
@@ -73,10 +73,10 @@ export default function SelfEmploymentTaxCalc() {
         <ResultRow label="Standard Deduction" value={`-${formatCurrency(deduction)}`} />
         <ResultRow label="50% SE Tax Deduction" value={`-${formatCurrency(seDeduction)}`} />
         <ResultRow label="Taxable Income" value={formatCurrency(taxableIncome)} />
-        <ResultRow label="Self-Employment Tax" value={formatCurrency(se.total)} />
+        <ResultRow label="Self Employment Tax" value={formatCurrency(se.total)} />
         <ResultRow label="Federal Income Tax" value={formatCurrency(fedTax)} />
         <ResultRow label="Total Tax" value={formatCurrency(totalTax)} bold />
-        <ResultRow label="Estimated Take-Home" value={formatCurrency(takeHome)} bold />
+        <ResultRow label="Estimated Take Home" value={formatCurrency(takeHome)} bold />
       </div>
 
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>

@@ -30,7 +30,7 @@ export default function FreelanceHourlyVsProjectCalc() {
 
   return (
     <div>
-      <SectionHeader title="Hourly vs. Project Pricing Calculator" subtitle="Compare your earnings under hourly and project-based pricing models" />
+      <SectionHeader title="Hourly vs. Project Pricing Calculator" subtitle="Compare your earnings under hourly and project based pricing models" />
 
       <div className="space-y-4 mb-8">
         <div>

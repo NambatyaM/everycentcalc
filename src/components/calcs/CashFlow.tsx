@@ -58,7 +58,7 @@ export default function CashFlow() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>One-Time Expenses ($)</label>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>One Time Expenses ($)</label>
             <input type="number" value={oneTimeExpenses} onChange={(e) => setOneTimeExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
@@ -80,7 +80,7 @@ export default function CashFlow() {
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Month-by-Month Projection</div>
+        <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Month by Month Projection</div>
         {monthData.map((d) => (
           <ResultRow key={d.month} label={`Month ${d.month}`} value={formatCurrency(d.balance)} bold={d.balance <= 0} />
         ))}
@@ -95,7 +95,7 @@ export default function CashFlow() {
       )}
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> Simple cash flow projection assuming constant monthly income and expenses. One-time expenses are applied in Month 1. Does not account for seasonal variations, tax payments, loan payments, or accounts receivable timing. Use for planning purposes only.</p>
+        <p><strong>Disclaimer:</strong> Simple cash flow projection assuming constant monthly income and expenses. One time expenses are applied in Month 1. Does not account for seasonal variations, tax payments, loan payments, or accounts receivable timing. Use for planning purposes only.</p>
       </div>
     </div>
   );

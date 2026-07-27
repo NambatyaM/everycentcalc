@@ -78,14 +78,14 @@ export default function LlcVsSolePropCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="🏢" label="Sole Prop Take-Home" value={formatCurrency(spTakeHome)} />
-        <ResultCard icon="🏛️" label="S-Corp LLC Take-Home" value={formatCurrency(scorpTakeHome)} highlight />
+        <ResultCard icon="🏢" label="Sole Prop Take Home" value={formatCurrency(spTakeHome)} />
+        <ResultCard icon="🏛️" label="S-Corp LLC Take Home" value={formatCurrency(scorpTakeHome)} highlight />
         <ResultCard icon="💡" label="S-Corp Savings" value={formatCurrency(savings)} highlight subtitle={savings > 0 ? 'per year' : ''} />
         <ResultCard icon="📋" label="S-Corp Salary" value={formatCurrency(salary)} subtitle="Subject to FICA" />
       </div>
 
       <div className="rounded-xl border p-4 mb-6 overflow-x-auto" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Side-by-Side Comparison</div>
+        <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Side by Side Comparison</div>
         <table className="w-full text-sm min-w-[320px]">
           <thead>
             <tr className="border-t" style={{ borderColor: 'var(--border)' }}>
@@ -102,7 +102,7 @@ export default function LlcVsSolePropCalc() {
               { label: 'SE / FICA Tax', sp: formatCurrency(spSe.total), sc: formatCurrency(totalFICA) },
               { label: 'Federal Income Tax', sp: formatCurrency(spFedTax), sc: formatCurrency(scorpFedTax) },
               { label: 'Total Tax', sp: formatCurrency(spTotalTax), sc: formatCurrency(scorpTotalTax) },
-              { label: 'Take-Home', sp: formatCurrency(spTakeHome), sc: formatCurrency(scorpTakeHome) },
+              { label: 'Take Home', sp: formatCurrency(spTakeHome), sc: formatCurrency(scorpTakeHome) },
             ].map((row) => (
               <tr key={row.label} className="border-t" style={{ borderColor: 'var(--border)' }}>
                 <td className="py-2 pr-4" style={{ color: 'var(--text-secondary)' }}>{row.label}</td>

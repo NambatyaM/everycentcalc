@@ -17,5 +17,8 @@ build/
 tmp/
 scripts/
 
+# build artifacts
+tsconfig.tsbuildinfo
+
 # vercel
 .vercel

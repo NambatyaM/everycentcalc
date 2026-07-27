@@ -75,7 +75,7 @@ export default function FreelancerSavingsRate() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="📊" label="Savings Rate" value={`${savingsRate.toLocaleString('en-US', { maximumFractionDigits: 1 })}%`} highlight />
-        <ResultCard icon="💵" label="After-Tax Income" value={`$${afterTaxIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultCard icon="💵" label="After Tax Income" value={`$${afterTaxIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultCard icon="💰" label="Monthly Surplus" value={`$${surplus.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="🏦" label="Months to Emergency Goal" value={surplus > 0 ? `${monthsToGoal} months` : 'N/A'} highlight />
         <ResultCard icon="📅" label="Annual Surplus" value={`$${annualSurplus.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
@@ -85,7 +85,7 @@ export default function FreelancerSavingsRate() {
         <ResultRow label="Monthly Income" value={`$${income.toLocaleString()}`} />
         <ResultRow label="Estimated Tax Rate" value={`${tax}%`} />
         <ResultRow label="Taxes" value={`-$${(income * tax / 100).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="After-Tax Income" value={`$${afterTaxIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="After Tax Income" value={`$${afterTaxIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Monthly Expenses" value={`-$${expenses.toLocaleString()}`} />
         <ResultRow label="Monthly Surplus" value={`$${surplus.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label="Savings Rate" value={`${savingsRate.toLocaleString('en-US', { maximumFractionDigits: 1 })}%`} bold />
@@ -96,7 +96,7 @@ export default function FreelancerSavingsRate() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Aim for a savings rate of at least 20% (including retirement). Freelancers should target 3–6 months of expenses in an emergency fund, or more for variable income. The tax rate should include federal, state, and self-employment taxes. Adjust expenses to include both business and personal costs. Does not account for investment growth on savings.</p>
+        <p>Aim for a savings rate of at least 20% (including retirement). Freelancers should target 3–6 months of expenses in an emergency fund, or more for variable income. The tax rate should include federal, state, and self employment taxes. Adjust expenses to include both business and personal costs. Does not account for investment growth on savings.</p>
       </div>
     </div>
   );

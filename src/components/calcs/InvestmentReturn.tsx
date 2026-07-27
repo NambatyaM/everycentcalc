@@ -26,7 +26,7 @@ export default function InvestmentReturnCalc() {
     : P + PMT * n * t;
   const totalContributed = P + PMT * t * 12;
   const totalInterest = fv - totalContributed;
-  const effectiveReturn = P > 0 && t > 0 ? ((fv / P) ** (1 / t) - 1) * 100 : 0;
+  const effectiveReturn = P > 0 && t > 0 && PMT === 0 ? ((fv / P) ** (1 / t) - 1) * 100 : 0;
 
   const milestones = [5, 10, 15, 20, 25, 30].filter((y) => y <= t && y > 0);
   const milestoneValues = milestones.map((y) => {

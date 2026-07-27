@@ -47,12 +47,14 @@ export function federalIncomeTax(taxableIncome: number, filingStatus: FilingStat
 export function selfEmploymentTax(
   netSEIncome: number,
   filingStatus: FilingStatus = 'single',
+  w2Wages: number = 0,
 ): { ss: number; medicare: number; additionalMedicare: number; total: number; taxable: number } {
   const taxable = netSEIncome * SE_RATE;
-  const ss = Math.min(taxable, SS_CAP) * SS_RATE;
+  const ss = Math.min(taxable, Math.max(0, SS_CAP - w2Wages)) * SS_RATE;
   const medicare = taxable * MEDICARE_RATE;
   const seThreshold = filingStatus === 'married' ? 250000 : 200000;
-  const additionalMedicare = Math.max(0, taxable - seThreshold) * ADDITIONAL_MEDICARE_RATE;
+  const adjustedThreshold = Math.max(0, seThreshold - w2Wages);
+  const additionalMedicare = Math.max(0, taxable - adjustedThreshold) * ADDITIONAL_MEDICARE_RATE;
   return { ss, medicare, additionalMedicare, total: ss + medicare + additionalMedicare, taxable };
 }
 

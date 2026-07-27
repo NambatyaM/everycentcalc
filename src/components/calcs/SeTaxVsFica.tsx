@@ -31,13 +31,13 @@ export default function SeTaxVsFica() {
 
   return (
     <div>
-      <SectionHeader title="Self-Employment Tax vs. W-2 FICA Comparison" subtitle="See the real difference between self-employment and employee payroll taxes" />
+      <SectionHeader title="Self Employment Tax vs. W-2 FICA Comparison" subtitle="See the real difference between self employment and employee payroll taxes" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
-              Net Self-Employment Income ($)
+              Net Self Employment Income ($)
             </label>
             <input type="number" value={netSEIncome} onChange={(e) => setNetSEIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
@@ -62,7 +62,7 @@ export default function SeTaxVsFica() {
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <p className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Self-Employment (You pay both halves)</p>
+        <p className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Self Employment (You pay both halves)</p>
         <ResultRow label="Taxable SE Income (92.35%)" value={formatCurrency(seTaxable)} />
         <ResultRow label="Social Security (12.4%)" value={formatCurrency(seSS)} />
         <ResultRow label="Medicare (2.9%)" value={formatCurrency(seMedicare)} />
@@ -86,7 +86,7 @@ export default function SeTaxVsFica() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Self-employed individuals pay both the employer and employee portions of FICA taxes (15.3% total on 92.35% of net SE income). W-2 employees only pay 7.65% — the employer pays the other half. Social Security cap: $184,500. Additional Medicare Tax of 0.9% applies above $200,000 for single filers. The employer portion of FICA is not a tax deduction you can take.</p>
+        <p>Self employed individuals pay both the employer and employee portions of FICA taxes (15.3% total on 92.35% of net SE income). W-2 employees only pay 7.65% — the employer pays the other half. Social Security cap: $184,500. Additional Medicare Tax of 0.9% applies above $200,000 for single filers. The employer portion of FICA is not a tax deduction you can take.</p>
       </div>
     </div>
   );

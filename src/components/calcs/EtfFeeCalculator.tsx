@@ -102,7 +102,7 @@ export default function EtfFeeCalculatorCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Expense ratios are deducted daily from the fund&apos;s NAV. Trading commissions are per-trade fees from your broker. Many brokers now offer commission-free ETF trading. A 0.03% expense ratio on a $100k portfolio costs ~$30/year.</p>
+        <p>Expense ratios are deducted daily from the fund&apos;s NAV. Trading commissions are per trade fees from your broker. Many brokers now offer commission free ETF trading. A 0.03% expense ratio on a $100k portfolio costs ~$30/year.</p>
       </div>
     </div>
   );

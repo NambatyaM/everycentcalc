@@ -18,11 +18,11 @@ export default function CashOnCashReturnCalc() {
 
   return (
     <div>
-      <SectionHeader title="Cash-on-Cash Return Calculator" subtitle="Measure your annual return on the cash you've invested" />
+      <SectionHeader title="Cash on Cash Return Calculator" subtitle="Measure your annual return on the cash you've invested" />
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Pre-Tax Cash Flow ($)</label>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Pre Tax Cash Flow ($)</label>
           <input type="number" value={annualCashFlow} onChange={(e) => setAnnualCashFlow(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
@@ -38,7 +38,7 @@ export default function CashOnCashReturnCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
-        <ResultCard icon="📈" label="Cash-on-Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
+        <ResultCard icon="📈" label="Cash on Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
         <ResultCard icon="💵" label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="💰" label="Annual per $100K" value={`$${returnPer100K.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
       </div>
@@ -71,14 +71,14 @@ export default function CashOnCashReturnCalc() {
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <ResultRow label="Annual Pre-Tax Cash Flow" value={`$${acf.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Annual Pre Tax Cash Flow" value={`$${acf.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Total Cash Invested" value={`$${tci.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Cash-on-Cash Return" value={`${cashOnCash.toFixed(2)}%`} bold />
+        <ResultRow label="Cash on Cash Return" value={`${cashOnCash.toFixed(2)}%`} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Cash-on-cash return measures the annual pre-tax cash flow as a percentage of the total cash invested. It is commonly used for real estate investments to compare the cash yield across different properties. This metric does not account for appreciation, loan paydown, tax benefits, or the time value of money. A typical target for rental properties is 8-12% cash-on-cash return.</p>
+        <p>Cash on cash return measures the annual pre tax cash flow as a percentage of the total cash invested. It is commonly used for real estate investments to compare the cash yield across different properties. This metric does not account for appreciation, loan paydown, tax benefits, or the time value of money. A typical target for rental properties is 8-12% cash on cash return.</p>
       </div>
     </div>
   );

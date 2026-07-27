@@ -121,7 +121,7 @@ export default function AboutPage() {
           </h2>
 
           <p>
-            Running 87 calculators with up-to-date tax data isn&apos;t free for us either. Here&apos;s how we keep the lights on without charging you a cent:
+            Running 87 calculators with current tax data isn&apos;t free for us either. Here&apos;s how we keep the lights on without charging you a cent:
           </p>
 
           <ul className="list-disc pl-6 space-y-2">

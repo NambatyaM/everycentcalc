@@ -67,8 +67,8 @@ export default function FreelanceWriterRate() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-6">
         <ResultCard icon="⏱️" label="Hourly Rate" value={formatCurrency(hourlyRate)} highlight />
-        <ResultCard icon="📝" label="Per-Word Rate" value={formatCurrency(perWord)} highlight />
-        <ResultCard icon="📄" label="Per-Article Rate" value={formatCurrency(perArticle)} />
+        <ResultCard icon="📝" label="Per Word Rate" value={formatCurrency(perWord)} highlight />
+        <ResultCard icon="📄" label="Per Article Rate" value={formatCurrency(perArticle)} />
         <ResultCard icon="💰" label="Monthly Income" value={formatCurrency(monthlyIncome)} />
       </div>
 
@@ -78,11 +78,11 @@ export default function FreelanceWriterRate() {
         <ResultRow label="Weeks per Year" value="52" />
         <ResultRow label="Billable Hours per Week" value={hours.toString()} />
         <ResultRow label="Hourly Rate (income ÷ 52 ÷ hours)" value={formatCurrency(hourlyRate)} bold />
-        <ResultRow label="Per-Word Rate (hourly ÷ words/hr)" value={formatCurrency(perWord)} bold />
+        <ResultRow label="Per Word Rate (hourly ÷ words/hr)" value={formatCurrency(perWord)} bold />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Per-Article Estimate (1,500 words)</p>
+        <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Per Article Estimate (1,500 words)</p>
         <ResultRow label="Writing Time (1,500 ÷ words/hr)" value={`${(wordsPerArticle / wph).toFixed(2)} hrs`} />
         <ResultRow label={`+ Research (${research}%)`} value={`+${((wordsPerArticle / wph) * (research / 100)).toFixed(2)} hrs`} />
         <ResultRow label={`+ Editing (${editing}%)`} value={`+${((wordsPerArticle / wph) * (editing / 100)).toFixed(2)} hrs`} />
@@ -91,7 +91,7 @@ export default function FreelanceWriterRate() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Based on a standard 1,500-word article. Research and editing percentages add to your total time per article. Per-word rate = hourly rate ÷ writing speed. Increase billable hours or writing speed to improve your effective rate.</p>
+        <p>Based on a standard 1,500-word article. Research and editing percentages add to your total time per article. Per word rate = hourly rate ÷ writing speed. Increase billable hours or writing speed to improve your effective rate.</p>
       </div>
     </div>
   );

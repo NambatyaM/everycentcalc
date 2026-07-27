@@ -84,7 +84,7 @@ export default function DscrLoanCalc() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="🏦" label="Cash Needed to Close" value={`$${cashNeeded.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultCard icon="📈" label="Loan-to-Value" value={`${ltv.toFixed(1)}%`} />
+        <ResultCard icon="📈" label="Loan to Value" value={`${ltv.toFixed(1)}%`} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>

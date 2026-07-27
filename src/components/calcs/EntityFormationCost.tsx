@@ -111,9 +111,9 @@ export default function EntityFormationCost() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
-        <ResultCard icon="📝" label="Formation Cost" value={formatCurrency(formationCost)} highlight subtitle="One-time" />
+        <ResultCard icon="📝" label="Formation Cost" value={formatCurrency(formationCost)} highlight subtitle="One time" />
         <ResultCard icon="📋" label="Annual Compliance" value={formatCurrency(totalAnnual)} subtitle="Per year" />
-        <ResultCard icon="💰" label="3-Year Total Cost" value={formatCurrency(threeYearTotal)} highlight />
+        <ResultCard icon="💰" label="3 Year Total Cost" value={formatCurrency(threeYearTotal)} highlight />
         <ResultCard icon="📅" label="Monthly Cost" value={formatCurrency(monthlyCost)} subtitle="Over 3 years" />
       </div>
 
@@ -140,7 +140,7 @@ export default function EntityFormationCost() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> Costs are estimates based on typical filing fees and standard service pricing. Actual costs vary by state, legal complexity, and service provider. Registered agent fees assume standard commercial service. Does not include potential state franchise taxes, annual reports with revenue-based fees, or expedited processing. Consult an attorney for precise estimates.</p>
+        <p><strong>Disclaimer:</strong> Costs are estimates based on typical filing fees and standard service pricing. Actual costs vary by state, legal complexity, and service provider. Registered agent fees assume standard commercial service. Does not include potential state franchise taxes, annual reports with revenue based fees, or expedited processing. Consult an attorney for precise estimates.</p>
       </div>
     </div>
   );

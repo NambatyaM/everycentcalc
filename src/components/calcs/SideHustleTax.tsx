@@ -14,7 +14,7 @@ export default function SideHustleTaxCalc() {
   const fs = filingStatus as 'single' | 'married';
 
   const totalIncome = w2 + si;
-  const se = selfEmploymentTax(si, fs);
+  const se = selfEmploymentTax(si, fs, w2);
   const deduction = getStandardDeduction(fs);
   const seDeduction = se.total / 2;
   const taxableIncome = Math.max(0, totalIncome - deduction - seDeduction);
@@ -60,9 +60,9 @@ export default function SideHustleTaxCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="💼" label="Side Hustle Take-Home" value={`$${Math.max(0, sideTakeHome).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
+        <ResultCard icon="💼" label="Side Hustle Take Home" value={`$${Math.max(0, sideTakeHome).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="📊" label="Side Income Marginal Rate" value={`${marginalRate.toFixed(0)}%`} highlight />
-        <ResultCard icon="🏦" label="Self-Employment Tax" value={`$${se.total.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultCard icon="🏦" label="Self Employment Tax" value={`$${se.total.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultCard icon="📈" label="Additional Federal Tax" value={`$${additionalFedTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 
@@ -70,10 +70,10 @@ export default function SideHustleTaxCalc() {
         <ResultRow label="W-2 Salary" value={`$${w2.toLocaleString()}`} />
         <ResultRow label="Side Hustle Income" value={`$${si.toLocaleString()}`} />
         <ResultRow label="Total Gross Income" value={`$${totalIncome.toLocaleString()}`} bold />
-        <ResultRow label="Self-Employment Tax" value={`$${se.total.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Self Employment Tax" value={`$${se.total.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Additional Federal Tax (marginal)" value={`$${additionalFedTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Total Tax on Side Hustle" value={`$${marginalTaxOnSide.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
-        <ResultRow label="Side Hustle Take-Home" value={`$${Math.max(0, sideTakeHome).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
+        <ResultRow label="Side Hustle Take Home" value={`$${Math.max(0, sideTakeHome).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label="Effective Rate on Total Income" value={`${effectiveRate.toFixed(1)}%`} />
       </div>
 

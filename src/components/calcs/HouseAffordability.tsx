@@ -133,8 +133,8 @@ export default function HouseAffordabilityCalc() {
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <ResultRow label="Front-End Limit (28%)" value={`$${frontEndLimit.toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo`} />
-        <ResultRow label="Back-End Limit (36%)" value={`$${backEndLimit.toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo`} />
+        <ResultRow label="Front End Limit (28%)" value={`$${frontEndLimit.toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo`} />
+        <ResultRow label="Back End Limit (36%)" value={`$${backEndLimit.toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo`} />
         <ResultRow label="Available After Debts" value={`$${availableForPIT.toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo`} />
         <ResultRow label="Monthly P&I" value={`$${monthlyPI.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Monthly Property Tax" value={`$${propTaxMonthly.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
@@ -143,7 +143,7 @@ export default function HouseAffordabilityCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Uses the 28/36 rule: front-end DTI ratio of 28% (housing costs only) and back-end DTI ratio of 36% (total debts). Does not account for PMI (required if down payment is less than 20%), HOA fees, or other housing costs. Consult a mortgage professional for exact figures.</p>
+        <p>Uses the 28/36 rule: front end DTI ratio of 28% (housing costs only) and back end DTI ratio of 36% (total debts). Does not account for PMI (required if down payment is less than 20%), HOA fees, or other housing costs. Consult a mortgage professional for exact figures.</p>
       </div>
     </div>
   );

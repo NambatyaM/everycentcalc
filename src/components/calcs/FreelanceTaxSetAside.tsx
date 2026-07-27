@@ -32,7 +32,7 @@ export default function FreelanceTaxSetAsideCalc() {
 
   return (
     <div>
-      <SectionHeader title="How Much to Set Aside for Taxes" subtitle="Estimate your total tax set-aside as a freelancer" />
+      <SectionHeader title="How Much to Set Aside for Taxes" subtitle="Estimate your total tax set aside as a freelancer" />
 
       <div className="space-y-4 mb-8">
         <div>
@@ -80,9 +80,9 @@ export default function FreelanceTaxSetAsideCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="🧾" label="Total Set-Aside" value={formatCurrency(totalTax)} highlight />
-        <ResultCard icon="📊" label="Set-Aside Percentage" value={formatPercent(effectiveRate)} highlight />
-        <ResultCard icon="🏦" label="Self-Employment Tax" value={formatCurrency(se.total)} />
+        <ResultCard icon="🧾" label="Total Set Aside" value={formatCurrency(totalTax)} highlight />
+        <ResultCard icon="📊" label="Set Aside Percentage" value={formatPercent(effectiveRate)} highlight />
+        <ResultCard icon="🏦" label="Self Employment Tax" value={formatCurrency(se.total)} />
         <ResultCard icon="💼" label="Federal Income Tax" value={formatCurrency(fedTax)} />
         <ResultCard icon="🏛️" label="State Tax" value={formatCurrency(stateTax)} />
         <ResultCard icon="💰" label="Amount Per Dollar" value={`$${perDollar.toFixed(3)}`} subtitle="Set aside per $1 earned" />
@@ -97,7 +97,7 @@ export default function FreelanceTaxSetAsideCalc() {
         <ResultRow label="Federal Income Tax" value={formatCurrency(fedTax)} />
         <ResultRow label={`State Tax (${STATE_TAX[state].label})`} value={formatCurrency(stateTax)} />
         <ResultRow label="Total Tax" value={formatCurrency(totalTax)} bold />
-        <ResultRow label="Estimated Take-Home" value={formatCurrency(ni - totalTax)} bold />
+        <ResultRow label="Estimated Take Home" value={formatCurrency(ni - totalTax)} bold />
       </div>
 
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
@@ -107,7 +107,7 @@ export default function FreelanceTaxSetAsideCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Note:</strong> Uses 2026 IRS brackets. SE tax is 15.3% on 92.35% of net self-employment income. Federal tax is calculated after subtracting the standard deduction and 50% of SE tax. State tax estimates are simplified flat rates by tier. Does not include QBI deduction or itemized deductions.</p>
+        <p><strong>Note:</strong> Uses 2026 IRS brackets. SE tax is 15.3% on 92.35% of net self employment income. Federal tax is calculated after subtracting the standard deduction and 50% of SE tax. State tax estimates are simplified flat rates by tier. Does not include QBI deduction or itemized deductions.</p>
       </div>
     </div>
   );

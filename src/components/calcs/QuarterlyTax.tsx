@@ -29,7 +29,7 @@ export default function QuarterlyTaxCalc() {
       <div className="space-y-4 mb-8">
         <div>
           <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
-            Annual Freelance / Self-Employment Income ($)
+            Annual Freelance / Self Employment Income ($)
           </label>
           <input type="number" value={annualIncome} onChange={(e) => setAnnualIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
@@ -59,7 +59,7 @@ export default function QuarterlyTaxCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="📅" label="Quarterly Payment" value={`$${quarterly.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="🧾" label="Annual Total Tax" value={`$${totalTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
-        <ResultCard icon="🏦" label="Self-Employment Tax" value={`$${se.total.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultCard icon="🏦" label="Self Employment Tax" value={`$${se.total.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultCard icon="📊" label="Federal Income Tax" value={`$${fedTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 

@@ -133,7 +133,7 @@ export default function FreelanceProjectProfitabilityCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Note:</strong> The tax rate is a simplified estimate. Actual taxes include self-employment tax (15.3%), federal income tax brackets, and state taxes. Expenses include direct project costs only, not overhead. Adjust the tax rate based on your marginal rate and SE tax obligations.</p>
+        <p><strong>Note:</strong> The tax rate is a simplified estimate. Actual taxes include self employment tax (15.3%), federal income tax brackets, and state taxes. Expenses include direct project costs only, not overhead. Adjust the tax rate based on your marginal rate and SE tax obligations.</p>
       </div>
     </div>
   );

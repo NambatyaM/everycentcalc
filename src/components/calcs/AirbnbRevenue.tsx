@@ -39,7 +39,7 @@ export default function AirbnbRevenueCalc() {
 
   return (
     <div>
-      <SectionHeader title="Airbnb Revenue Estimator" subtitle="Estimate short-term rental income vs. traditional renting" />
+      <SectionHeader title="Airbnb Revenue Estimator" subtitle="Estimate short term rental income vs. traditional renting" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -121,14 +121,14 @@ export default function AirbnbRevenueCalc() {
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <ResultRow label="Total Turnovers/Year (avg 3-night stay)" value={turnovers.toFixed(0)} />
+        <ResultRow label="Total Turnovers/Year (avg 3 night stay)" value={turnovers.toFixed(0)} />
         <ResultRow label="Guests per Booking" value={guests.toString()} />
-        <ResultRow label="Cleaning per Guest-Night" value={`$${(turnovers > 0 ? cleanFee * turnovers / (annualNights * guests) : 0).toFixed(2)}`} />
+        <ResultRow label="Cleaning per Guest Night" value={`$${(turnovers > 0 ? cleanFee * turnovers / (annualNights * guests) : 0).toFixed(2)}`} />
         <ResultRow label="Revenue per Available Night" value={`$${(annualNights > 0 ? totalGross / annualNights : 0).toFixed(2)}`} />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>This estimator uses a simplified model with an assumed 3-night average stay. Actual results vary significantly by location, season, property type, and hosting quality. Additional costs not included: cleaning supplies, furnishing, repairs, insurance premiums, local regulations/permits, and personal time. Does not account for seasonal pricing variations or minimum stay requirements.</p>
+        <p>This estimator uses a simplified model with an assumed 3 night average stay. Actual results vary significantly by location, season, property type, and hosting quality. Additional costs not included: cleaning supplies, furnishing, repairs, insurance premiums, local regulations/permits, and personal time. Does not account for seasonal pricing variations or minimum stay requirements.</p>
       </div>
     </div>
   );

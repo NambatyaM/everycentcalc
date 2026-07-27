@@ -80,7 +80,7 @@ export default function UberEatsProfit() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Vehicle expenses include gas, maintenance, depreciation, insurance, and other car-related costs. The IRS mileage deduction of $0.70/mile is shown for tax reference. Net profit = gross earnings − vehicle expenses. Annual projection assumes consistent weekly earnings over 52 weeks.</p>
+        <p>Vehicle expenses include gas, maintenance, depreciation, insurance, and other car related costs. The IRS mileage deduction of $0.70/mile is shown for tax reference. Net profit = gross earnings − vehicle expenses. Annual projection assumes consistent weekly earnings over 52 weeks.</p>
       </div>
     </div>
   );

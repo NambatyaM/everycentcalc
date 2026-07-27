@@ -166,7 +166,7 @@ export default function DebtAvalancheVsSnowballCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Avalanche pays highest-interest debt first to minimize total interest. Snowball pays smallest balances first for quick psychological wins. Both methods apply minimum payments to all debts while directing extra payments to the target debt. Actual savings depend on your specific debts and payment amounts.</p>
+        <p>Avalanche pays highest interest debt first to minimize total interest. Snowball pays smallest balances first for quick psychological wins. Both methods apply minimum payments to all debts while directing extra payments to the target debt. Actual savings depend on your specific debts and payment amounts.</p>
       </div>
     </div>
   );

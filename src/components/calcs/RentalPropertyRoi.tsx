@@ -124,7 +124,7 @@ export default function RentalPropertyRoiCalc() {
       <div className="grid grid-cols-2 gap-3 mb-6">
         <ResultCard icon="💵" label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="💰" label="Annual Cash Flow" value={`$${annualCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
-        <ResultCard icon="📈" label="Cash-on-Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
+        <ResultCard icon="📈" label="Cash on Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
         <ResultCard icon="🏠" label="Cap Rate" value={`${capRate.toFixed(2)}%`} />
         <ResultCard icon="🏦" label="Monthly Mortgage" value={`$${monthlyMortgage.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
         <ResultCard icon="📊" label="Net Operating Income" value={`$${noi.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />

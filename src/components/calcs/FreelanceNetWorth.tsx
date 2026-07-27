@@ -154,17 +154,17 @@ export default function FreelanceNetWorthCalc() {
         <ResultRow label="Total Assets" value={formatCurrency(totalAssets)} />
         <ResultRow label="Total Liabilities" value={formatCurrency(totalDebt)} />
         <ResultRow label="Net Worth" value={formatCurrency(netWorth)} bold />
-        <ResultRow label="Debt-to-Asset Ratio" value={`${debtToAsset.toFixed(1)}%`} />
+        <ResultRow label="Debt to Asset Ratio" value={`${debtToAsset.toFixed(1)}%`} />
         <ResultRow label="Liquid Reserve (months)" value={`${monthsOfExpenses.toFixed(1)} months`} />
       </div>
 
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
         <p className="text-sm" style={{ color: 'var(--brand)' }}>
           {netWorth >= income * 3
-            ? <>Strong position! Your net worth is {savingsRate.toFixed(0)}% of annual income. Focus on growing investments and eliminating remaining high-interest debt.</>
+            ? <>Strong position! Your net worth is {savingsRate.toFixed(0)}% of annual income. Focus on growing investments and eliminating remaining high interest debt.</>
             : netWorth >= income
             ? <>Good progress. Your net worth is {(savingsRate / 100).toFixed(1)}x annual income. Target 3x by age 35 ({formatCurrency(income * 3)}) by increasing retirement contributions and paying down debt.</>
-            : <>Your net worth is below your annual income. Prioritize: (1) Build emergency fund (3-6 months). (2) Pay off high-interest debt. (3) Maximize retirement contributions. (4) Grow business revenue.</>
+            : <>Your net worth is below your annual income. Prioritize: (1) Build emergency fund (3-6 months). (2) Pay off high interest debt. (3) Maximize retirement contributions. (4) Grow business revenue.</>
           }
         </p>
       </div>

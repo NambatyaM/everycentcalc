@@ -35,7 +35,7 @@ export default function RothVsTraditionalCalc() {
 
   return (
     <div>
-      <SectionHeader title="Roth vs Traditional IRA Calculator" subtitle="Compare after-tax retirement account values" />
+      <SectionHeader title="Roth vs Traditional IRA Calculator" subtitle="Compare after tax retirement account values" />
 
       <div className="space-y-4 mb-8">
         <div>
@@ -81,8 +81,8 @@ export default function RothVsTraditionalCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
-        <ResultCard icon="🏦" label="Traditional Value (after tax)" value={formatCurrency(tradAfterTaxValue)} highlight subtitle="Tax-deductible now, taxed at withdrawal" />
-        <ResultCard icon="💚" label="Roth Value (after tax)" value={formatCurrency(rothAfterTaxValue)} highlight subtitle="No deduction now, tax-free withdrawal" />
+        <ResultCard icon="🏦" label="Traditional Value (after tax)" value={formatCurrency(tradAfterTaxValue)} highlight subtitle="Tax deductible now, taxed at withdrawal" />
+        <ResultCard icon="💚" label="Roth Value (after tax)" value={formatCurrency(rothAfterTaxValue)} highlight subtitle="No deduction now, tax free withdrawal" />
         <ResultCard icon="💰" label="Tax Savings Now (Traditional)" value={formatCurrency(taxSavingsNow)} subtitle="Annual tax deduction" />
         <ResultCard icon="🎯" label="Better Option" value={rothAdvantage > 0 ? 'Roth' : 'Traditional'} subtitle={`${formatCurrency(Math.abs(rothAdvantage))} advantage`} />
       </div>
@@ -94,18 +94,18 @@ export default function RothVsTraditionalCalc() {
         <ResultRow label="Growth Factor" value={`${growthFactor.toFixed(2)}x over ${years} years`} />
         <ResultRow label="Value at Retirement" value={formatCurrency(tradPreTaxValue)} />
         <ResultRow label={`Tax at ${(bracketRetire * 100).toFixed(0)}% Bracket`} value={`-${formatCurrency(tradTaxOnWithdrawal)}`} />
-        <ResultRow label="After-Tax Value" value={formatCurrency(tradAfterTaxValue)} bold />
+        <ResultRow label="After Tax Value" value={formatCurrency(tradAfterTaxValue)} bold />
 
         <h3 className="text-sm font-medium mb-2 mt-4" style={{ color: 'var(--text-secondary)' }}>Roth IRA Path</h3>
         <ResultRow label="Annual Contribution" value={formatCurrency(C)} />
         <ResultRow label={`Tax Now at ${(bracketNow * 100).toFixed(0)}%`} value={`-${formatCurrency(rothInitialTax)}`} />
         <ResultRow label="Net Contribution" value={formatCurrency(rothNetContribution)} />
         <ResultRow label="Growth Factor" value={`${growthFactor.toFixed(2)}x over ${years} years`} />
-        <ResultRow label="After-Tax Value" value={formatCurrency(rothAfterTaxValue)} bold />
+        <ResultRow label="After Tax Value" value={formatCurrency(rothAfterTaxValue)} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Traditional: contribute pre-tax dollars, pay income tax on withdrawals. Roth: contribute after-tax dollars, withdrawals are tax-free. If your tax bracket drops in retirement, Traditional wins. If it stays the same or rises, Roth wins. Consider also Roth 401(k) and backdoor Roth options for higher earners.</p>
+        <p>Traditional: contribute pre tax dollars, pay income tax on withdrawals. Roth: contribute after tax dollars, withdrawals are tax free. If your tax bracket drops in retirement, Traditional wins. If it stays the same or rises, Roth wins. Consider also Roth 401(k) and backdoor Roth options for higher earners.</p>
       </div>
     </div>
   );

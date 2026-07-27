@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | EveryCentCalc',
   },
   description:
-    '87 free online calculators for freelancers, side hustlers, real estate investors, and small business owners. Calculate self-employment tax, quarterly payments, rental ROI, break-even, and more. No signup required.',
+    '87 free online calculators for freelancers, side hustlers, real estate investors, and small business owners. Calculate self employment tax, quarterly payments, rental ROI, break even analysis, and more. No signup required.',
   keywords: [
     'freelancer tax calculator',
     'self-employment tax calculator',

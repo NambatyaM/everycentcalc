@@ -23,7 +23,7 @@ export default function QbiDeduction() {
 
   return (
     <div>
-      <SectionHeader title="Qualified Business Income Deduction Calculator" subtitle="Estimate your Section 199A QBI deduction for pass-through business income" />
+      <SectionHeader title="Qualified Business Income Deduction Calculator" subtitle="Estimate your Section 199A QBI deduction for pass through business income" />
 
       <div className="space-y-4 mb-8">
         <div>
@@ -84,7 +84,7 @@ export default function QbiDeduction() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>The QBI deduction (Section 199A) allows eligible self-employed and small business owners to deduct up to 20% of qualified business income. The deduction is limited to 20% of taxable income (before QBI deduction). The deduction is still available for 2026. Income thresholds and W-2 wage limitations may apply for high-income earners. Consult a tax professional for your specific situation.</p>
+        <p>The QBI deduction (Section 199A) allows eligible self employed and small business owners to deduct up to 20% of qualified business income. The deduction is limited to 20% of taxable income (before QBI deduction). The deduction is still available for 2026. Income thresholds and W-2 wage limitations may apply for high income earners. Consult a tax professional for your specific situation.</p>
       </div>
     </div>
   );
