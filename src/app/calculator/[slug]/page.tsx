@@ -25,6 +25,57 @@ import SaasUnitEconomicsCalc from '@/components/calcs/SaasUnitEconomics';
 import SavingsGoalCalc from '@/components/calcs/SavingsGoal';
 import BusinessLoanCalc from '@/components/calcs/BusinessLoan';
 import GenericCalc from '@/components/calcs/Generic';
+import QuarterlyTaxPenaltyCalc from '@/components/calcs/QuarterlyTaxPenalty';
+import FreelancerEffectiveTaxRateCalc from '@/components/calcs/FreelancerEffectiveTaxRate';
+import HealthInsuranceDeductionCalc from '@/components/calcs/HealthInsuranceDeduction';
+import HomeOfficeDeductionCalc from '@/components/calcs/HomeOfficeDeduction';
+import IncomeTax1099Calc from '@/components/calcs/IncomeTax1099';
+import SeTaxVsFicaCalc from '@/components/calcs/SeTaxVsFica';
+import QbiDeductionCalc from '@/components/calcs/QbiDeduction';
+import FreelanceProjectRateCalc from '@/components/calcs/FreelanceProjectRate';
+import FreelancerSavingsRateCalc from '@/components/calcs/FreelancerSavingsRate';
+import FreelanceHourlyVsProjectCalc from '@/components/calcs/FreelanceHourlyVsProject';
+import FreelanceNetWorthCalc from '@/components/calcs/FreelanceNetWorth';
+import DoorDashProfitCalc from '@/components/calcs/DoorDashProfit';
+import UberEatsProfitCalc from '@/components/calcs/UberEatsProfit';
+import PrintOnDemandProfitCalc from '@/components/calcs/PrintOnDemandProfit';
+import AmazonFbaProfitCalc from '@/components/calcs/AmazonFbaProfit';
+import YoutubeRevenueCalc from '@/components/calcs/YoutubeRevenue';
+import OnlineCourseProfitCalc from '@/components/calcs/OnlineCourseProfit';
+import FreelanceWriterRateCalc from '@/components/calcs/FreelanceWriterRate';
+import GraphicDesignerRateCalc from '@/components/calcs/GraphicDesignerRate';
+import PodcastIncomeCalc from '@/components/calcs/PodcastIncome';
+import SocialMediaManagerRateCalc from '@/components/calcs/SocialMediaManagerRate';
+import HouseAffordabilityCalc from '@/components/calcs/HouseAffordability';
+import MortgageAffordabilityCalc from '@/components/calcs/MortgageAffordability';
+import AgentCommissionCalc from '@/components/calcs/AgentCommission';
+import PropertyRoiCalc from '@/components/calcs/PropertyRoi';
+import RentalYieldCalc from '@/components/calcs/RentalYield';
+import MortgageInterestCalc from '@/components/calcs/MortgageInterest';
+import HomeEquityCalc from '@/components/calcs/HomeEquity';
+import DscrLoanCalc from '@/components/calcs/DscrLoan';
+import RealEstateFlipProfitCalc from '@/components/calcs/RealEstateFlipProfit';
+import CapRateCalc from '@/components/calcs/CapRate';
+import SCorpSalaryCalc from '@/components/calcs/SCorpSalary';
+import LlcTaxSavingsCalc from '@/components/calcs/LlcTaxSavings';
+import CCorpVsSCorpCalc from '@/components/calcs/CCorpVsSCorp';
+import EntityFormationCostCalc from '@/components/calcs/EntityFormationCost';
+import PayrollTaxCalc from '@/components/calcs/PayrollTax';
+import CashFlowCalc from '@/components/calcs/CashFlow';
+import BusinessLoanInterestCalc from '@/components/calcs/BusinessLoanInterest';
+import RevenueGrowthCalc from '@/components/calcs/RevenueGrowth';
+import ExpenseRatioCalc from '@/components/calcs/ExpenseRatio';
+import ClientInvoiceCalc from '@/components/calcs/ClientInvoiceCalc';
+import InvestmentReturnCalc from '@/components/calcs/InvestmentReturn';
+import StockPortfolioReturnCalc from '@/components/calcs/StockPortfolioReturn';
+import EtfFeeCalculatorCalc from '@/components/calcs/EtfFeeCalculator';
+import RetirementGapCalc from '@/components/calcs/RetirementGap';
+import InflationAdjustedCalc from '@/components/calcs/InflationAdjusted';
+import SideHustleIncomeTaxCalc from '@/components/calcs/SideHustleIncomeTax';
+import EmergencyFundCalc from '@/components/calcs/EmergencyFund';
+import DebtAvalancheVsSnowballCalc from '@/components/calcs/DebtAvalancheVsSnowball';
+import RothVsTraditionalCalc from '@/components/calcs/RothVsTraditional';
+import InvestmentDiversificationCalc from '@/components/calcs/InvestmentDiversification';
 
 const CALC_COMPONENTS: Record<string, React.FC> = {
   'self-employment-tax-calculator': SelfEmploymentTaxCalc,
@@ -46,6 +97,57 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'business-debt-payoff-calculator': BusinessLoanCalc,
   'saas-metrics-calculator': SaasUnitEconomicsCalc,
   'rental-cash-flow-calculator': CashOnCashReturnCalc,
+  'quarterly-tax-penalty-calculator': QuarterlyTaxPenaltyCalc,
+  'freelancer-effective-tax-rate-calculator': FreelancerEffectiveTaxRateCalc,
+  'self-employed-health-insurance-deduction-calculator': HealthInsuranceDeductionCalc,
+  'home-office-deduction-calculator': HomeOfficeDeductionCalc,
+  '1099-income-tax-calculator': IncomeTax1099Calc,
+  'se-tax-vs-fica-calculator': SeTaxVsFicaCalc,
+  'freelancer-qbi-deduction-calculator': QbiDeductionCalc,
+  'freelance-project-rate-calculator': FreelanceProjectRateCalc,
+  'freelancer-savings-rate-calculator': FreelancerSavingsRateCalc,
+  'freelance-hourly-vs-project-calculator': FreelanceHourlyVsProjectCalc,
+  'freelance-net-worth-calculator': FreelanceNetWorthCalc,
+  'doordash-profit-calculator': DoorDashProfitCalc,
+  'uber-eats-profit-calculator': UberEatsProfitCalc,
+  'print-on-demand-profit-calculator': PrintOnDemandProfitCalc,
+  'amazon-fba-profit-calculator': AmazonFbaProfitCalc,
+  'youtube-revenue-calculator': YoutubeRevenueCalc,
+  'online-course-profit-calculator': OnlineCourseProfitCalc,
+  'freelance-writer-rate-calculator': FreelanceWriterRateCalc,
+  'freelance-graphic-designer-rate-calculator': GraphicDesignerRateCalc,
+  'podcast-income-calculator': PodcastIncomeCalc,
+  'social-media-manager-rate-calculator': SocialMediaManagerRateCalc,
+  'house-affordability-calculator': HouseAffordabilityCalc,
+  'mortgage-affordability-calculator': MortgageAffordabilityCalc,
+  'real-estate-agent-commission-calculator': AgentCommissionCalc,
+  'property-investment-roi-calculator': PropertyRoiCalc,
+  'rental-yield-calculator': RentalYieldCalc,
+  'mortgage-interest-calculator': MortgageInterestCalc,
+  'home-equity-calculator': HomeEquityCalc,
+  'dscr-loan-calculator': DscrLoanCalc,
+  'real-estate-flipping-profit-calculator': RealEstateFlipProfitCalc,
+  'cap-rate-calculator': CapRateCalc,
+  's-corp-salary-calculator': SCorpSalaryCalc,
+  'llc-tax-savings-calculator': LlcTaxSavingsCalc,
+  'c-corp-vs-s-corp-calculator': CCorpVsSCorpCalc,
+  'entity-formation-cost-calculator': EntityFormationCostCalc,
+  'payroll-tax-calculator': PayrollTaxCalc,
+  'cash-flow-calculator': CashFlowCalc,
+  'business-loan-interest-calculator': BusinessLoanInterestCalc,
+  'revenue-growth-calculator': RevenueGrowthCalc,
+  'expense-ratio-calculator': ExpenseRatioCalc,
+  'client-invoice-calculator': ClientInvoiceCalc,
+  'investment-return-calculator': InvestmentReturnCalc,
+  'stock-portfolio-return-calculator': StockPortfolioReturnCalc,
+  'etf-fee-calculator': EtfFeeCalculatorCalc,
+  'retirement-savings-gap-calculator': RetirementGapCalc,
+  'inflation-adjusted-calculator': InflationAdjustedCalc,
+  'side-hustle-income-tax-calculator': SideHustleIncomeTaxCalc,
+  'emergency-fund-calculator': EmergencyFundCalc,
+  'debt-avalanche-vs-snowball-calculator': DebtAvalancheVsSnowballCalc,
+  'roth-vs-traditional-calculator': RothVsTraditionalCalc,
+  'investment-diversification-calculator': InvestmentDiversificationCalc,
 };
 
 export function generateStaticParams() {
