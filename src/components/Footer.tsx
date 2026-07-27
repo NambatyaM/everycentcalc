@@ -35,7 +35,35 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderColor: 'var(--border)' }}>
+        <div className="mt-8">
+          <a
+            href="https://www.hostinger.com?REFERRALCODE=KKCNKEVINV2U"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="flex items-center justify-between rounded-xl border p-5 transition-all hover:shadow-md group"
+            style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}
+          >
+            <div>
+              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--text-primary)' }}>
+                Host a calculator site for $2.99/mo
+              </p>
+              <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                Need hosting for your own project? Hostinger offers fast, affordable web hosting with a free domain.
+              </p>
+            </div>
+            <span
+              className="ml-4 px-4 py-2 rounded-lg text-xs font-semibold whitespace-nowrap group-hover:opacity-90 transition-opacity"
+              style={{ background: 'var(--brand)', color: '#fff' }}
+            >
+              Get Hostinger →
+            </span>
+          </a>
+          <p className="text-[10px] mt-2" style={{ color: 'var(--text-muted)' }}>
+            This site earns a commission from Hostinger referrals at no extra cost to you.
+          </p>
+        </div>
+
+        <div className="mt-8 pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderColor: 'var(--border)' }}>
           <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
             &copy; {new Date().getFullYear()} EveryCentCalc. All calculators are for informational purposes only. Not financial, tax, or legal advice. Consult a qualified professional for specific guidance.
           </p>

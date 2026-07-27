@@ -160,6 +160,35 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <section className="py-12 px-4">
+          <div className="max-w-2xl mx-auto">
+            <a
+              href="https://www.hostinger.com?REFERRALCODE=KKCNKEVINV2U"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex flex-col sm:flex-row items-center justify-between rounded-xl border p-6 transition-all hover:shadow-lg group"
+              style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border)' }}
+            >
+              <div className="mb-4 sm:mb-0 text-center sm:text-left">
+                <p className="text-sm font-semibold mb-1" style={{ color: 'var(--text-primary)' }}>
+                  Build your own calculator site
+                </p>
+                <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                  Fast, affordable hosting starting at $2.99/mo with a free domain included.
+                </p>
+              </div>
+              <span
+                className="px-5 py-2.5 rounded-lg text-sm font-semibold whitespace-nowrap group-hover:opacity-90 transition-opacity"
+                style={{ background: 'var(--brand)', color: '#fff' }}
+              >
+                Get Hostinger →
+              </span>
+            </a>
+            <p className="text-[10px] text-center mt-2" style={{ color: 'var(--text-muted)' }}>
+              Affiliate link — we earn a commission at no cost to you.
+            </p>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
