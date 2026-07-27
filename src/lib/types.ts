@@ -25,4 +25,12 @@ export interface Calculator {
   faqs: FAQ[];
   question: string;
   answer: string;
+  affiliate?: {
+    title: string;
+    description: string;
+    cta: string;
+    href: string;
+    icon?: string;
+    badge?: string;
+  };
 }

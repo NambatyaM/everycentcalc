@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import AffiliateBanner from '@/components/AffiliateBanner';
 import SelfEmploymentTaxCalc from '@/components/calcs/SelfEmploymentTax';
 import QuarterlyTaxCalc from '@/components/calcs/QuarterlyTax';
 import FreelancerRateCalc from '@/components/calcs/FreelancerRate';
@@ -177,6 +178,17 @@ export default async function CalculatorPage({ params }: Props) {
             >
               <CalcComponent />
             </div>
+
+            {calc.affiliate && (
+              <AffiliateBanner
+                title={calc.affiliate.title}
+                description={calc.affiliate.description}
+                cta={calc.affiliate.cta}
+                href={calc.affiliate.href}
+                icon={calc.affiliate.icon}
+                badge={calc.affiliate.badge}
+              />
+            )}
 
             <div className="mb-10">
               <h2 className="text-xl font-bold mb-5" style={{ color: 'var(--text-primary)' }}>

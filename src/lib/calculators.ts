@@ -872,6 +872,73 @@ const investmentCalculators = [
   },
 ];
 
+const affiliateData: Record<string, Calculator['affiliate']> = {
+  'break-even-calculator': {
+    title: 'Smart Budget Planning for Your Business',
+    description: 'Track every dollar of your business income and expenses with a dynamic Google Sheets budget planner. Automated insights, interactive dashboard, and full history tracking.',
+    cta: 'Get the Planner',
+    href: 'https://www.digital-planning-studio.com/#aff=KevinMegan',
+    icon: '📊',
+    badge: 'Budget Tool',
+  },
+  'startup-runway-calculator': {
+    title: 'Don\'t Run Out of Cash — Plan Ahead',
+    description: 'This budget planner helps you visualize cash flow, track burn rate, and plan runway extensions. Interactive dashboard shows your financial trends at a glance.',
+    cta: 'Get the Planner',
+    href: 'https://www.digital-planning-studio.com/#aff=KevinMegan',
+    icon: '📊',
+    badge: 'Budget Tool',
+  },
+  'freelancer-profitability-calculator': {
+    title: 'Track Every Dollar of Your Freelance Income',
+    description: 'Know exactly where your money goes. This Google Sheets planner auto-generates insights on your income, expenses, and savings — so you can see if you\'re actually profitable.',
+    cta: 'Get the Planner',
+    href: 'https://www.digital-planning-studio.com/#aff=KevinMegan',
+    icon: '📊',
+    badge: 'Budget Tool',
+  },
+  'freelancer-retirement-savings-calculator': {
+    title: 'Plan Your Financial Future Today',
+    description: 'Retirement planning starts with knowing your numbers. This budget planner helps you allocate savings, track contributions, and visualize your path to financial freedom.',
+    cta: 'Get the Planner',
+    href: 'https://www.digital-planning-studio.com/#aff=KevinMegan',
+    icon: '📊',
+    badge: 'Budget Tool',
+  },
+  'freelancer-rate-calculator': {
+    title: 'Want to Earn $1,000-$3,000/Day in Passive Income?',
+    description: 'Learn how to build a profitable online business with affiliate marketing. Free masterclass reveals how to generate high-ticket commissions without tech skills or your own product.',
+    cta: 'Watch Free Masterclass',
+    href: 'https://millionairepartnership.com/webclass-d24#aff=KevinMegan',
+    icon: '💰',
+    badge: 'Free Training',
+  },
+  'freelance-vs-employment-calculator': {
+    title: 'Ready to Go Full-Time Freelance?',
+    description: 'Learn how to build a 6-figure freelance business from scratch. Free masterclass shows you how to earn $1,000-$3,000/day with affiliate marketing — even while keeping your day job.',
+    cta: 'Watch Free Masterclass',
+    href: 'https://millionairepartnership.com/webclass-d24#aff=KevinMegan',
+    icon: '💰',
+    badge: 'Free Training',
+  },
+  'time-tracking-value-calculator': {
+    title: 'Your Time Is Worth More Than You Think',
+    description: 'Stop trading time for money. Learn how to create automated income streams that earn while you sleep. Free masterclass reveals the #1 most profitable online side hustle.',
+    cta: 'Watch Free Masterclass',
+    href: 'https://millionairepartnership.com/webclass-d24#aff=KevinMegan',
+    icon: '💰',
+    badge: 'Free Training',
+  },
+  'freelance-debt-payoff-calculator': {
+    title: 'Break Free From Debt With Passive Income',
+    description: 'Imagine earning enough passive income to wipe out your debt in months, not years. Free masterclass shows how to build automated income streams with zero tech skills.',
+    cta: 'Watch Free Masterclass',
+    href: 'https://millionairepartnership.com/webclass-d24#aff=KevinMegan',
+    icon: '💰',
+    badge: 'Free Training',
+  },
+};
+
 export const calculators: Calculator[] = [
   ...freelanceTaxCalculators,
   ...freelanceBusinessCalculators,
@@ -885,6 +952,7 @@ export const calculators: Calculator[] = [
   categorySlug: calc.category,
   question: calc.faqs[0]?.q || '',
   answer: calc.faqs[0]?.a || '',
+  affiliate: affiliateData[calc.slug] || undefined,
 }));
 
 export function getCalculatorBySlug(slug: string): Calculator | undefined {
