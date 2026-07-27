@@ -44,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="admaven-placement" content="BqHaFqTY9" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
