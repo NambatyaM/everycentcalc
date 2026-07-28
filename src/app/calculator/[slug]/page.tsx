@@ -80,6 +80,11 @@ import IsSideHustleWorthItCalc from '@/components/calcs/IsSideHustleWorthIt';
 import PricingStrategyCalc from '@/components/calcs/PricingStrategy';
 import RentVsBuyNewCalc from '@/components/calcs/RentVsBuyNew';
 import ShopifyProfitCalc from '@/components/calcs/ShopifyProfit';
+import CustomerAcquisitionCostCalc from '@/components/calcs/CustomerAcquisitionCost';
+import CustomerLifetimeValueCalc from '@/components/calcs/CustomerLifetimeValue';
+import FourOhOneKCalc from '@/components/calcs/FourOhOneK';
+import RequiredMinimumDistributionCalc from '@/components/calcs/RequiredMinimumDistribution';
+import TimeTrackingValueCalc from '@/components/calcs/TimeTrackingValue';
 
 const CALC_COMPONENTS: Record<string, React.FC> = {
   'self-employment-tax-calculator': SelfEmploymentTaxCalc,
@@ -164,6 +169,11 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'business-profit-margin-calculator': BreakEvenCalc,
   'compound-interest-calculator': InvestmentReturnCalc,
   'roth-conversion-calculator': RothVsTraditionalCalc,
+  '401k-calculator': FourOhOneKCalc,
+  'customer-acquisition-cost-calculator': CustomerAcquisitionCostCalc,
+  'customer-lifetime-value-calculator': CustomerLifetimeValueCalc,
+  'required-minimum-distribution-calculator': RequiredMinimumDistributionCalc,
+  'time-tracking-value-calculator': TimeTrackingValueCalc,
 };
 
 export function generateStaticParams() {
