@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -108,6 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)' }}
       >
         {children}
+        <Analytics />
         <Script
           src="https://pl30565935.effectivecpmnetwork.com/5c/32/f4/5c32f490e7297948bf8b3b806f975fd1.js"
           strategy="lazyOnload"
