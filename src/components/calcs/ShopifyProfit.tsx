@@ -97,11 +97,11 @@ export default function ShopifyProfitCalc() {
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Profit per $100 Revenue</p>
         <ResultRow label="Revenue" value="$100.00" />
-        <ResultRow label="Product Cost" value={`-$${((pc / sp) * 100).toFixed(2)}`} />
-        <ResultRow label="Shopify Fees" value={`-$${((shopifyFee / sp) * 100).toFixed(2)}`} />
-        <ResultRow label="Shipping" value={`-$${((sc / sp) * 100).toFixed(2)}`} />
-        <ResultRow label="Marketing" value={`-$${((mc / sp) * 100).toFixed(2)}`} />
-        <ResultRow label="Other" value={`-$${((oe / sp) * 100).toFixed(2)}`} />
+        <ResultRow label="Product Cost" value={sp > 0 ? `-$${((pc / sp) * 100).toFixed(2)}` : '$0.00'} />
+        <ResultRow label="Shopify Fees" value={sp > 0 ? `-$${((shopifyFee / sp) * 100).toFixed(2)}` : '$0.00'} />
+        <ResultRow label="Shipping" value={sp > 0 ? `-$${((sc / sp) * 100).toFixed(2)}` : '$0.00'} />
+        <ResultRow label="Marketing" value={sp > 0 ? `-$${((mc / sp) * 100).toFixed(2)}` : '$0.00'} />
+        <ResultRow label="Other" value={sp > 0 ? `-$${((oe / sp) * 100).toFixed(2)}` : '$0.00'} />
         <ResultRow label="Net Profit" value={`$${profitMargin.toFixed(2)}`} bold />
       </div>
 

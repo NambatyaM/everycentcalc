@@ -20,10 +20,11 @@ export default function InvestmentReturnCalc() {
   const r = (parseFloat(annualRate) || 0) / 100;
   const t = parseFloat(years) || 0;
   const n = FREQ_MAP[freq];
+  const periodPMT = PMT * 12 / n;
 
   const fv = r > 0
-    ? P * Math.pow(1 + r / n, n * t) + PMT * ((Math.pow(1 + r / n, n * t) - 1) / (r / n))
-    : P + PMT * n * t;
+    ? P * Math.pow(1 + r / n, n * t) + periodPMT * ((Math.pow(1 + r / n, n * t) - 1) / (r / n))
+    : P + periodPMT * n * t;
   const totalContributed = P + PMT * t * 12;
   const totalInterest = fv - totalContributed;
   const effectiveReturn = P > 0 && t > 0 && PMT === 0 ? ((fv / P) ** (1 / t) - 1) * 100 : 0;
@@ -31,8 +32,8 @@ export default function InvestmentReturnCalc() {
   const milestones = [5, 10, 15, 20, 25, 30].filter((y) => y <= t && y > 0);
   const milestoneValues = milestones.map((y) => {
     const val = r > 0
-      ? P * Math.pow(1 + r / n, n * y) + PMT * ((Math.pow(1 + r / n, n * y) - 1) / (r / n))
-      : P + PMT * n * y;
+      ? P * Math.pow(1 + r / n, n * y) + periodPMT * ((Math.pow(1 + r / n, n * y) - 1) / (r / n))
+      : P + periodPMT * n * y;
     const contributed = P + PMT * y * 12;
     return { year: y, value: val, contributed, interest: val - contributed };
   });

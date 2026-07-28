@@ -27,8 +27,8 @@ export default function EtsyProfitCalc() {
   const totalOrderValue = sp + sc;
   const etsyFees = lf + totalOrderValue * (tf / 100) + totalOrderValue * (pp / 100) + ppf;
   const totalCosts = mc + shipC + oe + etsyFees;
-  const netProfit = sp - totalCosts;
-  const profitMargin = sp > 0 ? (netProfit / sp) * 100 : 0;
+  const netProfit = totalOrderValue - totalCosts;
+  const profitMargin = totalOrderValue > 0 ? (netProfit / totalOrderValue) * 100 : 0;
 
   return (
     <div>
@@ -114,6 +114,8 @@ export default function EtsyProfitCalc() {
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Profit Calculation</p>
         <ResultRow label="Sale Price" value={`$${sp.toFixed(2)}`} />
+        <ResultRow label="Shipping Charged" value={`$${sc.toFixed(2)}`} />
+        <ResultRow label="Total Revenue" value={`$${totalOrderValue.toFixed(2)}`} bold />
         <ResultRow label="Material Cost" value={`-$${mc.toFixed(2)}`} />
         <ResultRow label="Shipping Cost" value={`-$${shipC.toFixed(2)}`} />
         <ResultRow label="Other Expenses" value={`-$${oe.toFixed(2)}`} />

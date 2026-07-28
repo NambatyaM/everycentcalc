@@ -56,7 +56,7 @@ export default function InflationAdjustedCalc() {
         <ResultCard icon="📉" label="Future Real Value" value={formatCurrency(futureValue)} highlight />
         <ResultCard icon="💰" label="Purchasing Power Loss" value={formatCurrency(purchasingPowerLoss)} />
         <ResultCard icon="📊" label="Purchasing Power Remaining" value={`${purchasingPowerPct.toFixed(1)}%`} />
-        <ResultCard icon="🕐" label="Rule of 72 Doubling" value={`${(72 / (ir * 100)).toFixed(1)} years`} subtitle="Years for prices to double" />
+        <ResultCard icon="🕐" label="Rule of 72 Doubling" value={ir > 0 ? `${(72 / (ir * 100)).toFixed(1)} years` : 'Never (0% inflation)'} subtitle="Years for prices to double" />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>

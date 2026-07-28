@@ -68,11 +68,13 @@ export default function CustomerAcquisitionCostCalc() {
         <ResultRow label="CAC per Customer" value={nc > 0 ? `$${cac.toFixed(2)}` : '—'} bold />
       </div>
 
-      <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
-        <p className="text-sm" style={{ color: 'var(--brand)' }}>
-          Each new customer costs <strong>${cac.toFixed(2)}</strong> to acquire. Aim for a 3:1 LTV-to-CAC ratio — meaning each customer should be worth at least <strong>${(cac * 3).toFixed(2)}</strong> over their lifetime.
-        </p>
-      </div>
+      {nc > 0 && (
+        <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
+          <p className="text-sm" style={{ color: 'var(--brand)' }}>
+            Each new customer costs <strong>${cac.toFixed(2)}</strong> to acquire. Aim for a 3:1 LTV-to-CAC ratio — meaning each customer should be worth at least <strong>${(cac * 3).toFixed(2)}</strong> over their lifetime.
+          </p>
+        </div>
+      )}
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
         <p>This is a simple blended CAC calculation. For channel-specific CAC, calculate each marketing channel separately. Include all costs directly tied to acquisition: ad spend, salaries, software, creative production, and agency fees.</p>

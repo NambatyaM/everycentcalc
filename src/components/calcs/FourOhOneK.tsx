@@ -39,10 +39,9 @@ export default function FourOhOneKCalc() {
 
   if (!isFinite(futureValue)) futureValue = 0;
 
-  const totalContributions = cb + mc * months;
-  const totalEmployerMatch = (annualEmployerMatch / 12) * months;
-  const totalEarnings = futureValue - totalContributions - totalEmployerMatch;
   const totalOwnContributions = mc * months;
+  const totalEmployerMatch = (annualEmployerMatch / 12) * months;
+  const totalEarnings = futureValue - cb - totalOwnContributions - totalEmployerMatch;
 
   return (
     <div>

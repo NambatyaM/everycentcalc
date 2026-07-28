@@ -49,7 +49,7 @@ export default function CapRateCalc() {
       <div className="grid grid-cols-2 gap-3 mb-6">
         <ResultCard icon="📊" label="Net Operating Income (NOI)" value={`$${noi.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="📈" label="Cap Rate" value={`${capRate.toFixed(2)}%`} highlight />
-        <ResultCard icon="🏠" label="Implied Property Value" value={noi > 0 ? `$${(noi / (capRate / 100)).toLocaleString('en-US', { maximumFractionDigits: 0 })}` : '$0'} />
+        <ResultCard icon="🏠" label="Implied Property Value" value={noi > 0 && capRate > 0 ? `$${(noi / (capRate / 100)).toLocaleString('en-US', { maximumFractionDigits: 0 })}` : '$0'} />
         <ResultCard icon="💵" label="Monthly NOI" value={`$${(noi / 12).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
       </div>
 

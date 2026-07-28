@@ -37,6 +37,14 @@ export default function CashOnCashReturnCalc() {
         </div>
       </div>
 
+      {tci === 0 && (
+        <div className="rounded-lg border p-4 mb-6" style={{ background: '#fef2f2', borderColor: '#ef4444' }}>
+          <p className="text-sm font-medium" style={{ color: '#dc2626' }}>
+            Enter a total cash invested amount greater than zero to calculate return.
+          </p>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="📈" label="Cash on Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
         <ResultCard icon="💵" label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />

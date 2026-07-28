@@ -324,7 +324,7 @@ const freelanceTaxCalculators = [
   },
   {
     slug: 'freelancer-health-insurance-calculator',
-    name: 'Freelancer Health Insurance Cost Estimator',
+    name: 'Freelancer Health Insurance Cost Calculator',
     description: 'How much does health insurance really cost as a freelancer? This calculator estimates ACA marketplace premiums based on your age, income, and plan type — and shows your self-employed tax deduction.',
     category: 'freelance-tax',
     url: '/calculator/freelancer-health-insurance-calculator/',
@@ -1136,7 +1136,7 @@ const realEstateCalculators = [
   },
   {
     slug: 'airbnb-revenue-calculator',
-    name: 'Airbnb Revenue Estimator',
+    name: 'Airbnb Revenue Calculator',
     description: 'Estimate your short-term rental income on Airbnb. Compare Airbnb revenue to traditional long-term rental income after platform fees, management costs, and operating expenses.',
     category: 'real-estate',
     url: '/calculator/airbnb-revenue-calculator/',
@@ -1243,7 +1243,7 @@ const llcTaxCalculators = [
   },
   {
     slug: 'business-entity-tax-comparison',
-    name: 'Business Entity Tax Comparison',
+    name: 'Business Entity Tax Comparison Calculator',
     description: 'Sole proprietor, LLC, S-Corp, C-Corp — which entity saves you the most? This calculator compares all four side-by-side with your actual numbers.',
     category: 'llc-tax',
     url: '/calculator/business-entity-tax-comparison/',

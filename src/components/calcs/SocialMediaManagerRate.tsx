@@ -18,7 +18,8 @@ export default function SocialMediaManagerRate() {
   const marginPct = parseFloat(profitMarginPct) || 0;
 
   const totalHoursMonthly = clients * hours * 4;
-  const revenueNeeded = income / (1 - marginPct / 100) + tools;
+  const effectiveMargin = Math.min(marginPct, 99.9);
+  const revenueNeeded = income / (1 - effectiveMargin / 100) + tools;
   const perClient = revenueNeeded / clients;
   const hourly = totalHoursMonthly > 0 ? revenueNeeded / totalHoursMonthly : 0;
   const annualRevenue = revenueNeeded * 12;
@@ -70,6 +71,14 @@ export default function SocialMediaManagerRate() {
         <ResultCard icon="📊" label="Monthly Revenue Needed" value={formatCurrency(revenueNeeded)} />
         <ResultCard icon="📈" label="Annual Revenue" value={formatCurrency(annualRevenue)} />
       </div>
+
+      {income > 0 && marginPct > 99 && (
+        <div className="rounded-lg border p-4 mb-6" style={{ background: '#fef2f2', borderColor: '#ef4444' }}>
+          <p className="text-sm font-medium" style={{ color: '#dc2626' }}>
+            A {marginPct}% profit margin is not achievable — costs would consume all revenue. Margin capped at 99.9% for calculation. Try lowering your desired profit margin to 30-50%.
+          </p>
+        </div>
+      )}
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Revenue Calculation</p>

@@ -80,7 +80,7 @@ export default function LlcVsSolePropCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="🏢" label="Sole Prop Take Home" value={formatCurrency(spTakeHome)} />
         <ResultCard icon="🏛️" label="S-Corp LLC Take Home" value={formatCurrency(scorpTakeHome)} highlight />
-        <ResultCard icon="💡" label="S-Corp Savings" value={formatCurrency(savings)} highlight subtitle={savings > 0 ? 'per year' : ''} />
+        <ResultCard icon="💡" label={savings >= 0 ? 'S-Corp Savings' : 'S-Corp Cost'} value={`${savings >= 0 ? '' : '-'}${formatCurrency(Math.abs(savings))}`} highlight subtitle={savings > 0 ? 'per year' : savings < 0 ? 'extra per year' : ''} />
         <ResultCard icon="📋" label="S-Corp Salary" value={formatCurrency(salary)} subtitle="Subject to FICA" />
       </div>
 

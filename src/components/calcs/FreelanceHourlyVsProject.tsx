@@ -96,7 +96,7 @@ export default function FreelanceHourlyVsProjectCalc() {
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
         <p className="text-sm" style={{ color: 'var(--brand)' }}>
           {savings > 0
-            ? <>Project pricing earns you <strong>{formatCurrency(savings)}</strong> more per month ({formatCurrency(annualDifference)}/year). Your effective hourly rate jumps from ${hourlyEffective.toFixed(0)} to ${projectEffective.toFixed(0)}/hr — a {((effectiveGain / hourlyEffective) * 100).toFixed(0)}% increase.</>
+            ? <>Project pricing earns you <strong>{formatCurrency(savings)}</strong> more per month ({formatCurrency(annualDifference)}/year). Your effective hourly rate jumps from ${hourlyEffective.toFixed(0)} to ${projectEffective.toFixed(0)}/hr — {hourlyEffective > 0 ? `a ${((effectiveGain / hourlyEffective) * 100).toFixed(0)}% increase` : 'a massive gain'}.</>
             : <>At these numbers, hourly pricing earns more. This happens when your actual hours exceed estimates. Consider raising project prices or improving efficiency.</>
           }
         </p>

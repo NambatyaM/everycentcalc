@@ -26,7 +26,9 @@ export default function RetirementGapCalc() {
   const monthlyRate = r / 12;
   const totalMonths = yearsToRetire * 12;
 
-  const projectedSavings = cs * Math.pow(1 + r, yearsToRetire) + mc * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate);
+  const projectedSavings = monthlyRate > 0
+    ? cs * Math.pow(1 + r, yearsToRetire) + mc * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate)
+    : cs + mc * totalMonths;
 
   const withdrawalRate = 0.04;
   const retirementIncome = projectedSavings * withdrawalRate;

@@ -39,7 +39,7 @@ export default function AirbnbRevenueCalc() {
 
   return (
     <div>
-      <SectionHeader title="Airbnb Revenue Estimator" subtitle="Estimate short term rental income vs. traditional renting" />
+      <SectionHeader title="Airbnb Revenue Calculator" subtitle="Estimate short term rental income vs. traditional renting" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

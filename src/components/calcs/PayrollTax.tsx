@@ -42,8 +42,10 @@ export default function PayrollTax() {
 
   const employerSSPerPeriod = ssPerPeriod;
   const employerMedicarePerPeriod = medicarePerPeriod;
-  const futaPerPeriod = (annualSalary * 0.006) / periods;
-  const sutaPerPeriod = (annualSalary * 0.027) / periods;
+  const futaWageBase = Math.min(annualSalary, 7000);
+  const sutaWageBase = Math.min(annualSalary, 7000);
+  const futaPerPeriod = (futaWageBase * 0.006) / periods;
+  const sutaPerPeriod = (sutaWageBase * 0.027) / periods;
   const totalEmployerTaxPerPeriod = employerSSPerPeriod + employerMedicarePerPeriod + futaPerPeriod + sutaPerPeriod;
   const totalEmployerCostPerPeriod = grossPerPeriod + totalEmployerTaxPerPeriod;
 
@@ -119,7 +121,7 @@ export default function PayrollTax() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> Federal withholding uses simplified flat 12% estimate. Actual withholding depends on W-4 elections and IRS tables. State tax rate is user-entered. SUTA rate estimated at 2.7% (varies by state and employer experience rating). 401(k) deductions are pre tax. FUTA applies to first $7,000 of wages. Consult your payroll provider for exact calculations.</p>
+        <p><strong>Disclaimer:</strong> Federal withholding uses simplified flat 12% estimate. Actual withholding depends on W-4 elections and IRS tables. State tax rate is user-entered. SUTA rate estimated at 2.7% (varies by state and employer experience rating, wages capped at $7,000 for this calculation). 401(k) deductions are pre tax. FUTA applies to first $7,000 of wages ($42 max/year). Consult your payroll provider for exact calculations.</p>
       </div>
     </div>
   );

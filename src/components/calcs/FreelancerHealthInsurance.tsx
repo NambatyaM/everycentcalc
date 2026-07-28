@@ -10,14 +10,6 @@ const BASE_MONTHLY_COST: Record<string, number> = {
   Gold: 600,
 };
 
-const AGE_MULTIPLIERS: [number, number, number][] = [
-  [25, 0, 0.75],
-  [35, 25, 0.9],
-  [45, 35, 1.0],
-  [55, 45, 1.3],
-  [65, 55, 1.6],
-];
-
 function getAgeMultiplier(age: number): number {
   if (age < 25) return 0.75;
   if (age < 35) return 0.9;
@@ -57,7 +49,7 @@ export default function FreelancerHealthInsuranceCalc() {
 
   return (
     <div>
-      <SectionHeader title="Freelancer Health Insurance Cost Estimator" subtitle="Estimate ACA marketplace premiums, subsidies, and self employed tax deduction" />
+      <SectionHeader title="Freelancer Health Insurance Cost Calculator" subtitle="Estimate ACA marketplace premiums, subsidies, and self employed tax deduction" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
