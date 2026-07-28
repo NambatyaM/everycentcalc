@@ -37,7 +37,7 @@ export default function BusinessLoanCalc() {
       balance -= pmt;
     }
     return totalP;
-  })() : principal / 12 * 12;
+  })() : principal * 12 / n;
 
   const firstYearInterest = Math.max(0, (monthlyPayment * 12) - firstYearPrincipal);
 

@@ -24,7 +24,6 @@ export default function DoorDashProfit() {
   const netWeekly = gross - gasCost - other;
   const hourlyRate = hours > 0 ? netWeekly / hours : 0;
   const annualProfit = netWeekly * 52;
-  const annualGas = gasCost * 52;
 
   return (
     <div>

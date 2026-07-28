@@ -24,7 +24,6 @@ export default function CCorpVsSCorp() {
 
   const sTaxable = Math.max(0, ni - deduction - sEmployerFICA);
   const sFedTax = federalIncomeTax(sTaxable, fs);
-  const sDividendTax = retained > 0 ? federalIncomeTax(retained, fs) : 0;
   const sTotalTax = sTotalFICA + sFedTax;
   const sEffectiveRate = ni > 0 ? (sTotalTax / ni) * 100 : 0;
 

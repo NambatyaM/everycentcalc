@@ -21,7 +21,6 @@ export default function StockPortfolioReturnCalc() {
 
   const pretaxReturn = r + dy;
   const taxableGainRate = r;
-  const afterTaxReturn = pretaxReturn - taxableGainRate * tax;
 
   let portfolioPre = P;
   let portfolioPost = P;

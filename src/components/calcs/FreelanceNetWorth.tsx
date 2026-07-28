@@ -38,7 +38,6 @@ export default function FreelanceNetWorthCalc() {
   const liquidAssets = ba + inv;
   const monthsOfExpenses = income > 0 ? (liquidAssets / (income / 12)) : 0;
   const savingsRate = income > 0 ? ((netWorth / income) * 100) : 0;
-  const targetNetWorth = income * (35 / 10); // Age 35 rule
 
   return (
     <div>

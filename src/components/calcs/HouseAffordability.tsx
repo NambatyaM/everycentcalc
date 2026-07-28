@@ -59,7 +59,7 @@ export default function HouseAffordabilityCalc() {
   const totalMonthly = monthlyPI + propTaxMonthly + insMonthly;
   const totalPaid = totalMonthly * numPayments;
   const totalInterest = (monthlyPI * numPayments) - loanAmount;
-  const downPaymentImpact = dp > 0 ? (dp / maxHomePrice) * 100 : 0;
+  const downPaymentImpact = dp > 0 && maxHomePrice > 0 ? (dp / maxHomePrice) * 100 : 0;
 
   return (
     <div>

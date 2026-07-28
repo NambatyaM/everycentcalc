@@ -13,7 +13,6 @@ export default function QbiDeduction() {
   const qbi = parseFloat(qualifiedBusinessIncome) || 0;
   const taxableBeforeQBI = parseFloat(totalTaxableIncome) || 0;
   const fs = filingStatus as 'single' | 'married';
-  const rate = parseFloat(marginalRate) || 22;
 
   const qbiDeduction = Math.min(qbi * 0.20, taxableBeforeQBI * 0.20);
   const taxableAfterQBI = Math.max(0, taxableBeforeQBI - qbiDeduction);

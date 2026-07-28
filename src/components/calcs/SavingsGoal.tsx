@@ -27,7 +27,6 @@ export default function SavingsGoalCalc() {
   if (!isFinite(monthlyContribution) || monthlyContribution < 0) monthlyContribution = 0;
 
   const totalContributions = monthlyContribution * months;
-  const finalBalance = current + totalContributions;
   const interestEarned = goal - current - totalContributions;
 
   const progressPct = goal > 0 ? Math.min(100, (current / goal) * 100) : 0;

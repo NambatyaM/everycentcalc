@@ -34,7 +34,7 @@ export default function EtfFeeCalculatorCalc() {
   const growthNoFee = balanceNoFee - I;
   const growthWithFee = balanceWithFee - I;
   const feeImpact = growthNoFee > 0 ? (totalFees / growthNoFee) * 100 : 0;
-  const netReturn = I > 0 ? ((balanceWithFee / I) ** (1 / years) - 1) * 100 : 0;
+  const netReturn = I > 0 && years > 0 ? ((balanceWithFee / I) ** (1 / years) - 1) * 100 : 0;
 
   return (
     <div>

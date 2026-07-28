@@ -49,8 +49,6 @@ export default function PayrollTax() {
   const totalEmployerTaxPerPeriod = employerSSPerPeriod + employerMedicarePerPeriod + futaPerPeriod + sutaPerPeriod;
   const totalEmployerCostPerPeriod = grossPerPeriod + totalEmployerTaxPerPeriod;
 
-  const totalEmployeeTaxAnnual = totalEmployeeTaxPerPeriod * periods;
-  const totalEmployerTaxAnnual = totalEmployerTaxPerPeriod * periods;
   const totalEmployerCostAnnual = totalEmployerCostPerPeriod * periods;
 
   return (

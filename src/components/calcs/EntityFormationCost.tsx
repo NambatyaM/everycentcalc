@@ -46,7 +46,6 @@ export default function EntityFormationCost() {
   const [annualRevenue, setAnnualRevenue] = useState('100000');
   const [registeredAgent, setRegisteredAgent] = useState('yes');
 
-  const revenue = parseFloat(annualRevenue) || 0;
   const needsAgent = registeredAgent === 'yes';
 
   const filingFee = STATE_FEES[state];

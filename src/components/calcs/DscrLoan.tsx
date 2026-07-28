@@ -13,7 +13,6 @@ export default function DscrLoanCalc() {
 
   const value = parseFloat(propertyValue) || 0;
   const loan = parseFloat(loanAmount) || 0;
-  const rate = parseFloat(interestRate) || 0;
   const rent = parseFloat(monthlyRent) || 0;
   const piti = parseFloat(monthlyPiti) || 0;
   const expenses = parseFloat(otherExpenses) || 0;
