@@ -22,7 +22,8 @@ export default function FreelanceWriterRate() {
   const wordsPerArticle = 1500;
   const timePerArticle = (wordsPerArticle / wph) * (1 + (research + editing) / 100);
   const perArticle = hourlyRate * timePerArticle;
-  const monthlyIncome = hourlyRate * hours * 4;
+  const monthlyIncome = hourlyRate * hours * (52 / 12);
+  const perWordDisplay = `$${perWord.toFixed(2)}`;
 
   return (
     <div>
@@ -67,7 +68,7 @@ export default function FreelanceWriterRate() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-6">
         <ResultCard icon="⏱️" label="Hourly Rate" value={formatCurrency(hourlyRate)} highlight />
-        <ResultCard icon="📝" label="Per Word Rate" value={formatCurrency(perWord)} highlight />
+        <ResultCard icon="📝" label="Per Word Rate" value={perWordDisplay} highlight />
         <ResultCard icon="📄" label="Per Article Rate" value={formatCurrency(perArticle)} />
         <ResultCard icon="💰" label="Monthly Income" value={formatCurrency(monthlyIncome)} />
       </div>
@@ -78,7 +79,7 @@ export default function FreelanceWriterRate() {
         <ResultRow label="Weeks per Year" value="52" />
         <ResultRow label="Billable Hours per Week" value={hours.toString()} />
         <ResultRow label="Hourly Rate (income ÷ 52 ÷ hours)" value={formatCurrency(hourlyRate)} bold />
-        <ResultRow label="Per Word Rate (hourly ÷ words/hr)" value={formatCurrency(perWord)} bold />
+        <ResultRow label="Per Word Rate (hourly ÷ words/hr)" value={perWordDisplay} bold />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>

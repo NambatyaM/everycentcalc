@@ -57,7 +57,7 @@ export default function SeTaxVsFica() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="🏛️" label="SE Total FICA (15.3%)" value={formatCurrency(seTotalFICA)} highlight />
         <ResultCard icon="💼" label="W-2 Employee FICA (7.65%)" value={formatCurrency(w2EmployeeFICA)} />
-        <ResultCard icon="⚠️" label="Difference" value={formatCurrency(Math.abs(difference))} highlight />
+        <ResultCard icon="⚠️" label="Difference" value={formatCurrency(difference)} highlight subtitle={difference > 0 ? 'SE total costs more' : difference < 0 ? 'SE total costs less' : ''} />
         <ResultCard icon="💸" label="You Pay Extra" value={formatCurrency(youPayExtra)} highlight />
       </div>
 

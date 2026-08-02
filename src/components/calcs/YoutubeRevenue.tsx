@@ -17,7 +17,7 @@ export default function YoutubeRevenue() {
   const videos = parseFloat(videosPerMonth) || 0;
   const affiliate = parseFloat(affiliatePerVideo) || 0;
 
-  const adRevenue = (views / 1000) * cpm;
+  const adRevenue = (views / 1000) * cpm * 0.55;
   const sponsorTotal = sponsor * videos;
   const affiliateTotal = affiliate * videos;
   const totalRevenue = adRevenue + sponsorTotal + affiliateTotal;
@@ -73,7 +73,7 @@ export default function YoutubeRevenue() {
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Revenue Breakdown</p>
-        <ResultRow label="Ad Revenue (views ÷ 1000 × CPM)" value={formatCurrency(adRevenue)} />
+        <ResultRow label="Ad Revenue (views ÷ 1000 × CPM × 55%)" value={formatCurrency(adRevenue)} />
         <ResultRow label={`Sponsorships (${videos} videos × ${formatCurrency(sponsor)})`} value={formatCurrency(sponsorTotal)} />
         <ResultRow label={`Affiliate (${videos} videos × ${formatCurrency(affiliate)})`} value={formatCurrency(affiliateTotal)} />
         <ResultRow label="Total Monthly Revenue" value={formatCurrency(totalRevenue)} bold />

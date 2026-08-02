@@ -16,7 +16,8 @@ export default function AirbnbRevenueCalc() {
   const rate = parseFloat(nightlyRate) || 0;
   const occ = parseFloat(occupancy) || 0;
   const cleanFee = parseFloat(cleaningFee) || 0;
-  const guests = parseInt(numGuests) || 1;
+  const guestsInput = parseInt(numGuests);
+  const guests = isNaN(guestsInput) ? 1 : Math.max(0, guestsInput);
   const mortgage = parseFloat(monthlyMortgage) || 0;
   const utilities = parseFloat(monthlyUtilities) || 0;
   const mgmtFee = parseFloat(managementFee) || 0;

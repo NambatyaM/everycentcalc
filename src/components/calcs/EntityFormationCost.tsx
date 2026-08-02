@@ -43,7 +43,6 @@ const ENTITY_NAME: Record<string, string> = {
 export default function EntityFormationCost() {
   const [state, setState] = useState('delaware');
   const [entityType, setEntityType] = useState('llc');
-  const [annualRevenue, setAnnualRevenue] = useState('100000');
   const [registeredAgent, setRegisteredAgent] = useState('yes');
 
   const needsAgent = registeredAgent === 'yes';
@@ -90,12 +89,6 @@ export default function EntityFormationCost() {
               <option value="scorp">S-Corporation</option>
               <option value="ccorp">C-Corporation</option>
             </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Revenue Estimate ($)</label>
-            <input type="number" value={annualRevenue} onChange={(e) => setAnnualRevenue(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Need Registered Agent?</label>

@@ -6,7 +6,6 @@ import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
 export default function DscrLoanCalc() {
   const [propertyValue, setPropertyValue] = useState('350000');
   const [loanAmount, setLoanAmount] = useState('280000');
-  const [interestRate, setInterestRate] = useState('8');
   const [monthlyRent, setMonthlyRent] = useState('2500');
   const [monthlyPiti, setMonthlyPiti] = useState('1800');
   const [otherExpenses, setOtherExpenses] = useState('300');
@@ -47,25 +46,19 @@ export default function DscrLoanCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Interest Rate (%)</label>
-            <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
-          </div>
-          <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Rent ($)</label>
             <input type="number" value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly PITI ($)</label>
             <input type="number" value={monthlyPiti} onChange={(e) => setMonthlyPiti(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Other Monthly Expenses ($)</label>
             <input type="number" value={otherExpenses} onChange={(e) => setOtherExpenses(e.target.value)}

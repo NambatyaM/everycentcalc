@@ -16,7 +16,7 @@ export default function IncomeTax1099() {
   const fs = filingStatus as 'single' | 'married';
 
   const totalGross = income + w2;
-  const se = selfEmploymentTax(income, fs);
+  const se = selfEmploymentTax(income, fs, w2);
   const deduction = getStandardDeduction(fs);
   const seDeduction = se.total / 2;
   const taxableIncome = Math.max(0, totalGross - deduction - seDeduction - pretax);

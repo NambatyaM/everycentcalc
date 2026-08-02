@@ -22,7 +22,8 @@ export default function RentVsBuyNewCalc() {
   const ins = parseFloat(annualInsurance) || 0;
   const ri = parseFloat(rentIncrease) || 0;
   const ha = parseFloat(homeAppreciation) || 0;
-  const yrs = parseInt(years) || 10;
+  const yearsInput = parseInt(years);
+  const yrs = Math.max(0, isNaN(yearsInput) ? 10 : yearsInput);
 
   const dpAmount = hp * (dpPct / 100);
   const loanAmount = hp - dpAmount;

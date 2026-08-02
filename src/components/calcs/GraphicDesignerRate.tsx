@@ -20,7 +20,7 @@ export default function GraphicDesignerRate() {
   const website = parseFloat(websiteEstimate) || 0;
 
   const hourly = income / (52 * hours);
-  const monthlyRevenue = hourly * hours * 4;
+  const monthlyRevenue = hourly * hours * (52 / 12);
   const annualAtCurrent = monthlyRevenue * 12;
 
   const logoHours = hourly > 0 ? logo / hourly : 0;

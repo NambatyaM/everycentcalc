@@ -37,6 +37,7 @@ export default function FreelanceNetWorthCalc() {
   const debtToAsset = totalAssets > 0 ? (totalDebt / totalAssets) * 100 : 0;
   const liquidAssets = ba + inv;
   const monthsOfExpenses = income > 0 ? (liquidAssets / (income / 12)) : 0;
+  const monthsLabel = 'Months of Income';
   const savingsRate = income > 0 ? ((netWorth / income) * 100) : 0;
 
   return (
@@ -145,7 +146,7 @@ export default function FreelanceNetWorthCalc() {
         <ResultCard icon="📊" label="Total Assets" value={formatCurrency(totalAssets)} />
         <ResultCard icon="📋" label="Total Debt" value={formatCurrency(totalDebt)} />
         <ResultCard icon="💧" label="Liquid Assets" value={formatCurrency(liquidAssets)} subtitle="Cash + investments" />
-        <ResultCard icon="📅" label="Months of Expenses" value={`${monthsOfExpenses.toFixed(1)}`} subtitle="of liquid assets" />
+        <ResultCard icon="📅" label={monthsLabel} value={`${monthsOfExpenses.toFixed(1)}`} subtitle="of liquid assets" />
         <ResultCard icon="📈" label="Net Worth / Income" value={`${savingsRate.toFixed(0)}%`} />
       </div>
 

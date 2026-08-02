@@ -89,7 +89,7 @@ export default function FreelanceHourlyVsProjectCalc() {
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <ResultRow label="Hourly Effective Rate" value={`$${hourlyEffective.toFixed(0)}/hr`} />
         <ResultRow label="Project Effective Rate" value={`$${projectEffective.toFixed(0)}/hr`} bold />
-        <ResultRow label="Efficiency Gain" value={`+$${effectiveGain.toFixed(0)}/hr`} />
+        <ResultRow label="Efficiency Gain" value={`${effectiveGain >= 0 ? '+' : ''}$${effectiveGain.toFixed(0)}/hr`} />
         <ResultRow label="Monthly Hours Worked" value={`${((actual + overhead) * projects).toFixed(0)} hrs`} />
       </div>
 

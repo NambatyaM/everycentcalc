@@ -85,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="p:domain_verify" content="126d1234c42680b715fe721ef448ed15" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

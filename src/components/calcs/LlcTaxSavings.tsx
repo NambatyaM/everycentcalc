@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { selfEmploymentTax, federalIncomeTax, getStandardDeduction, formatCurrency, formatPercent, SS_CAP, SS_RATE, MEDICARE_RATE, type FilingStatus } from '@/lib/tax';
+import { selfEmploymentTax, federalIncomeTax, getStandardDeduction, formatCurrency, formatPercent, SS_CAP, SS_RATE, MEDICARE_RATE, ADDITIONAL_MEDICARE_RATE, type FilingStatus } from '@/lib/tax';
 
 export default function LlcTaxSavings() {
   const [netIncome, setNetIncome] = useState('120000');
@@ -20,12 +20,13 @@ export default function LlcTaxSavings() {
   const spTotalTax = se.total + spFedTax;
   const spEffectiveRate = ni > 0 ? (spTotalTax / ni) * 100 : 0;
 
-  const salary = ni * 0.6;
+  const salary = Math.min(ni * 0.6, 50000);
   const distribution = ni - salary;
   const employeeSS = Math.min(salary, SS_CAP) * SS_RATE;
   const employeeMedicare = salary * MEDICARE_RATE;
-  const employeeFICA = employeeSS + employeeMedicare;
-  const employerFICA = employeeFICA;
+  const additionalMedicare = Math.max(0, salary - (fs === 'married' ? 250000 : 200000)) * ADDITIONAL_MEDICARE_RATE;
+  const employeeFICA = employeeSS + employeeMedicare + additionalMedicare;
+  const employerFICA = employeeSS + employeeMedicare;
   const totalFICA = employeeFICA + employerFICA;
   const scorpTaxable = Math.max(0, ni - deduction - employerFICA);
   const scorpFedTax = federalIncomeTax(scorpTaxable, fs);
@@ -83,7 +84,7 @@ export default function LlcTaxSavings() {
         <ResultRow label="Sole Prop / LLC — SE Tax" value={formatCurrency(se.total)} />
         <ResultRow label="Sole Prop / LLC — Federal Tax" value={formatCurrency(spFedTax)} />
         <ResultRow label="Sole Prop / LLC — Total Tax" value={formatCurrency(spTotalTax)} />
-        <ResultRow label="S-Corp — Salary (60%)" value={formatCurrency(salary)} />
+        <ResultRow label="S-Corp — Salary (60%, $50K max)" value={formatCurrency(salary)} />
         <ResultRow label="S-Corp — Distribution (40%)" value={formatCurrency(distribution)} />
         <ResultRow label="S-Corp — Total FICA" value={formatCurrency(totalFICA)} />
         <ResultRow label="S-Corp — Federal Tax" value={formatCurrency(scorpFedTax)} />

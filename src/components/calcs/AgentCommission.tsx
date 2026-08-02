@@ -12,13 +12,15 @@ export default function AgentCommissionCalc() {
 
   const price = parseFloat(salePrice) || 0;
   const rate = parseFloat(commissionRate) || 0;
-  const listing = parseFloat(listingSplit) || 50;
-  const buyer = parseFloat(buyerSplit) || 50;
+  const parseWithDefault = (v: string, d: number) => { const n = parseFloat(v); return isNaN(n) ? d : n; };
+  const listing = Math.max(0, parseWithDefault(listingSplit, 50));
+  const buyer = Math.max(0, parseWithDefault(buyerSplit, 50));
   const tax = parseFloat(taxRate) || 0;
 
+  const splitTotal = listing + buyer;
   const totalCommission = price * (rate / 100);
-  const listingShare = totalCommission * (listing / 100);
-  const buyerShare = totalCommission * (buyer / 100);
+  const listingShare = splitTotal > 0 ? totalCommission * (listing / splitTotal) : 0;
+  const buyerShare = splitTotal > 0 ? totalCommission * (buyer / splitTotal) : 0;
   const afterTax = totalCommission * (1 - tax / 100);
   const listingAfterTax = listingShare * (1 - tax / 100);
   const buyerAfterTax = buyerShare * (1 - tax / 100);
@@ -70,6 +72,12 @@ export default function AgentCommissionCalc() {
         <ResultCard icon="📋" label="Listing Agent Cut" value={`$${listingShare.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="🤝" label="Buyer Agent Cut" value={`$${buyerShare.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
       </div>
+
+      {splitTotal !== 100 && (
+        <div className="rounded-lg border p-3 mb-6 text-sm" style={{ background: 'var(--bg-tertiary)', borderColor: '#d97706', color: '#d97706' }}>
+          Note: Listing + Buyer splits total {splitTotal.toFixed(1)}%. Splits are normalized to 100% for the calculations above.
+        </div>
+      )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <ResultCard icon="💵" label="After Tax Commission" value={`$${afterTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />

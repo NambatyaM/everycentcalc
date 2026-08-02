@@ -14,7 +14,7 @@ export default function QuarterlyTaxCalc() {
   const fs = filingStatus as 'single' | 'married';
 
   const totalIncome = ai + oi;
-  const se = selfEmploymentTax(ai, fs);
+  const se = selfEmploymentTax(ai, fs, oi);
   const deduction = getStandardDeduction(fs);
   const seDeduction = se.total / 2;
   const taxableIncome = Math.max(0, totalIncome - deduction - seDeduction);
@@ -37,7 +37,7 @@ export default function QuarterlyTaxCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
-            Other Income (W-2 salary, interest, etc.) ($)
+            Other W-2 Income (reduces SE tax cap) ($)
           </label>
           <input type="number" value={otherIncome} onChange={(e) => setOtherIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
@@ -65,7 +65,7 @@ export default function QuarterlyTaxCalc() {
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <ResultRow label="Q1 (Apr 15)" value={`$${quarterly.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Q2 (Jun 16)" value={`$${quarterly.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Q2 (Jun 15)" value={`$${quarterly.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Q3 (Sep 15)" value={`$${quarterly.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Q4 (Jan 15)" value={`$${quarterly.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>

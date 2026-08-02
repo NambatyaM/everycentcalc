@@ -19,13 +19,18 @@ export default function SaasUnitEconomicsCalc() {
   const cac = newCustomers > 0 ? marketingSpend / newCustomers : 0;
   const ltv = churn > 0 ? (avgRevenue * (margin / 100)) / (churn / 100) : Infinity;
   const ltvCacRatio = cac > 0 && ltv !== Infinity ? ltv / cac : 0;
+  const infiniteRatio = ltv === Infinity && cac > 0;
   const paybackPeriod = avgRevenue * (margin / 100) > 0 ? cac / (avgRevenue * (margin / 100)) : Infinity;
   const newMRR = newCustomers * avgRevenue;
 
   let ltvCacHealth: string;
   let ltvCacColor: string;
   let ltvCacBg: string;
-  if (ltvCacRatio > 3) {
+  if (infiniteRatio) {
+    ltvCacHealth = 'Healthy';
+    ltvCacColor = '#16a34a';
+    ltvCacBg = '#f0fdf4';
+  } else if (ltvCacRatio > 3) {
     ltvCacHealth = 'Healthy';
     ltvCacColor = '#16a34a';
     ltvCacBg = '#f0fdf4';
@@ -38,6 +43,7 @@ export default function SaasUnitEconomicsCalc() {
     ltvCacColor = '#dc2626';
     ltvCacBg = '#fef2f2';
   }
+  const ratioDisplay = infiniteRatio ? '∞:1' : ltvCacRatio > 0 ? `${ltvCacRatio.toFixed(1)}:1` : 'N/A';
 
   return (
     <div>
@@ -83,21 +89,21 @@ export default function SaasUnitEconomicsCalc() {
       <div className="rounded-lg border-2 p-4 mb-6 break-words overflow-hidden" style={{ background: ltvCacBg, borderColor: ltvCacColor }}>
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium" style={{ color: ltvCacColor }}>LTV:CAC Health</span>
-          <span className="text-lg font-bold font-mono" style={{ color: ltvCacColor }}>{ltvCacHealth} ({ltvCacRatio > 0 && ltvCacRatio !== Infinity ? ltvCacRatio.toFixed(1) + ':1' : 'N/A'})</span>
+          <span className="text-lg font-bold font-mono" style={{ color: ltvCacColor }}>{ltvCacHealth} ({ratioDisplay})</span>
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
         <ResultCard icon="🎯" label="CAC" value={`$${cac.toFixed(2)}`} highlight />
         <ResultCard icon="💎" label="LTV" value={ltv !== Infinity ? `$${ltv.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : '∞'} highlight />
-        <ResultCard icon="📊" label="LTV:CAC Ratio" value={ltvCacRatio > 0 && ltvCacRatio !== Infinity ? `${ltvCacRatio.toFixed(1)}:1` : 'N/A'} highlight />
+        <ResultCard icon="📊" label="LTV:CAC Ratio" value={ratioDisplay} highlight />
         <ResultCard icon="⏱️" label="Payback Period" value={isFinite(paybackPeriod) ? `${paybackPeriod.toFixed(1)} mo` : 'N/A'} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <ResultRow label="Cost per Acquisition (CAC)" value={`$${cac.toFixed(2)}`} />
         <ResultRow label="Customer Lifetime Value (LTV)" value={ltv !== Infinity ? `$${ltv.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : '∞ (no churn)'} />
-        <ResultRow label="LTV:CAC Ratio" value={ltvCacRatio > 0 && ltvCacRatio !== Infinity ? `${ltvCacRatio.toFixed(1)}:1` : 'N/A'} bold />
+        <ResultRow label="LTV:CAC Ratio" value={ratioDisplay} bold />
         <ResultRow label="Monthly MRR from New Customers" value={`$${newMRR.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label="Payback Period" value={isFinite(paybackPeriod) ? `${paybackPeriod.toFixed(1)} months` : 'N/A'} />
       </div>

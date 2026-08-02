@@ -24,7 +24,7 @@ export default function FreelanceProjectProfitabilityCalc() {
   const profitMargin = rev > 0 ? (netProfit / rev) * 100 : 0;
   const netHourlyRate = hrs > 0 ? netProfit / hrs : 0;
   const rateDiff = netHourlyRate - targetRate;
-  const isProfitable = effectiveHourlyRate >= targetRate;
+  const isProfitable = netHourlyRate >= targetRate;
 
   return (
     <div>

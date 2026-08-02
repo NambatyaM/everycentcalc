@@ -18,27 +18,28 @@ export default function PayrollTax() {
 
   const annualSalary = parseFloat(salary) || 0;
   const periods = PAY_PERIODS_PER_YEAR[payFrequency];
-  const allowance = parseInt(federalAllowance) || 1;
+  const allowanceInput = parseInt(federalAllowance);
+  const allowance = isNaN(allowanceInput) ? 1 : Math.max(0, allowanceInput);
   const stateRate = (parseFloat(stateTaxRate) || 0) / 100;
   const k401Rate = (parseFloat(k401Percent) || 0) / 100;
 
   const grossPerPeriod = annualSalary / periods;
   const k401PerPeriod = grossPerPeriod * k401Rate;
-  const taxableGross = grossPerPeriod - k401PerPeriod;
 
-  const annualTaxableGross = taxableGross * periods;
-  const employeeSSAnnual = Math.min(annualTaxableGross, SS_CAP) * 0.062;
-  const employeeMedicareAnnual = annualTaxableGross * 0.0145;
+  const employeeSSAnnual = Math.min(annualSalary, SS_CAP) * 0.062;
+  const employeeMedicareAnnual = annualSalary * 0.0145;
   const ssPerPeriod = employeeSSAnnual / periods;
   const medicarePerPeriod = employeeMedicareAnnual / periods;
 
+  const taxableGrossPerPeriod = grossPerPeriod - k401PerPeriod;
+  const annualTaxableGross = taxableGrossPerPeriod * periods;
   const federalAnnual = Math.max(0, annualTaxableGross - (allowance * 5000)) * 0.12;
   const federalPerPeriod = federalAnnual / periods;
 
-  const statePerPeriod = taxableGross * stateRate;
+  const statePerPeriod = taxableGrossPerPeriod * stateRate;
 
   const totalEmployeeTaxPerPeriod = ssPerPeriod + medicarePerPeriod + federalPerPeriod + statePerPeriod;
-  const netPayPerPeriod = taxableGross - totalEmployeeTaxPerPeriod;
+  const netPayPerPeriod = taxableGrossPerPeriod - totalEmployeeTaxPerPeriod;
 
   const employerSSPerPeriod = ssPerPeriod;
   const employerMedicarePerPeriod = medicarePerPeriod;
@@ -119,7 +120,7 @@ export default function PayrollTax() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> Federal withholding uses simplified flat 12% estimate. Actual withholding depends on W-4 elections and IRS tables. State tax rate is user-entered. SUTA rate estimated at 2.7% (varies by state and employer experience rating, wages capped at $7,000 for this calculation). 401(k) deductions are pre tax. FUTA applies to first $7,000 of wages ($42 max/year). Consult your payroll provider for exact calculations.</p>
+        <p><strong>Disclaimer:</strong> Federal withholding uses simplified flat 12% estimate. Actual withholding depends on W-4 elections and IRS tables. State tax rate is user-entered. SUTA rate estimated at 2.7% (varies by state and employer experience rating, wages capped at $7,000 for this calculation). 401(k) deductions are pre-tax for income tax but remain subject to Social Security and Medicare. FUTA applies to first $7,000 of wages ($42 max/year). Consult your payroll provider for exact calculations.</p>
       </div>
     </div>
   );

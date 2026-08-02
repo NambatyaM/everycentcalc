@@ -64,7 +64,7 @@ export function getStandardDeduction(filingStatus: FilingStatus): number {
 
 export function formatCurrency(amount: number): string {
   if (!isFinite(amount)) return '$—';
-  return `$${Math.round(Math.abs(amount)).toLocaleString('en-US')}`;
+  return `${amount < 0 ? '-$' : '$'}${Math.round(Math.abs(amount)).toLocaleString('en-US')}`;
 }
 
 export function formatPercent(rate: number, decimals = 1): string {

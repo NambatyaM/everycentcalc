@@ -9,10 +9,11 @@ export default function HealthInsuranceDeduction() {
   const [subsidies, setSubsidies] = useState('0');
   const [marginalRate, setMarginalRate] = useState('22');
 
-  const premium = parseFloat(annualPremium) || 0;
-  const months = Math.min(12, Math.max(1, parseFloat(monthsCovered) || 12));
-  const sub = parseFloat(subsidies) || 0;
-  const rate = parseFloat(marginalRate) || 0;
+  const premium = Math.max(0, parseFloat(annualPremium) || 0);
+  const monthsInput = parseFloat(monthsCovered);
+  const months = Math.min(12, Math.max(0, isNaN(monthsInput) ? 12 : monthsInput));
+  const sub = Math.max(0, parseFloat(subsidies) || 0);
+  const rate = Math.max(0, parseFloat(marginalRate) || 0);
 
   const deductible = Math.max(0, premium * (months / 12) - sub);
   const taxSavings = deductible * (rate / 100);

@@ -17,7 +17,8 @@ export default function RentVsBuyCalc() {
   const mr = parseFloat(monthlyRent) || 0;
   const dpPct = parseFloat(downPaymentPct) || 0;
   const ir = parseFloat(mortgageRate) || 0;
-  const yrs = parseInt(years) || 7;
+  const yearsInput = parseInt(years);
+  const yrs = Math.max(0, isNaN(yearsInput) ? 7 : yearsInput);
   const ptRate = parseFloat(propertyTaxRate) || 0;
   const appr = parseFloat(appreciation) || 0;
   const ri = parseFloat(rentIncrease) || 0;

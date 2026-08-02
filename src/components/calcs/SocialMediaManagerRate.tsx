@@ -11,16 +11,17 @@ export default function SocialMediaManagerRate() {
   const [toolsCost, setToolsCost] = useState('200');
   const [profitMarginPct, setProfitMarginPct] = useState('30');
 
-  const clients = parseFloat(numClients) || 1;
-  const hours = parseFloat(hoursPerClient) || 1;
+  const clients = parseFloat(numClients) || 0;
+  const hours = parseFloat(hoursPerClient) || 0;
   const income = parseFloat(desiredIncome) || 0;
   const tools = parseFloat(toolsCost) || 0;
   const marginPct = parseFloat(profitMarginPct) || 0;
 
   const totalHoursMonthly = clients * hours * 4;
   const effectiveMargin = Math.min(marginPct, 99.9);
-  const revenueNeeded = income / (1 - effectiveMargin / 100) + tools;
-  const perClient = revenueNeeded / clients;
+  const monthlyIncomeTarget = income / 12;
+  const revenueNeeded = monthlyIncomeTarget / (1 - effectiveMargin / 100) + tools;
+  const perClient = clients > 0 ? revenueNeeded / clients : 0;
   const hourly = totalHoursMonthly > 0 ? revenueNeeded / totalHoursMonthly : 0;
   const annualRevenue = revenueNeeded * 12;
 
@@ -99,7 +100,7 @@ export default function SocialMediaManagerRate() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Revenue needed = (desired income ÷ (1 − margin%)) + tools cost. This ensures your desired income is net of all expenses including tools and profit margin. Hourly rate = total monthly revenue ÷ total monthly hours. Adjust clients, hours, or margin to find the right balance.</p>
+        <p>Revenue needed = (monthly income target ÷ (1 − margin%)) + monthly tools cost. This ensures your monthly income goal is net of all expenses including tools and profit margin. Hourly rate = total monthly revenue ÷ total monthly hours. Adjust clients, hours, or margin to find the right balance.</p>
       </div>
     </div>
   );

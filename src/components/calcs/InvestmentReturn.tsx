@@ -21,17 +21,18 @@ export default function InvestmentReturnCalc() {
   const t = parseFloat(years) || 0;
   const n = FREQ_MAP[freq];
   const periodPMT = PMT * 12 / n;
+  const canCompound = 1 + r / n > 0;
 
-  const fv = r > 0
+  const fv = canCompound && r !== 0
     ? P * Math.pow(1 + r / n, n * t) + periodPMT * ((Math.pow(1 + r / n, n * t) - 1) / (r / n))
     : P + periodPMT * n * t;
   const totalContributed = P + PMT * t * 12;
   const totalInterest = fv - totalContributed;
-  const effectiveReturn = P > 0 && t > 0 && PMT === 0 ? ((fv / P) ** (1 / t) - 1) * 100 : 0;
+  const effectiveReturn = P > 0 && t > 0 && PMT === 0 ? ((fv / P) ** (1 / t) - 1) * 100 : null;
 
   const milestones = [5, 10, 15, 20, 25, 30].filter((y) => y <= t && y > 0);
   const milestoneValues = milestones.map((y) => {
-    const val = r > 0
+    const val = canCompound && r !== 0
       ? P * Math.pow(1 + r / n, n * y) + periodPMT * ((Math.pow(1 + r / n, n * y) - 1) / (r / n))
       : P + periodPMT * n * y;
     const contributed = P + PMT * y * 12;
@@ -87,7 +88,7 @@ export default function InvestmentReturnCalc() {
         <ResultCard icon="💰" label="Final Value" value={formatCurrency(fv)} highlight />
         <ResultCard icon="🏦" label="Total Contributed" value={formatCurrency(totalContributed)} />
         <ResultCard icon="📈" label="Total Interest Earned" value={formatCurrency(totalInterest)} />
-        <ResultCard icon="📊" label="Effective Annual Return" value={`${effectiveReturn.toFixed(2)}%`} />
+        <ResultCard icon="📊" label="Effective Annual Return" value={effectiveReturn !== null ? `${effectiveReturn.toFixed(2)}%` : 'N/A'} subtitle={effectiveReturn === null ? 'Requires no monthly contributions' : 'CAGR on initial amount'} />
       </div>
 
       {milestoneValues.length > 0 && (

@@ -18,7 +18,8 @@ export default function RentalPropertyRoiCalc() {
   const pp = parseFloat(purchasePrice) || 0;
   const dp = parseFloat(downPayment) || 0;
   const rate = parseFloat(mortgageRate) || 0;
-  const term = parseInt(mortgageTerm) || 30;
+  const termInput = parseInt(mortgageTerm);
+  const term = Math.max(1, isNaN(termInput) ? 30 : termInput);
   const rent = parseFloat(monthlyRent) || 0;
   const pt = parseFloat(propertyTax) || 0;
   const ins = parseFloat(insurance) || 0;

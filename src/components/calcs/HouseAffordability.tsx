@@ -23,7 +23,7 @@ export default function HouseAffordabilityCalc() {
   const monthlyIncome = income / 12;
   const frontEndLimit = monthlyIncome * 0.28;
   const backEndLimit = monthlyIncome * 0.36;
-  const availableForPIT = backEndLimit - debts;
+  const availableForPIT = Math.max(0, Math.min(frontEndLimit, backEndLimit - debts));
 
   const monthlyRate = rate / 100 / 12;
   const numPayments = term * 12;

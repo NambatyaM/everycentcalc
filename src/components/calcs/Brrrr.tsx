@@ -15,18 +15,20 @@ export default function BrrrrCalc() {
   const pp = parseFloat(purchasePrice) || 0;
   const rc = parseFloat(repairCosts) || 0;
   const arvVal = parseFloat(arv) || 0;
-  const ltv = parseFloat(refinanceLtv) || 75;
+  const ltvInput = parseFloat(refinanceLtv);
+  const ltv = isNaN(ltvInput) ? 75 : Math.max(0, ltvInput);
   const rent = parseFloat(monthlyRent) || 0;
   const mortgage = parseFloat(monthlyMortgage) || 0;
   const other = parseFloat(otherMonthlyExpenses) || 0;
 
   const allInCost = pp + rc;
   const loanAmount = arvVal * (ltv / 100);
-  const cashLeftInDeal = Math.max(0, allInCost - loanAmount);
+  const cashLeftInDeal = allInCost - loanAmount;
   const annualCashFlow = (rent - mortgage - other) * 12;
   const monthlyCashFlow = rent - mortgage - other;
-  const cashOnCash = cashLeftInDeal > 0 ? (annualCashFlow / cashLeftInDeal) * 100 : 0;
+  const cashOnCash = cashLeftInDeal !== 0 ? (annualCashFlow / cashLeftInDeal) * 100 : 0;
   const equity = arvVal - loanAmount;
+  const cashOutReceived = cashLeftInDeal < 0;
 
   return (
     <div>
@@ -84,10 +86,10 @@ export default function BrrrrCalc() {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="📊" label="Cash on Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
+        <ResultCard icon="📊" label="Cash on Cash Return" value={cashOnCash !== 0 ? `${cashOnCash.toFixed(2)}%` : 'N/A'} highlight subtitle={cashOutReceived ? 'No cash in deal (cash-out refinance)' : ''} />
         <ResultCard icon="💵" label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="💰" label="Annual Cash Flow" value={`$${annualCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
-        <ResultCard icon="🏦" label="Cash Left in Deal" value={`$${cashLeftInDeal.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
+        <ResultCard icon="🏦" label={cashOutReceived ? 'Cash Out Received' : 'Cash Left in Deal'} value={`$${Math.abs(cashLeftInDeal).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
         <ResultCard icon="🏠" label="Equity Position" value={`$${equity.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
         <ResultCard icon="📋" label="Loan Amount" value={`$${loanAmount.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
       </div>
@@ -99,7 +101,7 @@ export default function BrrrrCalc() {
         <ResultRow label="All in Cost" value={`$${allInCost.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label="After Repair Value (ARV)" value={`$${arvVal.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label={`Refinance Loan (${ltv}% of ARV)`} value={`$${loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Cash Left in Deal" value={`$${cashLeftInDeal.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
+        <ResultRow label={cashOutReceived ? 'Cash Out Received' : 'Cash Left in Deal'} value={`$${Math.abs(cashLeftInDeal).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label="Equity (ARV - Loan)" value={`$${equity.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
       </div>
 

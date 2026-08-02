@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { federalIncomeTax, getStandardDeduction, formatCurrency, formatPercent, SS_CAP, SS_RATE, MEDICARE_RATE, type FilingStatus } from '@/lib/tax';
+import { federalIncomeTax, getStandardDeduction, formatCurrency, formatPercent, SS_CAP, SS_RATE, MEDICARE_RATE, ADDITIONAL_MEDICARE_RATE, type FilingStatus } from '@/lib/tax';
 
 export default function CCorpVsSCorp() {
   const [netIncome, setNetIncome] = useState('200000');
@@ -18,8 +18,9 @@ export default function CCorpVsSCorp() {
 
   const sEmployeeSS = Math.min(salary, SS_CAP) * SS_RATE;
   const sEmployeeMedicare = salary * MEDICARE_RATE;
-  const sEmployeeFICA = sEmployeeSS + sEmployeeMedicare;
-  const sEmployerFICA = sEmployeeFICA;
+  const sAdditionalMedicare = Math.max(0, salary - (fs === 'married' ? 250000 : 200000)) * ADDITIONAL_MEDICARE_RATE;
+  const sEmployeeFICA = sEmployeeSS + sEmployeeMedicare + sAdditionalMedicare;
+  const sEmployerFICA = sEmployeeSS + sEmployeeMedicare;
   const sTotalFICA = sEmployeeFICA + sEmployerFICA;
 
   const sTaxable = Math.max(0, ni - deduction - sEmployerFICA);
@@ -113,7 +114,7 @@ export default function CCorpVsSCorp() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> S-Corp is pass through: all income taxed once at personal rates. C-Corp faces double taxation: 21% corporate tax + personal tax on salary and dividends. Dividend tax assumes qualified dividends at 15%. Does not include state taxes, QBI deduction, or additional Medicare taxes. Consult a tax advisor for entity selection.</p>
+        <p><strong>Disclaimer:</strong> S-Corp is pass through: all income taxed once at personal rates. C-Corp faces double taxation: 21% corporate tax + personal tax on salary and dividends. Dividend tax assumes qualified dividends at 15%. Does not include state taxes or the QBI deduction. Consult a tax advisor for entity selection.</p>
       </div>
     </div>
   );

@@ -88,6 +88,7 @@ export default function DoorDashProfit() {
         <ResultRow label="Other Expenses" value={`-${formatCurrency(other)}`} />
         <ResultRow label="IRS Vehicle Deduction (miles × $0.70)" value={formatCurrency(vehicleCost)} />
         <ResultRow label="Net Weekly Profit" value={formatCurrency(netWeekly)} bold />
+        <ResultRow label="Tax Savings from Vehicle Deduction (at 22%, reference only)" value={`~${formatCurrency(vehicleCost * 0.22)}/wk`} />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>

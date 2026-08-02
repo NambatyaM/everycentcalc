@@ -65,7 +65,7 @@ export default function BusinessLoanInterest() {
         <ResultCard icon="🏦" label="Total Interest" value={formatCurrency(totalInterest)} />
         <ResultCard icon="📝" label="Origination Fee" value={formatCurrency(originationFeeAmount)} />
         <ResultCard icon="💰" label="Total Cost of Loan" value={formatCurrency(totalCost)} highlight />
-        <ResultCard icon="📊" label="Effective APR" value={formatPercent(apr)} subtitle="Includes fees" />
+        <ResultCard icon="📊" label="Annual Cost Rate" value={formatPercent(apr)} subtitle="Total cost / principal / years" />
         <ResultCard icon="🔢" label="Total Payments" value={formatCurrency(totalPaid)} subtitle={`${totalMonths} months`} />
       </div>
 
@@ -77,11 +77,11 @@ export default function BusinessLoanInterest() {
         <ResultRow label="Total Interest Paid" value={formatCurrency(totalInterest)} />
         <ResultRow label="Origination Fee" value={formatCurrency(originationFeeAmount)} />
         <ResultRow label="Total Cost" value={formatCurrency(totalCost)} bold />
-        <ResultRow label="Effective APR" value={formatPercent(apr)} bold />
+        <ResultRow label="Annual Cost Rate" value={formatPercent(apr)} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> Uses standard amortization formula (PMT). Monthly payment assumes fixed-rate loan with equal payments. APR is simplified: total cost / principal / years. Actual APR may differ due to compounding frequency, closing costs, and fees. Does not include potential prepayment penalties or variable rate adjustments.</p>
+        <p><strong>Disclaimer:</strong> Uses standard amortization formula (PMT). Monthly payment assumes fixed-rate loan with equal payments. The annual cost rate is a simplified figure: total cost (interest + fees) / principal / years. It is not a true APR — actual APR may differ due to compounding frequency, closing costs, and fees. Does not include potential prepayment penalties or variable rate adjustments.</p>
       </div>
     </div>
   );

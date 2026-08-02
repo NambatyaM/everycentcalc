@@ -8,7 +8,6 @@ export default function QbiDeduction() {
   const [qualifiedBusinessIncome, setQualifiedBusinessIncome] = useState('100000');
   const [totalTaxableIncome, setTotalTaxableIncome] = useState('80000');
   const [filingStatus, setFilingStatus] = useState('single');
-  const [marginalRate, setMarginalRate] = useState('22');
 
   const qbi = parseFloat(qualifiedBusinessIncome) || 0;
   const taxableBeforeQBI = parseFloat(totalTaxableIncome) || 0;
@@ -52,14 +51,6 @@ export default function QbiDeduction() {
               <option value="single">Single</option>
               <option value="married">Married Filing Jointly</option>
             </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
-              Marginal Tax Rate (%)
-            </label>
-            <input type="number" value={marginalRate} onChange={(e) => setMarginalRate(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
       </div>

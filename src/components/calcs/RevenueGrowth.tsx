@@ -8,13 +8,12 @@ export default function RevenueGrowth() {
   const [currentRevenue, setCurrentRevenue] = useState('10000');
   const [growthRate, setGrowthRate] = useState('10');
   const [projectionMonths, setProjectionMonths] = useState('12');
-  const [currentCustomers, setCurrentCustomers] = useState('100');
   const [revenuePerCustomer, setRevenuePerCustomer] = useState('100');
 
   const monthlyRev = parseFloat(currentRevenue) || 0;
   const rate = (parseFloat(growthRate) || 0) / 100;
-  const months = Math.min(parseInt(projectionMonths) || 12, 60);
-  const customers = parseInt(currentCustomers) || 0;
+  const monthsInput = parseInt(projectionMonths);
+  const months = Math.max(0, Math.min(isNaN(monthsInput) ? 12 : monthsInput, 60));
   const rpc = parseFloat(revenuePerCustomer) || 0;
 
   let totalRevenue = 0;
@@ -54,12 +53,6 @@ export default function RevenueGrowth() {
           <div>
             <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Projection Months</label>
             <input type="number" value={projectionMonths} onChange={(e) => setProjectionMonths(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Customers</label>
-            <input type="number" value={currentCustomers} onChange={(e) => setCurrentCustomers(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { selfEmploymentTax, formatCurrency, formatPercent, SS_CAP, type FilingStatus } from '@/lib/tax';
+import { selfEmploymentTax, formatCurrency, formatPercent, SS_CAP, ADDITIONAL_MEDICARE_RATE, type FilingStatus } from '@/lib/tax';
 
 const INDUSTRY_MULTIPLIERS: Record<string, number> = {
   tech: 0.55,
@@ -18,7 +18,8 @@ export default function SCorpSalary() {
   const [yearsInBusiness, setYearsInBusiness] = useState('3');
 
   const ni = parseFloat(netIncome) || 0;
-  const yib = parseInt(yearsInBusiness) || 1;
+  const yibInput = parseInt(yearsInBusiness);
+  const yib = isNaN(yibInput) ? 1 : Math.max(0, yibInput);
   const fs = filingStatus as FilingStatus;
 
   const multiplier = INDUSTRY_MULTIPLIERS[industry];
@@ -33,7 +34,8 @@ export default function SCorpSalary() {
 
   const employeeSS = Math.min(adjustedSalary, SS_CAP) * EE_SS_RATE;
   const employeeMedicare = adjustedSalary * EE_MEDICARE_RATE;
-  const employeeFICA = employeeSS + employeeMedicare;
+  const additionalMedicare = Math.max(0, adjustedSalary - (fs === 'married' ? 250000 : 200000)) * ADDITIONAL_MEDICARE_RATE;
+  const employeeFICA = employeeSS + employeeMedicare + additionalMedicare;
   const employerSS = Math.min(adjustedSalary, SS_CAP) * ER_SS_RATE;
   const employerMedicare = adjustedSalary * ER_MEDICARE_RATE;
   const employerFICA = employerSS + employerMedicare;
@@ -87,7 +89,7 @@ export default function SCorpSalary() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
-        <ResultCard icon="💼" label="Recommended Salary" value={formatCurrency(adjustedSalary)} highlight subtitle={`${(multiplier * 100).toFixed(0)}% of income`} />
+        <ResultCard icon="💼" label="Recommended Salary" value={formatCurrency(adjustedSalary)} highlight subtitle={yib < 2 ? '90% of industry base' : yib > 5 ? '105% of industry base' : `${(multiplier * 100).toFixed(0)}% of income`} />
         <ResultCard icon="💰" label="Distribution" value={formatCurrency(distribution)} subtitle="No FICA" />
         <ResultCard icon="🏦" label="Total FICA Tax" value={formatCurrency(totalFICA)} />
         <ResultCard icon="📊" label="SE Tax Comparison" value={formatCurrency(se.total)} subtitle="If sole proprietor" />

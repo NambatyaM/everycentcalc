@@ -18,7 +18,8 @@ export default function TaxDeductionTrackerCalc() {
   const [profDev, setProfDev] = useState('500');
   const [otherExpenses, setOtherExpenses] = useState('0');
 
-  const sq = Math.min(parseFloat(sqft) || 0, HOME_OFFICE_MAX_SQFT);
+  const sqInput = parseFloat(sqft);
+  const sq = Math.max(0, Math.min(isNaN(sqInput) ? 0 : sqInput, HOME_OFFICE_MAX_SQFT));
   const eq = parseFloat(equipment) || 0;
   const sw = parseFloat(software) || 0;
   const inMo = (parseFloat(internet) || 0) * 12;

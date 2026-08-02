@@ -10,10 +10,15 @@ export default function HomeOfficeDeduction() {
   const [method, setMethod] = useState('simplified');
   const [marginalRate, setMarginalRate] = useState('22');
 
-  const total = parseFloat(totalSqFt) || 1000;
-  const office = parseFloat(officeSqFt) || 150;
-  const expenses = parseFloat(annualExpenses) || 24000;
-  const rate = parseFloat(marginalRate) || 22;
+  const parseWithDefault = (v: string, d: number) => {
+    const n = parseFloat(v);
+    return isNaN(n) ? d : n;
+  };
+
+  const total = Math.max(0, parseWithDefault(totalSqFt, 1000));
+  const office = Math.max(0, parseWithDefault(officeSqFt, 150));
+  const expenses = Math.max(0, parseWithDefault(annualExpenses, 24000));
+  const rate = Math.max(0, parseWithDefault(marginalRate, 22));
 
   const simplified = Math.min(office, 300) * 5;
   const regular = total > 0 ? (office / total) * expenses : 0;

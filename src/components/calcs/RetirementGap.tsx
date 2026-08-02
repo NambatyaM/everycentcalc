@@ -38,7 +38,7 @@ export default function RetirementGapCalc() {
     if (annualGap <= 0 || yearsToRetire <= 0) return 0;
     const futureValueNeeded = annualGap / withdrawalRate;
     if (monthlyRate === 0) return futureValueNeeded / totalMonths;
-    return (futureValueNeeded - cs * Math.pow(1 + r, yearsToRetire)) * monthlyRate / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+    return futureValueNeeded * monthlyRate / (Math.pow(1 + monthlyRate, totalMonths) - 1);
   })();
 
   return (

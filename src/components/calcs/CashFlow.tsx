@@ -15,7 +15,8 @@ export default function CashFlow() {
   const income = parseFloat(monthlyIncome) || 0;
   const expenses = parseFloat(monthlyExpenses) || 0;
   const oneTime = parseFloat(oneTimeExpenses) || 0;
-  const numMonths = Math.min(parseInt(months) || 12, 60);
+  const monthsInput = parseInt(months);
+  const numMonths = Math.max(0, Math.min(isNaN(monthsInput) ? 12 : monthsInput, 60));
 
   const monthlyCashFlow = income - expenses;
   let endBalance = startBal;
@@ -95,6 +96,7 @@ export default function CashFlow() {
       )}
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+        <p>{numMonths > 0 && monthsInput > 60 && <span style={{ color: '#d97706', fontWeight: 600 }}>Note: Projection capped at 60 months.</span>}</p>
         <p><strong>Disclaimer:</strong> Simple cash flow projection assuming constant monthly income and expenses. One time expenses are applied in Month 1. Does not account for seasonal variations, tax payments, loan payments, or accounts receivable timing. Use for planning purposes only.</p>
       </div>
     </div>
