@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
 import { formatCurrency } from '@/lib/tax';
 
-export default function DoorDashProfit() {
+export default function DoorDashProfit({ provider = 'DoorDash' }: { provider?: string }) {
   const [weeklyGross, setWeeklyGross] = useState('800');
   const [milesDriven, setMilesDriven] = useState('300');
   const [hoursWorked, setHoursWorked] = useState('30');
@@ -27,7 +27,7 @@ export default function DoorDashProfit() {
 
   return (
     <div>
-      <SectionHeader title="DoorDash Driver Profit Calculator" subtitle="Calculate your real hourly rate and net profit after expenses" />
+      <SectionHeader title={`${provider} Profit Calculator`} subtitle="Calculate your real hourly rate and net profit after expenses" />
 
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -86,13 +86,13 @@ export default function DoorDashProfit() {
         <ResultRow label="Gross Earnings" value={formatCurrency(gross)} />
         <ResultRow label="Gas Cost" value={`-${formatCurrency(gasCost)}`} />
         <ResultRow label="Other Expenses" value={`-${formatCurrency(other)}`} />
-        <ResultRow label="IRS Vehicle Deduction (miles × $0.70)" value={formatCurrency(vehicleCost)} />
         <ResultRow label="Net Weekly Profit" value={formatCurrency(netWeekly)} bold />
-        <ResultRow label="Tax Savings from Vehicle Deduction (at 22%, reference only)" value={`~${formatCurrency(vehicleCost * 0.22)}/wk`} />
+        <ResultRow label="IRS Standard Mileage Deduction (reference — not subtracted)" value={`${formatCurrency(vehicleCost)}/wk`} />
+        <ResultRow label="Tax Savings from Mileage Deduction (22% bracket, reference only)" value={`~${formatCurrency(vehicleCost * 0.22)}/wk`} />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Gas cost is calculated using your miles and MPG. The IRS standard mileage rate of $0.70/mile is shown for reference — actual tax deduction depends on your filing status. Net profit = gross earnings − gas cost − other expenses. Hourly rate = net profit ÷ hours worked.</p>
+        <p>Gas cost is calculated using your miles and MPG. Net profit = gross earnings − gas cost − other expenses. Hourly rate = net profit ÷ hours worked. For taxes, you choose EITHER the IRS standard mileage rate ($0.70/mile in 2026) OR your actual vehicle expenses (gas, repairs, insurance, depreciation) — never both. The mileage deduction is claimed on your tax return and does not reduce your cash profit directly.</p>
       </div>
     </div>
   );

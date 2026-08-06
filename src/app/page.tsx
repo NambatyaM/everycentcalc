@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import CalculatorCard from '@/components/CalculatorCard';
 
 function HeroSection() {
+  const totalCalcs = calculators.length;
   return (
     <section className="relative py-16 md:py-24 px-4 overflow-hidden">
       <div className="absolute inset-0 opacity-5" style={{ background: 'var(--brand-gradient)' }} />
@@ -13,21 +14,20 @@ function HeroSection() {
         <div className="text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-6" style={{ background: 'var(--brand-light)', color: 'var(--brand)' }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: 'var(--brand)' }} />
-            87 free calculators
+            {totalCalcs} free calculators · 2026 IRS rates
           </div>
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-balance"
             style={{ color: 'var(--text-primary)' }}
           >
-            How much do you <em>actually</em> owe?{' '}
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'var(--brand-gradient)' }}>Find out in 30 seconds.</span>
+            Free tax &amp; money calculators for{' '}
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'var(--brand-gradient)' }}>freelancers and small business owners</span>
           </h1>
           <p
             className="text-lg md:text-xl max-w-xl mb-10 leading-relaxed text-balance"
             style={{ color: 'var(--text-secondary)' }}
           >
-            87 free calculators built for freelancers, side hustlers, real estate investors,
-            and small business owners. No signup. No guessing. Just the number you need.
+            Self-employment tax, 1099 income, quarterly payments, rent vs. buy, and profit margins — {totalCalcs} free tools built for the self-employed. No signup. No guessing. Just the number you need in 30 seconds.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
             <Link
@@ -53,7 +53,7 @@ function HeroSection() {
           >
             <Image
               src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80"
-              alt="Freelancer calculating finances"
+              alt="Freelancer calculating self employment tax and finances"
               width={800}
               height={560}
               className="w-full h-auto object-cover"
@@ -220,6 +220,70 @@ function PopularCalculators() {
   );
 }
 
+function getNextQuarterlyDeadline(): { date: Date; quarter: string } {
+  const now = new Date();
+  const year = now.getFullYear();
+  const quarters = [
+    { month: 3, day: 15, quarter: 'Q1' },
+    { month: 5, day: 15, quarter: 'Q2' },
+    { month: 8, day: 15, quarter: 'Q3' },
+    { month: 0, day: 15, quarter: 'Q4' },
+  ];
+  for (const q of quarters) {
+    const candidate = new Date(year, q.month, q.day);
+    if (candidate > now) return { date: candidate, quarter: q.quarter };
+  }
+  return { date: new Date(year + 1, 0, 15), quarter: 'Q4' };
+}
+
+function DeadlineBanner() {
+  const { date, quarter } = getNextQuarterlyDeadline();
+  const formatted = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  return (
+    <section className="py-10 px-4">
+      <div className="max-w-6xl mx-auto rounded-2xl border-2 p-6 md:p-8 relative overflow-hidden" style={{ borderColor: 'var(--brand)', background: 'var(--brand-light)' }}>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div className="text-4xl flex-shrink-0">⏰</div>
+          <div className="flex-1">
+            <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--brand)' }}>
+              Estimated tax deadline — {quarter}
+            </p>
+            <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
+              Next quarterly tax payment due {formatted}
+            </h2>
+            <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+              1099 workers and freelancers owe estimated taxes four times a year. Miss a payment and the IRS adds underpayment penalties on top of what you owe. Calculate your amount before the deadline.
+            </p>
+            <div className="flex flex-wrap gap-3 mt-4">
+              <Link
+                href="/calculator/quarterly-tax-calculator/"
+                className="px-5 py-2.5 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:opacity-90 text-sm"
+                style={{ background: 'var(--brand-gradient)' }}
+              >
+                Calculate My Quarterly Tax
+              </Link>
+              <Link
+                href="/calculator/quarterly-tax-deadline-calculator/"
+                className="px-5 py-2.5 rounded-xl font-semibold border-2 transition-all hover:shadow-md text-sm"
+                style={{ borderColor: 'var(--border-hover)', color: 'var(--text-primary)' }}
+              >
+                Quarterly Tax Deadlines
+              </Link>
+              <Link
+                href="/calculator/self-employment-tax-calculator/"
+                className="px-5 py-2.5 rounded-xl font-semibold border-2 transition-all hover:shadow-md text-sm"
+                style={{ borderColor: 'var(--border-hover)', color: 'var(--text-primary)' }}
+              >
+                Self-Employment Tax
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function SuiteSection({ category }: { category: (typeof categories)[number] }) {
   const suiteCalcs = calculators.filter((c) => c.category === category.slug);
 
@@ -279,7 +343,7 @@ function WhySection() {
               {[
                 {
                   icon: '🧾',
-                  title: '87 Calculators Across 7 Categories',
+                  title: '91 Calculators Across 7 Categories',
                   desc: 'Self employment tax, quarterly estimates, S-Corp savings, rental property ROI, side hustle profit, business finance, and investment planning — all in one place.',
                 },
                 {
@@ -313,6 +377,61 @@ function WhySection() {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function SeoContentSection() {
+  return (
+    <section className="py-14 px-4">
+      <div className="max-w-4xl mx-auto space-y-5 text-sm md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+        <h2 className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
+          Free Online Financial Calculators for Freelancers &amp; the Self-Employed
+        </h2>
+        <p>
+          Whether you&apos;re a freelancer, 1099 contractor, gig worker, or small business owner, EveryCentCalc gives you the exact numbers you need — free. Start with the{' '}
+          <Link href="/calculator/self-employment-tax-calculator/" className="underline underline-offset-2" style={{ color: 'var(--brand)' }}>
+            self-employment tax calculator
+          </Link>{' '}
+          to see what the 15.3% SE tax costs you, run the{' '}
+          <Link href="/calculator/1099-income-tax-calculator/" className="underline underline-offset-2" style={{ color: 'var(--brand)' }}>
+            1099 income tax calculator
+          </Link>{' '}
+          for your full federal bill, and plan your payments with the{' '}
+          <Link href="/calculator/quarterly-tax-calculator/" className="underline underline-offset-2" style={{ color: 'var(--brand)' }}>
+            quarterly estimated tax calculator
+          </Link>{' '}
+          before each IRS deadline.
+        </p>
+        <h3 className="text-lg md:text-xl font-bold pt-2" style={{ color: 'var(--text-primary)' }}>
+          Built Around Tax Season, Not Generic Math
+        </h3>
+        <p>
+          Tax searches spike every February through April, and quarterly deadlines hit in April, June, September, and January. All our tax tools are updated with current 2026 IRS rates, self-employment caps, standard deductions, and tax brackets — so the numbers match what you&apos;ll actually owe, not last year&apos;s figures.
+        </p>
+        <h3 className="text-lg md:text-xl font-bold pt-2" style={{ color: 'var(--text-primary)' }}>
+          From Self-Employment Tax to Business Profit
+        </h3>
+        <p>
+          Beyond taxes, you&apos;ll find the numbers freelancers and small business owners search for every week: a{' '}
+          <Link href="/calculator/rent-vs-buy-calculator/" className="underline underline-offset-2" style={{ color: 'var(--brand)' }}>
+            rent vs buy calculator
+          </Link>{' '}
+          for housing decisions,{' '}
+          <Link href="/calculator/etsy-profit-calculator/" className="underline underline-offset-2" style={{ color: 'var(--brand)' }}>
+            Etsy profit calculator
+          </Link>{' '}
+          for marketplace sellers, a{' '}
+          <Link href="/calculator/break-even-calculator/" className="underline underline-offset-2" style={{ color: 'var(--brand)' }}>
+            break even calculator
+          </Link>{' '}
+          to find how many sales you need, and a{' '}
+          <Link href="/calculator/compound-interest-calculator/" className="underline underline-offset-2" style={{ color: 'var(--brand)' }}>
+            compound interest calculator
+          </Link>{' '}
+          to grow your savings. Every tool is free, private, and works entirely in your browser.
+        </p>
       </div>
     </section>
   );
@@ -380,19 +499,6 @@ function HostingerBanner() {
 export default function HomePage() {
   const totalCalcs = calculators.length;
 
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'EveryCentCalc',
-    url: 'https://everycentcalc.biz.id',
-    description: `${totalCalcs} free online financial calculators for freelancers, side hustlers, real estate investors, and small business owners.`,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://everycentcalc.biz.id/search?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
-  };
-
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -408,6 +514,7 @@ export default function HomePage() {
         <HeroSection />
         <TrustBadges />
         <TopAffiliateBanner />
+        <DeadlineBanner />
         <PopularCalculators />
         <section id="calculators" className="py-12 px-4">
           <div className="max-w-6xl mx-auto">
@@ -431,10 +538,10 @@ export default function HomePage() {
           </div>
         </section>
         <WhySection />
+        <SeoContentSection />
         <HostingerBanner />
       </main>
       <Footer />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
     </>
   );

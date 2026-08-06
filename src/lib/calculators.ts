@@ -339,6 +339,24 @@ const freelanceTaxCalculators = [
     ],
     keywords: ['freelancer health insurance cost 2026', 'self employed health insurance calculator', 'ACA marketplace premium estimate', 'health insurance tax deduction self employed', 'how much is health insurance for freelancers'],
   },
+  {
+    slug: 'tax-extension-calculator',
+    name: 'Tax Extension Calculator',
+    description: 'Need more time to file your taxes? This calculator shows your extended deadline (October 15), exactly how much to pay with Form 4868 to avoid penalties, and what it costs if you skip the extension.',
+    category: 'freelance-tax',
+    url: '/calculator/tax-extension-calculator/',
+    canonical: '/calculator/tax-extension-calculator/',
+    color: '#F97316',
+    icon: '🕒',
+    tags: ['tax extension calculator', 'how to file a tax extension', 'form 4868', 'tax extension deadline', 'october 15 tax deadline', 'irs extension'],
+    faqs: [
+      { q: 'How do I file a tax extension?', a: 'File Form 4868 with the IRS — online through IRS Free File, by mail, or with any tax software. It gives you an automatic 6-month extension to October 15. It takes about 5 minutes and is free for most filers.' },
+      { q: 'Does a tax extension delay how much I owe?', a: 'No. An extension only pushes back your filing deadline — not your payment deadline. You still must pay at least 90% of your tax by the original April 15 deadline to avoid underpayment penalties and interest. Use this calculator to see exactly what to pay now.' },
+      { q: 'What happens if I miss the October 15 extension deadline?', a: 'If you file late without an extension, the IRS charges a failure-to-file penalty of 5% of unpaid tax per month, up to 25%, plus interest (about 8% annually). If you don\'t pay on time, you also face a 0.5% per month failure-to-pay penalty — 10x lower than the filing penalty.' },
+      { q: 'Is a tax extension an extension to pay?', a: 'No. The IRS makes this distinction clear: Form 4868 extends time to file, not time to pay. If you can\'t pay in full, you should still file on time and set up an installment agreement or offer in compromise rather than ignoring the deadline.' },
+    ],
+    keywords: ['tax extension calculator', 'how to file a tax extension 2026', 'form 4868 calculator', 'tax extension deadline october 15', 'how much to pay with tax extension', 'irs tax extension'],
+  },
 
 ];
 
@@ -506,6 +524,23 @@ const freelanceBusinessCalculators = [
       { q: 'What is an effective hourly rate on a retainer?', a: 'Your effective hourly rate = monthly retainer fee / total hours worked (including admin, communication, and overtime). If you charge $4,000/month for 40 hours plus 5 overtime hours at 1.5x, your effective rate is $109.09/hour.' },
     ],
     keywords: ['client billing calculator', 'retainer vs hourly billing calculator', 'freelancer billing model calculator', 'client pricing calculator', 'retainer discount calculator'],
+  },
+  {
+    slug: 'salary-to-hourly-calculator',
+    name: 'Salary to Hourly Calculator',
+    description: 'Convert between annual salary and hourly wage in seconds. See your equivalent hourly, monthly, biweekly, weekly, and daily pay — plus the freelance rate you actually need to charge.',
+    category: 'freelance-business',
+    url: '/calculator/salary-to-hourly-calculator/',
+    canonical: '/calculator/salary-to-hourly-calculator/',
+    color: '#0D9488',
+    icon: '⏱️',
+    tags: ['salary to hourly calculator', 'hourly to salary calculator', 'annual salary to hourly rate', 'hourly wage calculator', 'salary converter'],
+    faqs: [
+      { q: 'How do I convert annual salary to hourly rate?', a: 'Divide annual salary by (hours per week × weeks per year). A $65,000 salary at 40 hours/week for 52 weeks = $31.25/hour. With 2 weeks unpaid leave (50 weeks), it becomes $32.50/hour. Use this calculator to see all pay frequencies at once.' },
+      { q: 'How much should a freelancer charge vs. a salary?', a: 'Multiply your target salary by 2-3x. A $50,000 salary ≈ $100-150/hour freelance because you cover self-employment tax (15.3%), health insurance, retirement, paid time off, unpaid admin time, and gaps between clients. A quick rule: salary / 1000 × 2 = target hourly.' },
+      { q: 'Is $25/hour the same as $50,000/year?', a: 'Roughly, at 40 hours/week and 50 paid weeks: $25 × 40 × 50 = $50,000. At 52 weeks it is $52,000. But $25/hour salary vs. $25/hour freelance are very different — a freelancer at $25/hour nets closer to $19/hour after self-employment tax and unpaid overhead.' },
+    ],
+    keywords: ['salary to hourly calculator 2026', 'annual salary to hourly rate', 'hourly to salary calculator', 'how much is my salary per hour', 'salary converter calculator'],
   },
 
 ];
@@ -862,6 +897,23 @@ const sideHustleCalculators = [
       { q: 'How do I calculate profit per $100 in Shopify sales?', a: 'Revenue: $100. Product cost: ~$35. Shopify fees (2.9% + $0.30): ~$3.20. Shipping: ~$8. Marketing (CAC): ~$15. Other: ~$5. Net profit: ~$33.80 (33.8% margin). Every store is different — use this calculator with your actual numbers.' },
     ],
     keywords: ['shopify profit calculator 2026', 'shopify profit margin calculator', 'shopify fees calculator per sale', 'ecommerce profit calculator', 'shopify revenue breakdown'],
+  },
+  {
+    slug: 'take-home-pay-calculator',
+    name: 'Take-Home Pay Calculator',
+    description: 'How much of your salary actually lands in your bank account? Estimate net pay after 2026 federal income tax, Social Security, Medicare, state tax, and 401(k) contributions — per month, biweekly, or weekly.',
+    category: 'side-hustle',
+    url: '/calculator/take-home-pay-calculator/',
+    canonical: '/calculator/take-home-pay-calculator/',
+    color: '#F97316',
+    icon: '💵',
+    tags: ['take home pay calculator', 'net pay calculator', 'paycheck calculator', 'how much will i take home', 'salary after tax calculator'],
+    faqs: [
+      { q: 'How much of my salary do I actually take home?', a: 'A $75,000 salary for a single filer in a no-income-tax state takes home roughly $58,300/year (~$2,240 biweekly). That\'s federal income tax (~$8,600 after the standard deduction), Social Security (6.2%), and Medicare (1.45%). State tax and 401(k) reduce it further.' },
+      { q: 'Why is my take-home pay less than my tax bracket says?', a: 'Your marginal tax bracket (e.g., 22%) only applies to income above each bracket threshold — not all of it. Your effective federal rate on $75,000 is closer to 12-13% after the $16,100 standard deduction. Add 7.65% FICA and you\'re at roughly 19-20% total, plus any state tax.' },
+      { q: 'How do 401(k) contributions affect take-home pay?', a: 'A pre-tax 401(k) contribution reduces taxable income, so federal tax drops. But the contribution itself comes out of your paycheck. On $75,000, a 6% contribution ($4,500) costs you about $3,400 in take-home pay — you keep ~$1,100 more than it costs due to tax savings.' },
+    ],
+    keywords: ['take home pay calculator 2026', 'net pay calculator', 'paycheck calculator federal tax', 'salary after tax calculator', 'biweekly take home pay'],
   },
 
 ];
@@ -1606,6 +1658,23 @@ const businessFinanceCalculators = [
       { q: 'Which pricing strategy is best?', a: 'Most businesses use a hybrid. Start with cost-plus as your floor (never sell below cost). Set revenue-based targets for volume goals. Use value-based pricing for premium offerings. Test different price points — a 10% price increase with 5% volume loss = higher total profit.' },
     ],
     keywords: ['pricing strategy calculator 2026', 'product pricing calculator', 'cost plus vs value based pricing', 'how to price my product calculator', 'pricing strategy comparison'],
+  },
+  {
+    slug: 'sales-tax-calculator',
+    name: 'Sales Tax Calculator',
+    description: 'Add sales tax to any price or reverse-calculate the pre-tax amount from a total. Pick your state (rates include average local taxes) or enter a custom rate — instant results for every US state.',
+    category: 'business-finance',
+    url: '/calculator/sales-tax-calculator/',
+    canonical: '/calculator/sales-tax-calculator/',
+    color: '#DC2626',
+    icon: '🧾',
+    tags: ['sales tax calculator', 'state sales tax rates', 'reverse sales tax calculator', 'how much sales tax', 'sales tax by state'],
+    faqs: [
+      { q: 'How do I calculate sales tax on a purchase?', a: 'Multiply the price by the tax rate. On $1,000 in California (8.85% combined average), tax is $88.50, total $1,088.50. To find the pre-tax price from a total you paid, divide by (1 + rate): $1,088.50 / 1.0885 = $1,000.' },
+      { q: 'Which states have no sales tax?', a: 'Alaska, Delaware, Montana, New Hampshire, and Oregon have no statewide sales tax. Alaska and Montana still allow local taxes (Alaska averages 1.82% locally). The highest combined rates are in Tennessee (9.55%) and Louisiana (9.55%).' },
+      { q: 'What is the difference between state and local sales tax?', a: 'Every state sets its own base rate (e.g., California 7.25%, Texas 6.25%). Counties, cities, and special districts add their own rates on top — that\'s why the combined rate in Austin, TX is 8.25% and in LA it\'s 10.25%. This calculator uses each state\'s average combined rate.' },
+    ],
+    keywords: ['sales tax calculator 2026', 'state sales tax rate calculator', 'reverse sales tax calculator', 'sales tax by state', 'how to calculate sales tax'],
   },
 
 ];

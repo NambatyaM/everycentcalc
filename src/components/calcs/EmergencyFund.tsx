@@ -95,7 +95,7 @@ export default function EmergencyFundCalc() {
         <ResultCard icon="🎯" label="Emergency Fund Target" value={formatCurrency(target)} highlight subtitle={`${targetMonths} months`} />
         <ResultCard icon="🏦" label="Current Savings" value={formatCurrency(current)} />
         <ResultCard icon="📉" label="Gap to Fill" value={gap > 0 ? formatCurrency(gap) : 'Fully Funded'} />
-        <ResultCard icon="📅" label="Monthly Savings Needed" value={gap > 0 && monthlySavings > 0 ? formatCurrency(gap / Math.max(1, monthsToGoal)) : '$0'} />
+        <ResultCard icon="📅" label="Your Monthly Savings" value={monthlySavings > 0 ? formatCurrency(monthlySavings) : '$0'} />
         <ResultCard icon="⏳" label="Months to Goal" value={monthsToGoal === Infinity ? 'N/A' : `${monthsToGoal}`} subtitle={monthsToGoal <= 12 ? 'Less than a year' : `${(monthsToGoal / 12).toFixed(1)} years`} />
       </div>
 

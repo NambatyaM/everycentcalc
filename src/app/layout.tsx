@@ -9,27 +9,28 @@ const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' }
 
 export const metadata: Metadata = {
   title: {
-    default: 'EveryCentCalc — Free Financial Calculators for Freelancers & Small Business',
+    default: 'EveryCentCalc — Free Tax & Financial Calculators (2026)',
     template: '%s | EveryCentCalc',
   },
   description:
-    '87 free online calculators for freelancers, side hustlers, real estate investors, and small business owners. Calculate self employment tax, quarterly payments, rental ROI, break even analysis, and more. No signup required.',
+    '91 free tax and financial calculators for freelancers, side hustlers, and small business owners. Self employment tax, 1099 income, quarterly payments, rent vs buy, and profit margins with 2026 IRS rates. No signup required.',
   keywords: [
+    'self-employment tax calculator 2026',
     'freelancer tax calculator',
-    'self-employment tax calculator',
     'quarterly estimated taxes',
+    '1099 tax calculator',
     'freelancer rate calculator',
     'side hustle profit calculator',
     'rent vs buy calculator',
     'small business calculator',
     'free financial calculator',
-    '1099 tax calculator',
     'rental property ROI calculator',
     'break even calculator',
     'mortgage calculator',
     'Etsy profit calculator',
     'Amazon FBA profit calculator',
     'startup runway calculator',
+    'compound interest calculator',
   ],
   authors: [{ name: 'EveryCentCalc' }],
   creator: 'EveryCentCalc',
@@ -53,16 +54,18 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'EveryCentCalc',
-    title: 'EveryCentCalc — 87 Free Financial Calculators',
+    title: 'EveryCentCalc — 91 Free Tax & Financial Calculators (2026)',
     description:
-      '87 free calculators for freelancers, side hustlers, real estate investors, and small business owners. 2026 IRS rates. 100% private.',
+      '91 free tax and financial calculators for freelancers, side hustlers, and small business owners. 2026 IRS rates. 100% private.',
     url: 'https://everycentcalc.biz.id',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'EveryCentCalc — 91 Free Tax & Financial Calculators (2026)' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EveryCentCalc — Free Financial Calculators',
+    title: 'EveryCentCalc — Free Tax & Financial Calculators (2026)',
     description:
-      '87 free calculators for freelancers, side hustlers, real estate investors, and small business owners.',
+      '91 free calculators for freelancers, side hustlers, and small business owners.',
+    images: ['/og.png'],
   },
   robots: {
     index: true,
@@ -100,12 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'EveryCentCalc',
               url: 'https://everycentcalc.biz.id',
               description:
-                '87 free online financial calculators for freelancers, side hustlers, real estate investors, and small business owners.',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: 'https://everycentcalc.biz.id/search?q={search_term_string}',
-                'query-input': 'required name=search_term_string',
-              },
+                '91 free online financial calculators for freelancers, side hustlers, real estate investors, and small business owners.',
             }),
           }}
         />

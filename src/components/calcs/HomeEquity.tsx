@@ -14,11 +14,11 @@ export default function HomeEquityCalc() {
   const balance = parseFloat(mortgageBalance) || 0;
   const improve = parseFloat(improvements) || 0;
 
-  const equity = value - balance + improve;
+  const equity = value - balance;
   const equityPct = value > 0 ? (equity / value) * 100 : 0;
   const cltv = value > 0 ? (balance / value) * 100 : 0;
   const helocPotential = Math.max(0, value * 0.8 - balance);
-  const totalGain = value - original + improve;
+  const totalGain = value - original - improve;
 
   return (
     <div>

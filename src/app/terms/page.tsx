@@ -3,8 +3,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service',
+  title: 'Terms of Service | EveryCentCalc',
   description: 'Terms of service for EveryCentCalc — rules and conditions for using our calculators and website.',
+  alternates: { canonical: '/terms/' },
 };
 
 export default function TermsPage() {

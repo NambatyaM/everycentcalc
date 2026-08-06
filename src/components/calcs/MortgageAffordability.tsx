@@ -25,7 +25,7 @@ export default function MortgageAffordabilityCalc() {
   const monthlyIncome = income / 12;
   const maxPITI = monthlyIncome * (backDTI / 100);
   const frontEndMax = monthlyIncome * (frontDTI / 100);
-  const effectivePITI = Math.min(maxPITI, frontEndMax + debts > maxPITI ? maxPITI : maxPITI - debts);
+  const effectivePITI = Math.min(frontEndMax, Math.max(0, maxPITI - debts));
 
   const monthlyRate = rate / 100 / 12;
   const numPayments = 30 * 12;
@@ -43,7 +43,7 @@ export default function MortgageAffordabilityCalc() {
       const loanAmount = mid - dpAmount;
       const pmt = loanAmount / pmtFactor;
       const totalPITI = pmt + propTaxMonthly + insMonthly;
-      if (totalPITI <= effectivePITI + debts) {
+      if (totalPITI <= effectivePITI) {
         low = mid;
       } else {
         high = mid;

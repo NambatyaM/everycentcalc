@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { formatCurrency, federalIncomeTax } from '@/lib/tax';
+import { formatCurrency, federalIncomeTax, SE_RATE, SS_RATE, MEDICARE_RATE } from '@/lib/tax';
 
 const BASE_MONTHLY_COST: Record<string, number> = {
   Bronze: 350,
@@ -45,7 +45,8 @@ export default function FreelancerHealthInsuranceCalc() {
   // Annual and tax deduction
   const annualPremium = subsidizedMonthly * 12;
   const marginalRate = income > 0 ? federalIncomeTax(income, filingStatus as 'single' | 'married') - federalIncomeTax(Math.max(0, income - 1), filingStatus as 'single' | 'married') : 0.22;
-  const taxSavings = annualPremium * marginalRate;
+  const seSavingsRate = SE_RATE * (SS_RATE + MEDICARE_RATE);
+  const taxSavings = annualPremium * (marginalRate + seSavingsRate);
   const netAnnualCost = annualPremium - taxSavings;
 
   return (

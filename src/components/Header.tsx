@@ -8,7 +8,9 @@ const navLinks = [
   { href: '/freelance-business/', label: 'Freelance Business' },
   { href: '/side-hustle/', label: 'Side Hustle' },
   { href: '/real-estate/', label: 'Real Estate' },
+  { href: '/llc-tax/', label: 'LLC & S-Corp' },
   { href: '/business-finance/', label: 'Business Finance' },
+  { href: '/investment/', label: 'Investing' },
 ];
 
 export default function Header() {

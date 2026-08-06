@@ -4,9 +4,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'About EveryCentCalc — Free Financial Calculators for Freelancers & Side Hustlers',
-  description: 'Built by a freelancer who was tired of guessing how much to save for taxes. 87 free calculators with 2026 IRS rates. No signup required.',
-  alternates: { canonical: '/about' },
+  title: 'About EveryCentCalc — 91 Free Financial Calculators',
+  description: 'Built by a freelancer who was tired of guessing how much to save for taxes. 91 free calculators with 2026 IRS rates. No signup required.',
+  alternates: { canonical: '/about/' },
 };
 
 export default function AboutPage() {
@@ -42,7 +42,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            That&apos;s why I built EveryCentCalc — a collection of <strong style={{ color: 'var(--text-primary)' }}>87 free financial calculators</strong> designed specifically for people like us: freelancers, side hustlers, gig workers, and small business owners who need real numbers, not generic advice.
+            That&apos;s why I built EveryCentCalc — a collection of <strong style={{ color: 'var(--text-primary)' }}>91 free financial calculators</strong> designed specifically for people like us: freelancers, side hustlers, gig workers, and small business owners who need real numbers, not generic advice.
           </p>
 
           <h2 className="text-xl font-bold pt-4" style={{ color: 'var(--text-primary)' }}>
@@ -50,7 +50,7 @@ export default function AboutPage() {
           </h2>
 
           <p>
-            Most tax calculators assume you&apos;re a W-2 employee. We don&apos;t. Our 87 calculators span 7 categories — from self employment tax and quarterly estimated payments to rent vs buy analysis, LLC vs S-Corp comparison, break even analysis, and profitability tracking. Every one handles the complexity real freelancers face: the 15.3% self employment tax, the 92.35% adjustment, business deductions, and the differences between sole proprietor, LLC, and S-Corp taxation.
+            Most tax calculators assume you&apos;re a W-2 employee. We don&apos;t. Our 91 calculators span 7 categories — from self employment tax and quarterly estimated payments to rent vs buy analysis, LLC vs S-Corp comparison, break even analysis, and profitability tracking. Every one handles the complexity real freelancers face: the 15.3% self employment tax, the 92.35% adjustment, business deductions, and the differences between sole proprietor, LLC, and S-Corp taxation.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 py-4">
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4">
             {[
-              { value: '87', label: 'Free Calculators' },
+              { value: '88', label: 'Free Calculators' },
               { value: '7', label: 'Categories' },
               { value: '2026', label: 'IRS Rates' },
               { value: '$0', label: 'Cost Forever' },
@@ -121,7 +121,7 @@ export default function AboutPage() {
           </h2>
 
           <p>
-            Running 87 calculators with current tax data isn&apos;t free for us either. Here&apos;s how we keep the lights on without charging you a cent:
+            Running 91 calculators with current tax data isn&apos;t free for us either. Here&apos;s how we keep the lights on without charging you a cent:
           </p>
 
           <ul className="list-disc pl-6 space-y-2">
@@ -172,7 +172,7 @@ export default function AboutPage() {
               className="px-6 py-3 rounded-xl font-semibold text-white transition-all hover:shadow-lg"
               style={{ background: 'var(--brand-gradient)' }}
             >
-              Browse All 87 Calculators
+              Browse All 91 Calculators
             </Link>
           </div>
         </div>

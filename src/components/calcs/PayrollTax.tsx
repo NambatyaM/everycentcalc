@@ -26,8 +26,8 @@ export default function PayrollTax() {
   const grossPerPeriod = annualSalary / periods;
   const k401PerPeriod = grossPerPeriod * k401Rate;
 
-  const employeeSSAnnual = Math.min(annualSalary, SS_CAP) * 0.062;
-  const employeeMedicareAnnual = annualSalary * 0.0145;
+  const employeeSSAnnual = Math.min(annualSalary, SS_CAP) * (SS_RATE / 2);
+  const employeeMedicareAnnual = annualSalary * (MEDICARE_RATE / 2);
   const ssPerPeriod = employeeSSAnnual / periods;
   const medicarePerPeriod = employeeMedicareAnnual / periods;
 
@@ -107,13 +107,13 @@ export default function PayrollTax() {
         <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Per {payFrequency === 'biweekly' ? 'Paycheck' : 'Month'} Breakdown</div>
         <ResultRow label="Gross Pay" value={formatCurrency(grossPerPeriod)} />
         <ResultRow label="401(k) Deduction" value={`-${formatCurrency(k401PerPeriod)}`} />
-        <ResultRow label="Social Security (6.2%)" value={`-${formatCurrency(ssPerPeriod)}`} />
-        <ResultRow label="Medicare (1.45%)" value={`-${formatCurrency(medicarePerPeriod)}`} />
-        <ResultRow label="Federal Income Tax (12%)" value={`-${formatCurrency(federalPerPeriod)}`} />
+        <ResultRow label={`Social Security (${(SS_RATE * 5).toFixed(1)}%)`} value={`-${formatCurrency(ssPerPeriod)}`} />
+        <ResultRow label={`Medicare (${(MEDICARE_RATE * 5).toFixed(2)}%)`} value={`-${formatCurrency(medicarePerPeriod)}`} />
+        <ResultRow label="Federal Income Tax (12% flat est.)" value={`-${formatCurrency(federalPerPeriod)}`} />
         <ResultRow label={`State Tax (${(stateRate * 100).toFixed(1)}%)`} value={`-${formatCurrency(statePerPeriod)}`} />
         <ResultRow label="Net Pay" value={formatCurrency(netPayPerPeriod)} bold />
-        <ResultRow label="Employer SS Match (6.2%)" value={formatCurrency(employerSSPerPeriod)} />
-        <ResultRow label="Employer Medicare Match (1.45%)" value={formatCurrency(employerMedicarePerPeriod)} />
+        <ResultRow label={`Employer SS Match (${(SS_RATE * 5).toFixed(1)}%)`} value={formatCurrency(employerSSPerPeriod)} />
+        <ResultRow label={`Employer Medicare Match (${(MEDICARE_RATE * 5).toFixed(2)}%)`} value={formatCurrency(employerMedicarePerPeriod)} />
         <ResultRow label="FUTA (0.6%)" value={formatCurrency(futaPerPeriod)} />
         <ResultRow label="SUTA (2.7%)" value={formatCurrency(sutaPerPeriod)} />
         <ResultRow label="Total Employer Cost" value={formatCurrency(totalEmployerCostPerPeriod)} bold />

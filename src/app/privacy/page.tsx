@@ -3,8 +3,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy',
+  title: 'Privacy Policy | EveryCentCalc',
   description: 'Privacy policy for EveryCentCalc — how we collect, use, and protect your data.',
+  alternates: { canonical: '/privacy/' },
 };
 
 export default function PrivacyPolicyPage() {

@@ -1,4 +1,5 @@
 import { calculators, getCalculatorBySlug, getAllSlugs, getCategoryBySlug } from '@/lib/calculators';
+import { calcTitle, metaDescription } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
@@ -7,6 +8,8 @@ import Link from 'next/link';
 import AffiliateBanner from '@/components/AffiliateBanner';
 import SelfEmploymentTaxCalc from '@/components/calcs/SelfEmploymentTax';
 import QuarterlyTaxCalc from '@/components/calcs/QuarterlyTax';
+import TaxExtensionCalc from '@/components/calcs/TaxExtension';
+import QuarterlyTaxDeadlineCalc from '@/components/calcs/QuarterlyTaxDeadline';
 import FreelancerRateCalc from '@/components/calcs/FreelancerRate';
 import RentVsBuyCalc from '@/components/calcs/RentVsBuy';
 import BreakEvenCalc from '@/components/calcs/BreakEven';
@@ -85,8 +88,11 @@ import CustomerLifetimeValueCalc from '@/components/calcs/CustomerLifetimeValue'
 import FourOhOneKCalc from '@/components/calcs/FourOhOneK';
 import RequiredMinimumDistributionCalc from '@/components/calcs/RequiredMinimumDistribution';
 import TimeTrackingValueCalc from '@/components/calcs/TimeTrackingValue';
+import SalesTaxCalc from '@/components/calcs/SalesTaxCalc';
+import TakeHomePayCalc from '@/components/calcs/TakeHomePayCalc';
+import SalaryToHourlyCalc from '@/components/calcs/SalaryToHourlyCalc';
 
-const CALC_COMPONENTS: Record<string, React.FC> = {
+const CALC_COMPONENTS: Record<string, React.FC | React.ReactElement> = {
   'self-employment-tax-calculator': SelfEmploymentTaxCalc,
   'quarterly-tax-calculator': QuarterlyTaxCalc,
   'side-hustle-tax-calculator': SideHustleTaxCalc,
@@ -160,8 +166,9 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'pricing-strategy-calculator': PricingStrategyCalc,
   'rent-vs-buy-new-calculator': RentVsBuyNewCalc,
   'shopify-profit-calculator': ShopifyProfitCalc,
-  'quarterly-tax-deadline-calculator': QuarterlyTaxCalc,
-  'rideshare-driver-calculator': DoorDashProfitCalc,
+  'quarterly-tax-deadline-calculator': QuarterlyTaxDeadlineCalc,
+  'tax-extension-calculator': TaxExtensionCalc,
+  'rideshare-driver-calculator': <DoorDashProfitCalc provider="Rideshare driver" />,
   'freelance-debt-payoff-calculator': BusinessLoanCalc,
   'house-flipping-calculator': RealEstateFlipProfitCalc,
   's-corp-tax-calculator': SCorpSalaryCalc,
@@ -174,6 +181,9 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'customer-lifetime-value-calculator': CustomerLifetimeValueCalc,
   'required-minimum-distribution-calculator': RequiredMinimumDistributionCalc,
   'time-tracking-value-calculator': TimeTrackingValueCalc,
+  'sales-tax-calculator': SalesTaxCalc,
+  'take-home-pay-calculator': TakeHomePayCalc,
+  'salary-to-hourly-calculator': SalaryToHourlyCalc,
 };
 
 export function generateStaticParams() {
@@ -187,15 +197,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const calc = getCalculatorBySlug(slug);
   if (!calc) return {};
 
+  const title = calcTitle(calc.name);
+
   return {
-    title: `${calc.name} — Free Online Calculator`,
-    description: calc.description,
+    title: { absolute: title },
+    description: metaDescription(calc.description),
     keywords: calc.keywords,
     openGraph: {
-      title: `${calc.name} | EveryCentCalc`,
-      description: calc.description,
+      title,
+      description: metaDescription(calc.description),
       type: 'website',
       url: `https://everycentcalc.biz.id/calculator/${calc.slug}/`,
+      images: [{ url: '/og.png', width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: ['/og.png'],
     },
     alternates: {
       canonical: `https://everycentcalc.biz.id/calculator/${calc.slug}/`,
@@ -210,7 +227,6 @@ export default async function CalculatorPage({ params }: Props) {
 
   const CalcComponent = CALC_COMPONENTS[slug] || GenericCalc;
   const cat = getCategoryBySlug(calc.categorySlug);
-
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -268,7 +284,21 @@ export default async function CalculatorPage({ params }: Props) {
     },
   };
 
-  const related = calculators.filter((c) => c.category === calc.category && c.slug !== calc.slug).slice(0, 3);
+  const related = calculators
+    .filter((c) => c.category === calc.category && c.slug !== calc.slug)
+    .slice(0, 6);
+
+  const topPicks = [
+    'self-employment-tax-calculator',
+    'quarterly-tax-calculator',
+    'freelancer-rate-calculator',
+    'compound-interest-calculator',
+    'rent-vs-buy-calculator',
+    'break-even-calculator',
+  ]
+    .map((slug) => calculators.find((c) => c.slug === slug))
+    .filter((c): c is (typeof calculators)[number] => Boolean(c))
+    .filter((c) => c.slug !== calc.slug);
 
   return (
     <>
@@ -304,7 +334,7 @@ export default async function CalculatorPage({ params }: Props) {
               className="rounded-2xl border p-5 md:p-8 mb-8"
               style={{ background: 'var(--bg-card)', borderColor: 'var(--border)', boxShadow: 'var(--shadow-md)' }}
             >
-              <CalcComponent />
+              {typeof CalcComponent === 'function' ? <CalcComponent /> : CalcComponent}
             </div>
 
             {calc.affiliate && (
@@ -354,6 +384,32 @@ export default async function CalculatorPage({ params }: Props) {
               <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {calc.answer}
               </p>
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-xl font-bold mb-5" style={{ color: 'var(--text-primary)' }}>
+                Related Free Calculators
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[...related, ...topPicks].slice(0, 6).map((r) => (
+                  <Link
+                    key={r.slug}
+                    href={`/calculator/${r.slug}/`}
+                    className="group flex items-center gap-3 rounded-xl border p-4 transition-all hover:shadow-md hover:border-[var(--brand)]"
+                    style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
+                  >
+                    <span className="text-xl">{r.icon}</span>
+                    <div>
+                      <p className="text-sm font-semibold group-hover:text-[var(--brand)] transition-colors" style={{ color: 'var(--text-primary)' }}>
+                        {r.name}
+                      </p>
+                      <p className="text-xs line-clamp-1 mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                        {r.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 

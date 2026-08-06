@@ -16,7 +16,6 @@ export default function CustomerLifetimeValueCalc() {
 
   const clvRevenue = ao * fq * ls;
   const clvProfit = clvRevenue * (mg / 100);
-  const ltvToCac = clvRevenue > 0 ? clvRevenue / (clvRevenue * 0.33) : 0;
 
   const totalPurchases = fq * ls;
 

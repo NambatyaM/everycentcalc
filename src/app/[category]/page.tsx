@@ -1,4 +1,5 @@
 import { categories, getCalculatorsByCategory, getCategoryBySlug } from '@/lib/calculators';
+import { metaDescription } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
@@ -17,12 +18,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = getCategoryBySlug(category);
   if (!cat) return {};
 
+  const calcs = getCalculatorsByCategory(category);
+
   return {
-    title: `${cat.name} — Free Online Calculators`,
-    description: cat.description,
+    title: { absolute: `${cat.name} (2026) — Free Online Calculators` },
+    description: metaDescription(cat.description),
+    keywords: Array.from(new Set(calcs.flatMap((c) => c.keywords as string[]))).slice(0, 15) as string[],
     openGraph: {
-      title: `${cat.name} | EveryCentCalc`,
-      description: cat.description,
+      title: `${cat.name} (2026) | EveryCentCalc`,
+      description: metaDescription(cat.description),
       type: 'website',
     },
     alternates: {
@@ -64,8 +68,11 @@ export default async function CategoryPage({ params }: Props) {
               {cat.name}
             </h1>
           </div>
-          <p className="text-base max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-base max-w-2xl mb-3" style={{ color: 'var(--text-secondary)' }}>
             {cat.description}
+          </p>
+          <p className="text-sm max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+            Every calculator below is free, runs in your browser, and is updated with 2026 tax rates and limits. No signup, no email — just your answer in seconds.
           </p>
         </div>
 
@@ -74,6 +81,41 @@ export default async function CategoryPage({ params }: Props) {
             <CalculatorCard key={calc.slug} calc={calc} />
           ))}
         </div>
+
+        {calcs.length > 0 && (
+          <div className="mt-14">
+            <h2 className="text-xl font-bold mb-5" style={{ color: 'var(--text-primary)' }}>
+              Frequently Asked Questions
+            </h2>
+            <div className="max-w-3xl">
+              {calcs.slice(0, 3).flatMap((calc) =>
+                calc.faqs.slice(0, 2).map((faq, i) => (
+                  <details
+                    key={`${calc.slug}-${i}`}
+                    className="group border-b py-1"
+                    style={{ borderColor: 'var(--border)' }}
+                  >
+                    <summary
+                      className="flex justify-between items-center py-4 cursor-pointer font-medium list-none"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      {faq.q}
+                      <span
+                        className="ml-2 transition-transform group-open:rotate-45 text-xl font-light flex-shrink-0"
+                        style={{ color: 'var(--text-muted)' }}
+                      >
+                        +
+                      </span>
+                    </summary>
+                    <p className="pb-4 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                      {faq.a}
+                    </p>
+                  </details>
+                ))
+              )}
+            </div>
+          </div>
+        )}
 
         <div className="mt-14 p-8 rounded-2xl border" style={{ background: 'var(--bg-card)', borderColor: 'var(--border)', boxShadow: 'var(--shadow-md)' }}>
           <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--text-primary)' }}>

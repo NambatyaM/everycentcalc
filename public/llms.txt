@@ -1,128 +1,138 @@
 # EveryCentCalc
 
-> 87 free financial calculators for freelancers, side hustlers, real estate investors, and small business owners. Updated for 2026 IRS tax brackets.
+> 91 free financial calculators for freelancers, self-employed workers, side hustlers, real estate investors, and small business owners. Updated for 2026 IRS tax brackets, rates, and limits.
 
 ## What This Site Does
 
-EveryCentCalc provides free online financial calculators. All calculations happen in the browser. No data is stored or transmitted.
+EveryCentCalc provides free online financial calculators. All calculations run in the browser — no data is stored or transmitted. Every page includes a direct answer, plain-English explanation, and FAQ.
 
-### Freelance and Self Employment Tax (13 calculators)
-- Self-Employment Tax Calculator
-- Quarterly Tax Calculator
-- Side Hustle Tax Calculator
-- Freelance Income Tax Calculator
-- Freelance Tax Deduction Calculator
-- Quarterly Tax Penalty Calculator
-- Freelancer Effective Tax Rate Calculator
-- Self-Employed Health Insurance Deduction Calculator
-- Home Office Deduction Calculator
-- 1099 Income Tax Calculator
-- Self-Employment Tax vs. FICA Calculator
-- Qualified Business Income (QBI) Deduction Calculator
-- Freelancer Health Insurance Cost Estimator
+## Calculators by Category
 
-### Freelance Business (8 calculators)
-- Freelancer Rate Calculator
-- Freelancer Profitability Calculator
-- Freelancer Retirement Savings Calculator
-- Freelance Project Rate Calculator
-- Freelancer Savings Rate Calculator
-- Freelance Hourly vs. Project Pricing Calculator
-- Freelancer Net Worth Calculator
-- Client Billing Calculator
+### Freelance & Self-Employment Tax (15 calculators)
+- Self-Employment Tax Calculator — https://everycentcalc.biz.id/calculator/self-employment-tax-calculator/
+- Quarterly Tax Calculator — https://everycentcalc.biz.id/calculator/quarterly-tax-calculator/
+- Side Hustle Tax Calculator — https://everycentcalc.biz.id/calculator/side-hustle-tax-calculator/
+- Freelance Income Tax Calculator — https://everycentcalc.biz.id/calculator/freelance-income-tax-calculator/
+- Freelance Tax Deduction Calculator — https://everycentcalc.biz.id/calculator/freelance-tax-deduction-calculator/
+- Quarterly Tax Deadline Calculator — https://everycentcalc.biz.id/calculator/quarterly-tax-deadline-calculator/
+- Quarterly Tax Penalty Calculator — https://everycentcalc.biz.id/calculator/quarterly-tax-penalty-calculator/
+- Freelancer Effective Tax Rate Calculator — https://everycentcalc.biz.id/calculator/freelancer-effective-tax-rate-calculator/
+- Self-Employed Health Insurance Deduction Calculator — https://everycentcalc.biz.id/calculator/self-employed-health-insurance-deduction-calculator/
+- Home Office Deduction Calculator — https://everycentcalc.biz.id/calculator/home-office-deduction-calculator/
+- 1099 Income Tax Calculator — https://everycentcalc.biz.id/calculator/1099-income-tax-calculator/
+- Self-Employment Tax vs. W-2 FICA Calculator — https://everycentcalc.biz.id/calculator/se-tax-vs-fica-calculator/
+- Freelancer QBI Deduction Calculator — https://everycentcalc.biz.id/calculator/freelancer-qbi-deduction-calculator/
+- Freelancer Health Insurance Cost Calculator — https://everycentcalc.biz.id/calculator/freelancer-health-insurance-calculator/
+- Tax Extension Calculator — https://everycentcalc.biz.id/calculator/tax-extension-calculator/
 
-### Side Hustle and Gig Economy (16 calculators)
-- Etsy Profit Calculator
-- Freelance vs. Employment Calculator
-- DoorDash Driver Profit Calculator
-- Uber Eats Driver Profit Calculator
-- Print on Demand Profit Calculator
-- Amazon FBA Profit Calculator
-- YouTube Revenue Calculator
-- Online Course Profit Calculator
-- Freelance Writer Rate Calculator
-- Freelance Graphic Designer Rate Calculator
-- Podcast Income Calculator
-- Social Media Manager Rate Calculator
-- Side Hustle Income Tax Calculator
-- Content Creator Revenue Calculator
-- Is My Side Hustle Worth It Calculator
-- Shopify Profit Margin Calculator
+### Freelance Business (9 calculators)
+- Freelancer Rate Calculator — https://everycentcalc.biz.id/calculator/freelancer-rate-calculator/
+- Freelancer Profitability Calculator — https://everycentcalc.biz.id/calculator/freelancer-profitability-calculator/
+- Freelancer Retirement Savings Calculator — https://everycentcalc.biz.id/calculator/freelancer-retirement-savings-calculator/
+- Freelance Project Rate Calculator — https://everycentcalc.biz.id/calculator/freelance-project-rate-calculator/
+- Freelancer Savings Rate Calculator — https://everycentcalc.biz.id/calculator/freelancer-savings-rate-calculator/
+- Freelance Hourly vs. Project Pricing Calculator — https://everycentcalc.biz.id/calculator/freelance-hourly-vs-project-calculator/
+- Freelancer Net Worth Calculator — https://everycentcalc.biz.id/calculator/freelance-net-worth-calculator/
+- Client Billing Calculator — https://everycentcalc.biz.id/calculator/client-billing-calculator/
+- Salary to Hourly Calculator — https://everycentcalc.biz.id/calculator/salary-to-hourly-calculator/
+
+### Side Hustle & Gig Economy (19 calculators)
+- Etsy Profit Calculator — https://everycentcalc.biz.id/calculator/etsy-profit-calculator/
+- Rideshare Driver Calculator — https://everycentcalc.biz.id/calculator/rideshare-driver-calculator/
+- Freelance vs. Employment Calculator — https://everycentcalc.biz.id/calculator/freelance-vs-employment-calculator/
+- Freelance Debt Payoff Calculator — https://everycentcalc.biz.id/calculator/freelance-debt-payoff-calculator/
+- Time Tracking Value Calculator — https://everycentcalc.biz.id/calculator/time-tracking-value-calculator/
+- DoorDash Driver Profit Calculator — https://everycentcalc.biz.id/calculator/doordash-profit-calculator/
+- Uber Eats Driver Profit Calculator — https://everycentcalc.biz.id/calculator/uber-eats-profit-calculator/
+- Print on Demand Profit Calculator — https://everycentcalc.biz.id/calculator/print-on-demand-profit-calculator/
+- Amazon FBA Profit Calculator — https://everycentcalc.biz.id/calculator/amazon-fba-profit-calculator/
+- YouTube Revenue Calculator — https://everycentcalc.biz.id/calculator/youtube-revenue-calculator/
+- Online Course Profit Calculator — https://everycentcalc.biz.id/calculator/online-course-profit-calculator/
+- Freelance Writer Rate Calculator — https://everycentcalc.biz.id/calculator/freelance-writer-rate-calculator/
+- Freelance Graphic Designer Rate Calculator — https://everycentcalc.biz.id/calculator/freelance-graphic-designer-rate-calculator/
+- Podcast Income Calculator — https://everycentcalc.biz.id/calculator/podcast-income-calculator/
+- Social Media Manager Rate Calculator — https://everycentcalc.biz.id/calculator/social-media-manager-rate-calculator/
+- Content Creator Revenue Calculator — https://everycentcalc.biz.id/calculator/content-creator-revenue-calculator/
+- Is My Side Hustle Worth It Calculator — https://everycentcalc.biz.id/calculator/is-side-hustle-worth-it-calculator/
+- Shopify Profit Margin Calculator — https://everycentcalc.biz.id/calculator/shopify-profit-calculator/
+- Take-Home Pay Calculator — https://everycentcalc.biz.id/calculator/take-home-pay-calculator/
 
 ### Real Estate Investing (16 calculators)
-- Rent vs. Buy Calculator
-- Rental Property Calculator
-- Rental Cash Flow Calculator
-- House Affordability Calculator
-- Mortgage Affordability Calculator
-- Real Estate Agent Commission Calculator
-- Property Investment ROI Calculator
-- Rental Yield Calculator
-- Mortgage Interest Calculator
-- Home Equity Calculator
-- DSCR Loan Calculator
-- Real Estate Flipping Profit Calculator
-- Cap Rate Calculator
-- Airbnb Revenue Estimator
-- BRRRR Method Calculator
-- Rent vs. Buy Calculator (Updated)
+- Rent vs. Buy Calculator — https://everycentcalc.biz.id/calculator/rent-vs-buy-calculator/
+- Rental Property Calculator — https://everycentcalc.biz.id/calculator/rental-property-calculator/
+- House Flipping Calculator — https://everycentcalc.biz.id/calculator/house-flipping-calculator/
+- Rental Cash Flow Calculator — https://everycentcalc.biz.id/calculator/rental-cash-flow-calculator/
+- Mortgage Payment Calculator — https://everycentcalc.biz.id/calculator/mortgage-payment-calculator/
+- House Affordability Calculator — https://everycentcalc.biz.id/calculator/house-affordability-calculator/
+- Real Estate Agent Commission Calculator — https://everycentcalc.biz.id/calculator/real-estate-agent-commission-calculator/
+- Rental Yield Calculator — https://everycentcalc.biz.id/calculator/rental-yield-calculator/
+- Mortgage Interest Calculator — https://everycentcalc.biz.id/calculator/mortgage-interest-calculator/
+- Home Equity Calculator — https://everycentcalc.biz.id/calculator/home-equity-calculator/
+- DSCR Loan Calculator — https://everycentcalc.biz.id/calculator/dscr-loan-calculator/
+- Real Estate Flipping Profit Calculator — https://everycentcalc.biz.id/calculator/real-estate-flipping-profit-calculator/
+- Cap Rate Calculator — https://everycentcalc.biz.id/calculator/cap-rate-calculator/
+- Airbnb Revenue Calculator — https://everycentcalc.biz.id/calculator/airbnb-revenue-calculator/
+- BRRRR Method Calculator — https://everycentcalc.biz.id/calculator/brrrr-calculator/
+- Rent vs. Buy Calculator (2026) — https://everycentcalc.biz.id/calculator/rent-vs-buy-new-calculator/
 
-### LLC and Business Entity Tax (6 calculators)
-- LLC vs. Sole Proprietor Tax Calculator
-- S-Corp Tax Calculator
-- LLC Tax Savings Calculator
-- C-Corp vs. S-Corp Tax Calculator
-- Business Entity Formation Cost Calculator
-- Payroll Tax Calculator
+### LLC & Business Entity Tax (8 calculators)
+- LLC vs. Sole Proprietor Tax Calculator — https://everycentcalc.biz.id/calculator/llc-vs-sole-proprietor-tax-calculator/
+- S-Corp Tax Calculator — https://everycentcalc.biz.id/calculator/s-corp-tax-calculator/
+- Business Entity Tax Comparison — https://everycentcalc.biz.id/calculator/business-entity-tax-comparison/
+- S-Corp Reasonable Salary Calculator — https://everycentcalc.biz.id/calculator/s-corp-salary-calculator/
+- LLC Tax Savings Calculator — https://everycentcalc.biz.id/calculator/llc-tax-savings-calculator/
+- C-Corp vs. S-Corp Tax Calculator — https://everycentcalc.biz.id/calculator/c-corp-vs-s-corp-calculator/
+- Business Entity Formation Cost Calculator — https://everycentcalc.biz.id/calculator/entity-formation-cost-calculator/
+- Payroll Tax Calculator — https://everycentcalc.biz.id/calculator/payroll-tax-calculator/
 
-### Business Finance (10 calculators)
-- Break-Even Calculator
-- Startup Runway Calculator
-- Business Debt Payoff Calculator
-- SaaS Metrics Calculator
-- Cash Flow Calculator
-- Business Loan Interest Calculator
-- Revenue Growth Calculator
-- Expense Ratio Calculator
-- Client Invoice Calculator
-- Pricing Strategy Calculator
+### Business Finance (13 calculators)
+- Break-Even Calculator — https://everycentcalc.biz.id/calculator/break-even-calculator/
+- Startup Runway Calculator — https://everycentcalc.biz.id/calculator/startup-runway-calculator/
+- Business Profit Margin Calculator — https://everycentcalc.biz.id/calculator/business-profit-margin-calculator/
+- Business Debt Payoff Calculator — https://everycentcalc.biz.id/calculator/business-debt-payoff-calculator/
+- SaaS Metrics Calculator — https://everycentcalc.biz.id/calculator/saas-metrics-calculator/
+- Customer Acquisition Cost Calculator — https://everycentcalc.biz.id/calculator/customer-acquisition-cost-calculator/
+- Customer Lifetime Value Calculator — https://everycentcalc.biz.id/calculator/customer-lifetime-value-calculator/
+- Cash Flow Calculator — https://everycentcalc.biz.id/calculator/cash-flow-calculator/
+- Business Loan Interest Calculator — https://everycentcalc.biz.id/calculator/business-loan-interest-calculator/
+- Revenue Growth Calculator — https://everycentcalc.biz.id/calculator/revenue-growth-calculator/
+- Business Expense Ratio Calculator — https://everycentcalc.biz.id/calculator/expense-ratio-calculator/
+- Pricing Strategy Calculator — https://everycentcalc.biz.id/calculator/pricing-strategy-calculator/
+- Sales Tax Calculator — https://everycentcalc.biz.id/calculator/sales-tax-calculator/
 
-### Investment and Retirement (14 calculators)
-- Compound Interest Calculator
-- Investment Return Calculator
-- Stock Portfolio Return Calculator
-- ETF Fee Calculator
-- Retirement Savings Gap Calculator
-- Inflation Adjusted Calculator
-- Emergency Fund Calculator
-- Debt Avalanche vs. Snowball Calculator
-- Roth vs. Traditional Calculator
-- Investment Diversification Calculator
-- Mortgage Payment Calculator
-- Required Minimum Distribution Calculator
-- Roth Conversion Calculator
-- 401(k) Calculator
+### Investment & Retirement (11 calculators)
+- Compound Interest Calculator — https://everycentcalc.biz.id/calculator/compound-interest-calculator/
+- Required Minimum Distribution Calculator — https://everycentcalc.biz.id/calculator/required-minimum-distribution-calculator/
+- Roth Conversion Calculator — https://everycentcalc.biz.id/calculator/roth-conversion-calculator/
+- 401(k) Calculator — https://everycentcalc.biz.id/calculator/401k-calculator/
+- Investment Return Calculator — https://everycentcalc.biz.id/calculator/investment-return-calculator/
+- Stock Portfolio Return Calculator — https://everycentcalc.biz.id/calculator/stock-portfolio-return-calculator/
+- ETF Fee Calculator — https://everycentcalc.biz.id/calculator/etf-fee-calculator/
+- Retirement Savings Gap Calculator — https://everycentcalc.biz.id/calculator/retirement-savings-gap-calculator/
+- Inflation Adjusted Calculator — https://everycentcalc.biz.id/calculator/inflation-adjusted-calculator/
+- Side Hustle Income Tax Calculator — https://everycentcalc.biz.id/calculator/side-hustle-income-tax-calculator/
+- Emergency Fund Calculator — https://everycentcalc.biz.id/calculator/emergency-fund-calculator/
 
 ## Key Facts
 
-- **87 calculators** across 7 categories
-- **2026 IRS tax brackets** and rates for all tax calculations
-- **100% free** with no accounts or paywalls
-- **100% private** with all calculations done client-side
-- Built for the US market targeting freelancers, side hustlers, and small business owners
+- **91 calculators** across 7 categories
+- **2026 IRS tax data**: Social Security wage base $184,500; self-employment tax 15.3% (12.4% SS + 2.9% Medicare) on 92.35% of net earnings; standard deduction $16,100 single / $32,200 married filing jointly; federal brackets 10%–37%; Medicare surtax 0.9% over $200k single / $250k MFJ
+- **Quarterly estimated tax deadlines**: Q1 Apr 15, Q2 Jun 15, Q3 Sep 15, Q4 Jan 15 (next business day if a weekend/holiday)
+- **Tax extension**: Form 4868 grants until October 15 to file — but not to pay; pay 90% of current-year tax (or 100%/110% of prior year) by the original deadline to avoid penalties
+- **100% free**, no accounts or paywalls
+- **100% private** — all calculations run client-side in the browser
+- Built for the US market, targeting freelancers, side hustlers, gig workers, and small business owners
 
-## Calculator URLs
+## Common Questions
 
-All calculators are at: `https://everycentcalc.biz.id/calculator/{calculator-slug}/`
+### How is self-employment tax calculated?
+Self-employment tax is 15.3% of net self-employment income: 12.4% for Social Security (on the first $184,500 in 2026) plus 2.9% for Medicare. The IRS calculates it on 92.35% of net earnings, and you can deduct half of the SE tax from gross income.
 
-Categories:
-- https://everycentcalc.biz.id/freelance-tax/
-- https://everycentcalc.biz.id/freelance-business/
-- https://everycentcalc.biz.id/side-hustle/
-- https://everycentcalc.biz.id/real-estate/
-- https://everycentcalc.biz.id/llc-tax/
-- https://everycentcalc.biz.id/business-finance/
-- https://everycentcalc.biz.id/investment/
+### When are quarterly estimated taxes due?
+Q1 (Jan 1–Mar 31) by April 15; Q2 (Apr 1–May 31) by June 15; Q3 (Jun 1–Aug 31) by September 15; Q4 (Sep 1–Dec 31) by January 15 of the next year.
+
+### Does a tax extension extend time to pay?
+No. Form 4868 only extends the filing deadline to October 15. You still owe at least 90% of your tax by the original deadline to avoid underpayment penalties and interest.
 
 ## Contact
 
