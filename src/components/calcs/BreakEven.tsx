@@ -59,7 +59,7 @@ export default function BreakEvenCalc() {
         </div>
       </div>
 
-      {contributionMargin <= 0 && pp > 0 && (
+      {contributionMargin <= 0 && (
         <div className="rounded-lg border p-4 mb-6" style={{ background: '#fef2f2', borderColor: '#ef4444' }}>
           <p className="text-sm font-medium" style={{ color: '#dc2626' }}>
             Not achievable — your variable cost (${vc}) equals or exceeds your price (${pp}). You lose money on every unit sold. Raise your price or lower your variable costs.
@@ -69,7 +69,7 @@ export default function BreakEvenCalc() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="🎯" label="Break Even Units" value={contributionMargin > 0 ? breakEvenUnits.toLocaleString() : 'N/A'} highlight />
-        <ResultCard icon="💰" label="Break Even Revenue" value={contributionMargin > 0 ? `$${breakEvenRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : '$0'} highlight />
+        <ResultCard icon="💰" label="Break Even Revenue" value={contributionMargin > 0 ? `$${breakEvenRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : 'N/A'} highlight />
         <ResultCard icon="📊" label="Contribution Margin" value={`${contributionMarginPct.toFixed(0)}%`} highlight />
       </div>
 

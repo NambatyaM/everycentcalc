@@ -38,7 +38,7 @@ export default function RentVsBuyNewCalc() {
   const monthlyInsurance = ins / 12;
   const totalMonthlyBuy = monthlyPI + monthlyPropTax + monthlyInsurance;
 
-  const months = yrs * 12;
+  const months = Math.min(yrs * 12, totalPayments);
 
   const remainingBalance = (n: number) => {
     if (monthlyRate <= 0) return Math.max(0, loanAmount - monthlyPI * n);
@@ -140,7 +140,7 @@ export default function RentVsBuyNewCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="💳" label="Monthly Difference" value={`$${monthlyDiff.toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo`} />
+        <ResultCard icon="💳" label="Current Monthly Difference" value={`$${monthlyDiff.toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo`} />
         <ResultCard icon="📈" label="Equity Built" value={`$${equity.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 

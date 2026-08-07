@@ -13,12 +13,22 @@ function nextBusinessDay(date: Date): Date {
 
 function getQuarters(now: Date) {
   const year = now.getFullYear();
-  return [
-    { quarter: 'Q1', label: 'Jan 1 – Mar 31', base: new Date(year, 3, 15), incomePeriod: 'Jan 1 – Mar 31' },
-    { quarter: 'Q2', label: 'Apr 1 – May 31', base: new Date(year, 5, 15), incomePeriod: 'Apr 1 – May 31' },
-    { quarter: 'Q3', label: 'Jun 1 – Aug 31', base: new Date(year, 8, 15), incomePeriod: 'Jun 1 – Aug 31' },
-    { quarter: 'Q4', label: 'Sep 1 – Dec 31', base: new Date(year + 1, 0, 15), incomePeriod: 'Sep 1 – Dec 31' },
-  ].map((q) => ({ ...q, due: nextBusinessDay(q.base) }));
+  const jan15ThisYear = new Date(year, 0, 15);
+  const earlyJanuary = now < jan15ThisYear;
+  const quarters = earlyJanuary
+    ? [
+        { quarter: 'Q4', label: 'Sep 1 – Dec 31', base: new Date(year, 0, 15), incomePeriod: 'Sep 1 – Dec 31' },
+        { quarter: 'Q1', label: 'Jan 1 – Mar 31', base: new Date(year, 3, 15), incomePeriod: 'Jan 1 – Mar 31' },
+        { quarter: 'Q2', label: 'Apr 1 – May 31', base: new Date(year, 5, 15), incomePeriod: 'Apr 1 – May 31' },
+        { quarter: 'Q3', label: 'Jun 1 – Aug 31', base: new Date(year, 8, 15), incomePeriod: 'Jun 1 – Aug 31' },
+      ]
+    : [
+        { quarter: 'Q1', label: 'Jan 1 – Mar 31', base: new Date(year, 3, 15), incomePeriod: 'Jan 1 – Mar 31' },
+        { quarter: 'Q2', label: 'Apr 1 – May 31', base: new Date(year, 5, 15), incomePeriod: 'Apr 1 – May 31' },
+        { quarter: 'Q3', label: 'Jun 1 – Aug 31', base: new Date(year, 8, 15), incomePeriod: 'Jun 1 – Aug 31' },
+        { quarter: 'Q4', label: 'Sep 1 – Dec 31', base: new Date(year + 1, 0, 15), incomePeriod: 'Sep 1 – Dec 31' },
+      ];
+  return quarters.map((q) => ({ ...q, due: nextBusinessDay(q.base) }));
 }
 
 export default function QuarterlyTaxDeadline() {
@@ -47,7 +57,7 @@ export default function QuarterlyTaxDeadline() {
         </div>
         <div>
           <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
-            Your AGI ($) — determines 100% vs 110% safe harbor
+            Prior Year AGI ($) — determines 100% vs 110% safe harbor
           </label>
           <input type="number" value={agi} onChange={(e) => setAgi(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
@@ -86,7 +96,7 @@ export default function QuarterlyTaxDeadline() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Deadlines assume the standard schedule: Q1 by April 15, Q2 by June 15, Q3 by September 15, Q4 by January 15 of the next year. When a date falls on a weekend or federal holiday, the deadline moves to the next business day. IRS Form 1040-ES and Form 2210 cover estimated payments and penalty calculations. Consult a tax professional for your situation.</p>
+        <p>Deadlines assume the standard schedule: Q1 by April 15, Q2 by June 15, Q3 by September 15, Q4 by January 15 of the next year. When a date falls on a weekend, the deadline moves to the next business day (federal holidays are not accounted for). IRS Form 1040-ES and Form 2210 cover estimated payments and penalty calculations. Consult a tax professional for your situation.</p>
       </div>
     </div>
   );

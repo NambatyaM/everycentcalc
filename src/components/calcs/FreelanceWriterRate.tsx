@@ -13,17 +13,19 @@ export default function FreelanceWriterRate() {
 
   const income = parseFloat(desiredIncome) || 0;
   const wph = parseFloat(wordsPerHour) || 1;
-  const hours = parseFloat(billableHours) || 1;
+  const hours = parseFloat(billableHours);
+  const hoursValid = !isNaN(hours) && hours > 0;
   const research = parseFloat(researchPct) || 0;
   const editing = parseFloat(editingPct) || 0;
 
-  const hourlyRate = income / (52 * hours);
+  const hourlyRate = hoursValid ? income / (52 * hours) : NaN;
   const perWord = hourlyRate / wph;
   const wordsPerArticle = 1500;
   const timePerArticle = (wordsPerArticle / wph) * (1 + (research + editing) / 100);
   const perArticle = hourlyRate * timePerArticle;
-  const monthlyIncome = hourlyRate * hours * (52 / 12);
-  const perWordDisplay = `$${perWord.toFixed(2)}`;
+  const monthlyIncome = hoursValid ? hourlyRate * hours * (52 / 12) : NaN;
+  const perWordDisplay = hoursValid ? `$${perWord.toFixed(2)}` : 'N/A';
+  const hoursDisplay = hoursValid ? hours.toString() : 'N/A';
 
   return (
     <div>
@@ -77,7 +79,7 @@ export default function FreelanceWriterRate() {
         <p className="text-sm font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>Rate Breakdown</p>
         <ResultRow label="Desired Annual Income" value={formatCurrency(income)} />
         <ResultRow label="Weeks per Year" value="52" />
-        <ResultRow label="Billable Hours per Week" value={hours.toString()} />
+        <ResultRow label="Billable Hours per Week" value={hoursDisplay} />
         <ResultRow label="Hourly Rate (income ÷ 52 ÷ hours)" value={formatCurrency(hourlyRate)} bold />
         <ResultRow label="Per Word Rate (hourly ÷ words/hr)" value={perWordDisplay} bold />
       </div>

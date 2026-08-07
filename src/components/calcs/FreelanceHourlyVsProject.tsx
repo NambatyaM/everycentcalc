@@ -17,7 +17,7 @@ export default function FreelanceHourlyVsProjectCalc() {
   const projects = parseFloat(projectsPerMonth) || 0;
   const overhead = parseFloat(overheadHours) || 0;
 
-  const hourlyRevenue = rate * (actual + overhead) * projects;
+  const hourlyRevenue = rate * actual * projects;
   const hourlyEffective = hourlyRevenue / ((actual + overhead) * projects || 1);
 
   const projectBase = rate * estimated * 1.2;

@@ -20,13 +20,13 @@ export default function TaxDeductionTrackerCalc() {
 
   const sqInput = parseFloat(sqft);
   const sq = Math.max(0, Math.min(isNaN(sqInput) ? 0 : sqInput, HOME_OFFICE_MAX_SQFT));
-  const eq = parseFloat(equipment) || 0;
-  const sw = parseFloat(software) || 0;
-  const inMo = (parseFloat(internet) || 0) * 12;
-  const phMo = (parseFloat(phone) || 0) * 12;
-  const hiMo = (parseFloat(healthInsurance) || 0) * 12;
-  const pd = parseFloat(profDev) || 0;
-  const ot = parseFloat(otherExpenses) || 0;
+  const eq = Math.max(0, parseFloat(equipment) || 0);
+  const sw = Math.max(0, parseFloat(software) || 0);
+  const inMo = Math.max(0, parseFloat(internet) || 0) * 12;
+  const phMo = Math.max(0, parseFloat(phone) || 0) * 12;
+  const hiMo = Math.max(0, parseFloat(healthInsurance) || 0) * 12;
+  const pd = Math.max(0, parseFloat(profDev) || 0);
+  const ot = Math.max(0, parseFloat(otherExpenses) || 0);
 
   const homeOffice = sq * HOME_OFFICE_RATE;
   const totalDeductions = homeOffice + eq + sw + inMo + phMo + hiMo + pd + ot;

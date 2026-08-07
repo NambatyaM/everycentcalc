@@ -24,6 +24,7 @@ export default function ShopifyProfitCalc() {
   const totalCosts = pc + shopifyFee + sc + mc + oe;
   const netProfit = sp - totalCosts;
   const profitMargin = sp > 0 ? (netProfit / sp) * 100 : 0;
+  const money = (n: number) => `${n < 0 ? '-' : ''}$${Math.abs(n).toFixed(2)}`;
 
   return (
     <div>
@@ -77,10 +78,10 @@ export default function ShopifyProfitCalc() {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="💰" label="Net Profit" value={`$${netProfit.toFixed(2)}`} highlight />
+        <ResultCard icon="💰" label="Net Profit" value={money(netProfit)} highlight />
         <ResultCard icon="📊" label="Profit Margin" value={`${profitMargin.toFixed(1)}%`} highlight />
-        <ResultCard icon="🛒" label="Shopify Fee" value={`$${shopifyFee.toFixed(2)}`} />
-        <ResultCard icon="📦" label="Total Costs" value={`$${totalCosts.toFixed(2)}`} />
+        <ResultCard icon="🛒" label="Shopify Fee" value={money(shopifyFee)} />
+        <ResultCard icon="📦" label="Total Costs" value={money(totalCosts)} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
@@ -90,8 +91,8 @@ export default function ShopifyProfitCalc() {
         <ResultRow label={`Shopify Fee (${fp}% + $${ff.toFixed(2)})`} value={`-$${shopifyFee.toFixed(2)}`} />
         <ResultRow label="Shipping Cost" value={`-$${sc.toFixed(2)}`} />
         <ResultRow label="Marketing Cost" value={`-$${mc.toFixed(2)}`} />
-        <ResultRow label="Other Expenses" value={`-$${oe.toFixed(2)}`} />
-        <ResultRow label="Net Profit" value={`$${netProfit.toFixed(2)}`} bold />
+        <ResultRow label="Other Expenses" value={`-${money(oe)}`} />
+        <ResultRow label="Net Profit" value={money(netProfit)} bold />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>

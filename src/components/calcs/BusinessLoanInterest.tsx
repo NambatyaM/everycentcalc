@@ -12,7 +12,7 @@ export default function BusinessLoanInterest() {
 
   const principal = parseFloat(loanAmount) || 0;
   const annualRate = (parseFloat(interestRate) || 0) / 100;
-  const years = parseInt(loanTerm) || 1;
+  const years = Math.max(1, parseFloat(loanTerm) || 1);
   const feeRate = (parseFloat(originationFee) || 0) / 100;
 
   const monthlyRate = annualRate / 12;

@@ -20,7 +20,7 @@ export default function SocialMediaManagerRate() {
   const totalHoursMonthly = clients * hours * 4;
   const effectiveMargin = Math.min(marginPct, 99.9);
   const monthlyIncomeTarget = income / 12;
-  const revenueNeeded = monthlyIncomeTarget / (1 - effectiveMargin / 100) + tools;
+  const revenueNeeded = (monthlyIncomeTarget + tools) / (1 - effectiveMargin / 100);
   const perClient = clients > 0 ? revenueNeeded / clients : 0;
   const hourly = totalHoursMonthly > 0 ? revenueNeeded / totalHoursMonthly : 0;
   const annualRevenue = revenueNeeded * 12;
@@ -86,7 +86,7 @@ export default function SocialMediaManagerRate() {
         <ResultRow label="Desired Annual Income" value={formatCurrency(income)} />
         <ResultRow label="Monthly Income Target" value={formatCurrency(income / 12)} />
         <ResultRow label="Monthly Tools Cost" value={formatCurrency(tools)} />
-        <ResultRow label={`Profit Margin (${marginPct}%)`} value={`${formatCurrency(revenueNeeded * marginPct / 100)}/mo`} />
+        <ResultRow label={`Profit Margin (${effectiveMargin}%)`} value={`${formatCurrency(revenueNeeded * effectiveMargin / 100)}/mo`} />
         <ResultRow label="Total Monthly Revenue Needed" value={formatCurrency(revenueNeeded)} bold />
       </div>
 
@@ -100,7 +100,7 @@ export default function SocialMediaManagerRate() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Revenue needed = (monthly income target ÷ (1 − margin%)) + monthly tools cost. This ensures your monthly income goal is net of all expenses including tools and profit margin. Hourly rate = total monthly revenue ÷ total monthly hours. Adjust clients, hours, or margin to find the right balance.</p>
+        <p>Revenue needed = (monthly income target + monthly tools cost) ÷ (1 − margin%). This ensures your monthly income goal plus tool costs are covered by revenue, with the stated profit margin as a share of revenue. Hourly rate = total monthly revenue ÷ total monthly hours. Adjust clients, hours, or margin to find the right balance.</p>
       </div>
     </div>
   );

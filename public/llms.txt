@@ -1,6 +1,6 @@
 # EveryCentCalc
 
-> 91 free financial calculators for freelancers, self-employed workers, side hustlers, real estate investors, and small business owners. Updated for 2026 IRS tax brackets, rates, and limits.
+> 100 free financial calculators for freelancers, self-employed workers, side hustlers, real estate investors, and small business owners. Updated for 2026 IRS tax brackets, rates, and limits.
 
 ## What This Site Does
 
@@ -57,7 +57,7 @@ EveryCentCalc provides free online financial calculators. All calculations run i
 - Shopify Profit Margin Calculator — https://everycentcalc.biz.id/calculator/shopify-profit-calculator/
 - Take-Home Pay Calculator — https://everycentcalc.biz.id/calculator/take-home-pay-calculator/
 
-### Real Estate Investing (16 calculators)
+### Real Estate Investing (17 calculators)
 - Rent vs. Buy Calculator — https://everycentcalc.biz.id/calculator/rent-vs-buy-calculator/
 - Rental Property Calculator — https://everycentcalc.biz.id/calculator/rental-property-calculator/
 - House Flipping Calculator — https://everycentcalc.biz.id/calculator/house-flipping-calculator/
@@ -73,7 +73,8 @@ EveryCentCalc provides free online financial calculators. All calculations run i
 - Cap Rate Calculator — https://everycentcalc.biz.id/calculator/cap-rate-calculator/
 - Airbnb Revenue Calculator — https://everycentcalc.biz.id/calculator/airbnb-revenue-calculator/
 - BRRRR Method Calculator — https://everycentcalc.biz.id/calculator/brrrr-calculator/
-- Rent vs. Buy Calculator (2026) — https://everycentcalc.biz.id/calculator/rent-vs-buy-new-calculator/
+- Rent vs. Buy Calculator (Updated) — https://everycentcalc.biz.id/calculator/rent-vs-buy-new-calculator/
+- Down Payment Calculator — https://everycentcalc.biz.id/calculator/down-payment-calculator/
 
 ### LLC & Business Entity Tax (8 calculators)
 - LLC vs. Sole Proprietor Tax Calculator — https://everycentcalc.biz.id/calculator/llc-vs-sole-proprietor-tax-calculator/
@@ -85,7 +86,7 @@ EveryCentCalc provides free online financial calculators. All calculations run i
 - Business Entity Formation Cost Calculator — https://everycentcalc.biz.id/calculator/entity-formation-cost-calculator/
 - Payroll Tax Calculator — https://everycentcalc.biz.id/calculator/payroll-tax-calculator/
 
-### Business Finance (13 calculators)
+### Business Finance (17 calculators)
 - Break-Even Calculator — https://everycentcalc.biz.id/calculator/break-even-calculator/
 - Startup Runway Calculator — https://everycentcalc.biz.id/calculator/startup-runway-calculator/
 - Business Profit Margin Calculator — https://everycentcalc.biz.id/calculator/business-profit-margin-calculator/
@@ -99,8 +100,12 @@ EveryCentCalc provides free online financial calculators. All calculations run i
 - Business Expense Ratio Calculator — https://everycentcalc.biz.id/calculator/expense-ratio-calculator/
 - Pricing Strategy Calculator — https://everycentcalc.biz.id/calculator/pricing-strategy-calculator/
 - Sales Tax Calculator — https://everycentcalc.biz.id/calculator/sales-tax-calculator/
+- Auto Loan Calculator — https://everycentcalc.biz.id/calculator/auto-loan-calculator/
+- Credit Card Payoff Calculator — https://everycentcalc.biz.id/calculator/credit-card-payoff-calculator/
+- Student Loan Calculator — https://everycentcalc.biz.id/calculator/student-loan-calculator/
+- Net Worth Calculator — https://everycentcalc.biz.id/calculator/net-worth-calculator/
 
-### Investment & Retirement (11 calculators)
+### Investment & Retirement (15 calculators)
 - Compound Interest Calculator — https://everycentcalc.biz.id/calculator/compound-interest-calculator/
 - Required Minimum Distribution Calculator — https://everycentcalc.biz.id/calculator/required-minimum-distribution-calculator/
 - Roth Conversion Calculator — https://everycentcalc.biz.id/calculator/roth-conversion-calculator/
@@ -112,10 +117,14 @@ EveryCentCalc provides free online financial calculators. All calculations run i
 - Inflation Adjusted Calculator — https://everycentcalc.biz.id/calculator/inflation-adjusted-calculator/
 - Side Hustle Income Tax Calculator — https://everycentcalc.biz.id/calculator/side-hustle-income-tax-calculator/
 - Emergency Fund Calculator — https://everycentcalc.biz.id/calculator/emergency-fund-calculator/
+- CD Calculator — https://everycentcalc.biz.id/calculator/cd-calculator/
+- Roth IRA Calculator — https://everycentcalc.biz.id/calculator/roth-ira-calculator/
+- Retirement Withdrawal Calculator — https://everycentcalc.biz.id/calculator/retirement-withdrawal-calculator/
+- 529 College Savings Calculator — https://everycentcalc.biz.id/calculator/529-college-savings-calculator/
 
 ## Key Facts
 
-- **91 calculators** across 7 categories
+- **100 calculators** across 7 categories
 - **2026 IRS tax data**: Social Security wage base $184,500; self-employment tax 15.3% (12.4% SS + 2.9% Medicare) on 92.35% of net earnings; standard deduction $16,100 single / $32,200 married filing jointly; federal brackets 10%–37%; Medicare surtax 0.9% over $200k single / $250k MFJ
 - **Quarterly estimated tax deadlines**: Q1 Apr 15, Q2 Jun 15, Q3 Sep 15, Q4 Jan 15 (next business day if a weekend/holiday)
 - **Tax extension**: Form 4868 grants until October 15 to file — but not to pay; pay 90% of current-year tax (or 100%/110% of prior year) by the original deadline to avoid penalties
@@ -126,13 +135,19 @@ EveryCentCalc provides free online financial calculators. All calculations run i
 ## Common Questions
 
 ### How is self-employment tax calculated?
-Self-employment tax is 15.3% of net self-employment income: 12.4% for Social Security (on the first $184,500 in 2026) plus 2.9% for Medicare. The IRS calculates it on 92.35% of net earnings, and you can deduct half of the SE tax from gross income.
+Self-employment tax is 15.3% of net self-employment income: 12.4% for Social Security (on the first $184,500 in 2026) plus 2.9% for Medicare. SE tax is charged on 92.35% of net earnings, and you can deduct half of the SE tax from gross income.
 
 ### When are quarterly estimated taxes due?
 Q1 (Jan 1–Mar 31) by April 15; Q2 (Apr 1–May 31) by June 15; Q3 (Jun 1–Aug 31) by September 15; Q4 (Sep 1–Dec 31) by January 15 of the next year.
 
 ### Does a tax extension extend time to pay?
 No. Form 4868 only extends the filing deadline to October 15. You still owe at least 90% of your tax by the original deadline to avoid underpayment penalties and interest.
+
+### How much house can I afford?
+Most lenders cap your front-end (mortgage) ratio at 28% and back-end (total debt) ratio at 36% of gross income. A 20% down payment avoids PMI and lowers your monthly payment.
+
+### What is the 4% rule for retirement withdrawals?
+The 4% rule says you can withdraw 4% of your retirement portfolio in year one (adjusted for inflation each year) and historically your money lasted 30 years. It assumes a balanced portfolio and withdrawal discipline. The rule is a planning guideline, not a guarantee.
 
 ## Contact
 

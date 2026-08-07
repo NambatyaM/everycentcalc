@@ -80,7 +80,7 @@ export default function OnlineCourseProfit() {
         <ResultCard icon="💰" label="Monthly Profit" value={formatCurrency(monthlyProfit)} highlight />
         <ResultCard icon="📈" label="Annual Profit" value={formatCurrency(annualProfit)} highlight />
         <ResultCard icon="📊" label="Profit Margin" value={`${margin.toFixed(1)}%`} />
-        <ResultCard icon="🚀" label="ROI on Ads" value={`${roi.toFixed(1)}%`} />
+        <ResultCard icon="🚀" label="Monthly Profit ÷ Ad Spend" value={`${roi.toFixed(1)}%`} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>

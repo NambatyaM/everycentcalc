@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import LogoMark from '@/components/LogoMark';
 
 const navLinks = [
   { href: '/freelance-tax/', label: 'Freelance Tax' },
@@ -42,7 +43,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 font-extrabold text-lg tracking-tight" style={{ color: 'var(--brand)' }}>
-          <span className="flex items-center justify-center w-8 h-8 rounded-lg text-white text-sm font-bold" style={{ background: 'var(--brand-gradient)' }}>$</span>
+          <LogoMark size={32} />
           <span className="hidden sm:inline">EveryCentCalc</span>
           <span className="sm:hidden">ECC</span>
         </Link>

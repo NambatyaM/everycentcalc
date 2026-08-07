@@ -124,7 +124,7 @@ export default function AirbnbRevenueCalc() {
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <ResultRow label="Total Turnovers/Year (avg 3 night stay)" value={turnovers.toFixed(0)} />
         <ResultRow label="Guests per Booking" value={guests.toString()} />
-        <ResultRow label="Cleaning per Guest Night" value={`$${(turnovers > 0 ? cleanFee * turnovers / (annualNights * guests) : 0).toFixed(2)}`} />
+        <ResultRow label="Cleaning per Guest Night" value={`$${(turnovers > 0 && annualNights > 0 && guests > 0 ? cleanFee * turnovers / (annualNights * guests) : 0).toFixed(2)}`} />
         <ResultRow label="Revenue per Available Night" value={`$${(annualNights > 0 ? totalGross / annualNights : 0).toFixed(2)}`} />
       </div>
 

@@ -15,6 +15,7 @@ interface PayoffResult {
   totalInterest: number;
   totalMonths: number;
   order: string[];
+  truncated: boolean;
 }
 
 function simulatePayoff(debts: Debt[], extraPayment: number, strategy: 'avalanche' | 'snowball'): PayoffResult {
@@ -27,17 +28,17 @@ function simulatePayoff(debts: Debt[], extraPayment: number, strategy: 'avalanch
     }))
     .filter((d) => d.balance > 0);
 
-  if (items.length === 0) return { totalInterest: 0, totalMonths: 0, order: [] };
+  if (items.length === 0) return { totalInterest: 0, totalMonths: 0, order: [], truncated: false };
 
   const orderList: string[] = [];
   let totalInterest = 0;
   let months = 0;
-  let remaining = extraPayment;
+  let carried = 0;
   const paid: string[] = [];
 
   while (items.some((d) => d.balance > 0) && months < 600) {
     months++;
-    let available = remaining;
+    let available = carried + extraPayment;
 
     items.forEach((d) => {
       if (d.balance <= 0) return;
@@ -59,7 +60,9 @@ function simulatePayoff(debts: Debt[], extraPayment: number, strategy: 'avalanch
       const target = active[0];
       const extra = Math.min(available, target.balance);
       target.balance -= extra;
+      available -= extra;
     }
+    carried = available;
 
     items.forEach((d) => {
       if (d.balance <= 0 && !paid.includes(d.name)) {
@@ -69,7 +72,8 @@ function simulatePayoff(debts: Debt[], extraPayment: number, strategy: 'avalanch
     });
   }
 
-  return { totalInterest, totalMonths: months, order: orderList };
+  const truncated = items.some((d) => d.balance > 0);
+  return { totalInterest, totalMonths: months, order: orderList, truncated };
 }
 
 const DEFAULT_DEBTS: Debt[] = [
@@ -89,6 +93,8 @@ export default function DebtAvalancheVsSnowballCalc() {
   const interestSaved = snowball.totalInterest - avalanche.totalInterest;
   const monthsSaved = snowball.totalMonths - avalanche.totalMonths;
   const betterStrategy = interestSaved > 0 ? 'Avalanche' : interestSaved < 0 ? 'Snowball' : 'Equal';
+  const fasterStrategy = monthsSaved > 0 ? 'Avalanche' : monthsSaved < 0 ? 'Snowball' : 'Equal';
+  const truncated = avalanche.truncated || snowball.truncated;
 
   const updateDebt = (index: number, field: keyof Debt, value: string) => {
     setDebts((prev) => prev.map((d, i) => (i === index ? { ...d, [field]: value } : d)));
@@ -144,8 +150,16 @@ export default function DebtAvalancheVsSnowballCalc() {
         <ResultCard icon="💰" label="Interest Saved" value={`${formatCurrency(Math.abs(interestSaved))}`} subtitle={`${betterStrategy} wins`} highlight />
         <ResultCard icon="📅" label="Avalanche Months" value={`${avalanche.totalMonths}`} />
         <ResultCard icon="📅" label="Snowball Months" value={`${snowball.totalMonths}`} />
-        <ResultCard icon="⏱️" label="Months Saved" value={`${Math.abs(monthsSaved)}`} subtitle={`${betterStrategy} is faster`} />
+        <ResultCard icon="⏱️" label="Months Saved" value={`${Math.abs(monthsSaved)}`} subtitle={`${fasterStrategy} is faster`} />
       </div>
+
+      {truncated && (
+        <div className="rounded-lg border p-4 mb-6" style={{ background: '#fef2f2', borderColor: '#ef4444' }}>
+          <p className="text-sm font-medium" style={{ color: '#dc2626' }}>
+            Some debts&apos; minimum payments may not cover their monthly interest, so the payoff did not complete within 600 months. Increase your extra payment or minimum payments to see a complete payoff plan.
+          </p>
+        </div>
+      )}
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <h3 className="text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>Payoff Order Comparison</h3>
@@ -153,13 +167,13 @@ export default function DebtAvalancheVsSnowballCalc() {
           <div>
             <p className="text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Avalanche (highest interest first)</p>
             {avalanche.order.map((name, i) => (
-              <ResultRow key={i} label={`${i + 1}. ${name}`} value={`${i + 1 === avalanche.order.length ? formatCurrency(debts.find((d) => d.name === name) ? parseFloat(debts.find((d) => d.name === name)!.balance) : 0) : ''}`} />
+              <ResultRow key={i} label={`${i + 1}. ${name}`} value="" />
             ))}
           </div>
           <div>
             <p className="text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Snowball (smallest balance first)</p>
             {snowball.order.map((name, i) => (
-              <ResultRow key={i} label={`${i + 1}. ${name}`} value={`${i + 1 === snowball.order.length ? formatCurrency(debts.find((d) => d.name === name) ? parseFloat(debts.find((d) => d.name === name)!.balance) : 0) : ''}`} />
+              <ResultRow key={i} label={`${i + 1}. ${name}`} value="" />
             ))}
           </div>
         </div>

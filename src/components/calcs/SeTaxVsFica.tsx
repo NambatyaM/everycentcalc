@@ -21,7 +21,7 @@ export default function SeTaxVsFica() {
   const w2Medicare = salary * (MEDICARE_RATE / 2);
   const w2AdditionalMedicare = Math.max(0, salary - 200000) * ADDITIONAL_MEDICARE_RATE;
   const w2EmployeeFICA = w2SS + w2Medicare + w2AdditionalMedicare;
-  const w2EmployerFICA = w2EmployeeFICA;
+  const w2EmployerFICA = w2SS + w2Medicare;
   const w2TotalFICA = w2EmployeeFICA + w2EmployerFICA;
 
   const difference = seTotalFICA - w2TotalFICA;

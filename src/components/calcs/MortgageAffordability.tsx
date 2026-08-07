@@ -29,10 +29,10 @@ export default function MortgageAffordabilityCalc() {
 
   const monthlyRate = rate / 100 / 12;
   const numPayments = 30 * 12;
+  const pmtFactor = monthlyRate > 0 ? (1 - Math.pow(1 + monthlyRate, -numPayments)) / monthlyRate : numPayments;
 
   let maxHomePrice = 0;
-  if (monthlyRate > 0) {
-    const pmtFactor = (1 - Math.pow(1 + monthlyRate, -numPayments)) / monthlyRate;
+  {
     let low = 0;
     let high = 5000000;
     for (let i = 0; i < 100; i++) {

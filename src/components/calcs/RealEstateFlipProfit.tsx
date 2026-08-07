@@ -14,7 +14,7 @@ export default function RealEstateFlipProfitCalc() {
 
   const purchase = parseFloat(purchasePrice) || 0;
   const renovation = parseFloat(renovationCost) || 0;
-  const months = parseInt(holdingPeriod) || 0;
+  const months = Math.max(0, parseInt(holdingPeriod) || 0);
   const holding = parseFloat(monthlyHoldingCosts) || 0;
   const arv = parseFloat(sellingPrice) || 0;
   const commission = parseFloat(agentCommission) || 0;

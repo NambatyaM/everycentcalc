@@ -16,7 +16,7 @@ export default function DoorDashProfit({ provider = 'DoorDash' }: { provider?: s
   const miles = parseFloat(milesDriven) || 0;
   const hours = parseFloat(hoursWorked) || 0;
   const gas = parseFloat(gasPrice) || 0;
-  const mpgVal = parseFloat(mpg) || 1;
+  const mpgVal = Math.max(1, parseFloat(mpg) || 0);
   const other = parseFloat(otherExpenses) || 0;
 
   const gasCost = (miles / mpgVal) * gas;
@@ -93,6 +93,9 @@ export default function DoorDashProfit({ provider = 'DoorDash' }: { provider?: s
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
         <p>Gas cost is calculated using your miles and MPG. Net profit = gross earnings − gas cost − other expenses. Hourly rate = net profit ÷ hours worked. For taxes, you choose EITHER the IRS standard mileage rate ($0.70/mile in 2026) OR your actual vehicle expenses (gas, repairs, insurance, depreciation) — never both. The mileage deduction is claimed on your tax return and does not reduce your cash profit directly.</p>
+        {parseFloat(mpg) <= 0 && (
+          <p>MPG must be greater than 0. Gas cost is currently estimated using 1 MPG — enter a valid MPG for accurate results.</p>
+        )}
       </div>
     </div>
   );

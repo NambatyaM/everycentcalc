@@ -107,20 +107,20 @@ export default function PayrollTax() {
         <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Per {payFrequency === 'biweekly' ? 'Paycheck' : 'Month'} Breakdown</div>
         <ResultRow label="Gross Pay" value={formatCurrency(grossPerPeriod)} />
         <ResultRow label="401(k) Deduction" value={`-${formatCurrency(k401PerPeriod)}`} />
-        <ResultRow label={`Social Security (${(SS_RATE * 5).toFixed(1)}%)`} value={`-${formatCurrency(ssPerPeriod)}`} />
-        <ResultRow label={`Medicare (${(MEDICARE_RATE * 5).toFixed(2)}%)`} value={`-${formatCurrency(medicarePerPeriod)}`} />
+        <ResultRow label={`Social Security (${(SS_RATE / 2 * 100).toFixed(1)}%)`} value={`-${formatCurrency(ssPerPeriod)}`} />
+        <ResultRow label={`Medicare (${(MEDICARE_RATE / 2 * 100).toFixed(2)}%)`} value={`-${formatCurrency(medicarePerPeriod)}`} />
         <ResultRow label="Federal Income Tax (12% flat est.)" value={`-${formatCurrency(federalPerPeriod)}`} />
         <ResultRow label={`State Tax (${(stateRate * 100).toFixed(1)}%)`} value={`-${formatCurrency(statePerPeriod)}`} />
         <ResultRow label="Net Pay" value={formatCurrency(netPayPerPeriod)} bold />
-        <ResultRow label={`Employer SS Match (${(SS_RATE * 5).toFixed(1)}%)`} value={formatCurrency(employerSSPerPeriod)} />
-        <ResultRow label={`Employer Medicare Match (${(MEDICARE_RATE * 5).toFixed(2)}%)`} value={formatCurrency(employerMedicarePerPeriod)} />
-        <ResultRow label="FUTA (0.6%)" value={formatCurrency(futaPerPeriod)} />
+        <ResultRow label={`Employer SS Match (${(SS_RATE / 2 * 100).toFixed(1)}%)`} value={formatCurrency(employerSSPerPeriod)} />
+        <ResultRow label={`Employer Medicare Match (${(MEDICARE_RATE / 2 * 100).toFixed(2)}%)`} value={formatCurrency(employerMedicarePerPeriod)} />
+        <ResultRow label="FUTA (0.6% net of SUTA credit)" value={formatCurrency(futaPerPeriod)} />
         <ResultRow label="SUTA (2.7%)" value={formatCurrency(sutaPerPeriod)} />
         <ResultRow label="Total Employer Cost" value={formatCurrency(totalEmployerCostPerPeriod)} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> Federal withholding uses simplified flat 12% estimate. Actual withholding depends on W-4 elections and IRS tables. State tax rate is user-entered. SUTA rate estimated at 2.7% (varies by state and employer experience rating, wages capped at $7,000 for this calculation). 401(k) deductions are pre-tax for income tax but remain subject to Social Security and Medicare. FUTA applies to first $7,000 of wages ($42 max/year). Consult your payroll provider for exact calculations.</p>
+        <p><strong>Disclaimer:</strong> Federal withholding uses simplified flat 12% estimate. Actual withholding depends on W-4 elections and IRS tables. State tax rate is user-entered. SUTA rate estimated at 2.7% (varies by state and employer experience rating, wages capped at $7,000). FUTA here uses the effective 0.6% rate after the 5.4% state unemployment credit on the first $7,000 of wages ($42 max/year); the statutory pre-credit rate is 6.0%. 401(k) deductions are pre-tax for income tax but remain subject to Social Security and Medicare. Consult your payroll provider for exact calculations.</p>
       </div>
     </div>
   );

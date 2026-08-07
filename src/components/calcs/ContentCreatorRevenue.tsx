@@ -31,8 +31,6 @@ export default function ContentCreatorRevenueCalc() {
   const affiliatePct = totalRevenue > 0 ? (ar / totalRevenue) * 100 : 0;
   const membershipPct = totalRevenue > 0 ? (membershipRevenue / totalRevenue) * 100 : 0;
 
-  const barHeight = (pct: number) => `${Math.max(pct * 1.5, 2)}px`;
-
   return (
     <div>
       <SectionHeader title="Content Creator Revenue Calculator" subtitle="Break down your revenue streams and project your income" />

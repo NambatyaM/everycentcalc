@@ -16,8 +16,8 @@ export default function CCorpVsSCorp() {
   const fs = filingStatus as FilingStatus;
   const deduction = getStandardDeduction(fs);
 
-  const sEmployeeSS = Math.min(salary, SS_CAP) * SS_RATE;
-  const sEmployeeMedicare = salary * MEDICARE_RATE;
+  const sEmployeeSS = Math.min(salary, SS_CAP) * (SS_RATE / 2);
+  const sEmployeeMedicare = salary * (MEDICARE_RATE / 2);
   const sAdditionalMedicare = Math.max(0, salary - (fs === 'married' ? 250000 : 200000)) * ADDITIONAL_MEDICARE_RATE;
   const sEmployeeFICA = sEmployeeSS + sEmployeeMedicare + sAdditionalMedicare;
   const sEmployerFICA = sEmployeeSS + sEmployeeMedicare;
@@ -30,13 +30,15 @@ export default function CCorpVsSCorp() {
 
   const cCorpTaxable = Math.max(0, ni - salary - sEmployerFICA);
   const cCorpTax = cCorpTaxable * 0.21;
+  const afterTaxProfit = Math.max(0, cCorpTaxable - cCorpTax);
   const personalTaxOnSalary = Math.max(0, salary - deduction);
   const personalFedTax = federalIncomeTax(personalTaxOnSalary, fs);
   const personalFICA = sEmployeeFICA;
-  const dividends = Math.max(0, retained);
+  const distributions = Math.max(0, retained);
+  const dividends = Math.min(distributions, afterTaxProfit);
   const dividendTax = dividends * 0.15;
   const personalTaxOnDividends = dividendTax;
-  const cTotalTax = cCorpTax + personalFedTax + personalFICA + personalTaxOnDividends;
+  const cTotalTax = cCorpTax + personalFedTax + personalFICA + sEmployerFICA + personalTaxOnDividends;
   const cEffectiveRate = ni > 0 ? (cTotalTax / ni) * 100 : 0;
 
   const difference = Math.abs(sTotalTax - cTotalTax);
@@ -70,7 +72,7 @@ export default function CCorpVsSCorp() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Retained Earnings ($)</label>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Owner Distributions / Dividends ($)</label>
             <input type="number" value={retainedEarnings} onChange={(e) => setRetainedEarnings(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
@@ -114,7 +116,7 @@ export default function CCorpVsSCorp() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> S-Corp is pass through: all income taxed once at personal rates. C-Corp faces double taxation: 21% corporate tax + personal tax on salary and dividends. Dividend tax assumes qualified dividends at 15%. Does not include state taxes or the QBI deduction. Consult a tax advisor for entity selection.</p>
+        <p><strong>Disclaimer:</strong> S-Corp is pass through: all income taxed once at personal rates. C-Corp faces double taxation: 21% corporate tax + personal tax on salary and distributed dividends. Distributions are assumed limited to after-tax corporate profits, and dividend tax assumes qualified dividends at 15%. Retained earnings that stay inside the C-Corp are not taxed at the personal level until actually distributed. Does not include state taxes or the QBI deduction. Consult a tax advisor for entity selection.</p>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
+import { formatCurrency } from '@/lib/tax';
 
 export default function TimeTrackingValueCalc() {
   const [desiredIncome, setDesiredIncome] = useState('100000');
@@ -10,15 +11,18 @@ export default function TimeTrackingValueCalc() {
   const [outsourceRate, setOutsourceRate] = useState('25');
 
   const di = parseFloat(desiredIncome) || 0;
-  const bh = parseFloat(billableHours) || 1;
+  const bh = parseFloat(billableHours);
+  const bhValid = !isNaN(bh) && bh > 0;
   const nbh = parseFloat(nonBillableHours) || 0;
   const or = parseFloat(outsourceRate) || 0;
 
-  const hourlyValue = di / bh;
+  const hourlyValue = bhValid ? di / bh : NaN;
   const annualOutsourceCost = nbh * or * 50;
   const annualLostRevenue = nbh * hourlyValue * 50;
   const annualSavings = annualLostRevenue - annualOutsourceCost;
-  const effectiveRate = di / (bh + nbh * 50);
+  const effectiveRate = bhValid ? di / (bh + nbh * 50) : NaN;
+  const rateDisplay = (v: number) => (bhValid ? `$${v.toFixed(2)}/hr` : 'N/A');
+  const bhDisplay = bhValid ? bh.toLocaleString() : 'N/A';
 
   return (
     <div>
@@ -57,22 +61,22 @@ export default function TimeTrackingValueCalc() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="⏱️" label="Your Hourly Value" value={`$${hourlyValue.toFixed(2)}/hr`} highlight />
+        <ResultCard icon="⏱️" label="Your Hourly Value" value={rateDisplay(hourlyValue)} highlight />
         <ResultCard icon="📉" label="Annual Lost to Admin" value={`$${annualLostRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="💵" label="Outsource Cost" value={`$${annualOutsourceCost.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultCard icon="💰" label="Potential Annual Savings" value={annualSavings > 0 ? `$${annualSavings.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : '$0'} />
+        <ResultCard icon="💰" label="Potential Annual Savings" value={formatCurrency(annualSavings)} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <ResultRow label="Desired Annual Income" value={`$${di.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Billable Hours per Year" value={bh.toLocaleString()} />
-        <ResultRow label="Your Hourly Value" value={`$${hourlyValue.toFixed(2)}/hr`} bold />
-        <ResultRow label="Effective Hourly Rate (with admin)" value={`$${effectiveRate.toFixed(2)}/hr`} />
+        <ResultRow label="Billable Hours per Year" value={bhDisplay} />
+        <ResultRow label="Your Hourly Value" value={rateDisplay(hourlyValue)} bold />
+        <ResultRow label="Effective Hourly Rate (with admin)" value={rateDisplay(effectiveRate)} />
         <ResultRow label="Weekly Non-Billable Hours" value={nbh.toLocaleString()} />
         <ResultRow label="Annual Non-Billable Hours" value={(nbh * 50).toLocaleString()} />
         <ResultRow label="Annual Lost Revenue (doing it yourself)" value={`$${annualLostRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label="Annual Outsource Cost" value={`$${annualOutsourceCost.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Annual Savings (if outsourced)" value={annualSavings > 0 ? `$${annualSavings.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : '$0'} bold />
+        <ResultRow label="Annual Savings (if outsourced)" value={formatCurrency(annualSavings)} bold />
       </div>
 
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>

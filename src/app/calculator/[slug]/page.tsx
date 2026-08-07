@@ -1,10 +1,12 @@
 import { calculators, getCalculatorBySlug, getAllSlugs, getCategoryBySlug } from '@/lib/calculators';
 import { calcTitle, metaDescription } from '@/lib/seo';
+import { getCalculatorImage } from '@/lib/calculatorImages';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import AffiliateBanner from '@/components/AffiliateBanner';
 import SelfEmploymentTaxCalc from '@/components/calcs/SelfEmploymentTax';
 import QuarterlyTaxCalc from '@/components/calcs/QuarterlyTax';
@@ -91,6 +93,15 @@ import TimeTrackingValueCalc from '@/components/calcs/TimeTrackingValue';
 import SalesTaxCalc from '@/components/calcs/SalesTaxCalc';
 import TakeHomePayCalc from '@/components/calcs/TakeHomePayCalc';
 import SalaryToHourlyCalc from '@/components/calcs/SalaryToHourlyCalc';
+import AutoLoanCalc from '@/components/calcs/AutoLoan';
+import CreditCardPayoffCalc from '@/components/calcs/CreditCardPayoff';
+import StudentLoanCalc from '@/components/calcs/StudentLoan';
+import NetWorthCalc from '@/components/calcs/NetWorth';
+import DownPaymentCalc from '@/components/calcs/DownPayment';
+import CdCalculatorCalc from '@/components/calcs/CdCalculator';
+import RothIraCalc from '@/components/calcs/RothIra';
+import RetirementWithdrawalCalc from '@/components/calcs/RetirementWithdrawal';
+import SavingsPlan529Calc from '@/components/calcs/SavingsPlan529';
 
 const CALC_COMPONENTS: Record<string, React.FC | React.ReactElement> = {
   'self-employment-tax-calculator': SelfEmploymentTaxCalc,
@@ -184,6 +195,15 @@ const CALC_COMPONENTS: Record<string, React.FC | React.ReactElement> = {
   'sales-tax-calculator': SalesTaxCalc,
   'take-home-pay-calculator': TakeHomePayCalc,
   'salary-to-hourly-calculator': SalaryToHourlyCalc,
+  'auto-loan-calculator': AutoLoanCalc,
+  'credit-card-payoff-calculator': CreditCardPayoffCalc,
+  'student-loan-calculator': StudentLoanCalc,
+  'net-worth-calculator': NetWorthCalc,
+  'down-payment-calculator': DownPaymentCalc,
+  'cd-calculator': CdCalculatorCalc,
+  'roth-ira-calculator': RothIraCalc,
+  'retirement-withdrawal-calculator': RetirementWithdrawalCalc,
+  '529-college-savings-calculator': SavingsPlan529Calc,
 };
 
 export function generateStaticParams() {
@@ -300,6 +320,8 @@ export default async function CalculatorPage({ params }: Props) {
     .filter((c): c is (typeof calculators)[number] => Boolean(c))
     .filter((c) => c.slug !== calc.slug);
 
+  const img = getCalculatorImage(calc.name, calc.slug);
+
   return (
     <>
       <Header />
@@ -318,13 +340,21 @@ export default async function CalculatorPage({ params }: Props) {
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
+            <div className="mb-6 rounded-2xl overflow-hidden" style={{ aspectRatio: '1200/630' }}>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={1200}
+                height={630}
+                priority
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <div className="mb-8">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-3xl">{calc.icon}</span>
-                <h1 className="text-2xl md:text-3xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
-                  {calc.name}
-                </h1>
-              </div>
+              <h1 className="text-2xl md:text-3xl font-extrabold mb-3" style={{ color: 'var(--text-primary)' }}>
+                {calc.name}
+              </h1>
               <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {calc.description}
               </p>

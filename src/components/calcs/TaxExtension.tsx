@@ -7,7 +7,8 @@ function getExtensionDeadline() {
   const now = new Date();
   const year = now.getFullYear();
   const deadline = new Date(year, 9, 15);
-  if (now > deadline) deadline.setFullYear(year + 1);
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if (today > deadline) deadline.setFullYear(year + 1);
   while (deadline.getDay() === 0 || deadline.getDay() === 6) {
     deadline.setDate(deadline.getDate() + 1);
   }

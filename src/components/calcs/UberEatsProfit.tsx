@@ -66,7 +66,7 @@ export default function UberEatsProfit() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-6">
         <ResultCard icon="💰" label="Net Weekly Profit" value={formatCurrency(netWeekly)} highlight />
-        <ResultCard icon="📦" label="Per Delivery Earning" value={formatCurrency(earningsPerDelivery)} highlight />
+        <ResultCard icon="📦" label="Gross Per Delivery" value={formatCurrency(earningsPerDelivery)} highlight />
         <ResultCard icon="⏱️" label="Hourly Rate" value={formatCurrency(hourlyRate)} />
         <ResultCard icon="📈" label="Annual Net Income" value={formatCurrency(annualNet)} />
       </div>

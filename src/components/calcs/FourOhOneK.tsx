@@ -119,19 +119,21 @@ export default function FourOhOneKCalc() {
         </div>
       )}
 
-      <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <ResultRow label="Current Age" value={`${ca.toFixed(0)}`} />
-        <ResultRow label="Retirement Age" value={`${ra.toFixed(0)}`} />
-        <ResultRow label="Years Until Retirement" value={`${(ra - ca).toFixed(0)}`} />
-        <ResultRow label="Current Balance" value={`$${cb.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Your Monthly Contribution" value={`$${mc.toFixed(2)}`} />
-        <ResultRow label="Employer Match per Month" value={`$${(annualEmployerMatch / 12).toFixed(2)}`} />
-        <ResultRow label="Total Monthly Contribution" value={`$${totalMonthly.toFixed(2)}`} bold />
-        <ResultRow label="Your Total Contributions" value={`$${totalOwnContributions.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Total Employer Match" value={`$${totalEmployerMatch.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Investment Earnings" value={`$${Math.max(0, totalEarnings).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
-        <ResultRow label="Projected Balance at Retirement" value={`$${futureValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
-      </div>
+      {ra > ca && (
+        <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
+          <ResultRow label="Current Age" value={`${ca.toFixed(0)}`} />
+          <ResultRow label="Retirement Age" value={`${ra.toFixed(0)}`} />
+          <ResultRow label="Years Until Retirement" value={`${(ra - ca).toFixed(0)}`} />
+          <ResultRow label="Current Balance" value={`$${cb.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+          <ResultRow label="Your Monthly Contribution" value={`$${mc.toFixed(2)}`} />
+          <ResultRow label="Employer Match per Month" value={`$${(annualEmployerMatch / 12).toFixed(2)}`} />
+          <ResultRow label="Total Monthly Contribution" value={`$${totalMonthly.toFixed(2)}`} bold />
+          <ResultRow label="Your Total Contributions" value={`$${totalOwnContributions.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+          <ResultRow label="Total Employer Match" value={`$${totalEmployerMatch.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+          <ResultRow label="Investment Earnings" value={`$${Math.max(0, totalEarnings).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
+          <ResultRow label="Projected Balance at Retirement" value={`$${futureValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
+        </div>
+      )}
 
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
         <p className="text-sm" style={{ color: 'var(--brand)' }}>

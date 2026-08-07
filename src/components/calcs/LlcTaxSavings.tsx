@@ -22,8 +22,8 @@ export default function LlcTaxSavings() {
 
   const salary = Math.min(ni * 0.6, 50000);
   const distribution = ni - salary;
-  const employeeSS = Math.min(salary, SS_CAP) * SS_RATE;
-  const employeeMedicare = salary * MEDICARE_RATE;
+  const employeeSS = Math.min(salary, SS_CAP) * (SS_RATE / 2);
+  const employeeMedicare = salary * (MEDICARE_RATE / 2);
   const additionalMedicare = Math.max(0, salary - (fs === 'married' ? 250000 : 200000)) * ADDITIONAL_MEDICARE_RATE;
   const employeeFICA = employeeSS + employeeMedicare + additionalMedicare;
   const employerFICA = employeeSS + employeeMedicare;

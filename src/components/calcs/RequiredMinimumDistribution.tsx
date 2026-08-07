@@ -25,7 +25,6 @@ export default function RequiredMinimumDistributionCalc() {
   const rmd = divisor > 0 ? bal / divisor : 0;
   const penalty25 = rmd * 0.25;
   const penalty10 = rmd * 0.10;
-  const lifetimeWithdrawal = bal * (bal > 0 ? 0.04 : 0);
 
   return (
     <div>

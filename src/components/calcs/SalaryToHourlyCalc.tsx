@@ -15,11 +15,11 @@ export default function SalaryToHourlyCalc() {
   const weeks = parseFloat(weeksPerYear) || 0;
 
   const annualSalary = mode === 'salary' ? (parseFloat(salary) || 0) : (parseFloat(hourly) || 0) * hours * weeks;
-  const hourlyRate = mode === 'salary' ? annualSalary / (hours * weeks) : (parseFloat(hourly) || 0);
+  const hourlyRate = mode === 'salary' ? (hours * weeks > 0 ? annualSalary / (hours * weeks) : 0) : (parseFloat(hourly) || 0);
 
   const monthly = annualSalary / 12;
-  const biweekly = annualSalary / 26;
-  const weekly = annualSalary / weeks;
+  const weekly = weeks > 0 ? annualSalary / weeks : 0;
+  const biweekly = weekly * 2;
 
   return (
     <div>

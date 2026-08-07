@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
+import { formatCurrency } from '@/lib/tax';
 
 export default function DscrLoanCalc() {
   const [propertyValue, setPropertyValue] = useState('350000');
@@ -70,8 +71,8 @@ export default function DscrLoanCalc() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="📊" label="DSCR Ratio" value={`${dscr.toFixed(2)}x`} highlight={dscr >= 1.25} />
-        <ResultCard icon="💵" label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight={monthlyCashFlow > 0} />
-        <ResultCard icon="💰" label="Annual Cash Flow" value={`$${annualCashFlow.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight={annualCashFlow > 0} />
+        <ResultCard icon="💵" label="Monthly Cash Flow" value={formatCurrency(monthlyCashFlow)} highlight={monthlyCashFlow > 0} />
+        <ResultCard icon="💰" label="Annual Cash Flow" value={formatCurrency(annualCashFlow)} highlight={annualCashFlow > 0} />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
@@ -85,7 +86,7 @@ export default function DscrLoanCalc() {
         <ResultRow label="Other Expenses" value={`$${expenses.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Total Debt Service" value={`$${debtService.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="DSCR" value={`${dscr.toFixed(2)}x`} bold />
-        <ResultRow label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
+        <ResultRow label="Monthly Cash Flow" value={formatCurrency(monthlyCashFlow)} bold />
         <ResultRow label="Estimated Closing Costs (2%)" value={`$${closingCosts.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Recommended Reserves (6 mo PITI)" value={`$${reserves.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Total Cash Needed" value={`$${cashNeeded.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />

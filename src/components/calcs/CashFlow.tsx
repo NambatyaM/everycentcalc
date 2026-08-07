@@ -76,7 +76,7 @@ export default function CashFlow() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="💵" label="Monthly Cash Flow" value={formatCurrency(monthlyCashFlow)} highlight subtitle={cashFlowPositive ? 'Positive' : 'Negative'} />
         <ResultCard icon="🏦" label="Ending Balance" value={formatCurrency(endBalance)} highlight subtitle={`After ${numMonths} months`} />
-        <ResultCard icon="⚠️" label="Months Until Zero" value={monthsUntilZero > 0 ? `${monthsUntilZero}` : 'N/A'} subtitle={monthsUntilZero > 0 ? 'Cash runs out' : 'Cash flow positive'} />
+        <ResultCard icon="⚠️" label="Months Until Zero" value={monthsUntilZero > 0 ? `${monthsUntilZero}` : 'N/A'} subtitle={monthsUntilZero > 0 ? 'Cash runs out' : cashFlowPositive ? 'Positive' : 'Negative'} />
         <ResultCard icon="📊" label="Cash Flow Status" value={cashFlowPositive ? 'Positive' : 'Negative'} subtitle={cashFlowPositive ? 'Sustainable' : 'Needs attention'} />
       </div>
 

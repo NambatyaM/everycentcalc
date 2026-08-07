@@ -25,21 +25,32 @@ export default function RetirementGapCalc() {
   const retirementYears = Math.max(0, le - ra);
   const monthlyRate = r / 12;
   const totalMonths = yearsToRetire * 12;
+  const retirementMonths = retirementYears * 12;
 
   const projectedSavings = monthlyRate > 0
-    ? cs * Math.pow(1 + r, yearsToRetire) + mc * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate)
+    ? cs * Math.pow(1 + monthlyRate, totalMonths) + mc * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate)
     : cs + mc * totalMonths;
 
-  const withdrawalRate = 0.04;
-  const retirementIncome = projectedSavings * withdrawalRate;
+  const retirementIncome = (() => {
+    if (retirementMonths <= 0) return 0;
+    if (monthlyRate === 0) return (projectedSavings / retirementMonths) * 12;
+    return projectedSavings * monthlyRate * 12 / (1 - Math.pow(1 + monthlyRate, -retirementMonths));
+  })();
   const annualGap = Math.max(0, di - retirementIncome);
 
   const extraMonthlyNeeded = (() => {
     if (annualGap <= 0 || yearsToRetire <= 0) return 0;
-    const futureValueNeeded = annualGap / withdrawalRate;
-    if (monthlyRate === 0) return futureValueNeeded / totalMonths;
+    if (retirementMonths <= 0) return 0;
+    const monthlyGap = annualGap / 12;
+    if (monthlyRate === 0) {
+      const futureValueNeeded = monthlyGap * retirementMonths;
+      return futureValueNeeded / totalMonths;
+    }
+    const futureValueNeeded = monthlyGap * (1 - Math.pow(1 + monthlyRate, -retirementMonths)) / monthlyRate;
     return futureValueNeeded * monthlyRate / (Math.pow(1 + monthlyRate, totalMonths) - 1);
   })();
+
+  const retiredWithGap = yearsToRetire <= 0 && annualGap > 0;
 
   return (
     <div>
@@ -100,21 +111,21 @@ export default function RetirementGapCalc() {
         <ResultCard icon="💰" label="Projected Savings" value={formatCurrency(projectedSavings)} highlight />
         <ResultCard icon="🏦" label="Retirement Income from Savings" value={`${formatCurrency(retirementIncome)}/yr`} />
         <ResultCard icon="📉" label="Annual Gap" value={annualGap > 0 ? `${formatCurrency(annualGap)}/yr` : 'No Gap'} />
-        <ResultCard icon="⚡" label="Extra Monthly Needed" value={extraMonthlyNeeded > 0 ? formatCurrency(extraMonthlyNeeded) : '$0'} highlight />
+        <ResultCard icon="⚡" label="Extra Monthly Needed" value={retiredWithGap ? 'N/A' : extraMonthlyNeeded > 0 ? formatCurrency(extraMonthlyNeeded) : '$0'} subtitle={retiredWithGap ? 'Already at retirement age — no saving period remains' : ''} highlight={extraMonthlyNeeded > 0} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <ResultRow label="Years to Retirement" value={`${yearsToRetire}`} />
         <ResultRow label="Years in Retirement" value={`${retirementYears}`} />
         <ResultRow label="Projected Savings at Retirement" value={formatCurrency(projectedSavings)} />
-        <ResultRow label="4% Withdrawal Income" value={`${formatCurrency(retirementIncome)}/yr`} />
+        <ResultRow label="Annual Income from Savings" value={`${formatCurrency(retirementIncome)}/yr`} />
         <ResultRow label="Desired Income" value={`${formatCurrency(di)}/yr`} />
         <ResultRow label="Annual Shortfall" value={annualGap > 0 ? `${formatCurrency(annualGap)}/yr` : 'On Track'} bold />
-        <ResultRow label="Extra Monthly Savings Needed" value={extraMonthlyNeeded > 0 ? formatCurrency(extraMonthlyNeeded) : '$0'} bold />
+        <ResultRow label="Extra Monthly Savings Needed" value={retiredWithGap ? 'N/A (already at retirement age)' : extraMonthlyNeeded > 0 ? formatCurrency(extraMonthlyNeeded) : '$0'} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Uses the 4% safe withdrawal rule. Projected savings include compound growth on current savings and regular monthly contributions. Actual retirement needs vary based on lifestyle, healthcare costs, and inflation. Consider consulting a financial advisor for personalized planning.</p>
+        <p>Projected savings include monthly compounding on current savings and regular monthly contributions. Annual retirement income is calculated by amortizing savings over the expected retirement years, so savings are designed to last until your life expectancy. Actual retirement needs vary based on lifestyle, healthcare costs, and inflation. Consider consulting a financial advisor for personalized planning.</p>
       </div>
     </div>
   );

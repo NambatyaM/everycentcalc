@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | EveryCentCalc',
   },
   description:
-    '91 free tax and financial calculators for freelancers, side hustlers, and small business owners. Self employment tax, 1099 income, quarterly payments, rent vs buy, and profit margins with 2026 IRS rates. No signup required.',
+    '100 free tax and financial calculators for freelancers, side hustlers, and small business owners. Self employment tax, 1099 income, quarterly payments, rent vs buy, and profit margins with 2026 IRS rates. No signup required.',
   keywords: [
     'self-employment tax calculator 2026',
     'freelancer tax calculator',
@@ -54,17 +54,17 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'EveryCentCalc',
-    title: 'EveryCentCalc — 91 Free Tax & Financial Calculators (2026)',
+    title: 'EveryCentCalc — 100 Free Tax & Financial Calculators (2026)',
     description:
-      '91 free tax and financial calculators for freelancers, side hustlers, and small business owners. 2026 IRS rates. 100% private.',
+      '100 free tax and financial calculators for freelancers, side hustlers, and small business owners. 2026 IRS rates. 100% private.',
     url: 'https://everycentcalc.biz.id',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'EveryCentCalc — 91 Free Tax & Financial Calculators (2026)' }],
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'EveryCentCalc — 100 Free Tax & Financial Calculators (2026)' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'EveryCentCalc — Free Tax & Financial Calculators (2026)',
     description:
-      '91 free calculators for freelancers, side hustlers, and small business owners.',
+      '100 free calculators for freelancers, side hustlers, and small business owners.',
     images: ['/og.png'],
   },
   robots: {
@@ -103,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'EveryCentCalc',
               url: 'https://everycentcalc.biz.id',
               description:
-                '91 free online financial calculators for freelancers, side hustlers, real estate investors, and small business owners.',
+                '100 free online financial calculators for freelancers, side hustlers, real estate investors, and small business owners.',
             }),
           }}
         />

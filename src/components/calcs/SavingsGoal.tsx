@@ -21,7 +21,8 @@ export default function SavingsGoalCalc() {
   if (monthlyRate === 0) {
     monthlyContribution = remaining / months;
   } else {
-    monthlyContribution = (remaining * monthlyRate) / (Math.pow(1 + monthlyRate, months) - 1);
+    const growthFactor = Math.pow(1 + monthlyRate, months);
+    monthlyContribution = ((goal - current * growthFactor) * monthlyRate) / (growthFactor - 1);
   }
 
   if (!isFinite(monthlyContribution) || monthlyContribution < 0) monthlyContribution = 0;

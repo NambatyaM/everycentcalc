@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { categories } from '@/lib/calculators';
+import LogoMark from '@/components/LogoMark';
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 font-extrabold text-lg mb-3" style={{ color: 'var(--brand)' }}>
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg text-white text-sm font-bold" style={{ background: 'var(--brand-gradient)' }}>$</span>
+              <LogoMark size={32} />
               EveryCentCalc
             </Link>
             <p className="text-sm leading-relaxed max-w-xs mb-4" style={{ color: 'var(--text-muted)' }}>

@@ -61,7 +61,7 @@ export default function ExpenseRatio() {
         <ResultCard icon="📊" label="Gross Margin" value={formatPercent(grossMargin)} highlight subtitle={formatCurrency(grossProfit)} />
         <ResultCard icon="📈" label="Operating Margin" value={formatPercent(operatingMargin)} highlight subtitle={formatCurrency(operatingProfit)} />
         <ResultCard icon="💰" label="Net Margin" value={formatPercent(netMargin)} highlight subtitle={formatCurrency(netProfit)} />
-        <ResultCard icon="⚠️" label="Expense Ratio" value={formatPercent(expenseRatio)} subtitle={`${formatCurrency(totalExpenses)} total`} />
+        <ResultCard icon="⚠️" label="Total Cost Ratio" value={formatPercent(expenseRatio)} subtitle={`${formatCurrency(totalExpenses)} total`} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
@@ -74,19 +74,19 @@ export default function ExpenseRatio() {
         <ResultRow label="Owner Compensation" value={`-${formatCurrency(ownerComp)}`} />
         <ResultRow label="Net Profit" value={formatCurrency(netProfit)} bold />
         <ResultRow label="Total Expenses" value={formatCurrency(totalExpenses)} />
-        <ResultRow label="Expense Ratio" value={formatPercent(expenseRatio)} bold />
+        <ResultRow label="Total Cost Ratio" value={formatPercent(expenseRatio)} bold />
       </div>
 
       {netMargin < 0 && (
         <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
           <p className="text-sm" style={{ color: 'var(--brand)' }}>
-            ⚠️ Negative net margin of {formatPercent(Math.abs(netMargin))}. Review operating expenses and owner compensation for cost reduction opportunities.
+            ⚠️ Negative net margin of {formatPercent(netMargin)}. Review operating expenses and owner compensation for cost reduction opportunities.
           </p>
         </div>
       )}
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p><strong>Disclaimer:</strong> Gross margin = (Revenue - COGS) / Revenue. Operating margin = Operating Profit / Revenue. Net margin includes owner compensation as an expense. Expense ratio = Total Expenses / Revenue. Industry benchmarks vary — software typically has 70%+ gross margins while retail averages 25-35%. Compare against your industry for context.</p>
+        <p><strong>Disclaimer:</strong> Gross margin = (Revenue - COGS) / Revenue. Operating margin = Operating Profit / Revenue. Net margin includes owner compensation as an expense. Total cost ratio = Total Expenses / Revenue. Industry benchmarks vary — software typically has 70%+ gross margins while retail averages 25-35%. Compare against your industry for context.</p>
       </div>
     </div>
   );

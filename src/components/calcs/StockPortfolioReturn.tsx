@@ -109,7 +109,7 @@ export default function StockPortfolioReturnCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Assumes taxes are paid annually on capital gains. Dividends are reinvested. Actual tax treatment depends on holding period, income level, and account type (taxable vs. tax advantaged). Long-term capital gains rates apply for holdings over 1 year.</p>
+        <p>Assumes taxes are paid annually on capital gains only. Dividends are reinvested and are assumed tax-free in this simplified model, so the after-tax results are optimistic for taxable accounts. Actual tax treatment depends on holding period, income level, and account type (taxable vs. tax advantaged). Long-term capital gains rates apply for holdings over 1 year.</p>
       </div>
     </div>
   );

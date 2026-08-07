@@ -97,7 +97,7 @@ export default function GraphicDesignerRate() {
         <ResultRow label="Weeks per Year" value="52" />
         <ResultRow label="Billable Hours per Week" value={hours.toString()} />
         <ResultRow label="Hourly Rate (income ÷ 52 ÷ hours)" value={formatCurrency(hourly)} bold />
-        <ResultRow label="Monthly Revenue (hourly × hours × 4)" value={formatCurrency(monthlyRevenue)} bold />
+        <ResultRow label="Monthly Revenue (hourly × hours × 52/12)" value={formatCurrency(monthlyRevenue)} bold />
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>

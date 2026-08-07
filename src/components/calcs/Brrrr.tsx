@@ -86,7 +86,7 @@ export default function BrrrrCalc() {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
-        <ResultCard icon="📊" label="Cash on Cash Return" value={cashOnCash !== 0 ? `${cashOnCash.toFixed(2)}%` : 'N/A'} highlight subtitle={cashOutReceived ? 'No cash in deal (cash-out refinance)' : ''} />
+        <ResultCard icon="📊" label="Cash on Cash Return" value={cashLeftInDeal > 0 ? `${cashOnCash.toFixed(2)}%` : 'N/A'} highlight subtitle={cashOutReceived ? 'No cash in deal (cash-out refinance)' : ''} />
         <ResultCard icon="💵" label="Monthly Cash Flow" value={`$${monthlyCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="💰" label="Annual Cash Flow" value={`$${annualCashFlow.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="🏦" label={cashOutReceived ? 'Cash Out Received' : 'Cash Left in Deal'} value={`$${Math.abs(cashLeftInDeal).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />

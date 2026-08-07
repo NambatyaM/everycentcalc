@@ -49,7 +49,7 @@ export function selfEmploymentTax(
   filingStatus: FilingStatus = 'single',
   w2Wages: number = 0,
 ): { ss: number; medicare: number; additionalMedicare: number; total: number; taxable: number } {
-  const taxable = netSEIncome * SE_RATE;
+  const taxable = Math.max(0, netSEIncome * SE_RATE);
   const ss = Math.min(taxable, Math.max(0, SS_CAP - w2Wages)) * SS_RATE;
   const medicare = taxable * MEDICARE_RATE;
   const seThreshold = filingStatus === 'married' ? 250000 : 200000;

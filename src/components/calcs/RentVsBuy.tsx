@@ -43,12 +43,14 @@ export default function RentVsBuyCalc() {
     return loanAmount * Math.pow(1 + monthlyRate, n) - monthlyPI * (Math.pow(1 + monthlyRate, n) - 1) / monthlyRate;
   };
 
-  const months = yrs * 12;
+  const months = Math.min(yrs * 12, totalPayments);
   const futureHomeValue = hp * Math.pow(1 + appr / 100, yrs);
   const loanBalance = remainingBalance(months);
-  const equityFromPaydown = loanAmount - Math.max(0, loanBalance);
-  const equityFromAppreciation = futureHomeValue - hp;
-  const totalEquity = equityFromPaydown + equityFromAppreciation;
+  // True equity = future home value − remaining loan balance (includes down payment,
+  // principal paydown, and appreciation). This is the same convention used by RentVsBuyNew.
+  const equityFromPaydown = Math.max(0, loanAmount - Math.max(0, loanBalance));
+  const equityFromAppreciation = Math.max(0, futureHomeValue - hp);
+  const totalEquity = Math.max(0, futureHomeValue - Math.max(0, loanBalance));
 
   // Total rent paid over period (with annual increases)
   let totalRentPaid = 0;
@@ -66,7 +68,6 @@ export default function RentVsBuyCalc() {
 
   // Net cost = total out of pocket - equity gained
   const netBuyCost = totalOwnCost - totalEquity;
-  const monthlyOwnership = totalMonthlyOwn;
 
   return (
     <div>
@@ -137,12 +138,13 @@ export default function RentVsBuyCalc() {
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
-        <ResultRow label="Down Payment" value={`$${dpAmount.toLocaleString()}`} />
+        <ResultRow label="Down Payment" value={`$${dpAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Monthly P&I" value={`$${monthlyPI.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Monthly Tax + Insurance" value={`$${(monthlyPropTax + monthlyInsurance).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Total Monthly Ownership" value={`$${totalMonthlyOwn.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
         <ResultRow label={`Home Value in ${yrs} yrs`} value={`$${futureHomeValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Loan Balance Remaining" value={`$${Math.max(0, loanBalance).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Equity from Down Payment" value={`$${dpAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Equity from Paydown" value={`$${equityFromPaydown.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Equity from Appreciation" value={`$${equityFromAppreciation.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>

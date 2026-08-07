@@ -36,10 +36,10 @@ export default function TakeHomePayCalc() {
   const addMedicareThreshold = filingStatus === 'married' ? 250000 : 200000;
   const addMedicare = Math.max(0, annualSalary - addMedicareThreshold) * ADDITIONAL_MEDICARE_RATE;
 
-  const stateTax = annualSalary * (stateTaxRate / 100);
+  const stateTax = Math.max(0, annualSalary - retirementContribution) * (stateTaxRate / 100);
   const totalDeductions = fedIncome + employeeSS + employeeMedicare + addMedicare + stateTax + retirementContribution;
   const takeHomeAnnual = Math.max(0, annualSalary - totalDeductions);
-  const effectiveRate = annualSalary > 0 ? (totalDeductions / annualSalary) * 100 : 0;
+  const deductionRate = annualSalary > 0 ? (totalDeductions / annualSalary) * 100 : 0;
 
   return (
     <div>
@@ -95,7 +95,7 @@ export default function TakeHomePayCalc() {
         <ResultCard icon="💵" label={`Take-Home (${period})`} value={formatCurrency(takeHomeAnnual / periods)} highlight />
         <ResultCard icon="📅" label="Annual Take-Home" value={formatCurrency(takeHomeAnnual)} />
         <ResultCard icon="🏛️" label="Federal Tax" value={formatCurrency(fedIncome)} />
-        <ResultCard icon="📊" label="Effective Tax Rate" value={`${effectiveRate.toFixed(1)}%`} />
+        <ResultCard icon="📊" label="Total Deduction Rate" value={`${deductionRate.toFixed(1)}%`} />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>

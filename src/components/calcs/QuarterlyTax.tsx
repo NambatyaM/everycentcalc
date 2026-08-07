@@ -7,10 +7,12 @@ import { selfEmploymentTax, federalIncomeTax, getStandardDeduction } from '@/lib
 export default function QuarterlyTaxCalc() {
   const [annualIncome, setAnnualIncome] = useState('80000');
   const [otherIncome, setOtherIncome] = useState('0');
+  const [w2Withholding, setW2Withholding] = useState('0');
   const [filingStatus, setFilingStatus] = useState('single');
 
   const ai = parseFloat(annualIncome) || 0;
   const oi = parseFloat(otherIncome) || 0;
+  const withheld = parseFloat(w2Withholding) || 0;
   const fs = filingStatus as 'single' | 'married';
 
   const totalIncome = ai + oi;
@@ -20,7 +22,8 @@ export default function QuarterlyTaxCalc() {
   const taxableIncome = Math.max(0, totalIncome - deduction - seDeduction);
   const fedTax = federalIncomeTax(taxableIncome, fs);
   const totalTax = se.total + fedTax;
-  const quarterly = totalTax / 4;
+  const remainingTax = Math.max(0, totalTax - withheld);
+  const quarterly = remainingTax / 4;
 
   return (
     <div>
@@ -40,6 +43,14 @@ export default function QuarterlyTaxCalc() {
             Other W-2 Income (reduces SE tax cap) ($)
           </label>
           <input type="number" value={otherIncome} onChange={(e) => setOtherIncome(e.target.value)}
+            className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+            style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            W-2 Federal Withholding Already Paid ($)
+          </label>
+          <input type="number" value={w2Withholding} onChange={(e) => setW2Withholding(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
@@ -77,7 +88,7 @@ export default function QuarterlyTaxCalc() {
       </div>
 
       <div className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-        <p>Uses 2026 IRS brackets and standard deduction ($16,100 single / $32,200 MFJ). SE tax is only on freelance income. The 50% SE tax deduction has been applied before calculating federal income tax. Does not include state taxes or QBI deduction. Consult a tax professional.</p>
+        <p>Uses 2026 IRS brackets and standard deduction ($16,100 single / $32,200 MFJ). SE tax is only on freelance income. The 50% SE tax deduction has been applied before calculating federal income tax. W-2 federal withholding is subtracted before dividing the remaining tax into quarterly payments. Does not include state taxes or QBI deduction. Consult a tax professional.</p>
       </div>
     </div>
   );

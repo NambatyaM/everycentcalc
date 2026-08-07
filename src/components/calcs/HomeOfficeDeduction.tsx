@@ -21,7 +21,7 @@ export default function HomeOfficeDeduction() {
   const rate = Math.max(0, parseWithDefault(marginalRate, 22));
 
   const simplified = Math.min(office, 300) * 5;
-  const regular = total > 0 ? (office / total) * expenses : 0;
+  const regular = total > 0 ? Math.min(1, office / total) * expenses : 0;
   const deduction = method === 'simplified' ? simplified : regular;
   const taxSavings = deduction * (rate / 100);
   const monthlyDeduction = deduction / 12;
@@ -96,7 +96,7 @@ export default function HomeOfficeDeduction() {
           </>
         ) : (
           <>
-            <ResultRow label="Office / Total" value={`${office} / ${total} = ${total > 0 ? ((office / total) * 100).toFixed(1) : 0}%`} />
+            <ResultRow label="Office / Total" value={`${office} / ${total} = ${total > 0 ? Math.min(100, (office / total) * 100).toFixed(1) : 0}%`} />
             <ResultRow label="Annual Home Expenses" value={`$${expenses.toLocaleString()}`} />
             <ResultRow label="Deduction" value={`$${deduction.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
           </>

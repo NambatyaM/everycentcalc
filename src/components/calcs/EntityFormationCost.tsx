@@ -48,9 +48,8 @@ export default function EntityFormationCost() {
   const needsAgent = registeredAgent === 'yes';
 
   const filingFee = STATE_FEES[state];
-  const agentCost = needsAgent ? 150 : 0;
   const legalFee = ENTITY_LEGAL_FEES[entityType];
-  const formationCost = filingFee + agentCost + legalFee;
+  const formationCost = filingFee + legalFee;
 
   const annualReportFee = ENTITY_ANNUAL_FEES[entityType];
   const agentAnnual = needsAgent ? 150 : 0;
@@ -112,7 +111,6 @@ export default function EntityFormationCost() {
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{ENTITY_NAME[entityType]} Cost Breakdown — {STATE_NAMES[state]}</div>
         <ResultRow label="State Filing Fee" value={formatCurrency(filingFee)} />
-        <ResultRow label="Registered Agent (Year 1)" value={formatCurrency(agentCost)} />
         <ResultRow label="Legal / Filing Assistance" value={formatCurrency(legalFee)} />
         <ResultRow label="EIN (IRS)" value="$0" />
         <ResultRow label="Total Formation Cost" value={formatCurrency(formationCost)} bold />

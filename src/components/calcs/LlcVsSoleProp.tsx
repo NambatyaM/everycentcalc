@@ -29,8 +29,8 @@ export default function LlcVsSolePropCalc() {
   // Employer pays matching 7.65% (deductible business expense)
   // Total FICA = 15.3% on salary (no 92.35% factor — that's SE-specific)
   const ssCap = SS_CAP;
-  const employeeSS = Math.min(salary, ssCap) * SS_RATE;
-  const employeeMedicare = salary * MEDICARE_RATE;
+  const employeeSS = Math.min(salary, ssCap) * (SS_RATE / 2);
+  const employeeMedicare = salary * (MEDICARE_RATE / 2);
   const employeeFICA = employeeSS + employeeMedicare;
   const employerFICA = employeeFICA; // matching
   const totalFICA = employeeFICA + employerFICA;

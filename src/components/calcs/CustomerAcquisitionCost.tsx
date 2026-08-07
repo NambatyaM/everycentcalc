@@ -44,7 +44,7 @@ export default function CustomerAcquisitionCostCalc() {
         </div>
       </div>
 
-      {nc > 0 && cac > 0 && (
+      {nc > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
           <ResultCard icon="💰" label="Total Cost" value={`$${totalCost.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
           <ResultCard icon="🎯" label="Customers Acquired" value={nc.toLocaleString()} highlight />
@@ -52,7 +52,7 @@ export default function CustomerAcquisitionCostCalc() {
         </div>
       )}
 
-      {nc === 0 && (
+      {nc <= 0 && (
         <div className="rounded-lg border p-4 mb-6" style={{ background: '#fef2f2', borderColor: '#ef4444' }}>
           <p className="text-sm font-medium" style={{ color: '#dc2626' }}>
             Enter a number of new customers greater than zero to calculate CAC.
@@ -68,7 +68,7 @@ export default function CustomerAcquisitionCostCalc() {
         <ResultRow label="CAC per Customer" value={nc > 0 ? `$${cac.toFixed(2)}` : '—'} bold />
       </div>
 
-      {nc > 0 && (
+      {cac > 0 && (
         <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
           <p className="text-sm" style={{ color: 'var(--brand)' }}>
             Each new customer costs <strong>${cac.toFixed(2)}</strong> to acquire. Aim for a 3:1 LTV-to-CAC ratio — meaning each customer should be worth at least <strong>${(cac * 3).toFixed(2)}</strong> over their lifetime.

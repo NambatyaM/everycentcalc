@@ -113,9 +113,9 @@ export default function FreelanceProjectProfitabilityCalc() {
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
         <ResultRow label="Project Revenue" value={formatCurrency(rev)} />
-        <ResultRow label="- Expenses" value={`-${formatCurrency(exp)}`} />
+        <ResultRow label="- Expenses" value={formatCurrency(-exp)} />
         <ResultRow label="= Gross Profit" value={formatCurrency(grossProfit)} />
-        <ResultRow label={`- Tax (${taxPct}%)`} value={`-${formatCurrency(taxAmount)}`} />
+        <ResultRow label={`- Tax (${taxPct}%)`} value={formatCurrency(-taxAmount)} />
         <ResultRow label="= Net Profit" value={formatCurrency(netProfit)} bold />
         <ResultRow label="Hours Worked" value={`${hrs}`} />
         <ResultRow label="Effective Hourly Rate" value={`$${effectiveHourlyRate.toFixed(2)}`} bold />
@@ -127,7 +127,7 @@ export default function FreelanceProjectProfitabilityCalc() {
       <div className="rounded-lg border p-4 mb-4 break-words overflow-hidden" style={{ background: isProfitable ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)', borderColor: isProfitable ? '#22c55e' : '#ef4444' }}>
         <p className="text-sm font-medium" style={{ color: isProfitable ? '#22c55e' : '#ef4444' }}>
           {isProfitable
-            ? `This project is profitable! Your effective rate of $${effectiveHourlyRate.toFixed(2)}/hr ${netHourlyRate >= targetRate ? 'meets' : 'is close to'} your $${targetRate.toFixed(2)}/hr target.`
+            ? `This project is profitable! Your net hourly rate of $${netHourlyRate.toFixed(2)}/hr ${netHourlyRate >= targetRate ? 'meets' : 'is close to'} your $${targetRate.toFixed(2)}/hr target.`
             : `This project does not meet your target rate. At $${effectiveHourlyRate.toFixed(2)}/hr (gross) or $${netHourlyRate.toFixed(2)}/hr (after tax), you are $${Math.abs(rateDiff).toFixed(2)}/hr below your $${targetRate.toFixed(2)} target.`}
         </p>
       </div>

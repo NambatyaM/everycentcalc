@@ -37,7 +37,6 @@ export default function HouseAffordabilityCalc() {
       const mid = (low + high) / 2;
       const propTaxMonthly = mid * (taxRate / 100) / 12;
       const insMonthly = insurance / 12;
-      const availableForPI = availableForPIT - propTaxMonthly - insMonthly;
       const pmt = mid > dp ? (mid - dp) / pmtFactor : 0;
       if (pmt + propTaxMonthly + insMonthly <= availableForPIT) {
         low = mid;
@@ -47,7 +46,7 @@ export default function HouseAffordabilityCalc() {
     }
     maxHomePrice = Math.floor((low + high) / 2 / 100) * 100;
   } else {
-    maxHomePrice = Math.max(0, availableForPIT * numPayments + dp);
+    maxHomePrice = Math.max(0, (availableForPIT - insurance / 12 + dp / numPayments) / (1 / numPayments + taxRate / 1200));
   }
 
   const loanAmount = Math.max(0, maxHomePrice - dp);
@@ -128,7 +127,7 @@ export default function HouseAffordabilityCalc() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="📈" label="Total Interest Paid" value={`$${totalInterest.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultCard icon="📅" label="Total Cost" value={`$${totalPaid.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultCard icon="📅" label="Total Loan Payments" value={`$${totalPaid.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultCard icon="🏦" label="Loan Amount" value={`$${loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
       </div>
 

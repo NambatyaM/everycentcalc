@@ -21,7 +21,7 @@ export default function InflationAdjustedCalc() {
   const milestoneValues = milestones.map((y) => {
     const fv = A / Math.pow(1 + ir, y);
     const loss = A - fv;
-    const pct = (fv / A) * 100;
+    const pct = A > 0 ? (fv / A) * 100 : 0;
     return { year: y, realValue: fv, loss, pct };
   });
 

@@ -12,7 +12,7 @@ export default function BusinessLoanCalc() {
 
   const principal = parseFloat(loanAmount) || 0;
   const annualRate = parseFloat(interestRate) || 0;
-  const years = parseFloat(loanTerm) || 1;
+  const years = Math.max(1, parseFloat(loanTerm) || 1);
   const revenue = parseFloat(monthlyRevenue) || 0;
   const margin = parseFloat(profitMargin) || 0;
 
@@ -39,7 +39,8 @@ export default function BusinessLoanCalc() {
     return totalP;
   })() : principal * 12 / n;
 
-  const firstYearInterest = Math.max(0, (monthlyPayment * 12) - firstYearPrincipal);
+  const firstYearMonths = Math.min(12, n);
+  const firstYearInterest = Math.max(0, (monthlyPayment * firstYearMonths) - firstYearPrincipal);
 
   return (
     <div>
@@ -114,7 +115,7 @@ export default function BusinessLoanCalc() {
         <div className="text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>First Year Breakdown</div>
         <ResultRow label="First Year Principal" value={`$${firstYearPrincipal.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="First Year Interest" value={`$${firstYearInterest.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="First Year Total" value={`$${(monthlyPayment * 12).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
+        <ResultRow label="First Year Total" value={`$${(monthlyPayment * Math.min(12, n)).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />
       </div>
 
       <div className="rounded-xl border p-4 mb-6" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>

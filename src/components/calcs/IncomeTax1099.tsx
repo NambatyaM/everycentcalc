@@ -23,7 +23,7 @@ export default function IncomeTax1099() {
   const fedTax = federalIncomeTax(taxableIncome, fs);
   const totalTax = se.total + fedTax;
   const effectiveRate = totalGross > 0 ? (totalTax / totalGross) * 100 : 0;
-  const takeHome = totalGross - totalTax;
+  const takeHome = totalGross - totalTax - w2 * 0.0765;
 
   return (
     <div>

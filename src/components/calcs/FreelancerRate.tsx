@@ -16,12 +16,13 @@ export default function FreelancerRateCalc() {
 
   const taxRate = 0.40;
   const incomeWithTax = di / (1 - taxRate);
-  const totalExpenses = di * (exp / 100);
-  const totalNeeded = incomeWithTax + totalExpenses;
-  const workingWeeks = 52 - vw;
+  const expenseRatio = exp / 100;
+  const totalNeeded = expenseRatio < 1 ? incomeWithTax / (1 - expenseRatio) : incomeWithTax;
+  const totalExpenses = totalNeeded - incomeWithTax;
+  const workingWeeks = Math.max(0, 52 - vw);
   const totalBillableHours = workingWeeks * 5 * bh;
   const hourlyRate = totalBillableHours > 0 ? totalNeeded / totalBillableHours : 0;
-  const dailyRate = hourlyRate * 8;
+  const dailyRate = hourlyRate * bh;
   const monthlyRetainer = hourlyRate * bh * 5 * 4;
 
   return (

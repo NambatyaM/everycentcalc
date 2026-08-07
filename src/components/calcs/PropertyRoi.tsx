@@ -32,18 +32,24 @@ export default function PropertyRoiCalc() {
     : loan / numPayments;
 
   const annualMortgage = monthlyMortgage * 12;
-  const annualProfit = rent - expenses - annualMortgage;
-  const cashOnCash = downPayment > 0 ? (annualProfit / downPayment) * 100 : 0;
+  const annualCashFlow = rent - expenses - annualMortgage;
+  const cashOnCash = downPayment > 0 ? (annualCashFlow / downPayment) * 100 : 0;
   const futureValue = price * Math.pow(1 + appr / 100, years);
 
   let loanBalance = loan;
+  let cumulativeCashFlow = 0;
   for (let m = 0; m < years * 12; m++) {
-    const intPayment = loanBalance * monthlyRate;
-    const prinPayment = monthlyMortgage - intPayment;
-    loanBalance = Math.max(0, loanBalance - prinPayment);
+    if (loanBalance > 0) {
+      const intPayment = loanBalance * monthlyRate;
+      const prinPayment = monthlyMortgage - intPayment;
+      loanBalance = Math.max(0, loanBalance - prinPayment);
+      cumulativeCashFlow += (rent - expenses) / 12 - monthlyMortgage;
+    } else {
+      cumulativeCashFlow += (rent - expenses) / 12;
+    }
   }
 
-  const totalReturn = (futureValue - loanBalance) - downPayment + (annualProfit * years);
+  const totalReturn = (futureValue - loanBalance) - downPayment + cumulativeCashFlow;
   const totalRoi = downPayment > 0 ? (totalReturn / downPayment) * 100 : 0;
 
   return (
@@ -113,7 +119,7 @@ export default function PropertyRoiCalc() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
         <ResultCard icon="📈" label="Cash on Cash Return" value={`${cashOnCash.toFixed(2)}%`} highlight />
-        <ResultCard icon="💵" label="Annual Cash Flow" value={`$${annualProfit.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
+        <ResultCard icon="💵" label="Annual Cash Flow" value={`$${annualCashFlow.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} highlight />
         <ResultCard icon="🏆" label="Total ROI" value={`${totalRoi.toFixed(2)}%`} highlight />
       </div>
 
@@ -127,7 +133,7 @@ export default function PropertyRoiCalc() {
         <ResultRow label="Loan Amount" value={`$${loan.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Monthly Mortgage" value={`$${monthlyMortgage.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Annual Mortgage" value={`$${annualMortgage.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
-        <ResultRow label="Annual Cash Flow" value={`$${annualProfit.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
+        <ResultRow label="Annual Cash Flow" value={`$${annualCashFlow.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Loan Balance at Exit" value={`$${loanBalance.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Equity at Exit" value={`$${(futureValue - loanBalance).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} />
         <ResultRow label="Total Return" value={`$${totalReturn.toLocaleString('en-US', { maximumFractionDigits: 0 })}`} bold />

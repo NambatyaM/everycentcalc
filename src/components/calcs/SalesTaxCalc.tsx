@@ -66,10 +66,11 @@ export default function SalesTaxCalc() {
   const baseAmount = parseFloat(amount) || 0;
   const rate = customRate !== '' ? parseFloat(customRate) || 0 : STATE_RATES[state] || 0;
 
-  const taxAmount = baseAmount * (rate / 100);
-  const total = baseAmount + taxAmount;
+  const taxAmount = mode === 'add' ? baseAmount * (rate / 100) : 0;
+  const total = mode === 'add' ? baseAmount + taxAmount : 0;
 
-  const preTax = mode === 'reverse' ? baseAmount / (1 + rate / 100) : 0;
+  const rateInvalid = Math.abs(1 + rate / 100) < 0.0001;
+  const preTax = mode === 'reverse' && !rateInvalid ? baseAmount / (1 + rate / 100) : 0;
   const reverseTax = mode === 'reverse' ? baseAmount - preTax : 0;
 
   return (
@@ -134,14 +135,14 @@ export default function SalesTaxCalc() {
         {mode === 'add' ? (
           <>
             <ResultRow label="Price Before Tax" value={formatCurrency(baseAmount)} />
-            <ResultRow label={`Tax Rate (${state})`} value={`${rate.toFixed(2)}%`} />
+            <ResultRow label={`Tax Rate (${customRate !== '' ? 'Custom' : state})`} value={`${rate.toFixed(2)}%`} />
             <ResultRow label="Sales Tax Amount" value={formatCurrency(taxAmount)} bold />
             <ResultRow label="Total After Tax" value={formatCurrency(total)} bold />
           </>
         ) : (
           <>
             <ResultRow label="Total Paid (Tax Included)" value={formatCurrency(baseAmount)} />
-            <ResultRow label={`Tax Rate (${state})`} value={`${rate.toFixed(2)}%`} />
+            <ResultRow label={`Tax Rate (${customRate !== '' ? 'Custom' : state})`} value={`${rate.toFixed(2)}%`} />
             <ResultRow label="Price Before Tax" value={formatCurrency(preTax)} bold />
             <ResultRow label="Tax Included" value={formatCurrency(reverseTax)} bold />
           </>

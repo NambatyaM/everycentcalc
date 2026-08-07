@@ -19,7 +19,7 @@ export default function FreelancerSavingsRate() {
   const afterTaxIncome = income * (1 - tax / 100);
   const surplus = afterTaxIncome - expenses;
   const savingsRate = afterTaxIncome > 0 ? (surplus / afterTaxIncome) * 100 : 0;
-  const monthsToGoal = surplus > 0 ? Math.ceil((goal - current) / surplus) : 0;
+  const monthsToGoal = surplus > 0 ? Math.max(0, Math.ceil((goal - current) / surplus)) : 0;
   const annualSurplus = surplus * 12;
 
   return (

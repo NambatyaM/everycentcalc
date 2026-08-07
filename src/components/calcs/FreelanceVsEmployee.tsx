@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ResultCard, ResultRow, SectionHeader } from '@/components/Results';
-import { selfEmploymentTax, federalIncomeTax, getStandardDeduction, formatCurrency, formatPercent } from '@/lib/tax';
+import { selfEmploymentTax, federalIncomeTax, getStandardDeduction, formatCurrency, formatPercent, SS_CAP } from '@/lib/tax';
 
 export default function FreelanceVsEmployeeCalc() {
   const [annualIncome, setAnnualIncome] = useState('100000');
@@ -13,7 +13,7 @@ export default function FreelanceVsEmployeeCalc() {
   const deduction = getStandardDeduction(fs);
 
   // Employee (W-2) side
-  const employeeFICA = income * 0.0765;
+  const employeeFICA = Math.min(income, SS_CAP) * 0.062 + income * 0.0145;
   const employeeTaxableIncome = Math.max(0, income - deduction);
   const employeeFederalTax = federalIncomeTax(employeeTaxableIncome, fs);
   const employeeTotalTax = employeeFICA + employeeFederalTax;

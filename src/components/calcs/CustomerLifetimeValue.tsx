@@ -73,7 +73,7 @@ export default function CustomerLifetimeValueCalc() {
 
       <div className="rounded-lg border p-4 mb-4" style={{ background: 'var(--brand-light)', borderColor: 'var(--brand)' }}>
         <p className="text-sm" style={{ color: 'var(--brand)' }}>
-          Each customer is worth <strong>${clvRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong> in revenue and <strong>${clvProfit.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong> in profit. A healthy business spends no more than one third of CLV on acquisition — meaning your target CAC should be around <strong>$${(clvRevenue / 3).toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong>.
+          Each customer is worth <strong>${clvRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong> in revenue and <strong>${clvProfit.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong> in profit. A healthy business spends no more than one third of CLV (profit) on acquisition — meaning your target CAC should be around <strong>$${(clvProfit / 3).toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong>.
         </p>
       </div>
 
