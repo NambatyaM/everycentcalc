@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Credit Card Payoff Calculator — free online calculator from EveryCentCalc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#681818"/>
+      <stop offset="100%" stop-color="#411a24"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.5">
+    <circle cx="1180" cy="620" r="220" fill="#ffffff" opacity="0.05"/>
+    <circle cx="560" cy="-60" r="180" fill="#ffffff" opacity="0.05"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="48" y="44" width="32" height="32" rx="9" fill="url(#brand)"/>
+    <text x="64" y="67" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">$</text>
+    <text x="94" y="67" font-size="22" font-weight="700" fill="#ffffff" opacity="0.95">EveryCentCalc</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="928" y="42" width="224" height="38" rx="19" fill="#ffffff" opacity="0.14"/>
+    <text x="1040" y="67" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Business Finance</text>
+  </g>
+
+  <g transform="translate(64,160)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect width="430" height="400" rx="36" fill="#ffffff" opacity="0.94"/>
+    <rect x="18" y="18" width="394" height="364" rx="24" fill="none" stroke="#964646" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+    <rect x="85" y="65" width="260" height="150" rx="12" fill="#5b1515"></rect><rect x="97" y="77" width="62.4" height="24" rx="2" fill="rgba(255,255,255,0.85)"></rect><circle cx="323" cy="87" r="5" fill="rgba(255,255,255,0.7)"></circle><rect x="135" y="180" width="150" height="12" rx="6" fill="rgba(255,255,255,0.5)"></rect><text x="215" y="250" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="30" fill="#ffffff" text-anchor="middle" font-weight="700">— — — 4242</text><path d="M 202 278.4 L 215 300 L 228 278.4 L 219.33333333333334 278.4 L 219.33333333333334 270 L 210.66666666666666 270 L 210.66666666666666 278.4 Z" fill="#7F1D1D"></path><circle cx="165" cy="320" r="28" fill="#964646"></circle><text x="165" y="328" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="16" fill="#1E293B" text-anchor="middle" font-weight="800">0</text><circle cx="265" cy="320" r="28" fill="#5b1515"></circle><text x="265" y="328" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="800">✓</text><text x="215" y="372" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="16" fill="#1E293B" text-anchor="middle" font-weight="700">snowball vs avalanche</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="570" y="210" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Credit Card Payoff</text>
+    <text x="570" y="277" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Calculator</text>
+    <text x="570" y="370" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(255,255,255,0.85)" font-weight="500">Time and cost to clear the card</text>
+    <line x1="570" y1="394" x2="1130" y2="394" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <rect x="540" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="636" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Balance</text><text x="636" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">$</text><rect x="744" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="840" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">APR</text><text x="840" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">%</text><rect x="948" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="1044" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Payoff</text><text x="1044" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">mo</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="540" y="502" width="170" height="42" rx="21" fill="#ffffff" opacity="0.16"/>
+    <text x="625" y="529" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">FREE TOOL · NO SIGNUP</text>
+  </g>
+
+  <text x="600" y="614" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">EveryCentCalc.com — free online financial calculators</text>
+</svg>

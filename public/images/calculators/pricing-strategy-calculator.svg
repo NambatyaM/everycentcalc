@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Pricing Strategy Calculator — free online calculator from EveryCentCalc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6630c2"/>
+      <stop offset="100%" stop-color="#402782"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.5">
+    <circle cx="1180" cy="620" r="220" fill="#ffffff" opacity="0.05"/>
+    <circle cx="560" cy="-60" r="180" fill="#ffffff" opacity="0.05"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="48" y="44" width="32" height="32" rx="9" fill="url(#brand)"/>
+    <text x="64" y="67" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">$</text>
+    <text x="94" y="67" font-size="22" font-weight="700" fill="#ffffff" opacity="0.95">EveryCentCalc</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="928" y="42" width="224" height="38" rx="19" fill="#ffffff" opacity="0.14"/>
+    <text x="1040" y="67" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Business Finance</text>
+  </g>
+
+  <g transform="translate(64,160)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect width="430" height="400" rx="36" fill="#ffffff" opacity="0.94"/>
+    <rect x="18" y="18" width="394" height="364" rx="24" fill="none" stroke="#945df0" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+    <path d="M 169 110 h 62 a 12 12 0 0 1 12 12 v 0 l -58 62 a 14 14 0 0 1 -20 -20 l 6 -6 v -48 Z" fill="#7C3AED"></path><circle cx="203" cy="120" r="8" fill="#ffffff" opacity="0.8"></circle><text x="231" y="116" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" font-weight="700">$</text><polygon points="80.0,60.0 87.9,79.1 108.5,80.7 92.8,94.2 97.6,114.3 80.0,103.5 62.4,114.3 67.2,94.2 51.5,80.7 72.1,79.1" fill="#945df0"></polygon><polygon points="360.0,280.0 370.6,305.4 398.0,307.6 377.1,325.6 383.5,352.4 360.0,338.0 336.5,352.4 342.9,325.6 322.0,307.6 349.4,305.4" fill="#592aab"></polygon><rect x="120" y="300" width="120" height="24" rx="12" fill="#945df0"></rect><text x="180" y="317" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="13" fill="#1E293B" text-anchor="middle" font-weight="700">cost-plus</text><rect x="260" y="300" width="120" height="24" rx="12" fill="#7C3AED"></rect><text x="320" y="317" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">value-based</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="570" y="210" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Pricing Strategy</text>
+    <text x="570" y="277" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Calculator</text>
+    <text x="570" y="370" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(255,255,255,0.85)" font-weight="500">Pick a profitable price</text>
+    <line x1="570" y1="394" x2="1130" y2="394" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <rect x="540" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="636" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Cost-plus</text><text x="636" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">margin</text><rect x="744" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="840" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Value-based</text><text x="840" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">worth</text><rect x="948" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="1044" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Markup</text><text x="1044" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">%</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="540" y="502" width="170" height="42" rx="21" fill="#ffffff" opacity="0.16"/>
+    <text x="625" y="529" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">FREE TOOL · NO SIGNUP</text>
+  </g>
+
+  <text x="600" y="614" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">EveryCentCalc.com — free online financial calculators</text>
+</svg>

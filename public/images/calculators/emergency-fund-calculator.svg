@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Emergency Fund Calculator — free online calculator from EveryCentCalc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#077792"/>
+      <stop offset="100%" stop-color="#0c4e67"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.5">
+    <circle cx="1180" cy="620" r="220" fill="#ffffff" opacity="0.05"/>
+    <circle cx="560" cy="-60" r="180" fill="#ffffff" opacity="0.05"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="48" y="44" width="32" height="32" rx="9" fill="url(#brand)"/>
+    <text x="64" y="67" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">$</text>
+    <text x="94" y="67" font-size="22" font-weight="700" fill="#ffffff" opacity="0.95">EveryCentCalc</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="928" y="42" width="224" height="38" rx="19" fill="#ffffff" opacity="0.14"/>
+    <text x="1040" y="67" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Investment &amp; Retirement</text>
+  </g>
+
+  <g transform="translate(64,160)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect width="430" height="400" rx="36" fill="#ffffff" opacity="0.94"/>
+    <rect x="18" y="18" width="394" height="364" rx="24" fill="none" stroke="#34a5c0" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+    <path d="M 215 50 C 335 80 320 185 215 350 C 110 185 95 80 215 50 Z" fill="#0891B2"></path><text x="215" y="195" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="34" fill="#ffffff" text-anchor="middle" font-weight="800">6</text><text x="215" y="225" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="700">months</text><circle cx="110" cy="330" r="30" fill="#066880"></circle><circle cx="110" cy="330" r="21" fill="none" stroke="#044b5c" stroke-width="2.6999999999999997" opacity="0.65"></circle><text x="110" y="340.5" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="30" fill="#044b5c" text-anchor="middle" font-weight="700">$</text><circle cx="320" cy="330" r="34" fill="#0891B2"></circle><circle cx="320" cy="330" r="23.799999999999997" fill="none" stroke="#066880" stroke-width="3.06" opacity="0.65"></circle><text x="320" y="341.9" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="34" fill="#066880" text-anchor="middle" font-weight="700">$</text><circle cx="360" cy="280" r="26" fill="#34a5c0"></circle><circle cx="360" cy="280" r="18.2" fill="none" stroke="#25778a" stroke-width="2.34" opacity="0.65"></circle><text x="360" y="289.1" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="26" fill="#25778a" text-anchor="middle" font-weight="700">$</text><text x="215" y="380" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="16" fill="#1E293B" text-anchor="middle" font-weight="700">emergency cushion</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="570" y="210" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Emergency Fund</text>
+    <text x="570" y="277" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Calculator</text>
+    <text x="570" y="370" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(255,255,255,0.85)" font-weight="500">How much emergency cushion</text>
+    <line x1="570" y1="394" x2="1130" y2="394" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <rect x="540" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="636" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">3 mo</text><text x="636" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">employee</text><rect x="744" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="840" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">6 mo</text><text x="840" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">freelancer</text><rect x="948" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="1044" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Months</text><text x="1044" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">goal</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="540" y="502" width="170" height="42" rx="21" fill="#ffffff" opacity="0.16"/>
+    <text x="625" y="529" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">FREE TOOL · NO SIGNUP</text>
+  </g>
+
+  <text x="600" y="614" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">EveryCentCalc.com — free online financial calculators</text>
+</svg>

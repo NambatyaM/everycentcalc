@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Net Worth Calculator — free online calculator from EveryCentCalc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c615a"/>
+      <stop offset="100%" stop-color="#0f4249"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.5">
+    <circle cx="1180" cy="620" r="220" fill="#ffffff" opacity="0.05"/>
+    <circle cx="560" cy="-60" r="180" fill="#ffffff" opacity="0.05"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="48" y="44" width="32" height="32" rx="9" fill="url(#brand)"/>
+    <text x="64" y="67" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">$</text>
+    <text x="94" y="67" font-size="22" font-weight="700" fill="#ffffff" opacity="0.95">EveryCentCalc</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="928" y="42" width="224" height="38" rx="19" fill="#ffffff" opacity="0.14"/>
+    <text x="1040" y="67" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Business Finance</text>
+  </g>
+
+  <g transform="translate(64,160)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect width="430" height="400" rx="36" fill="#ffffff" opacity="0.94"/>
+    <rect x="18" y="18" width="394" height="364" rx="24" fill="none" stroke="#3a8f88" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+    <text x="120" y="90" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="18" fill="#1E293B" text-anchor="middle" font-weight="700">Assets</text><text x="300" y="90" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="18" fill="#1E293B" text-anchor="middle" font-weight="700">Liabilities</text><rect x="70" y="90" width="100" height="44" rx="8" fill="#0F766E" opacity="1"></rect><rect x="70" y="145" width="100" height="36" rx="8" fill="#0F766E" opacity="0.8200000000000001"></rect><rect x="70" y="200" width="100" height="28" rx="8" fill="#0F766E" opacity="0.64"></rect><rect x="70" y="255" width="100" height="20" rx="8" fill="#0F766E" opacity="0.45999999999999996"></rect><rect x="250" y="120" width="100" height="40" rx="8" fill="#E2E8F0" opacity="1"></rect><rect x="250" y="175" width="100" height="32" rx="8" fill="#E2E8F0" opacity="0.85"></rect><rect x="250" y="230" width="100" height="24" rx="8" fill="#E2E8F0" opacity="0.7"></rect><path d="M 105 330.48 L 120 306 L 135 330.48 L 125 330.48 L 125 340 L 115 340 L 115 330.48 Z" fill="#0F766E"></path><path d="M 285 315.52 L 300 340 L 315 315.52 L 305 315.52 L 305 306 L 295 306 L 295 315.52 Z" fill="#CBD5E1"></path><circle cx="215" cy="372" r="24" fill="#3a8f88"></circle><text x="215" y="380" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="15" fill="#1E293B" text-anchor="middle" font-weight="800">= $</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="570" y="239" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="50" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Net Worth Calculator</text>
+    <text x="570" y="323" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(255,255,255,0.85)" font-weight="500">Everything you own minus owed</text>
+    <line x1="570" y1="347" x2="1130" y2="347" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <rect x="540" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="636" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Assets</text><text x="636" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">+</text><rect x="744" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="840" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Liabilities</text><text x="840" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">−</text><rect x="948" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="1044" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Net</text><text x="1044" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">worth</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="540" y="502" width="170" height="42" rx="21" fill="#ffffff" opacity="0.16"/>
+    <text x="625" y="529" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">FREE TOOL · NO SIGNUP</text>
+  </g>
+
+  <text x="600" y="614" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">EveryCentCalc.com — free online financial calculators</text>
+</svg>

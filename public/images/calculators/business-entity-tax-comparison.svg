@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Business Entity Tax Comparison Calculator — free online calculator from EveryCentCalc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d986a"/>
+      <stop offset="100%" stop-color="#0f6051"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.5">
+    <circle cx="1180" cy="620" r="220" fill="#ffffff" opacity="0.05"/>
+    <circle cx="560" cy="-60" r="180" fill="#ffffff" opacity="0.05"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="48" y="44" width="32" height="32" rx="9" fill="url(#brand)"/>
+    <text x="64" y="67" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">$</text>
+    <text x="94" y="67" font-size="22" font-weight="700" fill="#ffffff" opacity="0.95">EveryCentCalc</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="928" y="42" width="224" height="38" rx="19" fill="#ffffff" opacity="0.14"/>
+    <text x="1040" y="67" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">LLC &amp; Entities</text>
+  </g>
+
+  <g transform="translate(64,160)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect width="430" height="400" rx="36" fill="#ffffff" opacity="0.94"/>
+    <rect x="18" y="18" width="394" height="364" rx="24" fill="none" stroke="#3bc698" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+    <rect x="61.4" y="132" width="67.2" height="96" rx="6" fill="#10B981"></rect><rect x="61.4" y="132" width="67.2" height="14.399999999999999" rx="6" fill="#0c8b61"></rect><rect x="71" y="160" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="99.8" y="160" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="71" y="185.6" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="99.8" y="185.6" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="71" y="211.2" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="99.8" y="211.2" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="88.6" y="217.6" width="12.8" height="10.4" rx="1.5" fill="rgba(255,255,255,0.8)"></rect><rect x="181.4" y="132" width="67.2" height="96" rx="6" fill="#0c855d"></rect><rect x="181.4" y="132" width="67.2" height="14.399999999999999" rx="6" fill="#096446"></rect><rect x="191" y="160" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="219.8" y="160" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="191" y="185.6" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="219.8" y="185.6" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="191" y="211.2" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="219.8" y="211.2" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="208.6" y="217.6" width="12.8" height="10.4" rx="1.5" fill="rgba(255,255,255,0.8)"></rect><rect x="301.4" y="132" width="67.2" height="96" rx="6" fill="#3bc698"></rect><rect x="301.4" y="132" width="67.2" height="14.399999999999999" rx="6" fill="#2c9572"></rect><rect x="311" y="160" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="339.8" y="160" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="311" y="185.6" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="339.8" y="185.6" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="311" y="211.2" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="339.8" y="211.2" width="14.399999999999999" height="14.399999999999999" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="328.6" y="217.6" width="12.8" height="10.4" rx="1.5" fill="rgba(255,255,255,0.8)"></rect><rect x="60" y="320" width="70" height="24" rx="12" fill="#3bc698"></rect><text x="95" y="337" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="13" fill="#1E293B" text-anchor="middle" font-weight="700">LLC</text><rect x="180" y="320" width="70" height="24" rx="12" fill="#10B981"></rect><text x="215" y="337" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">S-CORP</text><rect x="300" y="320" width="70" height="24" rx="12" fill="#0c855d"></rect><text x="335" y="337" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">C-CORP</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="570" y="210" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="50" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Business Entity Tax</text>
+    <text x="570" y="268" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="50" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Comparison Calculator</text>
+    <text x="570" y="352" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(255,255,255,0.85)" font-weight="500">LLC, S-corp, and C-corp compared</text>
+    <line x1="570" y1="376" x2="1130" y2="376" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <rect x="540" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="636" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">LLC</text><text x="636" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">pass-through</text><rect x="744" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="840" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">S-corp</text><text x="840" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">payroll split</text><rect x="948" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="1044" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">C-corp</text><text x="1044" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">double tax</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="540" y="502" width="170" height="42" rx="21" fill="#ffffff" opacity="0.16"/>
+    <text x="625" y="529" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">FREE TOOL · NO SIGNUP</text>
+  </g>
+
+  <text x="600" y="614" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">EveryCentCalc.com — free online financial calculators</text>
+</svg>

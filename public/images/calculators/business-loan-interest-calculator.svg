@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Business Loan Interest Calculator — free online calculator from EveryCentCalc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b41f1f"/>
+      <stop offset="100%" stop-color="#6b1e28"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.5">
+    <circle cx="1180" cy="620" r="220" fill="#ffffff" opacity="0.05"/>
+    <circle cx="560" cy="-60" r="180" fill="#ffffff" opacity="0.05"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="48" y="44" width="32" height="32" rx="9" fill="url(#brand)"/>
+    <text x="64" y="67" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">$</text>
+    <text x="94" y="67" font-size="22" font-weight="700" fill="#ffffff" opacity="0.95">EveryCentCalc</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="928" y="42" width="224" height="38" rx="19" fill="#ffffff" opacity="0.14"/>
+    <text x="1040" y="67" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Business Finance</text>
+  </g>
+
+  <g transform="translate(64,160)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect width="430" height="400" rx="36" fill="#ffffff" opacity="0.94"/>
+    <rect x="18" y="18" width="394" height="364" rx="24" fill="none" stroke="#e24d4d" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+    <rect x="73.80000000000001" y="116.5" width="92.39999999999999" height="132" rx="6" fill="#DC2626"></rect><rect x="73.80000000000001" y="116.5" width="92.39999999999999" height="19.8" rx="6" fill="#a51d1d"></rect><rect x="87" y="155" width="19.8" height="19.8" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="126.6" y="155" width="19.8" height="19.8" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="87" y="190.2" width="19.8" height="19.8" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="126.6" y="190.2" width="19.8" height="19.8" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="87" y="225.4" width="19.8" height="19.8" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="126.6" y="225.4" width="19.8" height="19.8" rx="2" fill="rgba(255,255,255,0.7)"></rect><rect x="111.2" y="234.2" width="17.6" height="14.3" rx="1.5" fill="rgba(255,255,255,0.8)"></rect><rect x="240" y="110" width="150" height="150" rx="14" fill="#ffffff"></rect><rect x="240" y="110" width="150" height="34" rx="14" fill="#9e1b1b"></rect><text x="315" y="133" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="700">BUSINESS LOAN</text><rect x="260" y="165" width="90" height="9" rx="4" fill="#E2E8F0"></rect><rect x="260" y="185" width="110" height="9" rx="4" fill="#E2E8F0"></rect><rect x="260" y="220" width="70" height="20" rx="8" fill="#e24d4d"></rect><text x="215" y="380" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="16" fill="#1E293B" text-anchor="middle" font-weight="700">APR + total interest</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="570" y="210" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Business Loan</text>
+    <text x="570" y="277" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Interest Calculator</text>
+    <text x="570" y="370" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(255,255,255,0.85)" font-weight="500">Total interest and APR</text>
+    <line x1="570" y1="394" x2="1130" y2="394" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <rect x="540" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="636" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Rate</text><text x="636" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">%</text><rect x="744" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="840" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Term</text><text x="840" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">yrs</text><rect x="948" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="1044" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Interest</text><text x="1044" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">$</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="540" y="502" width="170" height="42" rx="21" fill="#ffffff" opacity="0.16"/>
+    <text x="625" y="529" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">FREE TOOL · NO SIGNUP</text>
+  </g>
+
+  <text x="600" y="614" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">EveryCentCalc.com — free online financial calculators</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Is My Side Hustle Worth It Calculator — free online calculator from EveryCentCalc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c98209"/>
+      <stop offset="100%" stop-color="#76541c"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.5">
+    <circle cx="1180" cy="620" r="220" fill="#ffffff" opacity="0.05"/>
+    <circle cx="560" cy="-60" r="180" fill="#ffffff" opacity="0.05"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="48" y="44" width="32" height="32" rx="9" fill="url(#brand)"/>
+    <text x="64" y="67" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">$</text>
+    <text x="94" y="67" font-size="22" font-weight="700" fill="#ffffff" opacity="0.95">EveryCentCalc</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="928" y="42" width="224" height="38" rx="19" fill="#ffffff" opacity="0.14"/>
+    <text x="1040" y="67" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Side Hustle</text>
+  </g>
+
+  <g transform="translate(64,160)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect width="430" height="400" rx="36" fill="#ffffff" opacity="0.94"/>
+    <rect x="18" y="18" width="394" height="364" rx="24" fill="none" stroke="#f7af37" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+    <line x1="215" y1="127.5" x2="215" y2="300" stroke="#F59E0B" stroke-width="8" stroke-linecap="round"></line><path d="M 215 300 h -75 h 150 Z" fill="#F59E0B"></path><path d="M 122 75 h 186" fill="none" stroke="#F59E0B" stroke-width="7" stroke-linecap="round"></path><line x1="122" y1="75" x2="122" y2="150" stroke="#F59E0B" stroke-width="7" stroke-linecap="round"></line><line x1="308" y1="75" x2="308" y2="150" stroke="#F59E0B" stroke-width="7" stroke-linecap="round"></line><line x1="215" y1="127.5" x2="122" y2="75" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"></line><line x1="215" y1="127.5" x2="308" y2="75" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"></line><circle cx="122" cy="150" r="19.5" fill="#F59E0B"></circle><circle cx="308" cy="150" r="19.5" fill="#F59E0B"></circle><circle cx="120" cy="205" r="34" fill="#b07208"></circle><circle cx="120" cy="205" r="23.799999999999997" fill="none" stroke="#7f5206" stroke-width="3.06" opacity="0.65"></circle><text x="120" y="216.9" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="34" fill="#7f5206" text-anchor="middle" font-weight="700">$</text><rect x="95" y="150" width="50" height="34" rx="6.12" fill="#f7af37"></rect><rect x="101" y="154.76" width="38" height="6.800000000000001" rx="3.4000000000000004" fill="rgba(255,255,255,0.55)"></rect><circle cx="120" cy="171.07999999999998" r="4.5" fill="rgba(255,255,255,0.5)"></circle><rect x="255" y="165" width="105" height="70" rx="10" fill="#f7af37"></rect><text x="307" y="205" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="15" fill="#1E293B" text-anchor="middle" font-weight="700">1099</text><text x="307" y="224" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">W-2</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="570" y="210" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Is My Side Hustle</text>
+    <text x="570" y="277" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="58" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Worth It Calculator</text>
+    <text x="570" y="370" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(255,255,255,0.85)" font-weight="500">Is the hustle worth your time?</text>
+    <line x1="570" y1="394" x2="1130" y2="394" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <rect x="540" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="636" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">$ / hr</text><text x="636" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">real rate</text><rect x="744" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="840" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Time</text><text x="840" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">cost</text><rect x="948" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="1044" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">Taxes</text><text x="1044" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">deduct</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="540" y="502" width="170" height="42" rx="21" fill="#ffffff" opacity="0.16"/>
+    <text x="625" y="529" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">FREE TOOL · NO SIGNUP</text>
+  </g>
+
+  <text x="600" y="614" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">EveryCentCalc.com — free online financial calculators</text>
+</svg>

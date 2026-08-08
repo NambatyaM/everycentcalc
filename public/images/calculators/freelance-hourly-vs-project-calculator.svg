@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Freelance Hourly vs. Project Pricing Calculator — free online calculator from EveryCentCalc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#724bca"/>
+      <stop offset="100%" stop-color="#473686"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.5">
+    <circle cx="1180" cy="620" r="220" fill="#ffffff" opacity="0.05"/>
+    <circle cx="560" cy="-60" r="180" fill="#ffffff" opacity="0.05"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="48" y="44" width="32" height="32" rx="9" fill="url(#brand)"/>
+    <text x="64" y="67" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">$</text>
+    <text x="94" y="67" font-size="22" font-weight="700" fill="#ffffff" opacity="0.95">EveryCentCalc</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="928" y="42" width="224" height="38" rx="19" fill="#ffffff" opacity="0.14"/>
+    <text x="1040" y="67" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Freelance Business</text>
+  </g>
+
+  <g transform="translate(64,160)" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect width="430" height="400" rx="36" fill="#ffffff" opacity="0.94"/>
+    <rect x="18" y="18" width="394" height="364" rx="24" fill="none" stroke="#a079f8" stroke-width="3" stroke-dasharray="10 10" opacity="0.55"/>
+    <circle cx="130" cy="150" r="90" fill="#a079f8"></circle><circle cx="130" cy="150" r="77.4" fill="#ffffff"></circle><circle cx="130" cy="150" r="4.95" fill="#a079f8"></circle><line x1="130" y1="150" x2="130" y2="103.19999999999999" stroke="#1E293B" stroke-width="6" stroke-linecap="round"></line><line x1="130" y1="150" x2="166" y2="163.5" stroke="#1E293B" stroke-width="6" stroke-linecap="round"></line><circle cx="130" cy="150" r="90" fill="none" stroke="#8B5CF6" stroke-width="8"></circle><text x="130" y="380" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="#1E293B" text-anchor="middle" font-weight="700">hourly</text><path d="M 250 90 L 220 210 L 280 210 L 250 330" fill="none" stroke="#8B5CF6" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="355" cy="140" r="42" fill="#8B5CF6"></circle><circle cx="355" cy="140" r="29.4" fill="none" stroke="#6442b1" stroke-width="3.78" opacity="0.65"></circle><text x="355" y="154.7" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="42" fill="#6442b1" text-anchor="middle" font-weight="700">$</text><circle cx="355" cy="220" r="42" fill="#6442b1"></circle><circle cx="355" cy="220" r="29.4" fill="none" stroke="#48307f" stroke-width="3.78" opacity="0.65"></circle><text x="355" y="234.7" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="42" fill="#48307f" text-anchor="middle" font-weight="700">$</text><text x="355" y="380" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="#1E293B" text-anchor="middle" font-weight="700">$ per year</text><circle cx="215" cy="90" r="20" fill="#a079f8"></circle><text x="215" y="97" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="13" fill="#1E293B" text-anchor="middle" font-weight="800">⇄</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="570" y="210" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="38" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Freelance Hourly vs. Project</text>
+    <text x="570" y="254" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="38" fill="#ffffff" font-weight="800" letter-spacing="-0.5">Pricing Calculator</text>
+    <text x="570" y="324" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(255,255,255,0.85)" font-weight="500">Which pricing model earns more?</text>
+    <line x1="570" y1="348" x2="1130" y2="348" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+    <rect x="540" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="636" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">1.3–1.5×</text><text x="636" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">project rate</text><rect x="744" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="840" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">$133/hr</text><text x="840" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">vs $100</text><rect x="948" y="410" width="192" height="64" rx="16" fill="rgba(255,255,255,0.14)"></rect><text x="1044" y="440" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="800">2 mo</text><text x="1044" y="460" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12.5" fill="rgba(255,255,255,0.75)" text-anchor="middle">data</text>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="540" y="502" width="170" height="42" rx="21" fill="#ffffff" opacity="0.16"/>
+    <text x="625" y="529" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">FREE TOOL · NO SIGNUP</text>
+  </g>
+
+  <text x="600" y="614" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#ffffff" opacity="0.55">EveryCentCalc.com — free online financial calculators</text>
+</svg>

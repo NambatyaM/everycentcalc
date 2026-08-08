@@ -211,7 +211,7 @@ export function getCalculatorImage(
   slug: string,
 ): CalculatorImage {
   return {
-    src: `/images/calculators/${slug}.jpg`,
+    src: `/images/calculators/${slug}.svg`,
     alt:
       ALT_MAP[slug] || `${_name} calculator — free online tool from EveryCentCalc`,
   };
