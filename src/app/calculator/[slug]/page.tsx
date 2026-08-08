@@ -326,7 +326,7 @@ export default async function CalculatorPage({ params }: Props) {
     <>
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <nav className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
+        <nav className="text-sm mb-6 flex flex-wrap items-center gap-y-1.5" style={{ color: 'var(--text-muted)' }}>
           <Link href="/" className="hover:underline">Home</Link>
           <span className="mx-2">/</span>
           {cat && (

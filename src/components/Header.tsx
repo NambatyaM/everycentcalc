@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header
-      className="sticky top-0 z-50 border-b backdrop-blur-xl"
+      className="sticky top-0 z-50 border-b backdrop-blur-xl safe-top"
       style={{
         background: 'color-mix(in srgb, var(--bg-primary) 80%, transparent)',
         borderColor: 'var(--border)',
@@ -91,6 +91,8 @@ export default function Header() {
             className="lg:hidden p-2 rounded-lg transition-colors hover:bg-[var(--bg-tertiary)]"
             style={{ color: 'var(--text-secondary)' }}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               {mobileOpen ? (
@@ -111,7 +113,11 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden border-t" style={{ borderColor: 'var(--border)', background: 'var(--bg-primary)' }}>
+        <div
+          id="mobile-menu"
+          className="lg:hidden border-t overflow-y-auto max-h-[calc(100dvh-4rem)] safe-bottom"
+          style={{ borderColor: 'var(--border)', background: 'var(--bg-primary)' }}
+        >
           <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
