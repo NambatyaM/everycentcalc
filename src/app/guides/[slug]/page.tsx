@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import CalculatorCard from '@/components/CalculatorCard';
 import { guides, getGuideBySlug, type GuideBlock } from '@/lib/guides';
 import { getCategoryBySlug, getCalculatorBySlug } from '@/lib/calculators';
+import { GuideSvg } from '@/components/GuideSvg';
 
 const BASE_URL = 'https://everycentcalc.biz.id';
 
@@ -155,6 +156,8 @@ function renderBlock(block: GuideBlock, index: number) {
           </p>
         </div>
       );
+    case 'svg':
+      return <GuideSvg key={index} name={block.name} caption={block.caption} />;
   }
 }
 

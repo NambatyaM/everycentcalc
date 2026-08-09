@@ -28,8 +28,6 @@ import RentalPropertyRoiCalc from '@/components/calcs/RentalPropertyRoi';
 import StartupRunwayCalc from '@/components/calcs/StartupRunway';
 import SaasUnitEconomicsCalc from '@/components/calcs/SaasUnitEconomics';
 import SavingsGoalCalc from '@/components/calcs/SavingsGoal';
-import BusinessLoanCalc from '@/components/calcs/BusinessLoan';
-import CashOnCashReturnCalc from '@/components/calcs/CashOnCashReturn';
 import GenericCalc from '@/components/calcs/Generic';
 import QuarterlyTaxPenaltyCalc from '@/components/calcs/QuarterlyTaxPenalty';
 import FreelancerEffectiveTaxRateCalc from '@/components/calcs/FreelancerEffectiveTaxRate';
@@ -76,7 +74,6 @@ import RetirementGapCalc from '@/components/calcs/RetirementGap';
 import InflationAdjustedCalc from '@/components/calcs/InflationAdjusted';
 import SideHustleIncomeTaxCalc from '@/components/calcs/SideHustleIncomeTax';
 import EmergencyFundCalc from '@/components/calcs/EmergencyFund';
-import RothVsTraditionalCalc from '@/components/calcs/RothVsTraditional';
 import AirbnbRevenueCalc from '@/components/calcs/AirbnbRevenue';
 import BrrrrCalc from '@/components/calcs/Brrrr';
 import ClientBillingCalc from '@/components/calcs/ClientBilling';
@@ -103,6 +100,12 @@ import CdCalculatorCalc from '@/components/calcs/CdCalculator';
 import RothIraCalc from '@/components/calcs/RothIra';
 import RetirementWithdrawalCalc from '@/components/calcs/RetirementWithdrawal';
 import SavingsPlan529Calc from '@/components/calcs/SavingsPlan529';
+import ProfitMarginCalc from '@/components/calcs/ProfitMargin';
+import DebtAvalancheVsSnowballCalc from '@/components/calcs/DebtAvalancheVsSnowball';
+import RentalCashFlowCalc from '@/components/calcs/RentalCashFlow';
+import SCorpTaxCalc from '@/components/calcs/SCorpTax';
+import EntityTaxComparisonCalc from '@/components/calcs/EntityTaxComparison';
+import RothConversionCalc from '@/components/calcs/RothConversion';
 
 const RideshareDriverCalc = () => <DoorDashProfitCalc provider="Rideshare driver" />;
 
@@ -123,9 +126,9 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'llc-vs-sole-proprietor-tax-calculator': LlcVsSolePropCalc,
   'break-even-calculator': BreakEvenCalc,
   'startup-runway-calculator': StartupRunwayCalc,
-  'business-debt-payoff-calculator': BusinessLoanCalc,
+  'business-debt-payoff-calculator': DebtAvalancheVsSnowballCalc,
   'saas-metrics-calculator': SaasUnitEconomicsCalc,
-  'rental-cash-flow-calculator': CashOnCashReturnCalc,
+  'rental-cash-flow-calculator': RentalCashFlowCalc,
   'quarterly-tax-penalty-calculator': QuarterlyTaxPenaltyCalc,
   'freelancer-effective-tax-rate-calculator': FreelancerEffectiveTaxRateCalc,
   'self-employed-health-insurance-deduction-calculator': HealthInsuranceDeductionCalc,
@@ -183,13 +186,13 @@ const CALC_COMPONENTS: Record<string, React.FC> = {
   'quarterly-tax-deadline-calculator': QuarterlyTaxDeadlineCalc,
   'tax-extension-calculator': TaxExtensionCalc,
   'rideshare-driver-calculator': RideshareDriverCalc,
-  'freelance-debt-payoff-calculator': BusinessLoanCalc,
+  'freelance-debt-payoff-calculator': DebtAvalancheVsSnowballCalc,
   'house-flipping-calculator': RealEstateFlipProfitCalc,
-  's-corp-tax-calculator': SCorpSalaryCalc,
-  'business-entity-tax-comparison': CCorpVsSCorpCalc,
-  'business-profit-margin-calculator': BreakEvenCalc,
+  's-corp-tax-calculator': SCorpTaxCalc,
+  'business-entity-tax-comparison': EntityTaxComparisonCalc,
+  'business-profit-margin-calculator': ProfitMarginCalc,
   'compound-interest-calculator': InvestmentReturnCalc,
-  'roth-conversion-calculator': RothVsTraditionalCalc,
+  'roth-conversion-calculator': RothConversionCalc,
   '401k-calculator': FourOhOneKCalc,
   'customer-acquisition-cost-calculator': CustomerAcquisitionCostCalc,
   'customer-lifetime-value-calculator': CustomerLifetimeValueCalc,
