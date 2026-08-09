@@ -104,7 +104,9 @@ import RothIraCalc from '@/components/calcs/RothIra';
 import RetirementWithdrawalCalc from '@/components/calcs/RetirementWithdrawal';
 import SavingsPlan529Calc from '@/components/calcs/SavingsPlan529';
 
-const CALC_COMPONENTS: Record<string, React.FC | React.ReactElement> = {
+const RideshareDriverCalc = () => <DoorDashProfitCalc provider="Rideshare driver" />;
+
+const CALC_COMPONENTS: Record<string, React.FC> = {
   'self-employment-tax-calculator': SelfEmploymentTaxCalc,
   'quarterly-tax-calculator': QuarterlyTaxCalc,
   'side-hustle-tax-calculator': SideHustleTaxCalc,
@@ -180,7 +182,7 @@ const CALC_COMPONENTS: Record<string, React.FC | React.ReactElement> = {
   'shopify-profit-calculator': ShopifyProfitCalc,
   'quarterly-tax-deadline-calculator': QuarterlyTaxDeadlineCalc,
   'tax-extension-calculator': TaxExtensionCalc,
-  'rideshare-driver-calculator': <DoorDashProfitCalc provider="Rideshare driver" />,
+  'rideshare-driver-calculator': RideshareDriverCalc,
   'freelance-debt-payoff-calculator': BusinessLoanCalc,
   'house-flipping-calculator': RealEstateFlipProfitCalc,
   's-corp-tax-calculator': SCorpSalaryCalc,
@@ -369,7 +371,7 @@ export default async function CalculatorPage({ params }: Props) {
               className="rounded-2xl border p-5 md:p-8 mb-8"
               style={{ background: 'var(--bg-card)', borderColor: 'var(--border)', boxShadow: 'var(--shadow-md)' }}
             >
-              {typeof CalcComponent === 'function' ? <CalcComponent /> : CalcComponent}
+              <CalcComponent />
             </div>
 
             {calc.affiliate && (
