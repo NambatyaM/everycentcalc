@@ -61,6 +61,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} EveryCentCalc. All calculators are for informational purposes only. Not financial, tax, or legal advice.
           </p>
           <div className="flex gap-5 text-xs" style={{ color: 'var(--text-muted)' }}>
+            <Link href="/guides/" className="hover:underline transition-colors">Guides</Link>
             <Link href="/about/" className="hover:underline transition-colors">About</Link>
             <Link href="/privacy/" className="hover:underline transition-colors">Privacy</Link>
             <Link href="/terms/" className="hover:underline transition-colors">Terms</Link>

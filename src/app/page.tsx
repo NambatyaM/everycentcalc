@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Suspense } from 'react';
 import { categories, calculators } from '@/lib/calculators';
 import { getCalculatorImage } from '@/lib/calculatorImages';
+import { guides } from '@/lib/guides';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CalculatorCard from '@/components/CalculatorCard';
+import CalculatorCatalog from '@/components/CalculatorCatalog';
 
 function HeroSection() {
   const totalCalcs = calculators.length;
@@ -297,29 +299,54 @@ function DeadlineBanner() {
   );
 }
 
-function SuiteSection({ category }: { category: (typeof categories)[number] }) {
-  const suiteCalcs = calculators.filter((c) => c.category === category.slug);
-
+function GuidesPreview() {
   return (
-    <div className="mb-14">
-      <div className="flex items-center gap-3 mb-2">
-        <span className="text-2xl">{category.icon}</span>
-        <h2 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-          {category.name}
-        </h2>
-        <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{ background: 'var(--bg-tertiary)', color: 'var(--text-muted)' }}>
-          {suiteCalcs.length} tools
-        </span>
+    <section className="py-12 px-4" style={{ background: 'var(--bg-secondary)' }}>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-8">
+          <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--brand)' }}>
+            Learn the math
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
+            Free Money Guides
+          </h2>
+          <p className="text-sm max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+            Plain-English explainers that pair with our calculators — so you know not just the number, but the why.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {guides.map((guide) => (
+            <Link
+              key={guide.slug}
+              href={`/guides/${guide.slug}/`}
+              className="group block rounded-xl border p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 hover:border-[var(--brand)]"
+              style={{ background: 'var(--bg-card)', borderColor: 'var(--border)', boxShadow: 'var(--shadow-sm)' }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--brand)' }}>
+                {guide.readMinutes} min read · Updated {new Date(guide.updated).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+              </p>
+              <h3 className="font-bold mb-2 group-hover:text-[var(--brand)] transition-colors" style={{ color: 'var(--text-primary)' }}>
+                {guide.title}
+              </h3>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
+                {guide.description}
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: 'var(--brand)' }}>
+                Read guide
+                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12l5-5-5-5" />
+                </svg>
+              </span>
+            </Link>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link href="/guides/" className="text-sm font-semibold hover:underline" style={{ color: 'var(--brand)' }}>
+            Browse all guides →
+          </Link>
+        </div>
       </div>
-      <p className="text-sm mb-5 ml-10" style={{ color: 'var(--text-secondary)' }}>
-        {category.description}
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {suiteCalcs.map((calc) => (
-          <CalculatorCard key={calc.slug} calc={calc} />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }
 
@@ -510,8 +537,6 @@ function HostingerBanner() {
 }
 
 export default function HomePage() {
-  const totalCalcs = calculators.length;
-
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -529,27 +554,10 @@ export default function HomePage() {
         <TopAffiliateBanner />
         <DeadlineBanner />
         <PopularCalculators />
-        <section id="calculators" className="py-12 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-10">
-              <h2
-                className="text-2xl md:text-3xl font-bold mb-3"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                All {totalCalcs} Free Calculators
-              </h2>
-              <p
-                className="text-sm max-w-xl mx-auto"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                Pick a category or jump straight to the calculator you need. Every tool runs in your browser, stores nothing, and gives you an instant answer.
-              </p>
-            </div>
-            {categories.map((cat) => (
-              <SuiteSection key={cat.slug} category={cat} />
-            ))}
-          </div>
-        </section>
+        <Suspense fallback={null}>
+          <CalculatorCatalog calculators={calculators} categories={categories} />
+        </Suspense>
+        <GuidesPreview />
         <WhySection />
         <SeoContentSection />
         <HostingerBanner />

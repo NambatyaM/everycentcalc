@@ -1,4 +1,5 @@
 import { calculators, categories } from '@/lib/calculators';
+import { guides } from '@/lib/guides';
 import { MetadataRoute } from 'next';
 
 const BASE_URL = 'https://everycentcalc.biz.id';
@@ -6,10 +7,18 @@ const BASE_URL = 'https://everycentcalc.biz.id';
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
+    { url: `${BASE_URL}/guides/`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/about/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/privacy/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
     { url: `${BASE_URL}/terms/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
   ];
+
+  const guidePages: MetadataRoute.Sitemap = guides.map((guide) => ({
+    url: `${BASE_URL}/guides/${guide.slug}/`,
+    lastModified: new Date(guide.updated),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
 
   const now = new Date();
   const inTaxSeason = now.getMonth() >= 1 && now.getMonth() <= 4;
@@ -34,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticPages, ...boostedCategoryPages, ...boostedCalcs];
+  return [...staticPages, ...guidePages, ...boostedCategoryPages, ...boostedCalcs];
 }
 
 const TAX_SEASON = new Set([

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import LogoMark from '@/components/LogoMark';
+import CalculatorSearchBar from '@/components/CalculatorSearchBar';
 
 const navLinks = [
   { href: '/freelance-tax/', label: 'Freelance Tax' },
@@ -61,6 +62,10 @@ export default function Header() {
           ))}
         </nav>
 
+        <div className="hidden xl:block w-48">
+          <CalculatorSearchBar compact />
+        </div>
+
         <div className="flex items-center gap-3">
           <Link
             href="/#calculators"
@@ -118,26 +123,37 @@ export default function Header() {
           className="lg:hidden border-t overflow-y-auto max-h-[calc(100dvh-4rem)] safe-bottom"
           style={{ borderColor: 'var(--border)', background: 'var(--bg-primary)' }}
         >
-          <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-            {navLinks.map((link) => (
+          <nav className="max-w-7xl mx-auto px-4 py-4 space-y-3">
+            <CalculatorSearchBar />
+            <div className="space-y-1 pt-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-3 text-sm font-medium rounded-lg transition-colors hover:bg-[var(--bg-tertiary)]"
+                  style={{ color: 'var(--text-secondary)' }}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
-                key={link.href}
-                href={link.href}
+                href="/guides/"
                 onClick={() => setMobileOpen(false)}
                 className="block px-4 py-3 text-sm font-medium rounded-lg transition-colors hover:bg-[var(--bg-tertiary)]"
                 style={{ color: 'var(--text-secondary)' }}
               >
-                {link.label}
+                Guides
               </Link>
-            ))}
-            <Link
-              href="/#calculators"
-              onClick={() => setMobileOpen(false)}
-              className="block px-4 py-3 text-sm font-semibold rounded-lg text-white text-center mt-2"
-              style={{ background: 'var(--brand-gradient)' }}
-            >
-              All Calculators
-            </Link>
+              <Link
+                href="/#calculators"
+                onClick={() => setMobileOpen(false)}
+                className="block px-4 py-3 text-sm font-semibold rounded-lg text-white text-center mt-2"
+                style={{ background: 'var(--brand-gradient)' }}
+              >
+                All Calculators
+              </Link>
+            </div>
           </nav>
         </div>
       )}

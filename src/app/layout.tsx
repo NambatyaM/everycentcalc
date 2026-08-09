@@ -43,7 +43,12 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
+  },
+  appleWebApp: {
+    capable: true,
+    title: 'EveryCentCalc',
+    statusBarStyle: 'black-translucent',
   },
   manifest: '/site.webmanifest',
   metadataBase: new URL('https://everycentcalc.biz.id'),
@@ -92,6 +97,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="p:domain_verify" content="126d1234c42680b715fe721ef448ed15" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`,

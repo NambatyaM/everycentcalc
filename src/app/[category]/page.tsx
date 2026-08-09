@@ -51,6 +51,44 @@ export default async function CategoryPage({ params }: Props) {
     ],
   };
 
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${cat.name} (2026)`,
+    description: metaDescription(cat.description),
+    url: `https://everycentcalc.biz.id/${cat.slug}/`,
+    inLanguage: 'en-US',
+    mainEntity: {
+      '@type': 'ItemList',
+      name: `${cat.name} Calculators`,
+      numberOfItems: calcs.length,
+      itemListElement: calcs.map((calc, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: calc.name,
+          description: metaDescription(calc.description),
+          url: `https://everycentcalc.biz.id/calculator/${calc.slug}/`,
+          applicationCategory: 'FinanceApplication',
+          operatingSystem: 'Any',
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        },
+      })),
+    },
+  };
+
+  const faqItems = calcs.slice(0, 3).flatMap((calc) => calc.faqs.slice(0, 2));
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  };
+
   return (
     <>
       <Header />
@@ -135,6 +173,10 @@ export default async function CategoryPage({ params }: Props) {
       </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+      {faqItems.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
     </>
   );
 }

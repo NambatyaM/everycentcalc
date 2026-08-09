@@ -1,4 +1,5 @@
 import { calculators, getCalculatorBySlug, getAllSlugs, getCategoryBySlug } from '@/lib/calculators';
+import { guides } from '@/lib/guides';
 import { calcTitle, metaDescription } from '@/lib/seo';
 import { getCalculatorImage } from '@/lib/calculatorImages';
 import { notFound } from 'next/navigation';
@@ -322,6 +323,10 @@ export default async function CalculatorPage({ params }: Props) {
 
   const img = getCalculatorImage(calc.name, calc.slug);
 
+  const relatedGuide = guides.find(
+    (g) => g.primaryCalc === calc.slug || g.relatedCalcs.includes(calc.slug),
+  );
+
   return (
     <>
       <Header />
@@ -415,6 +420,30 @@ export default async function CalculatorPage({ params }: Props) {
                 {calc.answer}
               </p>
             </div>
+
+            {relatedGuide && (
+              <Link
+                href={`/guides/${relatedGuide.slug}/`}
+                className="group mb-10 block rounded-2xl border-2 p-6 transition-all hover:shadow-lg"
+                style={{ borderColor: 'var(--brand)', background: 'var(--brand-light)' }}
+              >
+                <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--brand)' }}>
+                  📖 Free guide
+                </p>
+                <h2 className="text-lg font-bold mb-2 group-hover:text-[var(--brand)] transition-colors" style={{ color: 'var(--text-primary)' }}>
+                  {relatedGuide.title}
+                </h2>
+                <p className="text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>
+                  {relatedGuide.description}
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: 'var(--brand)' }}>
+                  Read the full guide ({relatedGuide.readMinutes} min)
+                  <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12l5-5-5-5" />
+                  </svg>
+                </span>
+              </Link>
+            )}
 
             <div className="mb-10">
               <h2 className="text-xl font-bold mb-5" style={{ color: 'var(--text-primary)' }}>
