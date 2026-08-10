@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Calculator } from '@/lib/types';
 import { getCalculatorImage } from '@/lib/calculatorImages';
 
@@ -17,7 +16,7 @@ export default function CalculatorCard({ calc }: { calc: Calculator }) {
       }}
     >
       <div className="overflow-hidden" style={{ aspectRatio: '1200/630', background: 'var(--bg-tertiary)' }}>
-        <Image
+        <img
           src={img.src}
           alt={img.alt}
           width={1200}

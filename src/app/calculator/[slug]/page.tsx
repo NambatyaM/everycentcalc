@@ -7,7 +7,6 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
-import Image from 'next/image';
 import AffiliateBanner from '@/components/AffiliateBanner';
 import AdsterraBanner from '@/components/AdsterraBanner';
 import SelfEmploymentTaxCalc from '@/components/calcs/SelfEmploymentTax';
@@ -381,7 +380,7 @@ export default async function CalculatorPage({ params }: Props) {
             )}
 
             <div className="mb-8 rounded-2xl overflow-hidden" style={{ aspectRatio: '1200/630' }}>
-              <Image
+              <img
                 src={img.src}
                 alt={img.alt}
                 width={1200}

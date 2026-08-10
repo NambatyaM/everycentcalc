@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Suspense } from 'react';
 import { categories, calculators } from '@/lib/calculators';
 import { getCalculatorImage } from '@/lib/calculatorImages';
@@ -55,13 +54,13 @@ function HeroSection() {
             className="rounded-2xl overflow-hidden shadow-xl"
             style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)' }}
           >
-            <Image
+            <img
               src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80"
               alt="Freelancer calculating self employment tax and finances"
               width={800}
               height={560}
               className="w-full h-auto object-cover"
-              priority
+              fetchPriority="high"
             />
           </div>
         </div>
@@ -201,7 +200,7 @@ function PopularCalculators() {
                 }}
               >
                 <div className="overflow-hidden" style={{ aspectRatio: '1200/630', background: 'var(--bg-tertiary)' }}>
-                  <Image
+                  <img
                     src={img.src}
                     alt={img.alt}
                     width={1200}
@@ -361,7 +360,7 @@ function WhySection() {
               className="rounded-2xl overflow-hidden shadow-xl"
               style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)' }}
             >
-              <Image
+              <img
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
                 alt="Financial data and analytics"
                 width={800}

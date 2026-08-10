@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -23,12 +22,11 @@ export default function AboutPage() {
       <Header />
       <main className="max-w-3xl mx-auto px-4 py-12 md:py-20">
         <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
-          <Image
+          <img
             src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80"
             alt="Freelancer reviewing financial documents at a desk"
-            fill
-            className="object-cover"
-            priority
+            className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 
