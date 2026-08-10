@@ -48,14 +48,14 @@ export default function TakeHomePayCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Gross Salary ($)</label>
-            <input type="number" value={salary} onChange={(e) => setSalary(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-gross-salary">Annual Gross Salary ($)</label>
+            <input id="calc-annual-gross-salary"  type="number" value={salary} onChange={(e) => setSalary(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Filing Status</label>
-            <select value={filingStatus} onChange={(e) => setFilingStatus(e.target.value as FilingStatus)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">Filing Status</label>
+            <select id="calc-filing-status"  value={filingStatus} onChange={(e) => setFilingStatus(e.target.value as FilingStatus)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="single">Single</option>
@@ -65,22 +65,22 @@ export default function TakeHomePayCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>State Income Tax Rate (%)</label>
-            <input type="number" value={stateRate} onChange={(e) => setStateRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-state-income-tax-rate">State Income Tax Rate (%)</label>
+            <input id="calc-state-income-tax-rate"  type="number" value={stateRate} onChange={(e) => setStateRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Enter 0 if you live in a no-income-tax state. Estimate only — see note below.</p>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Pre-Tax 401(k) Contribution (%)</label>
-            <input type="number" value={preTax401k} onChange={(e) => setPreTax401k(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-pre-tax-401-k-contribution">Pre-Tax 401(k) Contribution (%)</label>
+            <input id="calc-pre-tax-401-k-contribution"  type="number" value={preTax401k} onChange={(e) => setPreTax401k(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Pay Frequency</label>
-          <select value={period} onChange={(e) => setPeriod(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-pay-frequency">Pay Frequency</label>
+          <select id="calc-pay-frequency"  value={period} onChange={(e) => setPeriod(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
             <option value="monthly">Monthly (12/year)</option>

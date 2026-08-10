@@ -32,44 +32,44 @@ export default function ClientBilling() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-retainer-hours">
               Monthly Retainer Hours
             </label>
-            <input type="number" value={retainerHours} onChange={(e) => setRetainerHours(e.target.value)}
+            <input id="calc-monthly-retainer-hours"  type="number" value={retainerHours} onChange={(e) => setRetainerHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-hourly-rate">
               Hourly Rate ($)
             </label>
-            <input type="number" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)}
+            <input id="calc-hourly-rate"  type="number" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-overtime-hours-month">
               Overtime Hours/Month
             </label>
-            <input type="number" value={overtimeHours} onChange={(e) => setOvertimeHours(e.target.value)}
+            <input id="calc-overtime-hours-month"  type="number" value={overtimeHours} onChange={(e) => setOvertimeHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-overtime-multiplier">
               Overtime Multiplier
             </label>
-            <input type="number" value={overtimeMultiplier} onChange={(e) => setOvertimeMultiplier(e.target.value)} step="0.1"
+            <input id="calc-overtime-multiplier"  type="number" value={overtimeMultiplier} onChange={(e) => setOvertimeMultiplier(e.target.value)} step="0.1"
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-retainer-discount">
               Annual Retainer Discount (%)
             </label>
-            <input type="number" value={annualDiscount} onChange={(e) => setAnnualDiscount(e.target.value)}
+            <input id="calc-annual-retainer-discount"  type="number" value={annualDiscount} onChange={(e) => setAnnualDiscount(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

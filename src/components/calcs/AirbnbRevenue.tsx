@@ -45,56 +45,56 @@ export default function AirbnbRevenueCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Nightly Rate ($)</label>
-            <input type="number" value={nightlyRate} onChange={(e) => setNightlyRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-nightly-rate">Nightly Rate ($)</label>
+            <input id="calc-nightly-rate"  type="number" value={nightlyRate} onChange={(e) => setNightlyRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Avg Occupancy (% of year)</label>
-            <input type="number" value={occupancy} onChange={(e) => setOccupancy(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-avg-occupancy-of-year">Avg Occupancy (% of year)</label>
+            <input id="calc-avg-occupancy-of-year"  type="number" value={occupancy} onChange={(e) => setOccupancy(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Cleaning Fee ($/turnover)</label>
-            <input type="number" value={cleaningFee} onChange={(e) => setCleaningFee(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-cleaning-fee-turnover">Cleaning Fee ($/turnover)</label>
+            <input id="calc-cleaning-fee-turnover"  type="number" value={cleaningFee} onChange={(e) => setCleaningFee(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Number of Guests</label>
-            <input type="number" value={numGuests} onChange={(e) => setNumGuests(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Mortgage ($)</label>
-            <input type="number" value={monthlyMortgage} onChange={(e) => setMonthlyMortgage(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Utilities ($)</label>
-            <input type="number" value={monthlyUtilities} onChange={(e) => setMonthlyUtilities(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-number-of-guests">Number of Guests</label>
+            <input id="calc-number-of-guests"  type="number" value={numGuests} onChange={(e) => setNumGuests(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Management Fee (% of revenue)</label>
-            <input type="number" value={managementFee} onChange={(e) => setManagementFee(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-mortgage">Monthly Mortgage ($)</label>
+            <input id="calc-monthly-mortgage"  type="number" value={monthlyMortgage} onChange={(e) => setMonthlyMortgage(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-utilities">Monthly Utilities ($)</label>
+            <input id="calc-monthly-utilities"  type="number" value={monthlyUtilities} onChange={(e) => setMonthlyUtilities(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-management-fee-of-revenue">Management Fee (% of revenue)</label>
+            <input id="calc-management-fee-of-revenue"  type="number" value={managementFee} onChange={(e) => setManagementFee(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Platform Fee (% of revenue)</label>
-            <input type="number" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-platform-fee-of-revenue">Platform Fee (% of revenue)</label>
+            <input id="calc-platform-fee-of-revenue"  type="number" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>

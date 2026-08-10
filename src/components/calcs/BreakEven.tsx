@@ -27,33 +27,33 @@ export default function BreakEvenCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-fixed-costs">
             Monthly Fixed Costs ($)
           </label>
-          <input type="number" value={fixedCosts} onChange={(e) => setFixedCosts(e.target.value)}
+          <input id="calc-monthly-fixed-costs"  type="number" value={fixedCosts} onChange={(e) => setFixedCosts(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Rent, salaries, software, insurance — costs that don&apos;t change with sales</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Price per Unit ($)</label>
-            <input type="number" value={pricePerUnit} onChange={(e) => setPricePerUnit(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-price-per-unit">Price per Unit ($)</label>
+            <input id="calc-price-per-unit"  type="number" value={pricePerUnit} onChange={(e) => setPricePerUnit(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Variable Cost per Unit ($)</label>
-            <input type="number" value={variableCost} onChange={(e) => setVariableCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-variable-cost-per-unit">Variable Cost per Unit ($)</label>
+            <input id="calc-variable-cost-per-unit"  type="number" value={variableCost} onChange={(e) => setVariableCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-profit-goal">
             Monthly Profit Goal ($)
           </label>
-          <input type="number" value={monthlyGoal} onChange={(e) => setMonthlyGoal(e.target.value)}
+          <input id="calc-monthly-profit-goal"  type="number" value={monthlyGoal} onChange={(e) => setMonthlyGoal(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

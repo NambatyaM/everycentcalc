@@ -26,28 +26,28 @@ export default function HomeEquityCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Home Value ($)</label>
-          <input type="number" value={homeValue} onChange={(e) => setHomeValue(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-home-value">Current Home Value ($)</label>
+          <input id="calc-current-home-value"  type="number" value={homeValue} onChange={(e) => setHomeValue(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Original Purchase Price ($)</label>
-            <input type="number" value={originalPrice} onChange={(e) => setOriginalPrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-original-purchase-price">Original Purchase Price ($)</label>
+            <input id="calc-original-purchase-price"  type="number" value={originalPrice} onChange={(e) => setOriginalPrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Mortgage Balance ($)</label>
-            <input type="number" value={mortgageBalance} onChange={(e) => setMortgageBalance(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-mortgage-balance">Current Mortgage Balance ($)</label>
+            <input id="calc-current-mortgage-balance"  type="number" value={mortgageBalance} onChange={(e) => setMortgageBalance(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Home Improvement Costs ($)</label>
-          <input type="number" value={improvements} onChange={(e) => setImprovements(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-home-improvement-costs">Home Improvement Costs ($)</label>
+          <input id="calc-home-improvement-costs"  type="number" value={improvements} onChange={(e) => setImprovements(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

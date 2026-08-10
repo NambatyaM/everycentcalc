@@ -70,48 +70,48 @@ export default function MortgageAffordabilityCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Income ($)</label>
-            <input type="number" value={annualIncome} onChange={(e) => setAnnualIncome(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-income">Annual Income ($)</label>
+            <input id="calc-annual-income"  type="number" value={annualIncome} onChange={(e) => setAnnualIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Debts ($)</label>
-            <input type="number" value={monthlyDebts} onChange={(e) => setMonthlyDebts(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-debts">Monthly Debts ($)</label>
+            <input id="calc-monthly-debts"  type="number" value={monthlyDebts} onChange={(e) => setMonthlyDebts(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Interest Rate (%)</label>
-            <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-interest-rate">Interest Rate (%)</label>
+            <input id="calc-interest-rate"  type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Down Payment (%)</label>
-            <input type="number" value={downPaymentPct} onChange={(e) => setDownPaymentPct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-down-payment">Down Payment (%)</label>
+            <input id="calc-down-payment"  type="number" value={downPaymentPct} onChange={(e) => setDownPaymentPct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Property Tax Rate (%/yr)</label>
-            <input type="number" value={propertyTaxRate} onChange={(e) => setPropertyTaxRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-property-tax-rate-yr">Property Tax Rate (%/yr)</label>
+            <input id="calc-property-tax-rate-yr"  type="number" value={propertyTaxRate} onChange={(e) => setPropertyTaxRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Insurance ($)</label>
-            <input type="number" value={annualInsurance} onChange={(e) => setAnnualInsurance(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-insurance">Annual Insurance ($)</label>
+            <input id="calc-annual-insurance"  type="number" value={annualInsurance} onChange={(e) => setAnnualInsurance(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Loan Term</label>
-            <select value="30" disabled
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-loan-term">Loan Term</label>
+            <select id="calc-loan-term"  value="30" disabled
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="30">30 years</option>
@@ -120,14 +120,14 @@ export default function MortgageAffordabilityCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Front End DTI (%)</label>
-            <input type="number" value={frontEndDTI} onChange={(e) => setFrontEndDTI(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-front-end-dti">Front End DTI (%)</label>
+            <input id="calc-front-end-dti"  type="number" value={frontEndDTI} onChange={(e) => setFrontEndDTI(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Back End DTI (%)</label>
-            <input type="number" value={backEndDTI} onChange={(e) => setBackEndDTI(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-back-end-dti">Back End DTI (%)</label>
+            <input id="calc-back-end-dti"  type="number" value={backEndDTI} onChange={(e) => setBackEndDTI(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

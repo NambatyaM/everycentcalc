@@ -31,26 +31,26 @@ export default function ExpenseRatio() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Total Revenue ($)</label>
-            <input type="number" value={totalRevenue} onChange={(e) => setTotalRevenue(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-revenue">Total Revenue ($)</label>
+            <input id="calc-total-revenue"  type="number" value={totalRevenue} onChange={(e) => setTotalRevenue(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Cost of Goods Sold ($)</label>
-            <input type="number" value={cogs} onChange={(e) => setCogs(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-cost-of-goods-sold">Cost of Goods Sold ($)</label>
+            <input id="calc-cost-of-goods-sold"  type="number" value={cogs} onChange={(e) => setCogs(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Operating Expenses ($)</label>
-            <input type="number" value={operatingExpenses} onChange={(e) => setOperatingExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-operating-expenses">Operating Expenses ($)</label>
+            <input id="calc-operating-expenses"  type="number" value={operatingExpenses} onChange={(e) => setOperatingExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Owner Compensation ($)</label>
-            <input type="number" value={ownerCompensation} onChange={(e) => setOwnerCompensation(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-owner-compensation">Owner Compensation ($)</label>
+            <input id="calc-owner-compensation"  type="number" value={ownerCompensation} onChange={(e) => setOwnerCompensation(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

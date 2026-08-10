@@ -26,28 +26,28 @@ export default function CustomerLifetimeValueCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Average Order Value ($)</label>
-            <input type="number" value={avgOrder} onChange={(e) => setAvgOrder(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-average-order-value">Average Order Value ($)</label>
+            <input id="calc-average-order-value"  type="number" value={avgOrder} onChange={(e) => setAvgOrder(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Purchases per Year</label>
-            <input type="number" value={frequency} onChange={(e) => setFrequency(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-purchases-per-year">Purchases per Year</label>
+            <input id="calc-purchases-per-year"  type="number" value={frequency} onChange={(e) => setFrequency(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Customer Lifespan (years)</label>
-            <input type="number" value={lifespan} onChange={(e) => setLifespan(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-customer-lifespan-years">Customer Lifespan (years)</label>
+            <input id="calc-customer-lifespan-years"  type="number" value={lifespan} onChange={(e) => setLifespan(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Profit Margin (%)</label>
-            <input type="number" value={margin} onChange={(e) => setMargin(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-profit-margin">Profit Margin (%)</label>
+            <input id="calc-profit-margin"  type="number" value={margin} onChange={(e) => setMargin(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

@@ -29,35 +29,35 @@ export default function YoutubeRevenue() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Views</label>
-          <input type="number" value={monthlyViews} onChange={(e) => setMonthlyViews(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-views">Monthly Views</label>
+          <input id="calc-monthly-views"  type="number" value={monthlyViews} onChange={(e) => setMonthlyViews(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>CPM Rate ($)</label>
-            <input type="number" value={cpmRate} onChange={(e) => setCpmRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-cpm-rate">CPM Rate ($)</label>
+            <input id="calc-cpm-rate"  type="number" value={cpmRate} onChange={(e) => setCpmRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Videos per Month</label>
-            <input type="number" value={videosPerMonth} onChange={(e) => setVideosPerMonth(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-videos-per-month">Videos per Month</label>
+            <input id="calc-videos-per-month"  type="number" value={videosPerMonth} onChange={(e) => setVideosPerMonth(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Sponsorship Rate per Video ($)</label>
-            <input type="number" value={sponsorRate} onChange={(e) => setSponsorRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-sponsorship-rate-per-video">Sponsorship Rate per Video ($)</label>
+            <input id="calc-sponsorship-rate-per-video"  type="number" value={sponsorRate} onChange={(e) => setSponsorRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Affiliate Revenue per Video ($)</label>
-            <input type="number" value={affiliatePerVideo} onChange={(e) => setAffiliatePerVideo(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-affiliate-revenue-per-video">Affiliate Revenue per Video ($)</label>
+            <input id="calc-affiliate-revenue-per-video"  type="number" value={affiliatePerVideo} onChange={(e) => setAffiliatePerVideo(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

@@ -22,15 +22,15 @@ export default function CashOnCashReturnCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Pre Tax Cash Flow ($)</label>
-          <input type="number" value={annualCashFlow} onChange={(e) => setAnnualCashFlow(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-pre-tax-cash-flow">Annual Pre Tax Cash Flow ($)</label>
+          <input id="calc-annual-pre-tax-cash-flow"  type="number" value={annualCashFlow} onChange={(e) => setAnnualCashFlow(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Annual income minus all annual expenses (before taxes)</p>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Total Cash Invested ($)</label>
-          <input type="number" value={totalCashInvested} onChange={(e) => setTotalCashInvested(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-cash-invested">Total Cash Invested ($)</label>
+          <input id="calc-total-cash-invested"  type="number" value={totalCashInvested} onChange={(e) => setTotalCashInvested(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Down payment, closing costs, and any initial renovations</p>

@@ -32,42 +32,42 @@ export default function AmazonFbaProfit() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Selling Price ($)</label>
-            <input type="number" value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-selling-price">Selling Price ($)</label>
+            <input id="calc-selling-price"  type="number" value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Product Cost ($)</label>
-            <input type="number" value={productCost} onChange={(e) => setProductCost(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>FBA Fees ($)</label>
-            <input type="number" value={fbaFees} onChange={(e) => setFbaFees(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Shipping to Amazon ($)</label>
-            <input type="number" value={shippingToAmazon} onChange={(e) => setShippingToAmazon(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-product-cost">Product Cost ($)</label>
+            <input id="calc-product-cost"  type="number" value={productCost} onChange={(e) => setProductCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Advertising Cost per Unit ($)</label>
-            <input type="number" value={adCostPerUnit} onChange={(e) => setAdCostPerUnit(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-fba-fees">FBA Fees ($)</label>
+            <input id="calc-fba-fees"  type="number" value={fbaFees} onChange={(e) => setFbaFees(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Units Sold</label>
-            <input type="number" value={monthlyUnits} onChange={(e) => setMonthlyUnits(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-shipping-to-amazon">Shipping to Amazon ($)</label>
+            <input id="calc-shipping-to-amazon"  type="number" value={shippingToAmazon} onChange={(e) => setShippingToAmazon(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-advertising-cost-per-unit">Advertising Cost per Unit ($)</label>
+            <input id="calc-advertising-cost-per-unit"  type="number" value={adCostPerUnit} onChange={(e) => setAdCostPerUnit(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-units-sold">Monthly Units Sold</label>
+            <input id="calc-monthly-units-sold"  type="number" value={monthlyUnits} onChange={(e) => setMonthlyUnits(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

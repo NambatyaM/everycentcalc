@@ -34,45 +34,45 @@ export default function FreelanceHourlyVsProjectCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-your-hourly-rate">
             Your Hourly Rate ($)
           </label>
-          <input type="number" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)}
+          <input id="calc-your-hourly-rate"  type="number" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-estimated-hours-per-project">
               Estimated Hours per Project
             </label>
-            <input type="number" value={estimatedHours} onChange={(e) => setEstimatedHours(e.target.value)}
+            <input id="calc-estimated-hours-per-project"  type="number" value={estimatedHours} onChange={(e) => setEstimatedHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-actual-hours-per-project">
               Actual Hours per Project
             </label>
-            <input type="number" value={actualHours} onChange={(e) => setActualHours(e.target.value)}
+            <input id="calc-actual-hours-per-project"  type="number" value={actualHours} onChange={(e) => setActualHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-projects-per-month">
               Projects per Month
             </label>
-            <input type="number" value={projectsPerMonth} onChange={(e) => setProjectsPerMonth(e.target.value)}
+            <input id="calc-projects-per-month"  type="number" value={projectsPerMonth} onChange={(e) => setProjectsPerMonth(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-non-billable-hours-per-project">
               Non-Billable Hours per Project
             </label>
-            <input type="number" value={overheadHours} onChange={(e) => setOverheadHours(e.target.value)}
+            <input id="calc-non-billable-hours-per-project"  type="number" value={overheadHours} onChange={(e) => setOverheadHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

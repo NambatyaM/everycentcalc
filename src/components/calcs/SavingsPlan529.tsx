@@ -50,50 +50,50 @@ export default function SavingsPlan529() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Child's Current Age</label>
-            <input type="number" value={childAge} onChange={(e) => setChildAge(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-child-s-current-age">Child's Current Age</label>
+            <input id="calc-child-s-current-age"  type="number" value={childAge} onChange={(e) => setChildAge(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current 529 Balance ($)</label>
-            <input type="number" value={currentBalance} onChange={(e) => setCurrentBalance(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Contribution ($)</label>
-            <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Expected Annual Return (%)</label>
-            <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-529-balance">Current 529 Balance ($)</label>
+            <input id="calc-current-529-balance"  type="number" value={currentBalance} onChange={(e) => setCurrentBalance(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual College Cost Today ($)</label>
-            <input type="number" value={collegeCostToday} onChange={(e) => setCollegeCostToday(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-contribution">Monthly Contribution ($)</label>
+            <input id="calc-monthly-contribution"  type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-expected-annual-return">Expected Annual Return (%)</label>
+            <input id="calc-expected-annual-return"  type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-college-cost-today">Annual College Cost Today ($)</label>
+            <input id="calc-annual-college-cost-today"  type="number" value={collegeCostToday} onChange={(e) => setCollegeCostToday(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Tuition + room & board. Avg public in-state: ~$26k</p>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>College Cost Inflation (%)</label>
-            <input type="number" value={tuitionInflationRate} onChange={(e) => setTuitionInflationRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-college-cost-inflation">College Cost Inflation (%)</label>
+            <input id="calc-college-cost-inflation"  type="number" value={tuitionInflationRate} onChange={(e) => setTuitionInflationRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Years in School</label>
-          <input type="number" value={yearsInSchool} onChange={(e) => setYearsInSchool(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-years-in-school">Years in School</label>
+          <input id="calc-years-in-school"  type="number" value={yearsInSchool} onChange={(e) => setYearsInSchool(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

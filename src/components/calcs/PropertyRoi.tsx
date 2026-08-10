@@ -59,42 +59,42 @@ export default function PropertyRoiCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Purchase Price ($)</label>
-            <input type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-purchase-price">Purchase Price ($)</label>
+            <input id="calc-purchase-price"  type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Down Payment (%)</label>
-            <input type="number" value={downPaymentPct} onChange={(e) => setDownPaymentPct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-down-payment">Down Payment (%)</label>
+            <input id="calc-down-payment"  type="number" value={downPaymentPct} onChange={(e) => setDownPaymentPct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Rent ($)</label>
-            <input type="number" value={annualRent} onChange={(e) => setAnnualRent(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-rent">Annual Rent ($)</label>
+            <input id="calc-annual-rent"  type="number" value={annualRent} onChange={(e) => setAnnualRent(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Expenses ($)</label>
-            <input type="number" value={annualExpenses} onChange={(e) => setAnnualExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-expenses">Annual Expenses ($)</label>
+            <input id="calc-annual-expenses"  type="number" value={annualExpenses} onChange={(e) => setAnnualExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Mortgage Rate (%)</label>
-            <input type="number" value={mortgageRate} onChange={(e) => setMortgageRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-mortgage-rate">Mortgage Rate (%)</label>
+            <input id="calc-mortgage-rate"  type="number" value={mortgageRate} onChange={(e) => setMortgageRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Loan Term</label>
-            <select value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-loan-term">Loan Term</label>
+            <select id="calc-loan-term"  value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="30">30 years</option>
@@ -103,15 +103,15 @@ export default function PropertyRoiCalc() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Appreciation (%/yr)</label>
-            <input type="number" value={appreciationRate} onChange={(e) => setAppreciationRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-appreciation-yr">Appreciation (%/yr)</label>
+            <input id="calc-appreciation-yr"  type="number" value={appreciationRate} onChange={(e) => setAppreciationRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Holding Period (years)</label>
-          <input type="number" value={holdingYears} onChange={(e) => setHoldingYears(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-holding-period-years">Holding Period (years)</label>
+          <input id="calc-holding-period-years"  type="number" value={holdingYears} onChange={(e) => setHoldingYears(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

@@ -41,34 +41,34 @@ export default function PricingStrategyCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Cost to Produce ($)</label>
-            <input type="number" value={costToProduce} onChange={(e) => setCostToProduce(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-cost-to-produce">Cost to Produce ($)</label>
+            <input id="calc-cost-to-produce"  type="number" value={costToProduce} onChange={(e) => setCostToProduce(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Desired Margin %</label>
-            <input type="number" value={desiredMargin} onChange={(e) => setDesiredMargin(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-desired-margin">Desired Margin %</label>
+            <input id="calc-desired-margin"  type="number" value={desiredMargin} onChange={(e) => setDesiredMargin(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Competitor Price ($)</label>
-          <input type="number" value={competitorPrice} onChange={(e) => setCompetitorPrice(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-competitor-price">Competitor Price ($)</label>
+          <input id="calc-competitor-price"  type="number" value={competitorPrice} onChange={(e) => setCompetitorPrice(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Target Annual Revenue ($)</label>
-            <input type="number" value={targetRevenue} onChange={(e) => setTargetRevenue(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-target-annual-revenue">Target Annual Revenue ($)</label>
+            <input id="calc-target-annual-revenue"  type="number" value={targetRevenue} onChange={(e) => setTargetRevenue(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Est. Units Sold/Year</label>
-            <input type="number" value={unitsSold} onChange={(e) => setUnitsSold(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-est-units-sold-year">Est. Units Sold/Year</label>
+            <input id="calc-est-units-sold-year"  type="number" value={unitsSold} onChange={(e) => setUnitsSold(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

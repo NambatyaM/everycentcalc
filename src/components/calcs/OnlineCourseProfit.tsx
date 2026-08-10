@@ -34,42 +34,42 @@ export default function OnlineCourseProfit() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Course Price ($)</label>
-            <input type="number" value={coursePrice} onChange={(e) => setCoursePrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-course-price">Course Price ($)</label>
+            <input id="calc-course-price"  type="number" value={coursePrice} onChange={(e) => setCoursePrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Sales</label>
-            <input type="number" value={monthlySales} onChange={(e) => setMonthlySales(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Platform Fee (%)</label>
-            <input type="number" value={platformFeePct} onChange={(e) => setPlatformFeePct(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Ad Spend per Month ($)</label>
-            <input type="number" value={adSpend} onChange={(e) => setAdSpend(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-sales">Monthly Sales</label>
+            <input id="calc-monthly-sales"  type="number" value={monthlySales} onChange={(e) => setMonthlySales(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Course Production Cost ($)</label>
-            <input type="number" value={productionCost} onChange={(e) => setProductionCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-platform-fee">Platform Fee (%)</label>
+            <input id="calc-platform-fee"  type="number" value={platformFeePct} onChange={(e) => setPlatformFeePct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Other Monthly Costs ($)</label>
-            <input type="number" value={otherMonthly} onChange={(e) => setOtherMonthly(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-ad-spend-per-month">Ad Spend per Month ($)</label>
+            <input id="calc-ad-spend-per-month"  type="number" value={adSpend} onChange={(e) => setAdSpend(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-course-production-cost">Course Production Cost ($)</label>
+            <input id="calc-course-production-cost"  type="number" value={productionCost} onChange={(e) => setProductionCost(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-monthly-costs">Other Monthly Costs ($)</label>
+            <input id="calc-other-monthly-costs"  type="number" value={otherMonthly} onChange={(e) => setOtherMonthly(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

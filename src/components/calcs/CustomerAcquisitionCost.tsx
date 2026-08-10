@@ -22,23 +22,23 @@ export default function CustomerAcquisitionCostCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Total Marketing Cost ($)</label>
-            <input type="number" value={marketingCost} onChange={(e) => setMarketingCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-marketing-cost">Total Marketing Cost ($)</label>
+            <input id="calc-total-marketing-cost"  type="number" value={marketingCost} onChange={(e) => setMarketingCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Ads, content, software, agency fees</p>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Total Sales Cost ($)</label>
-            <input type="number" value={salesCost} onChange={(e) => setSalesCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-sales-cost">Total Sales Cost ($)</label>
+            <input id="calc-total-sales-cost"  type="number" value={salesCost} onChange={(e) => setSalesCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Salaries, commissions, CRM, tools</p>
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>New Customers Acquired</label>
-          <input type="number" value={newCustomers} onChange={(e) => setNewCustomers(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-new-customers-acquired">New Customers Acquired</label>
+          <input id="calc-new-customers-acquired"  type="number" value={newCustomers} onChange={(e) => setNewCustomers(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

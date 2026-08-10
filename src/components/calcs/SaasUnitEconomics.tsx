@@ -58,34 +58,34 @@ export default function SaasUnitEconomicsCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Marketing Spend ($)</label>
-            <input type="number" value={monthlyMarketingSpend} onChange={(e) => setMonthlyMarketingSpend(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-marketing-spend">Monthly Marketing Spend ($)</label>
+            <input id="calc-monthly-marketing-spend"  type="number" value={monthlyMarketingSpend} onChange={(e) => setMonthlyMarketingSpend(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>New Customers per Month</label>
-            <input type="number" value={newCustomersPerMonth} onChange={(e) => setNewCustomersPerMonth(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-new-customers-per-month">New Customers per Month</label>
+            <input id="calc-new-customers-per-month"  type="number" value={newCustomersPerMonth} onChange={(e) => setNewCustomersPerMonth(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Avg Monthly Revenue per Customer ($)</label>
-          <input type="number" value={avgMonthlyRevenue} onChange={(e) => setAvgMonthlyRevenue(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-avg-monthly-revenue-per-customer">Avg Monthly Revenue per Customer ($)</label>
+          <input id="calc-avg-monthly-revenue-per-customer"  type="number" value={avgMonthlyRevenue} onChange={(e) => setAvgMonthlyRevenue(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Gross Margin %</label>
-            <input type="number" value={grossMargin} onChange={(e) => setGrossMargin(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-gross-margin">Gross Margin %</label>
+            <input id="calc-gross-margin"  type="number" value={grossMargin} onChange={(e) => setGrossMargin(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Churn Rate %</label>
-            <input type="number" value={churnRate} onChange={(e) => setChurnRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-churn-rate">Monthly Churn Rate %</label>
+            <input id="calc-monthly-churn-rate"  type="number" value={churnRate} onChange={(e) => setChurnRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

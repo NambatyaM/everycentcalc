@@ -53,23 +53,23 @@ export default function StartupRunwayCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-cash-balance">
             Cash Balance ($)
           </label>
-          <input type="number" value={cashBalance} onChange={(e) => setCashBalance(e.target.value)}
+          <input id="calc-cash-balance"  type="number" value={cashBalance} onChange={(e) => setCashBalance(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Revenue ($)</label>
-            <input type="number" value={monthlyRevenue} onChange={(e) => setMonthlyRevenue(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-revenue">Monthly Revenue ($)</label>
+            <input id="calc-monthly-revenue"  type="number" value={monthlyRevenue} onChange={(e) => setMonthlyRevenue(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Expenses ($)</label>
-            <input type="number" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-expenses">Monthly Expenses ($)</label>
+            <input id="calc-monthly-expenses"  type="number" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

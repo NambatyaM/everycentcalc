@@ -36,48 +36,48 @@ export default function RealEstateFlipProfitCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Purchase Price ($)</label>
-            <input type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-purchase-price">Purchase Price ($)</label>
+            <input id="calc-purchase-price"  type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Renovation Cost ($)</label>
-            <input type="number" value={renovationCost} onChange={(e) => setRenovationCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-renovation-cost">Renovation Cost ($)</label>
+            <input id="calc-renovation-cost"  type="number" value={renovationCost} onChange={(e) => setRenovationCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Holding Period (months)</label>
-            <input type="number" value={holdingPeriod} onChange={(e) => setHoldingPeriod(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-holding-period-months">Holding Period (months)</label>
+            <input id="calc-holding-period-months"  type="number" value={holdingPeriod} onChange={(e) => setHoldingPeriod(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Holding Costs ($)</label>
-            <input type="number" value={monthlyHoldingCosts} onChange={(e) => setMonthlyHoldingCosts(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-holding-costs">Monthly Holding Costs ($)</label>
+            <input id="calc-monthly-holding-costs"  type="number" value={monthlyHoldingCosts} onChange={(e) => setMonthlyHoldingCosts(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Selling Price (ARV) ($)</label>
-            <input type="number" value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-selling-price-arv">Selling Price (ARV) ($)</label>
+            <input id="calc-selling-price-arv"  type="number" value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Agent Commission (%)</label>
-            <input type="number" value={agentCommission} onChange={(e) => setAgentCommission(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-agent-commission">Agent Commission (%)</label>
+            <input id="calc-agent-commission"  type="number" value={agentCommission} onChange={(e) => setAgentCommission(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Closing Costs (%)</label>
-            <input type="number" value={closingCostsPct} onChange={(e) => setClosingCostsPct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-closing-costs">Closing Costs (%)</label>
+            <input id="calc-closing-costs"  type="number" value={closingCostsPct} onChange={(e) => setClosingCostsPct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>

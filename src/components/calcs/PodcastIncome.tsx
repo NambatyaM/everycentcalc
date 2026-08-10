@@ -31,40 +31,40 @@ export default function PodcastIncome() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Downloads</label>
-            <input type="number" value={monthlyDownloads} onChange={(e) => setMonthlyDownloads(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-downloads">Monthly Downloads</label>
+            <input id="calc-monthly-downloads"  type="number" value={monthlyDownloads} onChange={(e) => setMonthlyDownloads(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Episodes per Month</label>
-            <input type="number" value={episodesPerMonth} onChange={(e) => setEpisodesPerMonth(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-episodes-per-month">Episodes per Month</label>
+            <input id="calc-episodes-per-month"  type="number" value={episodesPerMonth} onChange={(e) => setEpisodesPerMonth(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>CPM for Ads ($)</label>
-          <input type="number" value={cpmAds} onChange={(e) => setCpmAds(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-cpm-for-ads">CPM for Ads ($)</label>
+          <input id="calc-cpm-for-ads"  type="number" value={cpmAds} onChange={(e) => setCpmAds(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Sponsorship per Episode ($)</label>
-          <input type="number" value={sponsorPerEpisode} onChange={(e) => setSponsorPerEpisode(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-sponsorship-per-episode">Sponsorship per Episode ($)</label>
+          <input id="calc-sponsorship-per-episode"  type="number" value={sponsorPerEpisode} onChange={(e) => setSponsorPerEpisode(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Patreon Supporters</label>
-            <input type="number" value={patreonSupporters} onChange={(e) => setPatreonSupporters(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-patreon-supporters">Patreon Supporters</label>
+            <input id="calc-patreon-supporters"  type="number" value={patreonSupporters} onChange={(e) => setPatreonSupporters(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Average Patreon Pledge ($)</label>
-            <input type="number" value={avgPledge} onChange={(e) => setAvgPledge(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-average-patreon-pledge">Average Patreon Pledge ($)</label>
+            <input id="calc-average-patreon-pledge"  type="number" value={avgPledge} onChange={(e) => setAvgPledge(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

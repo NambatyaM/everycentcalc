@@ -31,34 +31,34 @@ export default function QuarterlyTaxCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-freelance-self-employment-income">
             Annual Freelance / Self Employment Income ($)
           </label>
-          <input type="number" value={annualIncome} onChange={(e) => setAnnualIncome(e.target.value)}
+          <input id="calc-annual-freelance-self-employment-income"  type="number" value={annualIncome} onChange={(e) => setAnnualIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-w-2-income-reduces-se-tax-cap">
             Other W-2 Income (reduces SE tax cap) ($)
           </label>
-          <input type="number" value={otherIncome} onChange={(e) => setOtherIncome(e.target.value)}
+          <input id="calc-other-w-2-income-reduces-se-tax-cap"  type="number" value={otherIncome} onChange={(e) => setOtherIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-w-2-federal-withholding-already-paid">
             W-2 Federal Withholding Already Paid ($)
           </label>
-          <input type="number" value={w2Withholding} onChange={(e) => setW2Withholding(e.target.value)}
+          <input id="calc-w-2-federal-withholding-already-paid"  type="number" value={w2Withholding} onChange={(e) => setW2Withholding(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">
             Filing Status
           </label>
-          <select value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
+          <select id="calc-filing-status"  value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
             <option value="single">Single</option>

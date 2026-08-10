@@ -46,35 +46,35 @@ export default function InvestmentReturnCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Initial Investment ($)</label>
-            <input type="number" value={initial} onChange={(e) => setInitial(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-initial-investment">Initial Investment ($)</label>
+            <input id="calc-initial-investment"  type="number" value={initial} onChange={(e) => setInitial(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Contribution ($)</label>
-            <input type="number" value={monthly} onChange={(e) => setMonthly(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-contribution">Monthly Contribution ($)</label>
+            <input id="calc-monthly-contribution"  type="number" value={monthly} onChange={(e) => setMonthly(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Return Rate (%)</label>
-            <input type="number" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-return-rate">Annual Return Rate (%)</label>
+            <input id="calc-annual-return-rate"  type="number" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Investment Period (years)</label>
-            <input type="number" value={years} onChange={(e) => setYears(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-investment-period-years">Investment Period (years)</label>
+            <input id="calc-investment-period-years"  type="number" value={years} onChange={(e) => setYears(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Compound Frequency</label>
-          <select value={freq} onChange={(e) => setFreq(e.target.value as CompoundFreq)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-compound-frequency">Compound Frequency</label>
+          <select id="calc-compound-frequency"  value={freq} onChange={(e) => setFreq(e.target.value as CompoundFreq)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
             <option value="monthly">Monthly</option>

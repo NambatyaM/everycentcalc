@@ -29,44 +29,44 @@ export default function FreelancerSavingsRate() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-income">
               Monthly Income ($)
             </label>
-            <input type="number" value={monthlyIncome} onChange={(e) => setMonthlyIncome(e.target.value)}
+            <input id="calc-monthly-income"  type="number" value={monthlyIncome} onChange={(e) => setMonthlyIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-expenses">
               Monthly Expenses ($)
             </label>
-            <input type="number" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(e.target.value)}
+            <input id="calc-monthly-expenses"  type="number" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-estimated-tax-rate">
             Estimated Tax Rate (%)
           </label>
-          <input type="number" value={taxRate} onChange={(e) => setTaxRate(e.target.value)}
+          <input id="calc-estimated-tax-rate"  type="number" value={taxRate} onChange={(e) => setTaxRate(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-emergency-fund-goal">
               Emergency Fund Goal ($)
             </label>
-            <input type="number" value={emergencyGoal} onChange={(e) => setEmergencyGoal(e.target.value)}
+            <input id="calc-emergency-fund-goal"  type="number" value={emergencyGoal} onChange={(e) => setEmergencyGoal(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-savings">
               Current Savings ($)
             </label>
-            <input type="number" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)}
+            <input id="calc-current-savings"  type="number" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

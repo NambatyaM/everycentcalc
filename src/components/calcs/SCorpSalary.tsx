@@ -54,14 +54,14 @@ export default function SCorpSalary() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Net Business Income ($)</label>
-            <input type="number" value={netIncome} onChange={(e) => setNetIncome(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-net-business-income">Net Business Income ($)</label>
+            <input id="calc-net-business-income"  type="number" value={netIncome} onChange={(e) => setNetIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Industry</label>
-            <select value={industry} onChange={(e) => setIndustry(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-industry">Industry</label>
+            <select id="calc-industry"  value={industry} onChange={(e) => setIndustry(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="tech">Technology (55%)</option>
@@ -71,8 +71,8 @@ export default function SCorpSalary() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Filing Status</label>
-            <select value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">Filing Status</label>
+            <select id="calc-filing-status"  value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="single">Single</option>
@@ -80,8 +80,8 @@ export default function SCorpSalary() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Years in Business</label>
-            <input type="number" value={yearsInBusiness} onChange={(e) => setYearsInBusiness(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-years-in-business">Years in Business</label>
+            <input id="calc-years-in-business"  type="number" value={yearsInBusiness} onChange={(e) => setYearsInBusiness(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

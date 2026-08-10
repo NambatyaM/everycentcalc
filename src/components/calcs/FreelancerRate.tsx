@@ -31,35 +31,35 @@ export default function FreelancerRateCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-desired-annual-take-home-pay">
             Desired Annual Take Home Pay ($)
           </label>
-          <input type="number" value={desiredIncome} onChange={(e) => setDesiredIncome(e.target.value)}
+          <input id="calc-desired-annual-take-home-pay"  type="number" value={desiredIncome} onChange={(e) => setDesiredIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-business-expenses-of-income">
             Business Expenses (% of income)
           </label>
-          <input type="number" value={expenses} onChange={(e) => setExpenses(e.target.value)}
+          <input id="calc-business-expenses-of-income"  type="number" value={expenses} onChange={(e) => setExpenses(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-vacation-weeks-year">
               Vacation Weeks/Year
             </label>
-            <input type="number" value={vacationWeeks} onChange={(e) => setVacationWeeks(e.target.value)}
+            <input id="calc-vacation-weeks-year"  type="number" value={vacationWeeks} onChange={(e) => setVacationWeeks(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-billable-hours-day">
               Billable Hours/Day
             </label>
-            <input type="number" value={billableHours} onChange={(e) => setBillableHours(e.target.value)}
+            <input id="calc-billable-hours-day"  type="number" value={billableHours} onChange={(e) => setBillableHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

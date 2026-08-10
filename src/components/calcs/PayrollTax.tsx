@@ -59,14 +59,14 @@ export default function PayrollTax() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Employee Annual Salary ($)</label>
-            <input type="number" value={salary} onChange={(e) => setSalary(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-employee-annual-salary">Employee Annual Salary ($)</label>
+            <input id="calc-employee-annual-salary"  type="number" value={salary} onChange={(e) => setSalary(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Pay Frequency</label>
-            <select value={payFrequency} onChange={(e) => setPayFrequency(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-pay-frequency">Pay Frequency</label>
+            <select id="calc-pay-frequency"  value={payFrequency} onChange={(e) => setPayFrequency(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="biweekly">Biweekly (26 periods)</option>
@@ -74,20 +74,20 @@ export default function PayrollTax() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Federal Withholding Allowances</label>
-            <input type="number" value={federalAllowance} onChange={(e) => setFederalAllowance(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-federal-withholding-allowances">Federal Withholding Allowances</label>
+            <input id="calc-federal-withholding-allowances"  type="number" value={federalAllowance} onChange={(e) => setFederalAllowance(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>State Tax Rate (%)</label>
-            <input type="number" value={stateTaxRate} onChange={(e) => setStateTaxRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-state-tax-rate">State Tax Rate (%)</label>
+            <input id="calc-state-tax-rate"  type="number" value={stateTaxRate} onChange={(e) => setStateTaxRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>401(k) Contribution (%)</label>
-            <input type="number" value={k401Percent} onChange={(e) => setK401Percent(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-401-k-contribution">401(k) Contribution (%)</label>
+            <input id="calc-401-k-contribution"  type="number" value={k401Percent} onChange={(e) => setK401Percent(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

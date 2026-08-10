@@ -29,27 +29,27 @@ export default function HealthInsuranceDeduction() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-health-insurance-premium">
             Annual Health Insurance Premium ($)
           </label>
-          <input type="number" value={annualPremium} onChange={(e) => setAnnualPremium(e.target.value)}
+          <input id="calc-annual-health-insurance-premium"  type="number" value={annualPremium} onChange={(e) => setAnnualPremium(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-months-covered">
               Months Covered
             </label>
-            <input type="number" value={monthsCovered} onChange={(e) => setMonthsCovered(e.target.value)}
+            <input id="calc-months-covered"  type="number" value={monthsCovered} onChange={(e) => setMonthsCovered(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-insurance-subsidies">
               Other Insurance Subsidies ($)
             </label>
-            <input type="number" value={subsidies} onChange={(e) => setSubsidies(e.target.value)}
+            <input id="calc-other-insurance-subsidies"  type="number" value={subsidies} onChange={(e) => setSubsidies(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
@@ -63,10 +63,10 @@ export default function HealthInsuranceDeduction() {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-your-marginal-tax-rate">
             Your Marginal Tax Rate (%)
           </label>
-          <input type="number" value={marginalRate} onChange={(e) => setMarginalRate(e.target.value)}
+          <input id="calc-your-marginal-tax-rate"  type="number" value={marginalRate} onChange={(e) => setMarginalRate(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

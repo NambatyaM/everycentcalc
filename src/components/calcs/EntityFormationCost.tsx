@@ -67,8 +67,8 @@ export default function EntityFormationCost() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>State</label>
-            <select value={state} onChange={(e) => setState(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-state">State</label>
+            <select id="calc-state"  value={state} onChange={(e) => setState(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="california">California ($80)</option>
@@ -80,8 +80,8 @@ export default function EntityFormationCost() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Entity Type</label>
-            <select value={entityType} onChange={(e) => setEntityType(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-entity-type">Entity Type</label>
+            <select id="calc-entity-type"  value={entityType} onChange={(e) => setEntityType(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="llc">LLC</option>
@@ -90,8 +90,8 @@ export default function EntityFormationCost() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Need Registered Agent?</label>
-            <select value={registeredAgent} onChange={(e) => setRegisteredAgent(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-need-registered-agent">Need Registered Agent?</label>
+            <select id="calc-need-registered-agent"  value={registeredAgent} onChange={(e) => setRegisteredAgent(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="yes">Yes ($150/yr)</option>

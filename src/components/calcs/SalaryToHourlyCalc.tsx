@@ -27,8 +27,8 @@ export default function SalaryToHourlyCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>What do you know?</label>
-          <select value={mode} onChange={(e) => setMode(e.target.value as 'salary' | 'hourly')}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-what-do-you-know">What do you know?</label>
+          <select id="calc-what-do-you-know"  value={mode} onChange={(e) => setMode(e.target.value as 'salary' | 'hourly')}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
             <option value="salary">My annual salary</option>
@@ -45,15 +45,15 @@ export default function SalaryToHourlyCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Hours Per Week</label>
-            <input type="number" value={hoursPerWeek} onChange={(e) => setHoursPerWeek(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-hours-per-week">Hours Per Week</label>
+            <input id="calc-hours-per-week"  type="number" value={hoursPerWeek} onChange={(e) => setHoursPerWeek(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Paid Weeks Per Year</label>
-          <input type="number" value={weeksPerYear} onChange={(e) => setWeeksPerYear(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-paid-weeks-per-year">Paid Weeks Per Year</label>
+          <input id="calc-paid-weeks-per-year"  type="number" value={weeksPerYear} onChange={(e) => setWeeksPerYear(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Use 52 with no unpaid leave, or 50 to account for 2 weeks off. These are gross pre-tax amounts.</p>

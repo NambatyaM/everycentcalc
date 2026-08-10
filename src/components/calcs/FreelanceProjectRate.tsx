@@ -30,44 +30,44 @@ export default function FreelanceProjectRate() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-estimated-hours-for-project">
               Estimated Hours for Project
             </label>
-            <input type="number" value={estimatedHours} onChange={(e) => setEstimatedHours(e.target.value)}
+            <input id="calc-estimated-hours-for-project"  type="number" value={estimatedHours} onChange={(e) => setEstimatedHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-desired-hourly-rate">
               Desired Hourly Rate ($)
             </label>
-            <input type="number" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)}
+            <input id="calc-desired-hourly-rate"  type="number" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-complexity-factor-1-0-2-0">
               Complexity Factor (1.0–2.0)
             </label>
-            <input type="number" value={complexityFactor} onChange={(e) => setComplexityFactor(e.target.value)} step="0.1"
+            <input id="calc-complexity-factor-1-0-2-0"  type="number" value={complexityFactor} onChange={(e) => setComplexityFactor(e.target.value)} step="0.1"
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-revision-rounds">
               Revision Rounds
             </label>
-            <input type="number" value={revisionRounds} onChange={(e) => setRevisionRounds(e.target.value)}
+            <input id="calc-revision-rounds"  type="number" value={revisionRounds} onChange={(e) => setRevisionRounds(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-buffer">
               Buffer (%)
             </label>
-            <input type="number" value={bufferPercent} onChange={(e) => setBufferPercent(e.target.value)}
+            <input id="calc-buffer"  type="number" value={bufferPercent} onChange={(e) => setBufferPercent(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

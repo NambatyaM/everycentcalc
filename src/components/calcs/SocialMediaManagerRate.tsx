@@ -32,34 +32,34 @@ export default function SocialMediaManagerRate() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Number of Clients</label>
-            <input type="number" value={numClients} onChange={(e) => setNumClients(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-number-of-clients">Number of Clients</label>
+            <input id="calc-number-of-clients"  type="number" value={numClients} onChange={(e) => setNumClients(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Hours per Client per Week</label>
-            <input type="number" value={hoursPerClient} onChange={(e) => setHoursPerClient(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-hours-per-client-per-week">Hours per Client per Week</label>
+            <input id="calc-hours-per-client-per-week"  type="number" value={hoursPerClient} onChange={(e) => setHoursPerClient(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Desired Annual Income ($)</label>
-          <input type="number" value={desiredIncome} onChange={(e) => setDesiredIncome(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-desired-annual-income">Desired Annual Income ($)</label>
+          <input id="calc-desired-annual-income"  type="number" value={desiredIncome} onChange={(e) => setDesiredIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Tools Cost ($)</label>
-            <input type="number" value={toolsCost} onChange={(e) => setToolsCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-tools-cost">Monthly Tools Cost ($)</label>
+            <input id="calc-monthly-tools-cost"  type="number" value={toolsCost} onChange={(e) => setToolsCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Desired Profit Margin (%)</label>
-            <input type="number" value={profitMarginPct} onChange={(e) => setProfitMarginPct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-desired-profit-margin">Desired Profit Margin (%)</label>
+            <input id="calc-desired-profit-margin"  type="number" value={profitMarginPct} onChange={(e) => setProfitMarginPct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

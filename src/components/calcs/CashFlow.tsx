@@ -41,32 +41,32 @@ export default function CashFlow() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Beginning Cash Balance ($)</label>
-            <input type="number" value={beginningBalance} onChange={(e) => setBeginningBalance(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-beginning-cash-balance">Beginning Cash Balance ($)</label>
+            <input id="calc-beginning-cash-balance"  type="number" value={beginningBalance} onChange={(e) => setBeginningBalance(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Income ($)</label>
-            <input type="number" value={monthlyIncome} onChange={(e) => setMonthlyIncome(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-income">Monthly Income ($)</label>
+            <input id="calc-monthly-income"  type="number" value={monthlyIncome} onChange={(e) => setMonthlyIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Expenses ($)</label>
-            <input type="number" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-expenses">Monthly Expenses ($)</label>
+            <input id="calc-monthly-expenses"  type="number" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>One Time Expenses ($)</label>
-            <input type="number" value={oneTimeExpenses} onChange={(e) => setOneTimeExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-one-time-expenses">One Time Expenses ($)</label>
+            <input id="calc-one-time-expenses"  type="number" value={oneTimeExpenses} onChange={(e) => setOneTimeExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Months to Project</label>
-            <input type="number" value={months} onChange={(e) => setMonths(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-months-to-project">Months to Project</label>
+            <input id="calc-months-to-project"  type="number" value={months} onChange={(e) => setMonths(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

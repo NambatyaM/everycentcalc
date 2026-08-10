@@ -25,27 +25,27 @@ export default function QbiDeduction() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-qualified-business-income">
             Qualified Business Income ($)
           </label>
-          <input type="number" value={qualifiedBusinessIncome} onChange={(e) => setQualifiedBusinessIncome(e.target.value)}
+          <input id="calc-qualified-business-income"  type="number" value={qualifiedBusinessIncome} onChange={(e) => setQualifiedBusinessIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-taxable-income-before-qbi-deduction">
             Total Taxable Income Before QBI Deduction ($)
           </label>
-          <input type="number" value={totalTaxableIncome} onChange={(e) => setTotalTaxableIncome(e.target.value)}
+          <input id="calc-total-taxable-income-before-qbi-deduction"  type="number" value={totalTaxableIncome} onChange={(e) => setTotalTaxableIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">
               Filing Status
             </label>
-            <select value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
+            <select id="calc-filing-status"  value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="single">Single</option>

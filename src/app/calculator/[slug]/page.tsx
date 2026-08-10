@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import AffiliateBanner from '@/components/AffiliateBanner';
+import AdsterraBanner from '@/components/AdsterraBanner';
 import SelfEmploymentTaxCalc from '@/components/calcs/SelfEmploymentTax';
 import QuarterlyTaxCalc from '@/components/calcs/QuarterlyTax';
 import TaxExtensionCalc from '@/components/calcs/TaxExtension';
@@ -350,18 +351,7 @@ export default async function CalculatorPage({ params }: Props) {
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <div className="mb-6 rounded-2xl overflow-hidden" style={{ aspectRatio: '1200/630' }}>
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={1200}
-                height={630}
-                priority
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="mb-8">
+            <div className="mb-6">
               <h1 className="text-2xl md:text-3xl font-extrabold mb-3" style={{ color: 'var(--text-primary)' }}>
                 {calc.name}
               </h1>
@@ -377,6 +367,8 @@ export default async function CalculatorPage({ params }: Props) {
               <CalcComponent />
             </div>
 
+            <AdsterraBanner className="mb-8" />
+
             {calc.affiliate && (
               <AffiliateBanner
                 title={calc.affiliate.title}
@@ -387,6 +379,17 @@ export default async function CalculatorPage({ params }: Props) {
                 badge={calc.affiliate.badge}
               />
             )}
+
+            <div className="mb-8 rounded-2xl overflow-hidden" style={{ aspectRatio: '1200/630' }}>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={1200}
+                height={630}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <div className="mb-10">
               <h2 className="text-xl font-bold mb-5" style={{ color: 'var(--text-primary)' }}>

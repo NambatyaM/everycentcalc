@@ -30,30 +30,30 @@ export default function TimeTrackingValueCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Desired Annual Income ($)</label>
-          <input type="number" value={desiredIncome} onChange={(e) => setDesiredIncome(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-desired-annual-income">Desired Annual Income ($)</label>
+          <input id="calc-desired-annual-income"  type="number" value={desiredIncome} onChange={(e) => setDesiredIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Billable Hours per Year</label>
-            <input type="number" value={billableHours} onChange={(e) => setBillableHours(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-billable-hours-per-year">Billable Hours per Year</label>
+            <input id="calc-billable-hours-per-year"  type="number" value={billableHours} onChange={(e) => setBillableHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Typical freelancers bill 1,200-1,500 hours per year</p>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Non-Billable Hours per Week</label>
-            <input type="number" value={nonBillableHours} onChange={(e) => setNonBillableHours(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-non-billable-hours-per-week">Non-Billable Hours per Week</label>
+            <input id="calc-non-billable-hours-per-week"  type="number" value={nonBillableHours} onChange={(e) => setNonBillableHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Admin, marketing, emails, prospecting</p>
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Outsource Hourly Rate ($)</label>
-          <input type="number" value={outsourceRate} onChange={(e) => setOutsourceRate(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-outsource-hourly-rate">Outsource Hourly Rate ($)</label>
+          <input id="calc-outsource-hourly-rate"  type="number" value={outsourceRate} onChange={(e) => setOutsourceRate(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>What a VA or specialist charges per hour</p>

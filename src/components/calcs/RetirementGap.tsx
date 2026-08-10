@@ -59,49 +59,49 @@ export default function RetirementGapCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Age</label>
-            <input type="number" value={currentAge} onChange={(e) => setCurrentAge(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-age">Current Age</label>
+            <input id="calc-current-age"  type="number" value={currentAge} onChange={(e) => setCurrentAge(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Retirement Age</label>
-            <input type="number" value={retireAge} onChange={(e) => setRetireAge(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Savings ($)</label>
-            <input type="number" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Contribution ($)</label>
-            <input type="number" value={monthlyContrib} onChange={(e) => setMonthlyContrib(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-retirement-age">Retirement Age</label>
+            <input id="calc-retirement-age"  type="number" value={retireAge} onChange={(e) => setRetireAge(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Expected Return (%)</label>
-            <input type="number" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-savings">Current Savings ($)</label>
+            <input id="calc-current-savings"  type="number" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Desired Retirement Income ($/year)</label>
-            <input type="number" value={desiredIncome} onChange={(e) => setDesiredIncome(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-contribution">Monthly Contribution ($)</label>
+            <input id="calc-monthly-contribution"  type="number" value={monthlyContrib} onChange={(e) => setMonthlyContrib(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-expected-return">Expected Return (%)</label>
+            <input id="calc-expected-return"  type="number" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-desired-retirement-income-year">Desired Retirement Income ($/year)</label>
+            <input id="calc-desired-retirement-income-year"  type="number" value={desiredIncome} onChange={(e) => setDesiredIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Life Expectancy</label>
-          <input type="number" value={lifeExpectancy} onChange={(e) => setLifeExpectancy(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-life-expectancy">Life Expectancy</label>
+          <input id="calc-life-expectancy"  type="number" value={lifeExpectancy} onChange={(e) => setLifeExpectancy(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

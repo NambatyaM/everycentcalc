@@ -48,18 +48,18 @@ export default function QuarterlyTaxDeadline() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-last-year-apos-s-total-tax">
             Last Year&apos;s Total Tax ($)
           </label>
-          <input type="number" value={lastYearTax} onChange={(e) => setLastYearTax(e.target.value)}
+          <input id="calc-last-year-apos-s-total-tax"  type="number" value={lastYearTax} onChange={(e) => setLastYearTax(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-prior-year-agi-determines-100-vs-110-safe-harbor">
             Prior Year AGI ($) — determines 100% vs 110% safe harbor
           </label>
-          <input type="number" value={agi} onChange={(e) => setAgi(e.target.value)}
+          <input id="calc-prior-year-agi-determines-100-vs-110-safe-harbor"  type="number" value={agi} onChange={(e) => setAgi(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

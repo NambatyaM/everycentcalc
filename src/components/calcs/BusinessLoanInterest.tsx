@@ -34,26 +34,26 @@ export default function BusinessLoanInterest() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Loan Amount ($)</label>
-            <input type="number" value={loanAmount} onChange={(e) => setLoanAmount(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-loan-amount">Loan Amount ($)</label>
+            <input id="calc-loan-amount"  type="number" value={loanAmount} onChange={(e) => setLoanAmount(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Interest Rate (%)</label>
-            <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-interest-rate">Annual Interest Rate (%)</label>
+            <input id="calc-annual-interest-rate"  type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Loan Term (Years)</label>
-            <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-loan-term-years">Loan Term (Years)</label>
+            <input id="calc-loan-term-years"  type="number" value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Origination Fee (%)</label>
-            <input type="number" value={originationFee} onChange={(e) => setOriginationFee(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-origination-fee">Origination Fee (%)</label>
+            <input id="calc-origination-fee"  type="number" value={originationFee} onChange={(e) => setOriginationFee(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

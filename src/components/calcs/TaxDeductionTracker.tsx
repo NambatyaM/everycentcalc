@@ -49,10 +49,10 @@ export default function TaxDeductionTrackerCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-home-office-sq-ft">
             Home Office (sq ft)
           </label>
-          <input
+          <input id="calc-home-office-sq-ft" 
             type="number"
             value={sqft}
             onChange={(e) => setSqft(e.target.value)}
@@ -63,10 +63,10 @@ export default function TaxDeductionTrackerCalc() {
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Simplified method: $5/sq ft (max 300 sq ft = $1,500)</p>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-computer-equipment">
             Computer / Equipment ($)
           </label>
-          <input
+          <input id="calc-computer-equipment" 
             type="number"
             value={equipment}
             onChange={(e) => setEquipment(e.target.value)}
@@ -76,10 +76,10 @@ export default function TaxDeductionTrackerCalc() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-software-subscriptions-annual">
             Software Subscriptions (annual $)
           </label>
-          <input
+          <input id="calc-software-subscriptions-annual" 
             type="number"
             value={software}
             onChange={(e) => setSoftware(e.target.value)}
@@ -90,10 +90,10 @@ export default function TaxDeductionTrackerCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-internet-monthly">
               Internet (monthly $)
             </label>
-            <input
+            <input id="calc-internet-monthly" 
               type="number"
               value={internet}
               onChange={(e) => setInternet(e.target.value)}
@@ -103,10 +103,10 @@ export default function TaxDeductionTrackerCalc() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-phone-monthly">
               Phone (monthly $)
             </label>
-            <input
+            <input id="calc-phone-monthly" 
               type="number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -117,10 +117,10 @@ export default function TaxDeductionTrackerCalc() {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-health-insurance-monthly">
             Health Insurance (monthly $)
           </label>
-          <input
+          <input id="calc-health-insurance-monthly" 
             type="number"
             value={healthInsurance}
             onChange={(e) => setHealthInsurance(e.target.value)}
@@ -131,10 +131,10 @@ export default function TaxDeductionTrackerCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-professional-development">
               Professional Development ($)
             </label>
-            <input
+            <input id="calc-professional-development" 
               type="number"
               value={profDev}
               onChange={(e) => setProfDev(e.target.value)}
@@ -144,10 +144,10 @@ export default function TaxDeductionTrackerCalc() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-business-expenses">
               Other Business Expenses ($)
             </label>
-            <input
+            <input id="calc-other-business-expenses" 
               type="number"
               value={otherExpenses}
               onChange={(e) => setOtherExpenses(e.target.value)}

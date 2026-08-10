@@ -38,18 +38,18 @@ export default function TaxExtension() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-tax-owed-for-the-year">
             Total Tax Owed for the Year ($)
           </label>
-          <input type="number" value={totalOwed} onChange={(e) => setTotalOwed(e.target.value)}
+          <input id="calc-total-tax-owed-for-the-year"  type="number" value={totalOwed} onChange={(e) => setTotalOwed(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-already-paid-estimated-payments-withholding">
             Already Paid (estimated payments + withholding) ($)
           </label>
-          <input type="number" value={amountPaid} onChange={(e) => setAmountPaid(e.target.value)}
+          <input id="calc-already-paid-estimated-payments-withholding"  type="number" value={amountPaid} onChange={(e) => setAmountPaid(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

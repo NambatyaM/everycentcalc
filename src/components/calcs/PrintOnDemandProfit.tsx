@@ -34,42 +34,42 @@ export default function PrintOnDemandProfit() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Selling Price ($)</label>
-            <input type="number" value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-selling-price">Selling Price ($)</label>
+            <input id="calc-selling-price"  type="number" value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Product Cost ($)</label>
-            <input type="number" value={productCost} onChange={(e) => setProductCost(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Shipping Charged ($)</label>
-            <input type="number" value={shippingCharged} onChange={(e) => setShippingCharged(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Marketing Cost per Sale ($)</label>
-            <input type="number" value={marketingCost} onChange={(e) => setMarketingCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-product-cost">Product Cost ($)</label>
+            <input id="calc-product-cost"  type="number" value={productCost} onChange={(e) => setProductCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Platform Fee (%)</label>
-            <input type="number" value={platformFeePct} onChange={(e) => setPlatformFeePct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-shipping-charged">Shipping Charged ($)</label>
+            <input id="calc-shipping-charged"  type="number" value={shippingCharged} onChange={(e) => setShippingCharged(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Sales Volume</label>
-            <input type="number" value={monthlyVolume} onChange={(e) => setMonthlyVolume(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-marketing-cost-per-sale">Marketing Cost per Sale ($)</label>
+            <input id="calc-marketing-cost-per-sale"  type="number" value={marketingCost} onChange={(e) => setMarketingCost(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-platform-fee">Platform Fee (%)</label>
+            <input id="calc-platform-fee"  type="number" value={platformFeePct} onChange={(e) => setPlatformFeePct(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-sales-volume">Monthly Sales Volume</label>
+            <input id="calc-monthly-sales-volume"  type="number" value={monthlyVolume} onChange={(e) => setMonthlyVolume(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

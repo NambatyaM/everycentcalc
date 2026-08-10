@@ -45,20 +45,20 @@ export default function ClientInvoiceCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Project Hours</label>
-            <input type="number" value={projectHours} onChange={(e) => setProjectHours(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-project-hours">Project Hours</label>
+            <input id="calc-project-hours"  type="number" value={projectHours} onChange={(e) => setProjectHours(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Hourly Rate ($)</label>
-            <input type="number" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-hourly-rate">Hourly Rate ($)</label>
+            <input id="calc-hourly-rate"  type="number" value={hourlyRate} onChange={(e) => setHourlyRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Expense Type</label>
-            <select value={expenseType} onChange={(e) => setExpenseType(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-expense-type">Expense Type</label>
+            <select id="calc-expense-type"  value={expenseType} onChange={(e) => setExpenseType(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="none">No Expenses</option>
@@ -67,15 +67,15 @@ export default function ClientInvoiceCalc() {
           </div>
           {expenseType === 'custom' && (
             <div>
-              <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Expenses ($)</label>
-              <input type="number" value={expenses} onChange={(e) => setExpenses(e.target.value)}
+              <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-expenses">Expenses ($)</label>
+              <input id="calc-expenses"  type="number" value={expenses} onChange={(e) => setExpenses(e.target.value)}
                 className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
                 style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             </div>
           )}
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Payment Terms</label>
-            <select value={paymentTerms} onChange={(e) => setPaymentTerms(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-payment-terms">Payment Terms</label>
+            <select id="calc-payment-terms"  value={paymentTerms} onChange={(e) => setPaymentTerms(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="net15">Net 15</option>
@@ -85,14 +85,14 @@ export default function ClientInvoiceCalc() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Late Fee (% per month)</label>
-            <input type="number" value={lateFeePercent} onChange={(e) => setLateFeePercent(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-late-fee-per-month">Late Fee (% per month)</label>
+            <input id="calc-late-fee-per-month"  type="number" value={lateFeePercent} onChange={(e) => setLateFeePercent(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Retainer Discount (%)</label>
-            <input type="number" value={retainerDiscount} onChange={(e) => setRetainerDiscount(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-retainer-discount">Retainer Discount (%)</label>
+            <input id="calc-retainer-discount"  type="number" value={retainerDiscount} onChange={(e) => setRetainerDiscount(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

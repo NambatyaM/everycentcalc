@@ -80,8 +80,8 @@ export default function SalesTaxCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>State</label>
-            <select value={state} onChange={(e) => { setState(e.target.value); setCustomRate(''); }}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-state">State</label>
+            <select id="calc-state"  value={state} onChange={(e) => { setState(e.target.value); setCustomRate(''); }}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               {Object.keys(STATE_RATES).sort().map((s) => (
@@ -91,8 +91,8 @@ export default function SalesTaxCalc() {
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>State + average local rate. Enter a custom rate below to override.</p>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Custom Tax Rate (%)</label>
-            <input type="number" value={customRate} onChange={(e) => setCustomRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-custom-tax-rate">Custom Tax Rate (%)</label>
+            <input id="calc-custom-tax-rate"  type="number" value={customRate} onChange={(e) => setCustomRate(e.target.value)}
               placeholder="Optional"
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
@@ -108,8 +108,8 @@ export default function SalesTaxCalc() {
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Mode</label>
-            <select value={mode} onChange={(e) => setMode(e.target.value as 'add' | 'reverse')}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-mode">Mode</label>
+            <select id="calc-mode"  value={mode} onChange={(e) => setMode(e.target.value as 'add' | 'reverse')}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="add">Add tax to a price</option>

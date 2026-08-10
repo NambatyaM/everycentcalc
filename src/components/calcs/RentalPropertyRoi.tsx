@@ -53,48 +53,48 @@ export default function RentalPropertyRoiCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Purchase Price ($)</label>
-            <input type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-purchase-price">Purchase Price ($)</label>
+            <input id="calc-purchase-price"  type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Down Payment ($)</label>
-            <input type="number" value={downPayment} onChange={(e) => setDownPayment(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-down-payment">Down Payment ($)</label>
+            <input id="calc-down-payment"  type="number" value={downPayment} onChange={(e) => setDownPayment(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Mortgage Rate (%/yr)</label>
-            <input type="number" value={mortgageRate} onChange={(e) => setMortgageRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-mortgage-rate-yr">Mortgage Rate (%/yr)</label>
+            <input id="calc-mortgage-rate-yr"  type="number" value={mortgageRate} onChange={(e) => setMortgageRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Mortgage Term (yrs)</label>
-            <input type="number" value={mortgageTerm} onChange={(e) => setMortgageTerm(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-mortgage-term-yrs">Mortgage Term (yrs)</label>
+            <input id="calc-mortgage-term-yrs"  type="number" value={mortgageTerm} onChange={(e) => setMortgageTerm(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Rent ($)</label>
-            <input type="number" value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-rent">Monthly Rent ($)</label>
+            <input id="calc-monthly-rent"  type="number" value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Property Tax (annual $)</label>
-            <input type="number" value={propertyTax} onChange={(e) => setPropertyTax(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-property-tax-annual">Property Tax (annual $)</label>
+            <input id="calc-property-tax-annual"  type="number" value={propertyTax} onChange={(e) => setPropertyTax(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Insurance (annual $)</label>
-            <input type="number" value={insurance} onChange={(e) => setInsurance(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-insurance-annual">Insurance (annual $)</label>
+            <input id="calc-insurance-annual"  type="number" value={insurance} onChange={(e) => setInsurance(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
@@ -102,20 +102,20 @@ export default function RentalPropertyRoiCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Maintenance (% of rent)</label>
-            <input type="number" value={maintenancePct} onChange={(e) => setMaintenancePct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-maintenance-of-rent">Maintenance (% of rent)</label>
+            <input id="calc-maintenance-of-rent"  type="number" value={maintenancePct} onChange={(e) => setMaintenancePct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Vacancy (% of rent)</label>
-            <input type="number" value={vacancyPct} onChange={(e) => setVacancyPct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-vacancy-of-rent">Vacancy (% of rent)</label>
+            <input id="calc-vacancy-of-rent"  type="number" value={vacancyPct} onChange={(e) => setVacancyPct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Management (% of rent)</label>
-            <input type="number" value={managementPct} onChange={(e) => setManagementPct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-management-of-rent">Management (% of rent)</label>
+            <input id="calc-management-of-rent"  type="number" value={managementPct} onChange={(e) => setManagementPct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>

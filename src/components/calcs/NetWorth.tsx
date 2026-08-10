@@ -46,42 +46,42 @@ export default function NetWorthCalc() {
         <p className="text-sm font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>Assets</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Cash & Bank Accounts ($)</label>
-            <input type="number" value={cash} onChange={(e) => setCash(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-cash-bank-accounts">Cash & Bank Accounts ($)</label>
+            <input id="calc-cash-bank-accounts"  type="number" value={cash} onChange={(e) => setCash(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Investments (non-retirement) ($)</label>
-            <input type="number" value={investments} onChange={(e) => setInvestments(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Retirement Accounts ($)</label>
-            <input type="number" value={retirement} onChange={(e) => setRetirement(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Home Value ($)</label>
-            <input type="number" value={homeValue} onChange={(e) => setHomeValue(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-investments-non-retirement">Investments (non-retirement) ($)</label>
+            <input id="calc-investments-non-retirement"  type="number" value={investments} onChange={(e) => setInvestments(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Vehicle Value ($)</label>
-            <input type="number" value={vehicleValue} onChange={(e) => setVehicleValue(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-retirement-accounts">Retirement Accounts ($)</label>
+            <input id="calc-retirement-accounts"  type="number" value={retirement} onChange={(e) => setRetirement(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Other Assets ($)</label>
-            <input type="number" value={otherAssets} onChange={(e) => setOtherAssets(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-home-value">Home Value ($)</label>
+            <input id="calc-home-value"  type="number" value={homeValue} onChange={(e) => setHomeValue(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-vehicle-value">Vehicle Value ($)</label>
+            <input id="calc-vehicle-value"  type="number" value={vehicleValue} onChange={(e) => setVehicleValue(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-assets">Other Assets ($)</label>
+            <input id="calc-other-assets"  type="number" value={otherAssets} onChange={(e) => setOtherAssets(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
@@ -90,32 +90,32 @@ export default function NetWorthCalc() {
         <p className="text-sm font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>Liabilities</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Mortgage Balance ($)</label>
-            <input type="number" value={mortgage} onChange={(e) => setMortgage(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-mortgage-balance">Mortgage Balance ($)</label>
+            <input id="calc-mortgage-balance"  type="number" value={mortgage} onChange={(e) => setMortgage(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Car Loans ($)</label>
-            <input type="number" value={carLoans} onChange={(e) => setCarLoans(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-car-loans">Car Loans ($)</label>
+            <input id="calc-car-loans"  type="number" value={carLoans} onChange={(e) => setCarLoans(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Credit Card Debt ($)</label>
-            <input type="number" value={creditCards} onChange={(e) => setCreditCards(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-credit-card-debt">Credit Card Debt ($)</label>
+            <input id="calc-credit-card-debt"  type="number" value={creditCards} onChange={(e) => setCreditCards(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Student Loans ($)</label>
-            <input type="number" value={studentLoans} onChange={(e) => setStudentLoans(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-student-loans">Student Loans ($)</label>
+            <input id="calc-student-loans"  type="number" value={studentLoans} onChange={(e) => setStudentLoans(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Other Debts ($)</label>
-            <input type="number" value={otherLiabilities} onChange={(e) => setOtherLiabilities(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-debts">Other Debts ($)</label>
+            <input id="calc-other-debts"  type="number" value={otherLiabilities} onChange={(e) => setOtherLiabilities(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

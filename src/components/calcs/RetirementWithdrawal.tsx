@@ -53,35 +53,35 @@ export default function RetirementWithdrawalCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Retirement Savings ($)</label>
-            <input type="number" value={savings} onChange={(e) => setSavings(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-retirement-savings">Retirement Savings ($)</label>
+            <input id="calc-retirement-savings"  type="number" value={savings} onChange={(e) => setSavings(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Return (%)</label>
-            <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-return">Annual Return (%)</label>
+            <input id="calc-annual-return"  type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Withdrawal Rate (%)</label>
-            <input type="number" value={withdrawalRate} onChange={(e) => setWithdrawalRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-withdrawal-rate">Withdrawal Rate (%)</label>
+            <input id="calc-withdrawal-rate"  type="number" value={withdrawalRate} onChange={(e) => setWithdrawalRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Years in Retirement</label>
-            <input type="number" value={retirementYears} onChange={(e) => setRetirementYears(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-years-in-retirement">Years in Retirement</label>
+            <input id="calc-years-in-retirement"  type="number" value={retirementYears} onChange={(e) => setRetirementYears(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Inflation Rate (%)</label>
-          <input type="number" value={inflationRate} onChange={(e) => setInflationRate(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-inflation-rate">Inflation Rate (%)</label>
+          <input id="calc-inflation-rate"  type="number" value={inflationRate} onChange={(e) => setInflationRate(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

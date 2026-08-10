@@ -32,15 +32,15 @@ export default function RequiredMinimumDistributionCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Retirement Account Balance ($)</label>
-          <input type="number" value={balance} onChange={(e) => setBalance(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-retirement-account-balance">Retirement Account Balance ($)</label>
+          <input id="calc-retirement-account-balance"  type="number" value={balance} onChange={(e) => setBalance(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Total in traditional IRAs, 401(k)s, 403(b)s, etc.</p>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Your Age</label>
-          <select value={age} onChange={(e) => setAge(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-your-age">Your Age</label>
+          <select id="calc-your-age"  value={age} onChange={(e) => setAge(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
             {ages.map((a) => <option key={a} value={a}>{a}</option>)}

@@ -50,28 +50,28 @@ export default function FourOhOneKCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Age</label>
-            <input type="number" value={currentAge} onChange={(e) => setCurrentAge(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-age">Current Age</label>
+            <input id="calc-current-age"  type="number" value={currentAge} onChange={(e) => setCurrentAge(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Retirement Age</label>
-            <input type="number" value={retirementAge} onChange={(e) => setRetirementAge(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-retirement-age">Retirement Age</label>
+            <input id="calc-retirement-age"  type="number" value={retirementAge} onChange={(e) => setRetirementAge(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current 401(k) Balance ($)</label>
-            <input type="number" value={currentBalance} onChange={(e) => setCurrentBalance(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-401-k-balance">Current 401(k) Balance ($)</label>
+            <input id="calc-current-401-k-balance"  type="number" value={currentBalance} onChange={(e) => setCurrentBalance(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Contribution ($)</label>
-            <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-contribution">Monthly Contribution ($)</label>
+            <input id="calc-monthly-contribution"  type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>2026 max: $23,500/yr ($31,000 if 50+)</p>
@@ -79,22 +79,22 @@ export default function FourOhOneKCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Employer Match (%)</label>
-            <input type="number" value={matchPct} onChange={(e) => setMatchPct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-employer-match">Employer Match (%)</label>
+            <input id="calc-employer-match"  type="number" value={matchPct} onChange={(e) => setMatchPct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Typical: 50-100%</p>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Salary ($)</label>
-            <input type="number" value={salary} onChange={(e) => setSalary(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-salary">Annual Salary ($)</label>
+            <input id="calc-annual-salary"  type="number" value={salary} onChange={(e) => setSalary(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Used to calculate match limit (6% assumed)</p>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Expected Annual Return (%)</label>
-            <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-expected-annual-return">Expected Annual Return (%)</label>
+            <input id="calc-expected-annual-return"  type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Historical S&P 500 avg: ~10% (~7% inflation-adjusted)</p>

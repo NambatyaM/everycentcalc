@@ -13,20 +13,20 @@ export default function GenericCalc() {
       <SectionHeader title="Calculator" subtitle="Enter your values below" />
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Value 1</label>
-          <input type="number" value={input1} onChange={(e) => setInput1(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-value-1">Value 1</label>
+          <input id="calc-value-1"  type="number" value={input1} onChange={(e) => setInput1(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Value 2</label>
-          <input type="number" value={input2} onChange={(e) => setInput2(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-value-2">Value 2</label>
+          <input id="calc-value-2"  type="number" value={input2} onChange={(e) => setInput2(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Value 3</label>
-          <input type="number" value={input3} onChange={(e) => setInput3(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-value-3">Value 3</label>
+          <input id="calc-value-3"  type="number" value={input3} onChange={(e) => setInput3(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

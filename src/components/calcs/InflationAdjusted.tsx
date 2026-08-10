@@ -31,21 +31,21 @@ export default function InflationAdjustedCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Amount ($)</label>
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-amount">Current Amount ($)</label>
+          <input id="calc-current-amount"  type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Inflation Rate (%)</label>
-            <input type="number" value={inflationRate} onChange={(e) => setInflationRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-inflation-rate">Annual Inflation Rate (%)</label>
+            <input id="calc-annual-inflation-rate"  type="number" value={inflationRate} onChange={(e) => setInflationRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Years to Project</label>
-            <input type="number" value={years} onChange={(e) => setYears(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-years-to-project">Years to Project</label>
+            <input id="calc-years-to-project"  type="number" value={years} onChange={(e) => setYears(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

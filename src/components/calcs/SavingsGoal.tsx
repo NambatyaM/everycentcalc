@@ -38,28 +38,28 @@ export default function SavingsGoalCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Savings Goal ($)</label>
-          <input type="number" value={savingsGoal} onChange={(e) => setSavingsGoal(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-savings-goal">Savings Goal ($)</label>
+          <input id="calc-savings-goal"  type="number" value={savingsGoal} onChange={(e) => setSavingsGoal(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Time Frame (months)</label>
-            <input type="number" value={timeFrame} onChange={(e) => setTimeFrame(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-time-frame-months">Time Frame (months)</label>
+            <input id="calc-time-frame-months"  type="number" value={timeFrame} onChange={(e) => setTimeFrame(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Savings ($)</label>
-            <input type="number" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-savings">Current Savings ($)</label>
+            <input id="calc-current-savings"  type="number" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Expected APY %</label>
-          <input type="number" value={expectedAPY} onChange={(e) => setExpectedAPY(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-expected-apy">Expected APY %</label>
+          <input id="calc-expected-apy"  type="number" value={expectedAPY} onChange={(e) => setExpectedAPY(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>High yield savings accounts currently offer 4-5% APY</p>

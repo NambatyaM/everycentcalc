@@ -33,36 +33,36 @@ export default function HomeOfficeDeduction() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-home-square-footage">
               Total Home Square Footage
             </label>
-            <input type="number" value={totalSqFt} onChange={(e) => setTotalSqFt(e.target.value)}
+            <input id="calc-total-home-square-footage"  type="number" value={totalSqFt} onChange={(e) => setTotalSqFt(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-office-square-footage">
               Office Square Footage
             </label>
-            <input type="number" value={officeSqFt} onChange={(e) => setOfficeSqFt(e.target.value)}
+            <input id="calc-office-square-footage"  type="number" value={officeSqFt} onChange={(e) => setOfficeSqFt(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-annual-home-expenses">
             Total Annual Home Expenses ($)
           </label>
-          <input type="number" value={annualExpenses} onChange={(e) => setAnnualExpenses(e.target.value)}
+          <input id="calc-total-annual-home-expenses"  type="number" value={annualExpenses} onChange={(e) => setAnnualExpenses(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-calculation-method">
               Calculation Method
             </label>
-            <select value={method} onChange={(e) => setMethod(e.target.value)}
+            <select id="calc-calculation-method"  value={method} onChange={(e) => setMethod(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="simplified">Simplified ($5/sq ft, max 300 sq ft)</option>
@@ -70,10 +70,10 @@ export default function HomeOfficeDeduction() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-marginal-tax-rate">
               Marginal Tax Rate (%)
             </label>
-            <input type="number" value={marginalRate} onChange={(e) => setMarginalRate(e.target.value)}
+            <input id="calc-marginal-tax-rate"  type="number" value={marginalRate} onChange={(e) => setMarginalRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

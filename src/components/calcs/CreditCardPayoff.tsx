@@ -42,21 +42,21 @@ export default function CreditCardPayoffCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Balance ($)</label>
-            <input type="number" value={balance} onChange={(e) => setBalance(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-balance">Current Balance ($)</label>
+            <input id="calc-current-balance"  type="number" value={balance} onChange={(e) => setBalance(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>APR (%)</label>
-            <input type="number" value={apr} onChange={(e) => setApr(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-apr">APR (%)</label>
+            <input id="calc-apr"  type="number" value={apr} onChange={(e) => setApr(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Payment ($)</label>
-          <input type="number" value={monthlyPayment} onChange={(e) => setMonthlyPayment(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-payment">Monthly Payment ($)</label>
+          <input id="calc-monthly-payment"  type="number" value={monthlyPayment} onChange={(e) => setMonthlyPayment(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

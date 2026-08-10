@@ -26,21 +26,21 @@ export default function CapRateCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Rental Income ($)</label>
-            <input type="number" value={annualRentalIncome} onChange={(e) => setAnnualRentalIncome(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-rental-income">Annual Rental Income ($)</label>
+            <input id="calc-annual-rental-income"  type="number" value={annualRentalIncome} onChange={(e) => setAnnualRentalIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Operating Expenses ($)</label>
-            <input type="number" value={annualOperatingExpenses} onChange={(e) => setAnnualOperatingExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-operating-expenses">Annual Operating Expenses ($)</label>
+            <input id="calc-annual-operating-expenses"  type="number" value={annualOperatingExpenses} onChange={(e) => setAnnualOperatingExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Property Value ($)</label>
-          <input type="number" value={propertyValue} onChange={(e) => setPropertyValue(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-property-value">Property Value ($)</label>
+          <input id="calc-property-value"  type="number" value={propertyValue} onChange={(e) => setPropertyValue(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

@@ -32,35 +32,35 @@ export default function AgentCommissionCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Home Sale Price ($)</label>
-          <input type="number" value={salePrice} onChange={(e) => setSalePrice(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-home-sale-price">Home Sale Price ($)</label>
+          <input id="calc-home-sale-price"  type="number" value={salePrice} onChange={(e) => setSalePrice(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Commission Rate (%)</label>
-            <input type="number" value={commissionRate} onChange={(e) => setCommissionRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-commission-rate">Commission Rate (%)</label>
+            <input id="calc-commission-rate"  type="number" value={commissionRate} onChange={(e) => setCommissionRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Tax Rate (%)</label>
-            <input type="number" value={taxRate} onChange={(e) => setTaxRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-tax-rate">Tax Rate (%)</label>
+            <input id="calc-tax-rate"  type="number" value={taxRate} onChange={(e) => setTaxRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Listing Agent Split (%)</label>
-            <input type="number" value={listingSplit} onChange={(e) => setListingSplit(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-listing-agent-split">Listing Agent Split (%)</label>
+            <input id="calc-listing-agent-split"  type="number" value={listingSplit} onChange={(e) => setListingSplit(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Buyer Agent Split (%)</label>
-            <input type="number" value={buyerSplit} onChange={(e) => setBuyerSplit(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-buyer-agent-split">Buyer Agent Split (%)</label>
+            <input id="calc-buyer-agent-split"  type="number" value={buyerSplit} onChange={(e) => setBuyerSplit(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

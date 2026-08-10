@@ -37,48 +37,48 @@ export default function BrrrrCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Purchase Price ($)</label>
-            <input type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-purchase-price">Purchase Price ($)</label>
+            <input id="calc-purchase-price"  type="number" value={purchasePrice} onChange={(e) => setPurchasePrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Repair Costs ($)</label>
-            <input type="number" value={repairCosts} onChange={(e) => setRepairCosts(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-repair-costs">Repair Costs ($)</label>
+            <input id="calc-repair-costs"  type="number" value={repairCosts} onChange={(e) => setRepairCosts(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>After Repair Value (ARV, $)</label>
-            <input type="number" value={arv} onChange={(e) => setArv(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-after-repair-value-arv">After Repair Value (ARV, $)</label>
+            <input id="calc-after-repair-value-arv"  type="number" value={arv} onChange={(e) => setArv(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Refinance LTV (% of ARV)</label>
-            <input type="number" value={refinanceLtv} onChange={(e) => setRefinanceLtv(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-refinance-ltv-of-arv">Refinance LTV (% of ARV)</label>
+            <input id="calc-refinance-ltv-of-arv"  type="number" value={refinanceLtv} onChange={(e) => setRefinanceLtv(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} step="0.1" />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Rent ($)</label>
-            <input type="number" value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-rent">Monthly Rent ($)</label>
+            <input id="calc-monthly-rent"  type="number" value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Mortgage ($)</label>
-            <input type="number" value={monthlyMortgage} onChange={(e) => setMonthlyMortgage(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-mortgage">Monthly Mortgage ($)</label>
+            <input id="calc-monthly-mortgage"  type="number" value={monthlyMortgage} onChange={(e) => setMonthlyMortgage(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Other Monthly Expenses ($)</label>
-            <input type="number" value={otherMonthlyExpenses} onChange={(e) => setOtherMonthlyExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-monthly-expenses">Other Monthly Expenses ($)</label>
+            <input id="calc-other-monthly-expenses"  type="number" value={otherMonthlyExpenses} onChange={(e) => setOtherMonthlyExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

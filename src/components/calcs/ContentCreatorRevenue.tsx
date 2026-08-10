@@ -37,47 +37,47 @@ export default function ContentCreatorRevenueCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Views</label>
-          <input type="number" value={monthlyViews} onChange={(e) => setMonthlyViews(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-views">Monthly Views</label>
+          <input id="calc-monthly-views"  type="number" value={monthlyViews} onChange={(e) => setMonthlyViews(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>CPM Rate ($ per 1K views)</label>
-          <input type="number" value={cpmRate} onChange={(e) => setCpmRate(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-cpm-rate-per-1k-views">CPM Rate ($ per 1K views)</label>
+          <input id="calc-cpm-rate-per-1k-views"  type="number" value={cpmRate} onChange={(e) => setCpmRate(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Sponsorships per Month</label>
-            <input type="number" value={sponsorships} onChange={(e) => setSponsorships(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-sponsorships-per-month">Sponsorships per Month</label>
+            <input id="calc-sponsorships-per-month"  type="number" value={sponsorships} onChange={(e) => setSponsorships(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Avg Sponsorship Value ($)</label>
-            <input type="number" value={avgSponsorshipValue} onChange={(e) => setAvgSponsorshipValue(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-avg-sponsorship-value">Avg Sponsorship Value ($)</label>
+            <input id="calc-avg-sponsorship-value"  type="number" value={avgSponsorshipValue} onChange={(e) => setAvgSponsorshipValue(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Affiliate Commission per Month ($)</label>
-          <input type="number" value={affiliateRevenue} onChange={(e) => setAffiliateRevenue(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-affiliate-commission-per-month">Affiliate Commission per Month ($)</label>
+          <input id="calc-affiliate-commission-per-month"  type="number" value={affiliateRevenue} onChange={(e) => setAffiliateRevenue(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Members/Subscribers</label>
-            <input type="number" value={members} onChange={(e) => setMembers(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-members-subscribers">Members/Subscribers</label>
+            <input id="calc-members-subscribers"  type="number" value={members} onChange={(e) => setMembers(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Membership Price ($)</label>
-            <input type="number" value={membershipPrice} onChange={(e) => setMembershipPrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-membership-price">Membership Price ($)</label>
+            <input id="calc-membership-price"  type="number" value={membershipPrice} onChange={(e) => setMembershipPrice(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

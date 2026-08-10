@@ -41,27 +41,27 @@ export default function IsSideHustleWorthItCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Side Hustle Revenue ($)</label>
-          <input type="number" value={revenue} onChange={(e) => setRevenue(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-side-hustle-revenue">Monthly Side Hustle Revenue ($)</label>
+          <input id="calc-monthly-side-hustle-revenue"  type="number" value={revenue} onChange={(e) => setRevenue(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Hours Worked</label>
-          <input type="number" value={hours} onChange={(e) => setHours(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-hours-worked">Monthly Hours Worked</label>
+          <input id="calc-monthly-hours-worked"  type="number" value={hours} onChange={(e) => setHours(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Expenses ($)</label>
-            <input type="number" value={expenses} onChange={(e) => setExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-expenses">Monthly Expenses ($)</label>
+            <input id="calc-monthly-expenses"  type="number" value={expenses} onChange={(e) => setExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Tax Rate (% to set aside)</label>
-            <input type="number" value={taxRate} onChange={(e) => setTaxRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-tax-rate-to-set-aside">Tax Rate (% to set aside)</label>
+            <input id="calc-tax-rate-to-set-aside"  type="number" value={taxRate} onChange={(e) => setTaxRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

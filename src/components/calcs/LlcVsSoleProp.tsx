@@ -49,10 +49,10 @@ export default function LlcVsSolePropCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-net-income">
             Annual Net Income ($)
           </label>
-          <input
+          <input id="calc-annual-net-income" 
             type="number"
             value={netIncome}
             onChange={(e) => setNetIncome(e.target.value)}
@@ -62,10 +62,10 @@ export default function LlcVsSolePropCalc() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">
             Filing Status
           </label>
-          <select
+          <select id="calc-filing-status" 
             value={filingStatus}
             onChange={(e) => setFilingStatus(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"

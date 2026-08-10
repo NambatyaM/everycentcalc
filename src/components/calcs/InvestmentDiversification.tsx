@@ -58,34 +58,34 @@ export default function InvestmentDiversificationCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Total Portfolio Value ($)</label>
-          <input type="number" value={total} onChange={(e) => setTotal(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-portfolio-value">Total Portfolio Value ($)</label>
+          <input id="calc-total-portfolio-value"  type="number" value={total} onChange={(e) => setTotal(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <h3 className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>Asset Allocation (%)</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Stocks</label>
-            <input type="number" value={stockPct} onChange={(e) => setStockPct(e.target.value)}
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-stocks">Stocks</label>
+            <input id="calc-stocks"  type="number" value={stockPct} onChange={(e) => setStockPct(e.target.value)}
               className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Bonds</label>
-            <input type="number" value={bondPct} onChange={(e) => setBondPct(e.target.value)}
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-bonds">Bonds</label>
+            <input id="calc-bonds"  type="number" value={bondPct} onChange={(e) => setBondPct(e.target.value)}
               className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Real Estate</label>
-            <input type="number" value={rePct} onChange={(e) => setRePct(e.target.value)}
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-real-estate">Real Estate</label>
+            <input id="calc-real-estate"  type="number" value={rePct} onChange={(e) => setRePct(e.target.value)}
               className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Cash</label>
-            <input type="number" value={cashPct} onChange={(e) => setCashPct(e.target.value)}
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-cash">Cash</label>
+            <input id="calc-cash"  type="number" value={cashPct} onChange={(e) => setCashPct(e.target.value)}
               className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
@@ -96,26 +96,26 @@ export default function InvestmentDiversificationCalc() {
         <h3 className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>Expected Returns (%)</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Stocks</label>
-            <input type="number" value={stockReturn} onChange={(e) => setStockReturn(e.target.value)}
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-stocks-2">Stocks</label>
+            <input id="calc-stocks-2"  type="number" value={stockReturn} onChange={(e) => setStockReturn(e.target.value)}
               className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Bonds</label>
-            <input type="number" value={bondReturn} onChange={(e) => setBondReturn(e.target.value)}
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-bonds-2">Bonds</label>
+            <input id="calc-bonds-2"  type="number" value={bondReturn} onChange={(e) => setBondReturn(e.target.value)}
               className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Real Estate</label>
-            <input type="number" value={reReturn} onChange={(e) => setReReturn(e.target.value)}
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-real-estate-2">Real Estate</label>
+            <input id="calc-real-estate-2"  type="number" value={reReturn} onChange={(e) => setReReturn(e.target.value)}
               className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Cash</label>
-            <input type="number" value={cashReturn} onChange={(e) => setCashReturn(e.target.value)}
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-cash-2">Cash</label>
+            <input id="calc-cash-2"  type="number" value={cashReturn} onChange={(e) => setCashReturn(e.target.value)}
               className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

@@ -39,42 +39,42 @@ export default function RothVsTraditionalCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Contribution ($)</label>
-          <input type="number" value={contribution} onChange={(e) => setContribution(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-contribution">Annual Contribution ($)</label>
+          <input id="calc-annual-contribution"  type="number" value={contribution} onChange={(e) => setContribution(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Tax Bracket (%)</label>
-            <input type="number" value={currentBracket} onChange={(e) => setCurrentBracket(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-tax-bracket">Current Tax Bracket (%)</label>
+            <input id="calc-current-tax-bracket"  type="number" value={currentBracket} onChange={(e) => setCurrentBracket(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Expected Retirement Bracket (%)</label>
-            <input type="number" value={retireBracket} onChange={(e) => setRetireBracket(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-expected-retirement-bracket">Expected Retirement Bracket (%)</label>
+            <input id="calc-expected-retirement-bracket"  type="number" value={retireBracket} onChange={(e) => setRetireBracket(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Age</label>
-            <input type="number" value={currentAge} onChange={(e) => setCurrentAge(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-age">Current Age</label>
+            <input id="calc-current-age"  type="number" value={currentAge} onChange={(e) => setCurrentAge(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Retirement Age</label>
-            <input type="number" value={retireAge} onChange={(e) => setRetireAge(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-retirement-age">Retirement Age</label>
+            <input id="calc-retirement-age"  type="number" value={retireAge} onChange={(e) => setRetireAge(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Return (%)</label>
-          <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-return">Annual Return (%)</label>
+          <input id="calc-annual-return"  type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

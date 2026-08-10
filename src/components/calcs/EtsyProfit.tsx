@@ -37,59 +37,59 @@ export default function EtsyProfitCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Sale Price ($)</label>
-          <input type="number" value={salePrice} onChange={(e) => setSalePrice(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-sale-price">Sale Price ($)</label>
+          <input id="calc-sale-price"  type="number" value={salePrice} onChange={(e) => setSalePrice(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Shipping Charged to Customer ($)</label>
-          <input type="number" value={shippingCharged} onChange={(e) => setShippingCharged(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-shipping-charged-to-customer">Shipping Charged to Customer ($)</label>
+          <input id="calc-shipping-charged-to-customer"  type="number" value={shippingCharged} onChange={(e) => setShippingCharged(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Listing Fee ($)</label>
-            <input type="number" value={listingFee} onChange={(e) => setListingFee(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-listing-fee">Listing Fee ($)</label>
+            <input id="calc-listing-fee"  type="number" value={listingFee} onChange={(e) => setListingFee(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Transaction Fee (%)</label>
-            <input type="number" value={transactionFee} onChange={(e) => setTransactionFee(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-transaction-fee">Transaction Fee (%)</label>
+            <input id="calc-transaction-fee"  type="number" value={transactionFee} onChange={(e) => setTransactionFee(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Payment Processing (%)</label>
-            <input type="number" value={paymentProcessing} onChange={(e) => setPaymentProcessing(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-payment-processing">Payment Processing (%)</label>
+            <input id="calc-payment-processing"  type="number" value={paymentProcessing} onChange={(e) => setPaymentProcessing(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Payment Processing Flat Fee ($)</label>
-          <input type="number" value={paymentProcessingFlat} onChange={(e) => setPaymentProcessingFlat(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-payment-processing-flat-fee">Payment Processing Flat Fee ($)</label>
+          <input id="calc-payment-processing-flat-fee"  type="number" value={paymentProcessingFlat} onChange={(e) => setPaymentProcessingFlat(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Material Cost ($)</label>
-            <input type="number" value={materialCost} onChange={(e) => setMaterialCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-material-cost">Material Cost ($)</label>
+            <input id="calc-material-cost"  type="number" value={materialCost} onChange={(e) => setMaterialCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Shipping Cost ($)</label>
-            <input type="number" value={shippingCost} onChange={(e) => setShippingCost(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-shipping-cost">Shipping Cost ($)</label>
+            <input id="calc-shipping-cost"  type="number" value={shippingCost} onChange={(e) => setShippingCost(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Other Expenses ($)</label>
-            <input type="number" value={otherExpenses} onChange={(e) => setOtherExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-expenses">Other Expenses ($)</label>
+            <input id="calc-other-expenses"  type="number" value={otherExpenses} onChange={(e) => setOtherExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

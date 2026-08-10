@@ -32,22 +32,22 @@ export default function SideHustleIncomeTaxCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>W-2 Salary ($)</label>
-            <input type="number" value={w2Salary} onChange={(e) => setW2Salary(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-w-2-salary">W-2 Salary ($)</label>
+            <input id="calc-w-2-salary"  type="number" value={w2Salary} onChange={(e) => setW2Salary(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Side Hustle Net Income ($)</label>
-            <input type="number" value={sideIncome} onChange={(e) => setSideIncome(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-side-hustle-net-income">Side Hustle Net Income ($)</label>
+            <input id="calc-side-hustle-net-income"  type="number" value={sideIncome} onChange={(e) => setSideIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Filing Status</label>
-            <select value={filingStatus} onChange={(e) => setFilingStatus(e.target.value as FilingStatus)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">Filing Status</label>
+            <select id="calc-filing-status"  value={filingStatus} onChange={(e) => setFilingStatus(e.target.value as FilingStatus)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="single">Single</option>
@@ -55,8 +55,8 @@ export default function SideHustleIncomeTaxCalc() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>W-2 Withholding Already Done ($)</label>
-            <input type="number" value={w2Withholding} onChange={(e) => setW2Withholding(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-w-2-withholding-already-done">W-2 Withholding Already Done ($)</label>
+            <input id="calc-w-2-withholding-already-done"  type="number" value={w2Withholding} onChange={(e) => setW2Withholding(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

@@ -7,6 +7,7 @@ import { guides } from '@/lib/guides';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CalculatorCatalog from '@/components/CalculatorCatalog';
+import AdsterraBanner from '@/components/AdsterraBanner';
 
 function HeroSection() {
   const totalCalcs = calculators.length;
@@ -554,6 +555,11 @@ export default function HomePage() {
         <TopAffiliateBanner />
         <DeadlineBanner />
         <PopularCalculators />
+        <section className="py-10 px-4">
+          <div className="max-w-3xl mx-auto">
+            <AdsterraBanner />
+          </div>
+        </section>
         <Suspense fallback={null}>
           <CalculatorCatalog calculators={calculators} categories={categories} />
         </Suspense>

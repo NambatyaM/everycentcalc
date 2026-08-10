@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CalculatorCard from '@/components/CalculatorCard';
+import AdsterraBanner from '@/components/AdsterraBanner';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -118,6 +119,10 @@ export default async function CategoryPage({ params }: Props) {
           {calcs.map((calc) => (
             <CalculatorCard key={calc.slug} calc={calc} />
           ))}
+        </div>
+
+        <div className="mt-14 max-w-3xl mx-auto">
+          <AdsterraBanner />
         </div>
 
         {calcs.length > 0 && (

@@ -50,41 +50,41 @@ export default function StockPortfolioReturnCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Initial Portfolio Value ($)</label>
-            <input type="number" value={initial} onChange={(e) => setInitial(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-initial-portfolio-value">Initial Portfolio Value ($)</label>
+            <input id="calc-initial-portfolio-value"  type="number" value={initial} onChange={(e) => setInitial(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Annual Contributions ($)</label>
-            <input type="number" value={annualContrib} onChange={(e) => setAnnualContrib(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-contributions">Annual Contributions ($)</label>
+            <input id="calc-annual-contributions"  type="number" value={annualContrib} onChange={(e) => setAnnualContrib(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Expected Return (%)</label>
-            <input type="number" value={returnRate} onChange={(e) => setReturnRate(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-expected-return">Expected Return (%)</label>
+            <input id="calc-expected-return"  type="number" value={returnRate} onChange={(e) => setReturnRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Dividend Yield (%)</label>
-            <input type="number" value={divYield} onChange={(e) => setDivYield(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-dividend-yield">Dividend Yield (%)</label>
+            <input id="calc-dividend-yield"  type="number" value={divYield} onChange={(e) => setDivYield(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Capital Gains Tax (%)</label>
-            <input type="number" value={capGainsTax} onChange={(e) => setCapGainsTax(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-capital-gains-tax">Capital Gains Tax (%)</label>
+            <input id="calc-capital-gains-tax"  type="number" value={capGainsTax} onChange={(e) => setCapGainsTax(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Holding Period (years)</label>
-          <input type="number" value={years} onChange={(e) => setYears(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-holding-period-years">Holding Period (years)</label>
+          <input id="calc-holding-period-years"  type="number" value={years} onChange={(e) => setYears(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

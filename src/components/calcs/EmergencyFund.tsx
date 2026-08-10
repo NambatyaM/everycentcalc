@@ -36,22 +36,22 @@ export default function EmergencyFundCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Essential Expenses ($)</label>
-            <input type="number" value={expenses} onChange={(e) => setExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-essential-expenses">Monthly Essential Expenses ($)</label>
+            <input id="calc-monthly-essential-expenses"  type="number" value={expenses} onChange={(e) => setExpenses(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Current Emergency Savings ($)</label>
-            <input type="number" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-current-emergency-savings">Current Emergency Savings ($)</label>
+            <input id="calc-current-emergency-savings"  type="number" value={currentSavings} onChange={(e) => setCurrentSavings(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Income Type</label>
-            <select value={incomeType} onChange={(e) => setIncomeType(e.target.value as IncomeType)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-income-type">Income Type</label>
+            <select id="calc-income-type"  value={incomeType} onChange={(e) => setIncomeType(e.target.value as IncomeType)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="w2">W-2 Employee</option>
@@ -60,8 +60,8 @@ export default function EmergencyFundCalc() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Risk Tolerance</label>
-            <select value={riskLevel} onChange={(e) => setRiskLevel(e.target.value as RiskLevel)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-risk-tolerance">Risk Tolerance</label>
+            <select id="calc-risk-tolerance"  value={riskLevel} onChange={(e) => setRiskLevel(e.target.value as RiskLevel)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="conservative">Conservative (9 months)</option>
@@ -71,8 +71,8 @@ export default function EmergencyFundCalc() {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Monthly Savings Toward Fund ($)</label>
-          <input type="number" value={monthlySavingsInput} onChange={(e) => setMonthlySavingsInput(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-monthly-savings-toward-fund">Monthly Savings Toward Fund ($)</label>
+          <input id="calc-monthly-savings-toward-fund"  type="number" value={monthlySavingsInput} onChange={(e) => setMonthlySavingsInput(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

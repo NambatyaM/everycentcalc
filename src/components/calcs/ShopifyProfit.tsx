@@ -32,46 +32,46 @@ export default function ShopifyProfitCalc() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Sale Price ($)</label>
-          <input type="number" value={salePrice} onChange={(e) => setSalePrice(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-sale-price">Sale Price ($)</label>
+          <input id="calc-sale-price"  type="number" value={salePrice} onChange={(e) => setSalePrice(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Product Cost ($)</label>
-          <input type="number" value={productCost} onChange={(e) => setProductCost(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-product-cost">Product Cost ($)</label>
+          <input id="calc-product-cost"  type="number" value={productCost} onChange={(e) => setProductCost(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Shopify Fee (%)</label>
-            <input type="number" value={feePct} onChange={(e) => setFeePct(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-shopify-fee">Shopify Fee (%)</label>
+            <input id="calc-shopify-fee"  type="number" value={feePct} onChange={(e) => setFeePct(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Shopify Flat Fee ($)</label>
-            <input type="number" value={flatFee} onChange={(e) => setFlatFee(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-shopify-flat-fee">Shopify Flat Fee ($)</label>
+            <input id="calc-shopify-flat-fee"  type="number" value={flatFee} onChange={(e) => setFlatFee(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Shipping Cost ($)</label>
-          <input type="number" value={shippingCost} onChange={(e) => setShippingCost(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-shipping-cost">Shipping Cost ($)</label>
+          <input id="calc-shipping-cost"  type="number" value={shippingCost} onChange={(e) => setShippingCost(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Marketing Cost per Sale ($)</label>
-          <input type="number" value={marketingCost} onChange={(e) => setMarketingCost(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-marketing-cost-per-sale">Marketing Cost per Sale ($)</label>
+          <input id="calc-marketing-cost-per-sale"  type="number" value={marketingCost} onChange={(e) => setMarketingCost(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Other Expenses ($)</label>
-          <input type="number" value={otherExpenses} onChange={(e) => setOtherExpenses(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-expenses">Other Expenses ($)</label>
+          <input id="calc-other-expenses"  type="number" value={otherExpenses} onChange={(e) => setOtherExpenses(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

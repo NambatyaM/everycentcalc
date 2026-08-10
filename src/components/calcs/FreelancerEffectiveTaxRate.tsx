@@ -29,26 +29,26 @@ export default function FreelancerEffectiveTaxRate() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-gross-income">
             Gross Income ($)
           </label>
-          <input type="number" value={grossIncome} onChange={(e) => setGrossIncome(e.target.value)}
+          <input id="calc-gross-income"  type="number" value={grossIncome} onChange={(e) => setGrossIncome(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-business-expenses">
             Business Expenses ($)
           </label>
-          <input type="number" value={businessExpenses} onChange={(e) => setBusinessExpenses(e.target.value)}
+          <input id="calc-business-expenses"  type="number" value={businessExpenses} onChange={(e) => setBusinessExpenses(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">
             Filing Status
           </label>
-          <select value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
+          <select id="calc-filing-status"  value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
             <option value="single">Single</option>

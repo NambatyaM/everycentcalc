@@ -110,26 +110,26 @@ export default function DebtAvalancheVsSnowballCalc() {
           <div key={i} className="rounded-lg border p-3" style={{ background: 'var(--bg-tertiary)', borderColor: 'var(--border)' }}>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div>
-                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Name</label>
-                <input type="text" value={debt.name} onChange={(e) => updateDebt(i, 'name', e.target.value)}
+                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-name">Name</label>
+                <input id="calc-name"  type="text" value={debt.name} onChange={(e) => updateDebt(i, 'name', e.target.value)}
                   className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
                   style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
               </div>
               <div>
-                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Balance ($)</label>
-                <input type="number" value={debt.balance} onChange={(e) => updateDebt(i, 'balance', e.target.value)}
+                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-balance">Balance ($)</label>
+                <input id="calc-balance"  type="number" value={debt.balance} onChange={(e) => updateDebt(i, 'balance', e.target.value)}
                   className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
                   style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
               </div>
               <div>
-                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Rate (%)</label>
-                <input type="number" value={debt.rate} onChange={(e) => updateDebt(i, 'rate', e.target.value)}
+                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-rate">Rate (%)</label>
+                <input id="calc-rate"  type="number" value={debt.rate} onChange={(e) => updateDebt(i, 'rate', e.target.value)}
                   className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
                   style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
               </div>
               <div>
-                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>Min Payment ($)</label>
-                <input type="number" value={debt.minPayment} onChange={(e) => updateDebt(i, 'minPayment', e.target.value)}
+                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }} htmlFor="calc-min-payment">Min Payment ($)</label>
+                <input id="calc-min-payment"  type="number" value={debt.minPayment} onChange={(e) => updateDebt(i, 'minPayment', e.target.value)}
                   className="w-full rounded-lg border px-3 py-2 font-mono text-sm"
                   style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
               </div>
@@ -137,8 +137,8 @@ export default function DebtAvalancheVsSnowballCalc() {
           </div>
         ))}
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Extra Monthly Payment ($)</label>
-          <input type="number" value={extraPayment} onChange={(e) => setExtraPayment(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-extra-monthly-payment">Extra Monthly Payment ($)</label>
+          <input id="calc-extra-monthly-payment"  type="number" value={extraPayment} onChange={(e) => setExtraPayment(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

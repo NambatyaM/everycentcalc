@@ -7,6 +7,7 @@ import CalculatorCard from '@/components/CalculatorCard';
 import { guides, getGuideBySlug, type GuideBlock } from '@/lib/guides';
 import { getCategoryBySlug, getCalculatorBySlug } from '@/lib/calculators';
 import { GuideSvg } from '@/components/GuideSvg';
+import AdsterraBanner from '@/components/AdsterraBanner';
 
 const BASE_URL = 'https://everycentcalc.biz.id';
 
@@ -262,6 +263,8 @@ export default async function GuidePage({ params }: Props) {
             </section>
           ))}
         </article>
+
+        <AdsterraBanner className="mb-14" />
 
         {primaryCalc && (
           <div

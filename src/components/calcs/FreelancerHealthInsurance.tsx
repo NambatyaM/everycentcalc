@@ -55,10 +55,10 @@ export default function FreelancerHealthInsuranceCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-age">
               Age
             </label>
-            <input
+            <input id="calc-age" 
               type="number"
               value={age}
               onChange={(e) => setAge(e.target.value)}
@@ -68,10 +68,10 @@ export default function FreelancerHealthInsuranceCalc() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-annual-income">
               Annual Income ($)
             </label>
-            <input
+            <input id="calc-annual-income" 
               type="number"
               value={annualIncome}
               onChange={(e) => setAnnualIncome(e.target.value)}
@@ -83,10 +83,10 @@ export default function FreelancerHealthInsuranceCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">
               Filing Status
             </label>
-            <select
+            <select id="calc-filing-status" 
               value={filingStatus}
               onChange={(e) => setFilingStatus(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
@@ -97,10 +97,10 @@ export default function FreelancerHealthInsuranceCalc() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-plan-type">
               Plan Type
             </label>
-            <select
+            <select id="calc-plan-type" 
               value={planType}
               onChange={(e) => setPlanType(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"

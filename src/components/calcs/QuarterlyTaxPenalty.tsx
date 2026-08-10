@@ -24,35 +24,35 @@ export default function QuarterlyTaxPenalty() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-total-estimated-tax-owed">
             Total Estimated Tax Owed ($)
           </label>
-          <input type="number" value={estimatedTax} onChange={(e) => setEstimatedTax(e.target.value)}
+          <input id="calc-total-estimated-tax-owed"  type="number" value={estimatedTax} onChange={(e) => setEstimatedTax(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-amount-already-paid">
             Amount Already Paid ($)
           </label>
-          <input type="number" value={amountPaid} onChange={(e) => setAmountPaid(e.target.value)}
+          <input id="calc-amount-already-paid"  type="number" value={amountPaid} onChange={(e) => setAmountPaid(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-underpayment-period-months">
               Underpayment Period (months)
             </label>
-            <input type="number" value={underpaymentMonths} onChange={(e) => setUnderpaymentMonths(e.target.value)}
+            <input id="calc-underpayment-period-months"  type="number" value={underpaymentMonths} onChange={(e) => setUnderpaymentMonths(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-irs-penalty-rate">
               IRS Penalty Rate (%)
             </label>
-            <input type="number" value={penaltyRate} onChange={(e) => setPenaltyRate(e.target.value)}
+            <input id="calc-irs-penalty-rate"  type="number" value={penaltyRate} onChange={(e) => setPenaltyRate(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

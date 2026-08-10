@@ -33,10 +33,10 @@ export default function FreelanceProjectProfitabilityCalc() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-project-revenue">
               Project Revenue ($)
             </label>
-            <input
+            <input id="calc-project-revenue" 
               type="number"
               value={revenue}
               onChange={(e) => setRevenue(e.target.value)}
@@ -46,10 +46,10 @@ export default function FreelanceProjectProfitabilityCalc() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-estimated-hours">
               Estimated Hours
             </label>
-            <input
+            <input id="calc-estimated-hours" 
               type="number"
               value={hours}
               onChange={(e) => setHours(e.target.value)}
@@ -61,10 +61,10 @@ export default function FreelanceProjectProfitabilityCalc() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-hourly-rate-target">
               Hourly Rate (Target) ($)
             </label>
-            <input
+            <input id="calc-hourly-rate-target" 
               type="number"
               value={hourlyRate}
               onChange={(e) => setHourlyRate(e.target.value)}
@@ -74,10 +74,10 @@ export default function FreelanceProjectProfitabilityCalc() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-project-expenses">
               Project Expenses ($)
             </label>
-            <input
+            <input id="calc-project-expenses" 
               type="number"
               value={expenses}
               onChange={(e) => setExpenses(e.target.value)}
@@ -88,10 +88,10 @@ export default function FreelanceProjectProfitabilityCalc() {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-tax-rate-to-set-aside">
             Tax Rate (% to set aside)
           </label>
-          <input
+          <input id="calc-tax-rate-to-set-aside" 
             type="number"
             value={taxRate}
             onChange={(e) => setTaxRate(e.target.value)}

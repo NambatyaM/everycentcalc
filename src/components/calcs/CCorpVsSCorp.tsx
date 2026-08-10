@@ -51,20 +51,20 @@ export default function CCorpVsSCorp() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Net Business Income ($)</label>
-            <input type="number" value={netIncome} onChange={(e) => setNetIncome(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-net-business-income">Net Business Income ($)</label>
+            <input id="calc-net-business-income"  type="number" value={netIncome} onChange={(e) => setNetIncome(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Salary Taken ($)</label>
-            <input type="number" value={salaryTaken} onChange={(e) => setSalaryTaken(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-salary-taken">Salary Taken ($)</label>
+            <input id="calc-salary-taken"  type="number" value={salaryTaken} onChange={(e) => setSalaryTaken(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Filing Status</label>
-            <select value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">Filing Status</label>
+            <select id="calc-filing-status"  value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="single">Single</option>
@@ -72,8 +72,8 @@ export default function CCorpVsSCorp() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Owner Distributions / Dividends ($)</label>
-            <input type="number" value={retainedEarnings} onChange={(e) => setRetainedEarnings(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-owner-distributions-dividends">Owner Distributions / Dividends ($)</label>
+            <input id="calc-owner-distributions-dividends"  type="number" value={retainedEarnings} onChange={(e) => setRetainedEarnings(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>

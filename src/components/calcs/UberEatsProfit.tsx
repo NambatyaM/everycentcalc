@@ -30,35 +30,35 @@ export default function UberEatsProfit() {
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Weekly Earnings ($)</label>
-            <input type="number" value={weeklyEarnings} onChange={(e) => setWeeklyEarnings(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-weekly-earnings">Weekly Earnings ($)</label>
+            <input id="calc-weekly-earnings"  type="number" value={weeklyEarnings} onChange={(e) => setWeeklyEarnings(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Deliveries per Week</label>
-            <input type="number" value={deliveriesPerWeek} onChange={(e) => setDeliveriesPerWeek(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-deliveries-per-week">Deliveries per Week</label>
+            <input id="calc-deliveries-per-week"  type="number" value={deliveriesPerWeek} onChange={(e) => setDeliveriesPerWeek(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Hours Worked per Week</label>
-            <input type="number" value={hoursWorked} onChange={(e) => setHoursWorked(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-hours-worked-per-week">Hours Worked per Week</label>
+            <input id="calc-hours-worked-per-week"  type="number" value={hoursWorked} onChange={(e) => setHoursWorked(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Miles Driven per Week</label>
-            <input type="number" value={milesDriven} onChange={(e) => setMilesDriven(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-miles-driven-per-week">Miles Driven per Week</label>
+            <input id="calc-miles-driven-per-week"  type="number" value={milesDriven} onChange={(e) => setMilesDriven(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Vehicle Expenses per Week ($)</label>
-          <input type="number" value={vehicleExpenses} onChange={(e) => setVehicleExpenses(e.target.value)}
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-vehicle-expenses-per-week">Vehicle Expenses per Week ($)</label>
+          <input id="calc-vehicle-expenses-per-week"  type="number" value={vehicleExpenses} onChange={(e) => setVehicleExpenses(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>

@@ -31,35 +31,35 @@ export default function IncomeTax1099() {
 
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-1099-self-employment-income">
             1099 Self Employment Income ($)
           </label>
-          <input type="number" value={income1099} onChange={(e) => setIncome1099(e.target.value)}
+          <input id="calc-1099-self-employment-income"  type="number" value={income1099} onChange={(e) => setIncome1099(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-w-2-income">
             Other W-2 Income ($)
           </label>
-          <input type="number" value={w2Income} onChange={(e) => setW2Income(e.target.value)}
+          <input id="calc-other-w-2-income"  type="number" value={w2Income} onChange={(e) => setW2Income(e.target.value)}
             className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
             style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-pre-tax-deductions">
               Pre Tax Deductions ($)
             </label>
-            <input type="number" value={preTaxDeductions} onChange={(e) => setPreTaxDeductions(e.target.value)}
+            <input id="calc-pre-tax-deductions"  type="number" value={preTaxDeductions} onChange={(e) => setPreTaxDeductions(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-filing-status">
               Filing Status
             </label>
-            <select value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
+            <select id="calc-filing-status"  value={filingStatus} onChange={(e) => setFilingStatus(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }}>
               <option value="single">Single</option>

@@ -32,42 +32,42 @@ export default function DoorDashProfit({ provider = 'DoorDash' }: { provider?: s
       <div className="space-y-4 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Weekly Gross Earnings ($)</label>
-            <input type="number" value={weeklyGross} onChange={(e) => setWeeklyGross(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-weekly-gross-earnings">Weekly Gross Earnings ($)</label>
+            <input id="calc-weekly-gross-earnings"  type="number" value={weeklyGross} onChange={(e) => setWeeklyGross(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Hours Worked per Week</label>
-            <input type="number" value={hoursWorked} onChange={(e) => setHoursWorked(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Miles Driven per Week</label>
-            <input type="number" value={milesDriven} onChange={(e) => setMilesDriven(e.target.value)}
-              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
-              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Other Expenses per Week ($)</label>
-            <input type="number" value={otherExpenses} onChange={(e) => setOtherExpenses(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-hours-worked-per-week">Hours Worked per Week</label>
+            <input id="calc-hours-worked-per-week"  type="number" value={hoursWorked} onChange={(e) => setHoursWorked(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Gas Price per Gallon ($)</label>
-            <input type="number" value={gasPrice} onChange={(e) => setGasPrice(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-miles-driven-per-week">Miles Driven per Week</label>
+            <input id="calc-miles-driven-per-week"  type="number" value={milesDriven} onChange={(e) => setMilesDriven(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }}>Vehicle MPG</label>
-            <input type="number" value={mpg} onChange={(e) => setMpg(e.target.value)}
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-other-expenses-per-week">Other Expenses per Week ($)</label>
+            <input id="calc-other-expenses-per-week"  type="number" value={otherExpenses} onChange={(e) => setOtherExpenses(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-gas-price-per-gallon">Gas Price per Gallon ($)</label>
+            <input id="calc-gas-price-per-gallon"  type="number" value={gasPrice} onChange={(e) => setGasPrice(e.target.value)}
+              className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
+              style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-secondary)' }} htmlFor="calc-vehicle-mpg">Vehicle MPG</label>
+            <input id="calc-vehicle-mpg"  type="number" value={mpg} onChange={(e) => setMpg(e.target.value)}
               className="w-full rounded-lg border px-4 py-3 font-mono text-lg"
               style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-primary)' }} />
           </div>
